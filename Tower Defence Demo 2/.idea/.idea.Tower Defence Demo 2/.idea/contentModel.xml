@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Adrián\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Adrián\OneDrive\Programming\Tower Defense Kit For Unity\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Box.cs" t="Include" />
+        <e p="Editor" t="Include">
+          <e p="CustomInspectors" t="Include">
+            <e p="AudioEventCustomInspector.cs" t="Include" />
+            <e p="ComplexEnemyInstanceCustomInspector.cs" t="Include" />
+            <e p="IntVariableCustomInspector.cs" t="Include" />
+            <e p="LevelCustomInspector.cs" t="Include" />
+            <e p="SimpleAudioEventCustomInspector.cs" t="Include" />
+            <e p="TileDatabaseCustomInspector.cs" t="Include" />
+            <e p="TileInspector.cs" t="Include" />
+            <e p="WaveSpawnerCustomInspector.cs" t="Include" />
+            <e p="WaypointTypeCustomInspector.cs" t="Include" />
+          </e>
+          <e p="CustomWindows" t="Include">
+            <e p="WaveEditor.cs" t="Include" />
+            <e p="WaveSpawnerCustomWindow.cs" t="Include" />
+          </e>
+          <e p="EditorToolsMenu" t="Include">
+            <e p="AddAndRemoveTilesTool.cs" t="Include" />
+            <e p="SquareHandle.cs" t="Include" />
+            <e p="ToolsMenu.cs" t="Include" />
+          </e>
+          <e p="PropertyDrawers" t="Include">
+            <e p="IntReferencePropertyDrawer.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="GuiColor.cs" t="Include" />
+            <e p="IsolatedArea.cs" t="Include" />
+            <e p="IsolatedHorizontal.cs" t="Include" />
+            <e p="IsolatedScrollView.cs" t="Include" />
+            <e p="ListUtils.cs" t="Include" />
+            <e p="SceneUtils.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scrips" t="Include">
+          <e p="BaseFilter.cs" t="Include" />
+          <e p="BuffData" t="Include">
+            <e p="BaseBuffData.cs" t="Include" />
+            <e p="BuffComponentInfo" t="Include">
+              <e p="BaseBuffComponent.cs" t="Include" />
+              <e p="PoisonBuffComponent.cs" t="Include" />
+              <e p="SlownessBuffComponent.cs" t="Include" />
+            </e>
+            <e p="BurningBuffData.cs" t="Include" />
+            <e p="PoisonBuffData.cs" t="Include" />
+            <e p="SlownessBuffData.cs" t="Include" />
+          </e>
+          <e p="CameraController.cs" t="Include" />
+          <e p="CustomTypes" t="Include">
+            <e p="Amount.cs" t="Include" />
+            <e p="Duration.cs" t="Include" />
+            <e p="IncreaseType" t="Include">
+              <e p="AdditiveIncreaseType.cs" t="Include" />
+              <e p="BaseIncreaseType.cs" t="Include" />
+              <e p="FixedIncreaseType.cs" t="Include" />
+              <e p="MultiplicativeIncreaseType.cs" t="Include" />
+              <e p="NoIncreaseType.cs" t="Include" />
+            </e>
+            <e p="LogLevel.cs" t="Include" />
+          </e>
+          <e p="Data" t="Include">
+            <e p="Currency.cs" t="Include" />
+            <e p="FloatIncrease.cs" t="Include" />
+            <e p="Goal.cs" t="Include" />
+            <e p="IntCurrency.cs" t="Include" />
+            <e p="Spawnpoint.cs" t="Include" />
+            <e p="TileColor.cs" t="Include" />
+            <e p="TileData" t="Include">
+              <e p="TileRow.cs" t="Include" />
+              <e p="TileTable.cs" t="Include" />
+              <e p="TileType.cs" t="Include" />
+              <e p="TileWithCoordinates.cs" t="Include" />
+              <e p="TileWithDistance.cs" t="Include" />
+            </e>
+            <e p="TileData.cs" t="Include" />
+            <e p="WaypointType.cs" t="Include" />
+          </e>
+          <e p="Direction.cs" t="Include" />
+          <e p="EnemyData" t="Include">
+            <e p="AutoGenerateModifers" t="Include">
+              <e p="BaseAutoGenerateModifiers.cs" t="Include" />
+            </e>
+            <e p="Instances" t="Include">
+              <e p="EnemyInstance.cs" t="Include" />
+            </e>
+            <e p="Triggers" t="Include">
+              <e p="BaseTriggers.cs" t="Include" />
+            </e>
+            <e p="WaveData" t="Include">
+              <e p="BaseWaveData.cs" t="Include" />
+              <e p="MoreWaveData.cs" t="Include" />
+              <e p="WaveDataWithCustomInspector.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Events" t="Include">
+            <e p="Audio" t="Include">
+              <e p="AudioEvent.cs" t="Include" />
+              <e p="AudioEventListener.cs" t="Include" />
+              <e p="AudioLoop.cs" t="Include" />
+              <e p="LoopAudioEvent.cs" t="Include" />
+              <e p="SimpleAudioEvent.cs" t="Include" />
+            </e>
+            <e p="Enemies" t="Include">
+              <e p="EnemyEvent.cs" t="Include" />
+              <e p="EnemyEventListener.cs" t="Include" />
+            </e>
+            <e p="GameEvent.cs" t="Include" />
+            <e p="GameEventListener.cs" t="Include" />
+          </e>
+          <e p="Extensions" t="Include">
+            <e p="FloatExtensions.cs" t="Include" />
+          </e>
+          <e p="HealthBar.cs" t="Include" />
+          <e p="Instances" t="Include">
+            <e p="BulletInstance.cs" t="Include" />
+            <e p="TextInstance.cs" t="Include" />
+            <e p="TowerInstance.cs" t="Include" />
+          </e>
+          <e p="Level.cs" t="Include" />
+          <e p="PoolManager.cs" t="Include" />
+          <e p="Priorities" t="Include">
+            <e p="BasePriority.cs" t="Include" />
+            <e p="HighestArmorPriority.cs" t="Include" />
+            <e p="NearestToGoalPriority.cs" t="Include" />
+          </e>
+          <e p="ScoreManager.cs" t="Include" />
+          <e p="SelectedTowerOption.cs" t="Include" />
+          <e p="SpecialEffects" t="Include">
+            <e p="BaseSpecialEffect.cs" t="Include" />
+            <e p="BuffSpecialEffect.cs" t="Include" />
+            <e p="ChainHit.cs" t="Include" />
+            <e p="ReduceArmor.cs" t="Include" />
+            <e p="SplashDamage.cs" t="Include" />
+          </e>
+          <e p="TdTile.cs" t="Include" />
+          <e p="TowerOption.cs" t="Include" />
+          <e p="TowerUpgrades" t="Include">
+            <e p="TowerUpgradeBranch.cs" t="Include" />
+            <e p="TowerUpgradeNode.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="UiSkin.cs" t="Include" />
+            <e p="UiSkinButton.cs" t="Include" />
+            <e p="UISkinData.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="BulkRevertToPrefab.cs" t="Include" />
+            <e p="DebugUtils.cs" t="Include" />
+            <e p="Utils.cs" t="Include" />
+          </e>
+          <e p="Variables" t="Include">
+            <e p="IntReference.cs" t="Include" />
+            <e p="IntVariable.cs" t="Include" />
+          </e>
+          <e p="WaveModifiers" t="Include">
+            <e p="BasicWaveModifier.cs" t="Include" />
+          </e>
+          <e p="Waves" t="Include">
+            <e p="EnemyWaveData.cs" t="Include" />
+            <e p="IntEnemyStat.cs" t="Include" />
+            <e p="Wave.cs" t="Include" />
+            <e p="Wave2.cs" t="Include" />
+            <e p="WaveCluster.cs" t="Include" />
+            <e p="WaveCluster2.cs" t="Include" />
+            <e p="WaveController.cs" t="Include" />
+            <e p="WaveGenerator.cs" t="Include" />
+            <e p="WaveGenerator2.cs" t="Include" />
+            <e p="WaveSpawner.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Simple UI" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="OFL.txt" t="Include" />
+          </e>
+        </e>
+        <e p="TestScript.cs" t="Include" />
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="Tower Defence Demo 2.sln" t="IncludeFlat" />
+    </e>
+  </component>
+  <component name="RiderRiderContentModelStore">
+    <excludedPaths>
+      <Path>Temp</Path>
+      <Path>Library</Path>
+    </excludedPaths>
+  </component>
+</project>
