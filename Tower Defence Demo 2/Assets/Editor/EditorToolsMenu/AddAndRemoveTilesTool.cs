@@ -157,33 +157,29 @@ namespace Editor.EditorToolsMenu
         {
             var levelComponent = LevelProperty.GetComponent<Level>();
 
-            var minX = - (levelComponent.Width - 1) / 2f;
-            var minY = - (levelComponent.Height - 1) / 2f;
+            float minX = - (levelComponent.Width - 1) / 2f;
+            float minY = - (levelComponent.Height - 1) / 2f;
 
-            var actualX = Mathf.FloorToInt(position.x - minX);
-            var actualY = Mathf.FloorToInt(position.y - minY);
+            int actualX = Mathf.FloorToInt(position.x - minX);
+            int actualY = Mathf.FloorToInt(position.y - minY);
 
-            RecoverTiles();
-            if (levelComponent.Tiles != null)
+            var newTile = (GameObject)PrefabUtility.InstantiatePrefab(LevelProperty.GetComponent<Level>().TilePrefab);
+            newTile.transform.parent = LevelProperty.transform.Find("Tiles");
+
+            newTile.transform.position = new Vector3(position.x, position.y, 1);
+            //newTile.transform.localScale = new Vector3(7, 7, 1);
+
+            if (levelComponent[actualX, actualY] != null)
             {
-                var newTile = (GameObject)PrefabUtility.InstantiatePrefab(LevelProperty.GetComponent<Level>().TilePrefab);
-                newTile.transform.parent = LevelProperty.transform.Find("Tiles");
-
-                newTile.transform.position = new Vector3(position.x, position.y, 1);
-                //newTile.transform.localScale = new Vector3(7, 7, 1);
-
-                if (levelComponent.Tiles[actualX, actualY] != null)
-                {
-                    RemoveTile(levelComponent.Tiles[actualX, actualY].transform.position);
-                }
-
-                levelComponent.Tiles[actualX, actualY] = newTile;
-
-                CreateSpecialPoints(newTile);
-
-                Undo.RegisterCreatedObjectUndo(newTile, "Add Tile");
-                UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
+                RemoveTile(levelComponent[actualX, actualY].transform.position);
             }
+
+            levelComponent[actualX, actualY] = newTile;
+
+            CreateSpecialPoints(newTile);
+
+            Undo.RegisterCreatedObjectUndo(newTile, "Add Tile");
+            UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
         }
 
         private static void CreateSpecialPoints(GameObject tile)
@@ -212,28 +208,6 @@ namespace Editor.EditorToolsMenu
             }
         }
 
-        private static void RecoverTiles()
-        {
-            var levelComponent = LevelProperty.GetComponent<Level>();
-            if (levelComponent.Tiles != null)
-            {
-                return;
-            }
-            Debug.LogWarning("Tiles are null, recovering");
-            levelComponent.Tiles = new GameObject[levelComponent.Width, levelComponent.Height];
-            for(int i = 0; i < LevelProperty.transform.Find("Tiles").childCount; i++)
-            {
-                var go = LevelProperty.transform.Find("Tiles").GetChild(i).gameObject;
-                var minX = - (levelComponent.Width - 1) / 2f;
-                var minY = - (levelComponent.Height - 1) / 2f;
-
-                var actualX = Mathf.FloorToInt(go.transform.position.x - minX);
-                var actualY = Mathf.FloorToInt(go.transform.position.y - minY);
-                levelComponent.Tiles[actualX, actualY] = go;
-            }
-
-        }
-
         public static void RemoveTile(Vector2 position)
         {
             var levelComponent = LevelProperty.GetComponent<Level>();
@@ -244,12 +218,11 @@ namespace Editor.EditorToolsMenu
             var actualX = Mathf.FloorToInt(position.x - minX);
             var actualY = Mathf.FloorToInt(position.y - minY);
 
-            RecoverTiles();
-            if (levelComponent.Tiles != null && levelComponent.Tiles[actualX, actualY] != null)
+            if (levelComponent[actualX, actualY] != null)
             {
 
-                var objectToDestroy = levelComponent.Tiles[actualX, actualY];
-                levelComponent.Tiles[actualX, actualY] = null;
+                var objectToDestroy = levelComponent[actualX, actualY];
+                levelComponent[actualX, actualY] = null;
 
 
                 if (objectToDestroy.GetComponent<TdTile>().WaypointTypes.Any(wt => wt == TileType.SpawnPoint))
@@ -283,7 +256,7 @@ namespace Editor.EditorToolsMenu
                         }
                     }
                 }
-            
+
                 Undo.DestroyObjectImmediate(objectToDestroy);
                 DestroyImmediate(objectToDestroy);
                 UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();

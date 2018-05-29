@@ -51,23 +51,44 @@ namespace Editor.CustomInspectors
 
         private void GenerateNewMap()
         {
-            _level.Tiles = new GameObject[_level.Width, _level.Height];
-            int size = _level.Height / 2;
+            _level.RecreateTiles();
 
-            //_camera.GetComponent<Camera>().orthographicSize = size;
+            float minX = -(_level.Width - 1) / 2f;
+            float minY = -(_level.Height - 1) / 2f;
+
+            _camera.GetComponent<Camera>().orthographicSize = _level.Height / 2f;
+
+            var tilesGo = _level.transform.Find("Tiles");
+            var spawnpointsGo = _level.transform.Find("SpawnPoints");
+            var goalsGo = _level.transform.Find("Goals");
+
+            foreach (Transform child in spawnpointsGo.transform)
+            {
+                DestroyImmediate(child.gameObject);
+            }
+
+            foreach (Transform child in goalsGo.transform)
+            {
+                DestroyImmediate(child.gameObject);
+            }
+
             for (int x = 0; x < _level.Width; x++)
             {
                 for(int y = 0; y < _level.Height; y++)
                 {
+                    var go = (GameObject) PrefabUtility.InstantiatePrefab(_level.TilePrefab);
+                    go.transform.parent = _level.transform.Find("Tiles");
+                    go.transform.position = new Vector3(minX + x, minY + y, 1);
 
+                    _level[x, y] = go;
                 }
             }
         }
 
         private void DrawTilePrefab()
         {
-            var go = (GameObject)EditorGUILayout.ObjectField(_level.TilePrefab, typeof(GameObject), false);
-            _level.TilePrefab = Level.StTilePrefab = go;
+            var go = (GameObject)EditorGUILayout.ObjectField("Default tile: ", _level.TilePrefab, typeof(GameObject), false);
+            _level.TilePrefab = go;
         }
     }
 }

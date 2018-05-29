@@ -9,22 +9,36 @@ namespace Scrips
 {
     public class Level : MonoBehaviour
     {
+        [SerializeField] private GameObject[] _serializedTiles;
+
         [HideInInspector]
         public int Width, Height;
 
         [HideInInspector]
-        public GameObject[,] Tiles;
-
-        [HideInInspector]
         public GameObject TilePrefab;
 
-        public static GameObject StTilePrefab;
+        public GameObject this[int x, int y]
+        {
+            get { return _serializedTiles[y * Width + x]; }
+            set { _serializedTiles[y * Width + x] = value; }
+        }
 
         public void Start()
         {
             Profiler.BeginSample("Pathfinding");
             CalculateWaypoints();
             Profiler.EndSample();
+        }
+
+        public void RecreateTiles()
+        {
+            _serializedTiles = new GameObject[Width * Height];
+            var tilesGo = GameObject.Find("Tiles");
+
+            for (int i = tilesGo.transform.childCount - 1; i >= 0; i--)
+            {
+                DestroyImmediate(tilesGo.transform.GetChild(i).gameObject);
+            }
         }
 
         public void CalculateWaypoints()
@@ -73,10 +87,10 @@ namespace Scrips
                     {
                         try
                         {
-                            var go = Tiles[i, j];
+                            var go = this[i, j];
                             var tile = go.GetComponent<TdTile>();
                             if (tile.WaypointTypes.Count > 0)
-                                result.Add(new TileWithCoordinates(i, j, Tiles[i, j]));
+                                result.Add(new TileWithCoordinates(i, j, this[i, j]));
                         }
                         catch(IndexOutOfRangeException)
                         {
@@ -91,7 +105,6 @@ namespace Scrips
 
         private List<TileWithCoordinates> GetGoals()
         {
-            if (Tiles == null) RecoverTiles();
 
             var result = new List<TileWithCoordinates>();
 
@@ -99,7 +112,8 @@ namespace Scrips
             {
                 for(int y = 0; y < Height; y++)
                 {
-                    var tile = Tiles[x, y];
+                    var tile = this[x, y];
+                    if (tile == null) Debug.LogError($"Tile at [{x}, {y}] is null, which is BS");
                     var tileComponent = tile.GetComponent<TdTile>();
                     if (tileComponent.WaypointTypes != null && tileComponent.WaypointTypes.Contains(TileType.Goal))
                         result.Add(new TileWithCoordinates(x, y, tile));
@@ -107,27 +121,6 @@ namespace Scrips
             }
 
             return result;
-        }
-
-        private void RecoverTiles()
-        {
-            if (Tiles != null)
-            {
-                return;
-            }
-            Debug.LogWarning("Tiles are null, recovering");
-            Tiles = new GameObject[Width, Height];
-            for (int i = 0; i < transform.Find("Tiles").childCount; i++)
-            {
-                var go = transform.Find("Tiles").GetChild(i).gameObject;
-                var minX = -(Width - 1) / 2f;
-                var minY = -(Height - 1) / 2f;
-
-                var actualX = Mathf.FloorToInt(go.transform.position.x - minX);
-                var actualY = Mathf.FloorToInt(go.transform.position.y - minY);
-                Tiles[actualX, actualY] = go;
-            }
-
         }
     }
 }
