@@ -1,25 +1,11 @@
-﻿using Scrips.Events;
+﻿using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Scrips.Variables
 {
+    [PublicAPI]
     [CreateAssetMenu(menuName = "Variables/Int variable")]
-    public class IntVariable : ScriptableObject
+    public class IntVariable : Variable<int>
     {
-        [SerializeField]
-        [HideInInspector]
-        private int _value;
-
-        public int Value
-        {
-            get { return _value; }
-            set
-            {
-                _value = value;
-                OnValueChanged?.Invoke();
-            }
-        }
-
-        public GameEvent OnValueChanged;
     }
 }

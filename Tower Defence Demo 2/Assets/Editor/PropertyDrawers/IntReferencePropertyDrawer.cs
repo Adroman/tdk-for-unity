@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Editor.PropertyDrawers
 {
-    [CustomPropertyDrawer(typeof(IntReference))]
+    //[CustomPropertyDrawer(typeof(IntReference))]
     public class IntReferencePropertyDrawer : PropertyDrawer
     {
         private readonly string[] _options = { "Use Constant", "Use Variable" };
