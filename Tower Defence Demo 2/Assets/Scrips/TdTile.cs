@@ -10,25 +10,33 @@ using TileWithDistance = Data.TileWithDistance;
 namespace Scrips
 {
     [Serializable]
-    //[ExecuteInEditMode]
+    [ExecuteInEditMode]
     public class TdTile : MonoBehaviour
     {
-        public bool Buildable;
+        [HideInInspector]
+        [SerializeField]
+        private bool _buildable;
+
+        [HideInInspector]
+        [SerializeField]
+        private bool _walkable;
+
+        [HideInInspector]
+        [SerializeField]
+        private bool _isSpawnpoint;
+
+        [HideInInspector]
+        [SerializeField]
+        private bool _isGoal;
 
         public TileColor TileColor;
-
-        [HideInInspector]
-        public List<GameObject> WaypointTypesSupported;
-
-        [HideInInspector]
-        public List<TileType> WaypointTypes;
 
         private TowerInstance _currentTower;
         private bool _readyToBuild;
         private SpriteRenderer _renderer;
         private static GameObject _towersParent;
 
-        private List<Transform> _next = null;
+        private List<Transform> _next;
         private float _distanceToGoal = Mathf.Infinity;
 
         private static Level _level;
@@ -47,20 +55,83 @@ namespace Scrips
         public float DistanceToGoal { get { return _distanceToGoal; } private set { _distanceToGoal = value; } }
         public List<Transform> NextTiles { get { return _next; } private set { _next = value; } }
 
+        public bool Buildable
+        {
+            get { return _buildable; }
+            set
+            {
+                _buildable = value;
+                if (value)
+                {
+                    _isGoal = false;
+                    _isSpawnpoint = false;
+                    _walkable = false;
+                }
+            }
+        }
+
+        public bool Walkable
+        {
+            get { return _walkable; }
+            set
+            {
+                _walkable = value;
+                if (value)
+                {
+                    _buildable = false;
+                }
+                else
+                {
+                    _isGoal = false;
+                    _isSpawnpoint = false;
+                }
+            }
+        }
+
+        public bool IsSpawnpoint
+        {
+            get { return _isSpawnpoint; }
+            set
+            {
+                _isSpawnpoint = value;
+                if (value)
+                {
+                    _isGoal = false;
+                    _buildable = false;
+                    _walkable = true;
+                }
+            }
+        }
+
+        public bool IsGoal
+        {
+            get { return _isGoal; }
+            set
+            {
+                _isGoal = value;
+                if (value)
+                {
+                    _isSpawnpoint = false;
+                    _buildable = false;
+                    _walkable = true;
+                }
+            }
+        }
+
         public List<GameObject> CalculateDistance(List<TileWithDistance> allNeighbors)
         {
             var result = new List<GameObject>();
 
-            if (WaypointTypes.Count == 0) return result;
+            if (!Walkable) return result;
 
-            if (WaypointTypes.Contains(TileType.Goal))
+            if (IsGoal)
             {
                 DistanceToGoal = 0;
                 foreach(var n in allNeighbors)
                 {
                     var t = n.gameObject.GetComponent<TdTile>();
                     if (t == null) throw new InvalidOperationException("GameObject has to have Tile component");
-                    if (t.WaypointTypes.Count == 0) continue;
+                    if (!Walkable) continue;
                     if (float.IsPositiveInfinity(t.DistanceToGoal)) result.Add(n.gameObject);
                 }
 
@@ -72,7 +143,7 @@ namespace Scrips
             {
                 var t = n.gameObject.GetComponent<TdTile>();
                 if (t == null) continue;
-                if (t.WaypointTypes.Count == 0) continue;
+                if (!Walkable) continue;
                 if (float.IsPositiveInfinity(t.DistanceToGoal)) result.Add(n.gameObject);
                 else
                 {
@@ -85,7 +156,7 @@ namespace Scrips
                             n.gameObject.transform
                         };
                     }
-                    else if (dist == DistanceToGoal)
+                    else if (Math.Abs(dist - DistanceToGoal) < 0.001f)
                     {
                         NextTiles.Add(n.gameObject.transform);
                     }
@@ -130,11 +201,6 @@ namespace Scrips
 
             _renderer = GetComponent<SpriteRenderer>();
             _renderer.color = Application.isPlaying ? TileColor.InGameColor : TileColor.EditorColor;
-        }
-
-        private void Update()
-        {
-            //_renderer.color = Application.isPlaying ? TileColor.InGameColor : TileColor.EditorColor;
         }
 
         private void OnPlayModeChanged(PlayModeStateChange state)

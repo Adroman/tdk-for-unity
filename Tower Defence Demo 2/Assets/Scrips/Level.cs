@@ -89,7 +89,7 @@ namespace Scrips
                         {
                             var go = this[i, j];
                             var tile = go.GetComponent<TdTile>();
-                            if (tile.WaypointTypes.Count > 0)
+                            if (tile.Walkable)
                                 result.Add(new TileWithCoordinates(i, j, this[i, j]));
                         }
                         catch(IndexOutOfRangeException)
@@ -115,7 +115,7 @@ namespace Scrips
                     var tile = this[x, y];
                     if (tile == null) Debug.LogError($"Tile at [{x}, {y}] is null, which is BS");
                     var tileComponent = tile.GetComponent<TdTile>();
-                    if (tileComponent.WaypointTypes != null && tileComponent.WaypointTypes.Contains(TileType.Goal))
+                    if (tileComponent.IsGoal)
                         result.Add(new TileWithCoordinates(x, y, tile));
                 }
             }

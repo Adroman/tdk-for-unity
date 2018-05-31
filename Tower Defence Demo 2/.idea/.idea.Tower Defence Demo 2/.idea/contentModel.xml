@@ -157,10 +157,12 @@
             <e p="Utils.cs" t="Include" />
           </e>
           <e p="Variables" t="Include">
+            <e p="EnemyCollection.cs" t="Include" />
             <e p="FloatVariable.cs" t="Include" />
             <e p="IntReference.cs" t="Include" />
             <e p="IntVariable.cs" t="Include" />
             <e p="Reference.cs" t="Include" />
+            <e p="RuntimeCollection.cs" t="Include" />
             <e p="Variable.cs" t="Include" />
           </e>
           <e p="WaveModifiers" t="Include">

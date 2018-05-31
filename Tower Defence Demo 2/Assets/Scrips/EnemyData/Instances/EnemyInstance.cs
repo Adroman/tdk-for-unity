@@ -83,7 +83,7 @@ namespace Scrips.EnemyData.Instances
                 //transform.Translate(dir.normalized * distanceToTravel, Space.World);
                 distanceToTravel -= distanceLeft;
 
-                if (_target.GetComponent<TdTile>().WaypointTypes.Contains(TileType.Goal))
+                if (_target.GetComponent<TdTile>().IsGoal)
                 {
                     TargetReached();
                     return;

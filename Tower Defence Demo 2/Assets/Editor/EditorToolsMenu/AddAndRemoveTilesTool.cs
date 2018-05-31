@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using Data;
 using Scrips;
 using Scrips.Data;
 using UnityEditor;
@@ -11,11 +9,11 @@ namespace Editor.EditorToolsMenu
     [InitializeOnLoad]
     public class AddAndRemoveTilesTool : UnityEditor.Editor
     {
-        static GameObject _level;
+        private static GameObject _level;
 
-        static TileDatabase _tileDatabase;
+        private static TileDatabase _tileDatabase;
 
-        static Vector2 _scrollPosition;
+        private static Vector2 _scrollPosition;
 
         public static GameObject LevelProperty
         {
@@ -71,7 +69,7 @@ namespace Editor.EditorToolsMenu
             SceneView.onSceneGUIDelegate -= OnSceneGUI;
         }
 
-        static void OnSceneGUI(SceneView sceneView)
+        private static void OnSceneGUI(SceneView sceneView)
         {
 
             if (ToolsMenu.SelectedTool == 0)
@@ -117,7 +115,7 @@ namespace Editor.EditorToolsMenu
 
             GUI.Box(new Rect(0, 0, 80, sceneView.position.height - 35), GUIContent.none, EditorStyles.textArea);
 
-            if (TileDatabase?.Tiles != null)
+            if (TileDatabase != null && TileDatabase.Tiles != null)
             {
                 _scrollPosition = GUI.BeginScrollView(new Rect(0, 0, 95, sceneView.position.height - 35), _scrollPosition,
                     new Rect(0, 0, 80, TileDatabase.Tiles.Count * 100));
@@ -187,36 +185,31 @@ namespace Editor.EditorToolsMenu
             var t = tile.GetComponent<TdTile>();
             if (t == null) return;
 
-            for(int i = 0; i < t.WaypointTypesSupported.Count; i++)
-            {
-                if(t.WaypointTypes[i] == TileType.SpawnPoint)
+                if(t.IsSpawnpoint)
                 {
-                    var sp = new GameObject(t.WaypointTypesSupported[i].name + " SpawnPoint");
+                    var sp = new GameObject("SpawnPoint");
                     sp.transform.position = t.transform.position;
                     var s = sp.AddComponent<Spawnpoint>();
-                    s.WaypointType = t.WaypointTypesSupported[i];
                     sp.transform.parent = GameObject.Find("SpawnPoints").transform;
                 }
-                else if(t.WaypointTypes[i] == TileType.Goal)
+                else if(t.IsGoal)
                 {
-                    var goal = new GameObject(t.WaypointTypesSupported[i].name + " Goal");
+                    var goal = new GameObject("Goal");
                     goal.transform.position = t.transform.position;
                     var g = goal.AddComponent<Goal>();
-                    g.WaypointType = t.WaypointTypesSupported[i];
                     goal.transform.parent = GameObject.Find("Goals").transform;
                 }
-            }
         }
 
         public static void RemoveTile(Vector2 position)
         {
             var levelComponent = LevelProperty.GetComponent<Level>();
 
-            var minX = -(levelComponent.Width - 1) / 2f;
-            var minY = -(levelComponent.Height - 1) / 2f;
+            float minX = -(levelComponent.Width - 1) / 2f;
+            float minY = -(levelComponent.Height - 1) / 2f;
 
-            var actualX = Mathf.FloorToInt(position.x - minX);
-            var actualY = Mathf.FloorToInt(position.y - minY);
+            int actualX = Mathf.FloorToInt(position.x - minX);
+            int actualY = Mathf.FloorToInt(position.y - minY);
 
             if (levelComponent[actualX, actualY] != null)
             {
@@ -225,7 +218,7 @@ namespace Editor.EditorToolsMenu
                 levelComponent[actualX, actualY] = null;
 
 
-                if (objectToDestroy.GetComponent<TdTile>().WaypointTypes.Any(wt => wt == TileType.SpawnPoint))
+                if (objectToDestroy.GetComponent<TdTile>().IsSpawnpoint)
                 {
                     // Destroy all spawnpoints on that position
                     var spawnpoints = GameObject.Find("SpawnPoints").transform;
@@ -241,7 +234,7 @@ namespace Editor.EditorToolsMenu
                     }
                 }
 
-                if (objectToDestroy.GetComponent<TdTile>().WaypointTypes.Any(wt => wt == TileType.Goal))
+                if (objectToDestroy.GetComponent<TdTile>().IsGoal)
                 {
                     // Destroy all spawnpoints on that position
                     var goals = GameObject.Find("Goals").transform;
