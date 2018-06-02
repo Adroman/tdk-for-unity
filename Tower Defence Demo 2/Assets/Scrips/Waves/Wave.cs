@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Scrips.EnemyData.WaveData;
+using Scrips.Events;
+using Scrips.Events.Enemies;
 using UnityEngine;
 
 namespace Scrips.Waves
@@ -15,6 +17,8 @@ namespace Scrips.Waves
         public List<Transform> SpawnPoints;
 
         public string Seed = "";
+
+        public EnemyEvent OnEnemySpawned;
 
         public Wave()
         {
@@ -77,6 +81,8 @@ namespace Scrips.Waves
 
             enemy.SetSpawnPoint(spawnPoint, true);
             enemy.gameObject.SetActive(true);
+
+            if (OnEnemySpawned != null) OnEnemySpawned.Invoke(enemy);
         }
 
         private float GetDeviatedValue(float baseValue, float deviation)

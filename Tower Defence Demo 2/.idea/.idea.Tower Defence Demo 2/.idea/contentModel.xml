@@ -74,6 +74,7 @@
             <e p="Spawnpoint.cs" t="Include" />
             <e p="TileColor.cs" t="Include" />
             <e p="TileData" t="Include">
+              <e p="IntCountdownVariable.cs" t="Include" />
               <e p="TileRow.cs" t="Include" />
               <e p="TileTable.cs" t="Include" />
               <e p="TileType.cs" t="Include" />

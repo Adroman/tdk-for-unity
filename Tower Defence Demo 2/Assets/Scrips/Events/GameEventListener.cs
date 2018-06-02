@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Scrips.Events
@@ -22,12 +23,13 @@ namespace Scrips.Events
 
         public void OnInvoked()
         {
-            Invoke(nameof(InvokeAfterCaller), 0);
+            StartCoroutine(InvokeAfterCaller());
         }
 
-        private void InvokeAfterCaller()
+        private IEnumerator InvokeAfterCaller()
         {
             Response.Invoke();
+            yield break;
         }
     }
 }

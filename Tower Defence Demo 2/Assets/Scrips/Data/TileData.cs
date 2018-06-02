@@ -15,7 +15,7 @@ namespace Scrips.Data
     [CreateAssetMenu]
     public class TileDatabase : ScriptableObject
     {
-        
+
         public List<TileData> Tiles = new List<TileData>();
     }
 }

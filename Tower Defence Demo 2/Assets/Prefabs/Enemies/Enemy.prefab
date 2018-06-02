@@ -259,9 +259,8 @@ MonoBehaviour:
   Speed: 2.5
   IntLoot: []
   IntPunishments: []
-  waypointType: {fileID: 1443128240235860, guid: a7b9a7fac31831640ab1b8fd78752ce1,
-    type: 2}
   HealthImage: {fileID: 114326197292018630}
+  RuntimeCollection: {fileID: 11400000, guid: 39943dabb991d5f41a54e86ae27ebadf, type: 2}
 --- !u!114 &114801245727604470
 MonoBehaviour:
   m_ObjectHideFlags: 1

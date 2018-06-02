@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Scrips.EnemyData.Instances;
 using UnityEngine;
 using UnityEngine.Events;
@@ -29,7 +30,13 @@ namespace Scrips.Events.Enemies
 
         public void Invoke(EnemyInstance target)
         {
+            StartCoroutine(InvokeAfterCaller(target));
+        }
+
+        private IEnumerator InvokeAfterCaller(EnemyInstance target)
+        {
             Response.Invoke(target);
+            yield break;
         }
     }
 }

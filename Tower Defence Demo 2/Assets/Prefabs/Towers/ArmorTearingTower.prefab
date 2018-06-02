@@ -323,4 +323,4 @@ MonoBehaviour:
     type: 2}
   RotationPoint: {fileID: 4263464875525906}
   ShootingPoint: {fileID: 4871150171106590}
-  PreviewSprite: {fileID: 21300000, guid: 5a2237a747b4a0042af19547f16edac7, type: 3}
+  PreviewSprite: {fileID: 21300000, guid: bf52b413617f9714384e45a0b039051f, type: 3}

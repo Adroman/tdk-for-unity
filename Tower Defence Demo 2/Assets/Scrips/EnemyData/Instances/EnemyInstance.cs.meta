@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 07d83f7be5430064080a69b7b5046dd8
-timeCreated: 1487529147
-licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HealthImage: {instanceID: 0}
+  - RuntimeCollection: {fileID: 11400000, guid: 39943dabb991d5f41a54e86ae27ebadf,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

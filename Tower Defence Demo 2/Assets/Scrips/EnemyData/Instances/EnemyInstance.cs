@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Data;
 using Scrips.BuffData;
 using Scrips.Data;
 using Scrips.EnemyData.AutoGenerateModifers;
 using Scrips.EnemyData.Triggers;
 using Scrips.EnemyData.WaveData;
 using Scrips.Extensions;
+using Scrips.Variables;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,9 +25,9 @@ namespace Scrips.EnemyData.Instances
         public List<IntCurrency> IntLoot;
         public List<IntCurrency> IntPunishments;
 
-        public GameObject waypointType;
-
         public Image HealthImage;
+
+        public EnemyCollection RuntimeCollection;
 
         public List<BaseBuffData> ActiveDebuffs;
 
@@ -45,6 +45,22 @@ namespace Scrips.EnemyData.Instances
         protected BaseWaveData WaveDataComponent;        // not sure if we need this
 
         public float DistanceToGoal => _target.GetComponent<TdTile>().DistanceToGoal + (transform.position - _target.transform.position).magnitude;
+
+        private void OnEnable()
+        {
+            if (RuntimeCollection != null)
+            {
+                RuntimeCollection.AddInstance(this);
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (RuntimeCollection != null)
+            {
+                RuntimeCollection.RemoveInstance(this);
+            }
+        }
 
         // Use this for initialization
         private void Start ()

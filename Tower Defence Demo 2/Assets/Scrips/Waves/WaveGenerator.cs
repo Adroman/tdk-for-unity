@@ -40,6 +40,7 @@ namespace Scrips.Waves
             {
                 int clusterCount = _random.Next(MinClusters, MaxClusters + 1);
                 var wave = InstantiateNewWave();
+                wave.OnEnemySpawned = _waveController.OnEnemySpawned;
                 wave.WaveClusters = new List<WaveCluster>();
                 for (int j = 0; j < clusterCount; j++)
                 {

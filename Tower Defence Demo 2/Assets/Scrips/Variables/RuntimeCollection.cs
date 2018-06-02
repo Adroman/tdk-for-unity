@@ -11,7 +11,7 @@ namespace Scrips.Variables
 
         public IntVariable Count;
 
-        public void Add(T instance)
+        public void AddInstance(T instance)
         {
             if (!Instances.Contains(instance))
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Editor.Utils;
+using Scrips.Data;
 using Scrips.EnemyData.AutoGenerateModifers;
 using Scrips.EnemyData.Instances;
 using Scrips.Waves;
@@ -289,7 +290,7 @@ namespace Editor.CustomWindows
 
         private bool CheckSpawnPoint(GameObject go)
         {
-            return go != null && go.transform.parent.name == "SpawnPoints";
+            return go != null && go.transform.parent.name == "SpawnPoints" && go.GetComponent<Spawnpoint>() != null;
         }
 
         private void DrawClustersForWave(float baseX, float baseY)
