@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Scrips.BuffData;
 using Scrips.Data;
-using Scrips.EnemyData.AutoGenerateModifers;
 using Scrips.EnemyData.Triggers;
-using Scrips.EnemyData.WaveData;
 using Scrips.Extensions;
 using Scrips.Variables;
 using UnityEngine;
@@ -15,13 +13,12 @@ namespace Scrips.EnemyData.Instances
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(BaseTriggers))]
-    [RequireComponent(typeof(BaseWaveData))]
-    [RequireComponent(typeof(BaseAutoGenerateModifiers))]
     public class EnemyInstance : MonoBehaviour
     {
         public float Hitpoints;
         public float Armor;
         public float Speed;
+
         public List<IntCurrency> IntLoot;
         public List<IntCurrency> IntPunishments;
 
@@ -29,20 +26,22 @@ namespace Scrips.EnemyData.Instances
 
         public EnemyCollection RuntimeCollection;
 
-        public List<BaseBuffData> ActiveDebuffs;
+        public List<BaseBuffData> ActiveDebuffs = new List<BaseBuffData>();
 
         private GameObject _target;
         private Transform _spawnpoint;
         private Rigidbody2D _rigidbody;
 
-        private float _initialHitpoint;
-        private float _initialArmor;
-        [HideInInspector]
+        [NonSerialized]
+        public float InitialHitpoints;
+
+        [NonSerialized]
+        public float InitialArmor;
+
         [NonSerialized]
         public float InitialSpeed;
 
         protected BaseTriggers TriggersComponent;        // we need this for sure
-        protected BaseWaveData WaveDataComponent;        // not sure if we need this
 
         public float DistanceToGoal => _target.GetComponent<TdTile>().DistanceToGoal + (transform.position - _target.transform.position).magnitude;
 
@@ -66,16 +65,23 @@ namespace Scrips.EnemyData.Instances
         private void Start ()
         {
             TriggersComponent = GetComponent<BaseTriggers>();
-            WaveDataComponent = GetComponent<BaseWaveData>();
-
             _rigidbody = GetComponent<Rigidbody2D>();
 
-            ResetStats();
-
-            var a = GameObject.Find("Level/Tiles");
+            var a = GameObject.Find("Tiles");
             var b = a.GetComponentsInChildren<TdTile>();
             var firstTargets = FindNearestTile(b).NextTiles;
             _target = firstTargets[GetRandom(0, firstTargets.Count)].gameObject;
+
+            ResetStats();
+        }
+
+        private void ResetStats()
+        {
+            Speed = InitialSpeed;
+            Armor = InitialArmor;
+            Hitpoints = InitialHitpoints;
+            
+            ActiveDebuffs.Clear();
         }
 
         // Update is called once per frame
@@ -153,7 +159,7 @@ namespace Scrips.EnemyData.Instances
             _spawnpoint = sp;
             if (move)
             {
-                var a = GameObject.Find("Level/Tiles");
+                var a = GameObject.Find("Tiles");
                 var b = a.GetComponentsInChildren<TdTile>();
                 var firstTargets = FindNearestTile(b).NextTiles;
                 transform.position = new Vector3(sp.position.x, sp.position.y);
@@ -230,26 +236,12 @@ namespace Scrips.EnemyData.Instances
 
         private void UpdateHealthbar()
         {
-            HealthImage.fillAmount = _initialHitpoint > 0 ? Hitpoints / _initialHitpoint : 0;
+            HealthImage.fillAmount = InitialHitpoints > 0 ? Hitpoints / InitialHitpoints : 0;
         }
 
         public void ReduceArmor(float amount)
         {
             Armor = Math.Max(0, Armor - amount);
-        }
-
-        private void ResetStats()
-        {
-            ActiveDebuffs = new List<BaseBuffData>();
-            _initialArmor = Armor = GetDeviatedValue(WaveDataComponent.InitialArmor, WaveDataComponent.ArmorDeviation);
-            _initialHitpoint = Hitpoints = GetDeviatedValue(WaveDataComponent.InitialHitpoints, WaveDataComponent.HitpointsDeviation);
-            InitialSpeed = Speed = GetDeviatedValue(WaveDataComponent.InitialSpeed, WaveDataComponent.SpeedDeviation);
-            IntLoot = WaveDataComponent.IntLoot;
-        }
-
-        private float GetDeviatedValue(float baseValue, float deviation)
-        {
-            return baseValue * (GetRandomNumber(1 - deviation, 1 + deviation));
         }
 
         // origin: https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers

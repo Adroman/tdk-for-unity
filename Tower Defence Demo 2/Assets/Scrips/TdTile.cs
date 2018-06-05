@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Data;
 using Scrips.Data;
 using Scrips.Instances;
-using UnityEditor;
 using UnityEngine;
 using TileWithDistance = Data.TileWithDistance;
 
@@ -194,21 +192,8 @@ namespace Scrips
         // Use this for initialization
         private void Start()
         {
-            //if (!Application.isPlaying) return;
-
-            //EditorApplication.playModeStateChanged -= OnPlayModeChanged;
-            //EditorApplication.playModeStateChanged += OnPlayModeChanged;
-
             _renderer = GetComponent<SpriteRenderer>();
             _renderer.color = Application.isPlaying ? TileColor.InGameColor : TileColor.EditorColor;
-        }
-
-        private void OnPlayModeChanged(PlayModeStateChange state)
-        {
-            if (state == PlayModeStateChange.ExitingPlayMode)
-            {
-                _renderer.color = TileColor.EditorColor;
-            }
         }
 
         private void OnMouseEnter()
@@ -236,14 +221,6 @@ namespace Scrips
             {
                 _readyToBuild = false;
                 BuildTower();
-            }
-        }
-
-        private void OnDestroy()
-        {
-            if(Application.isPlaying == false && Application.isEditor && EditorPrefs.GetInt("SelectedEditorTool", 0) == 0)
-            {
-                Debug.Log("Not allowing to delete");
             }
         }
 

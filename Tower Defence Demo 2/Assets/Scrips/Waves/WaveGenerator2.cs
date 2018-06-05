@@ -7,6 +7,7 @@ using UnityEngine;
 namespace Scrips.Waves
 {
     [Serializable]
+    [PublicAPI]
     public struct WaveNumber
     {
         public int Number;
@@ -19,10 +20,10 @@ namespace Scrips.Waves
         }
     }
 
-    [CreateAssetMenu]
-    public class WaveGenerator2 : ScriptableObject
+    public class WaveGenerator2 : MonoBehaviour
     {
-        public List<GameObject> Prefabs = new List<GameObject>();
+        public int CountdownForEachWave;
+        public List<BaseEnemyGenerationModifiers> EnemiesToUse = new List<BaseEnemyGenerationModifiers>();
         public int WavesTotal;
         public int MinClusters;
         public int MaxClusters;
@@ -33,11 +34,11 @@ namespace Scrips.Waves
         public float DifficultyDeviation;
         public string RandomSeed;
 
-        public List<int> ClusterIncreases;
+        public List<Transform> SpawnpointsToUse = new List<Transform>();
+        public List<int> ClusterIncreases = new List<int>();
         public List<WaveNumber> Waves = new List<WaveNumber>();
 
         private int _currentWave;
-        private int _currentClusterCount;
         private int _currentDifficulty;
         private System.Random _random;
 
@@ -60,14 +61,18 @@ namespace Scrips.Waves
             }
         }
 
-        public Wave2 GetNextWave()
+        private Wave2 GetNextWave()
         {
             _currentWave++;
             _currentDifficulty = (int) (_currentDifficulty * DifficultyIncrease);
-            if (ClusterIncreases.Contains(_currentWave)) _currentClusterCount++;
-            int clusters = _random.Next(MinClusters, _currentClusterCount + 1);
+            if (ClusterIncreases.Contains(_currentWave)) MaxClusters++;
+            int clusters = _random.Next(MinClusters, MaxClusters + 1);
 
-            var wave = new Wave2();
+            var wave = new Wave2
+            {
+                Countdown = CountdownForEachWave,
+                Spawnpoints = SpawnpointsToUse
+            };
 
             for (int i = 0; i < clusters; i++)
             {
@@ -77,9 +82,11 @@ namespace Scrips.Waves
             return wave;
         }
 
-        public WaveCluster2 GenerateWaveCluster(int clusterCount)
+        private WaveCluster2 GenerateWaveCluster(int clusterCount)
         {
-            return new WaveCluster2();
+            float ratio = 1f / clusterCount;
+            return EnemiesToUse[_random.Next(0, EnemiesToUse.Count)]
+                .GenerateCluster(_currentDifficulty, ratio, _random);
         }
 
         public void GenerateWaves()
@@ -99,7 +106,6 @@ namespace Scrips.Waves
         {
             _currentWave = 0;
             _currentDifficulty = BaseDifficulty;
-            _currentClusterCount = MinClusters;
             _random = new System.Random(RandomSeed.GetHashCode());
         }
     }

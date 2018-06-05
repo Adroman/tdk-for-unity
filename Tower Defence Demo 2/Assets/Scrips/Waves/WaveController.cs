@@ -1,104 +1,192 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Data;
 using Scrips.CustomTypes;
+using Scrips.EnemyData.Instances;
 using Scrips.Events;
 using Scrips.Events.Enemies;
-using Scrips.Utils;
 using Scrips.Variables;
 using UnityEngine;
 
 namespace Scrips.Waves
 {
+    [RequireComponent(typeof(IntCountdown))]
+    [RequireComponent(typeof(WaveGenerator2))]
     public class WaveController : MonoBehaviour
     {
-        [HideInInspector]
-        public List<Wave> Waves;
-
-        [HideInInspector]
-        [SerializeField]
-        private WaveGenerator _generator;
-
         public LogLevel LogLevel;
 
         public GameEvent OnWaveStarted;
 
         public EnemyEvent OnEnemySpawned;
 
+        public IntVariable ActiveEnemies;
+
         public IntVariable EnemiesWaiting;
 
-        public WaveGenerator Generator
+        public IntVariable WaveIndex;
+
+        public int QueueLength;
+
+        public bool ActivateWavesAtStart;
+
+        public string RandomSeed;
+
+        private WaveGenerator2 _generator;
+
+        private System.Random _random;
+
+        private Coroutine _waveCountdown;
+
+        private Queue<Wave2> _wavesQueue;
+
+        private IEnumerator<Wave2> _wavesEnumerator;
+
+        private int _waveNumber;
+
+        private Wave2 _nextWaveWaiting;
+
+        private IntCountdown _countdownVariable;
+
+        private void Start()
         {
-            get
+            _generator = GetComponent<WaveGenerator2>();
+            _wavesQueue = new Queue<Wave2>();
+            _wavesEnumerator = _generator.GetWaves().GetEnumerator();
+            _waveNumber = 0;
+            _countdownVariable = GetComponent<IntCountdown>();
+
+            if (WaveIndex != null) WaveIndex.Value = 0;
+            if (EnemiesWaiting != null) EnemiesWaiting.Value = 0;
+
+            InitQueue();
+
+            _random = new System.Random(RandomSeed.GetHashCode());
+            if (ActivateWavesAtStart)
             {
-                if (_generator == null) _generator = new WaveGenerator();
-                return _generator;
+                ActivateWaves();
             }
         }
 
-        //public Button CallEarly;
-
-        private int _currentWave;
-
-
-        // Use this for initialization
-        void Start ()
+        private void InitQueue()
         {
-            ScoreManager.Instance.Wave = -2;
-            //var button = CallEarly.GetComponent<Button>();
-            //button.onClick.AddListener(NextWave);
-            _currentWave = -2;
-            ScoreManager.Instance.Wave = Math.Max(0, _currentWave);
-            //ActivateWaves();
-            if (EnemiesWaiting != null) EnemiesWaiting.Value = 0;
+            for (int i = 0; i < QueueLength; i++)
+            {
+                if (_wavesEnumerator.MoveNext())
+                {
+                    _wavesQueue.Enqueue(_wavesEnumerator.Current);
+                }
+            }
+        }
 
-            NextWave();
+        private bool TryGetNextWave(out Wave2 result)
+        {
+            result = null;
+            if (_wavesQueue.Count == 0) return false;
+
+            if (_wavesEnumerator.MoveNext())
+            {
+                _wavesQueue.Enqueue(_wavesEnumerator.Current);
+            }
+
+            result = _wavesQueue.Dequeue();
+            return true;
+        }
+
+        public void CallWave()
+        {
+            if (_nextWaveWaiting != null)
+            {
+                StartCoroutine(SpawnWave(_nextWaveWaiting));
+            }
+
+            if (_nextWaveWaiting != null)
+            {
+                StartCoroutine(ActivateWave());
+            }
+        }
+
+        private void ActivateWaves()
+        {
+            if (TryGetNextWave(out _nextWaveWaiting))
+                StartCoroutine(ActivateWave());
         }
 
         private IEnumerator ActivateWave()
         {
-            int currentWave = _currentWave;
-            if (currentWave < Waves.Count)
+            while (true)
             {
-                DebugUtils.LogDebug(LogLevel, "Activating wave " + (currentWave + 2));
-                if (currentWave > -1)
-                {
-                    Waves[currentWave].ActivateWave();
-                    if (EnemiesWaiting != null)
-                    {
-                        EnemiesWaiting.Value += Waves[currentWave].WaveClusters.Sum(cluster => cluster.Amount);
-                    }
-                }
-                DebugUtils.LogDebug(LogLevel, "Waiting for wave " + (currentWave + 2));
-                if (currentWave + 1 < Waves.Count) yield return new WaitForSeconds(Waves[currentWave + 1].Countdown);
-                if (currentWave == _currentWave)
-                {
-                    if (OnWaveStarted != null) OnWaveStarted.Invoke();
-                    NextWave();  // no wave was called
-                }
-                DebugUtils.LogDebug(LogLevel, "Done wave " + (currentWave + 2));
+                int waveNumber = _waveNumber;
 
+                _countdownVariable.StartCountdown(_nextWaveWaiting.Countdown);
+                yield return new WaitForSeconds(_nextWaveWaiting.Countdown);
+
+                if (waveNumber == _waveNumber)
+                {
+                    StartCoroutine(SpawnWave(_nextWaveWaiting));
+                    if (_nextWaveWaiting == null) yield break;
+                }
+                else
+                {
+                    yield break;
+                }
             }
         }
 
-        public void NextWave()
+        private IEnumerator SpawnWave(Wave2 wave)
         {
-            _currentWave++;
-            StartCoroutine(ActivateWave());
-            ScoreManager.Instance.Wave = Math.Max(0, _currentWave);
-        }
+            _waveNumber++;
+            if (WaveIndex != null) WaveIndex.Value++;
+            TryGetNextWave(out _nextWaveWaiting);
+            if (EnemiesWaiting != null) EnemiesWaiting.Value += wave.WaveClusters.Sum(c => c.Amount);
 
-        public void CallWaveEarly()
-        {
             if (OnWaveStarted != null) OnWaveStarted.Invoke();
-            NextWave();
+
+            for (int clusterIndex = 0; clusterIndex < wave.WaveClusters.Count; clusterIndex++)
+            {
+                var cluster = wave.WaveClusters[clusterIndex];
+
+                if (!cluster.SpawnWithPreviousCluster)
+                {
+                    foreach (var time in SpawnCluster(wave, clusterIndex))
+                    {
+                        yield return time;
+                    }
+                }
+                else
+                {
+                    StartCoroutine(SpawnCluster(wave, clusterIndex).GetEnumerator());
+                }
+            }
         }
 
-        public void SubstractOneWaitingEnemy()
+        private IEnumerable SpawnCluster(Wave2 wave, int clusterIndex)
         {
+            var cluster = wave.WaveClusters[clusterIndex];
+            yield return new WaitForSeconds(cluster.InitialCountDown);
+            for (int i = 0; i < cluster.Amount; i++)
+            {
+                if (i > 0)
+                    yield return new WaitForSeconds(
+                        Utils.Utils.GetDeviatedValue(
+                            cluster.Interval,
+                            cluster.IntervalDeviation,
+                            _random));
+
+                var spawnpoint = wave.GetRandomSpawnpoint(clusterIndex, _random);
+                SpawnEnemy(spawnpoint, cluster);
+            }
+        }
+
+        private void SpawnEnemy(Transform spawnpoint, WaveCluster2 cluster)
+        {
+            var enemy = Instantiate(cluster.Prefab, GameObject.Find("Enemies").transform, spawnpoint);
+            enemy.transform.position = spawnpoint.position;
+            enemy.SetSpawnPoint(spawnpoint, true);
+            cluster.EnemyData.SetEnemy(enemy, _random);
+            if (OnEnemySpawned != null) OnEnemySpawned.Invoke(enemy);
             if (EnemiesWaiting != null) EnemiesWaiting.Value--;
-            else Debug.LogWarning("No variable for representing enemies waiting.");
         }
     }
 }

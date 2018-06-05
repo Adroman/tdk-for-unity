@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Scrips.EnemyData.Instances;
 using UnityEngine;
 
 namespace Scrips.Waves
@@ -16,10 +17,10 @@ namespace Scrips.Waves
         [Range(0, 1)]
         public float IntervalDeviation;
 
-        public List<Transform> OverrideSpawnpoints;
+        public List<Transform> OverrideSpawnpoints = new List<Transform>();
 
         // Enemy info
-        public GameObject Prefab;
+        public EnemyInstance Prefab;
 
         public EnemyWaveData EnemyData;
     }

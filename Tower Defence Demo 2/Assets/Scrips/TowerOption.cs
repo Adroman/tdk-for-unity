@@ -1,5 +1,4 @@
 ﻿using Scrips.Instances;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 

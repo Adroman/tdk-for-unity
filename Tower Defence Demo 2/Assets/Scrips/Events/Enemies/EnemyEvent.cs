@@ -7,7 +7,7 @@ namespace Scrips.Events.Enemies
     [CreateAssetMenu(menuName = "Events/Enemy event", order = 10)]
     public class EnemyEvent : ScriptableObject
     {
-        private List<EnemyEventListener> _listeners;
+        private List<EnemyEventListener> _listeners = new List<EnemyEventListener>();
 
         public void AddListener(EnemyEventListener listener)
         {

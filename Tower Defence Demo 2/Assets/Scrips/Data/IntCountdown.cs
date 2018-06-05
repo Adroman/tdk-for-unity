@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using JetBrains.Annotations;
 using Scrips.Variables;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 namespace Data
 {
     [PublicAPI]
+    [Serializable]
     public class IntCountdown : MonoBehaviour
     {
         public IntVariable VariableToUse;
@@ -16,7 +18,7 @@ namespace Data
             VariableToUse.Value = value;
         }
 
-        public void StartCountDown(int initialValue)
+        public void StartCountdown(int initialValue)
         {
             ResetCountDown(initialValue);
             StartCoroutine(CountDown());

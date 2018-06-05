@@ -1,5 +1,6 @@
 ﻿using Scrips;
 using UnityEditor;
+using UnityEngine;
 
 namespace Editor.CustomInspectors
 {
@@ -18,10 +19,43 @@ namespace Editor.CustomInspectors
 
         private void DrawToggles()
         {
-            _tdTile.Buildable = EditorGUILayout.Toggle("Buildable", _tdTile.Buildable);
-            _tdTile.Walkable = EditorGUILayout.Toggle("Walkable", _tdTile.Walkable);
-            _tdTile.IsSpawnpoint = EditorGUILayout.Toggle("Spawnpoint", _tdTile.IsSpawnpoint);
-            _tdTile.IsGoal = EditorGUILayout.Toggle("Goal", _tdTile.IsGoal);
+            bool oldBuildable = _tdTile.Buildable;
+            bool oldWalkable = _tdTile.Walkable;
+            bool oldIsSpawnpoint = _tdTile.IsSpawnpoint;
+            bool oldIsGoal = _tdTile.IsGoal;
+
+            bool newBuildable = EditorGUILayout.Toggle("Buildable", oldBuildable);
+            bool newWalkable = EditorGUILayout.Toggle("Walkable", oldWalkable);
+            bool newIsSpawnpoint = EditorGUILayout.Toggle("Spawnpoint", oldIsSpawnpoint);
+            bool newIsGoal = EditorGUILayout.Toggle("Goal", oldIsGoal);
+
+            if (oldBuildable != newBuildable)
+            {
+                Undo.RecordObject(_tdTile, "Change Tile properties");
+                _tdTile.Buildable = newBuildable;
+                EditorUtility.SetDirty(_tdTile);
+            }
+
+            if (oldWalkable != newWalkable)
+            {
+                Undo.RecordObject(_tdTile, "Change Tile properties");
+                _tdTile.Walkable = newWalkable;
+                EditorUtility.SetDirty(_tdTile);
+            }
+
+            if (oldIsSpawnpoint != newIsSpawnpoint)
+            {
+                Undo.RecordObject(_tdTile, "Change Tile properties");
+                _tdTile.IsSpawnpoint = newIsSpawnpoint;
+                EditorUtility.SetDirty(_tdTile);
+            }
+
+            if (oldIsGoal != newIsGoal)
+            {
+                Undo.RecordObject(_tdTile, "Change Tile properties");
+                _tdTile.IsGoal = newIsGoal;
+                EditorUtility.SetDirty(_tdTile);
+            }
         }
     }
 }

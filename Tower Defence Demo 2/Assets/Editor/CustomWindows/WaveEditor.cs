@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Editor.Utils;
 using Scrips.Data;
-using Scrips.EnemyData.AutoGenerateModifers;
 using Scrips.EnemyData.Instances;
 using Scrips.Waves;
 using UnityEditor;
@@ -13,6 +12,7 @@ using Object = UnityEngine.Object;
 
 namespace Editor.CustomWindows
 {
+    /*
     public class WaveEditor : EditorWindow
     {
         private WaveController _waveController;
@@ -33,7 +33,7 @@ namespace Editor.CustomWindows
         {
             get
             {
-                if (_waveController == null) _waveController = GameObject.Find("Level/Waves").GetComponent<WaveController>();
+                if (_waveController == null) _waveController = GameObject.Find("Waves").GetComponent<WaveController>();
                 return _waveController;
             }
         }
@@ -505,6 +505,6 @@ namespace Editor.CustomWindows
             go.name = "wave cluster";
             return go.AddComponent<WaveCluster>();
         }
-    }
+    }*/
 }
 

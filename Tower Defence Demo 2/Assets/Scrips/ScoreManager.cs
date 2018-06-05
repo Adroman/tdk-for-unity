@@ -4,6 +4,7 @@ using Scrips.Instances;
 using Scrips.Variables;
 using UnityEngine;
 
+
 namespace Scrips
 {
     public class ScoreManager : MonoBehaviour

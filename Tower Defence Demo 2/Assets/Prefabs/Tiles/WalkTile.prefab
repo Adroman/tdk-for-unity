@@ -78,11 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4a7277de8429041b823f962f543b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buildable: 0
+  _buildable: 0
+  _walkable: 1
+  _isSpawnpoint: 0
+  _isGoal: 0
   TileColor: {fileID: 11400000, guid: 9aac4dacc336b5947902e66c3a678ad3, type: 2}
-  WaypointTypesSupported:
-  - {fileID: 1443128240235860, guid: a7b9a7fac31831640ab1b8fd78752ce1, type: 2}
-  WaypointTypes: 00000000
 --- !u!212 &212792090840585484
 SpriteRenderer:
   m_ObjectHideFlags: 1

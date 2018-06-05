@@ -10,18 +10,17 @@
         <e p="Editor" t="Include">
           <e p="CustomInspectors" t="Include">
             <e p="AudioEventCustomInspector.cs" t="Include" />
+            <e p="BaseEnemyGenerationModifiersInspector.cs" t="Include" />
             <e p="ComplexEnemyInstanceCustomInspector.cs" t="Include" />
             <e p="IntVariableCustomInspector.cs" t="Include" />
             <e p="LevelCustomInspector.cs" t="Include" />
             <e p="SimpleAudioEventCustomInspector.cs" t="Include" />
             <e p="TileDatabaseCustomInspector.cs" t="Include" />
             <e p="TileInspector.cs" t="Include" />
-            <e p="WaveSpawnerCustomInspector.cs" t="Include" />
-            <e p="WaypointTypeCustomInspector.cs" t="Include" />
+            <e p="WaveGeneratorCustomInspector.cs" t="Include" />
           </e>
           <e p="CustomWindows" t="Include">
             <e p="WaveEditor.cs" t="Include" />
-            <e p="WaveSpawnerCustomWindow.cs" t="Include" />
           </e>
           <e p="EditorToolsMenu" t="Include">
             <e p="AddAndRemoveTilesTool.cs" t="Include" />
@@ -32,6 +31,7 @@
             <e p="IntReferencePropertyDrawer.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
+            <e p="BulkRevertToPrefab.cs" t="Include" />
             <e p="GuiColor.cs" t="Include" />
             <e p="IsolatedArea.cs" t="Include" />
             <e p="IsolatedHorizontal.cs" t="Include" />
@@ -70,11 +70,11 @@
             <e p="Currency.cs" t="Include" />
             <e p="FloatIncrease.cs" t="Include" />
             <e p="Goal.cs" t="Include" />
+            <e p="IntCountdown.cs" t="Include" />
             <e p="IntCurrency.cs" t="Include" />
             <e p="Spawnpoint.cs" t="Include" />
             <e p="TileColor.cs" t="Include" />
             <e p="TileData" t="Include">
-              <e p="IntCountdownVariable.cs" t="Include" />
               <e p="TileRow.cs" t="Include" />
               <e p="TileTable.cs" t="Include" />
               <e p="TileType.cs" t="Include" />
@@ -82,13 +82,9 @@
               <e p="TileWithDistance.cs" t="Include" />
             </e>
             <e p="TileData.cs" t="Include" />
-            <e p="WaypointType.cs" t="Include" />
           </e>
           <e p="Direction.cs" t="Include" />
           <e p="EnemyData" t="Include">
-            <e p="AutoGenerateModifers" t="Include">
-              <e p="BaseAutoGenerateModifiers.cs" t="Include" />
-            </e>
             <e p="Instances" t="Include">
               <e p="EnemyInstance.cs" t="Include" />
             </e>
@@ -153,7 +149,6 @@
             <e p="UISkinData.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
-            <e p="BulkRevertToPrefab.cs" t="Include" />
             <e p="DebugUtils.cs" t="Include" />
             <e p="Utils.cs" t="Include" />
           </e>
@@ -170,16 +165,14 @@
             <e p="BasicWaveModifier.cs" t="Include" />
           </e>
           <e p="Waves" t="Include">
+            <e p="BaseEnemyGenerationModifiers.cs" t="Include" />
             <e p="EnemyWaveData.cs" t="Include" />
             <e p="IntEnemyStat.cs" t="Include" />
-            <e p="Wave.cs" t="Include" />
+            <e p="IntLootStat.cs" t="Include" />
             <e p="Wave2.cs" t="Include" />
-            <e p="WaveCluster.cs" t="Include" />
             <e p="WaveCluster2.cs" t="Include" />
             <e p="WaveController.cs" t="Include" />
-            <e p="WaveGenerator.cs" t="Include" />
             <e p="WaveGenerator2.cs" t="Include" />
-            <e p="WaveSpawner.cs" t="Include" />
           </e>
         </e>
         <e p="Simple UI" t="Include">
