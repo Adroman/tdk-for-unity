@@ -27,6 +27,8 @@ namespace Scrips.Waves
 
         public IntVariable WaveIndex;
 
+        public BooleanVariable LastWave;
+
         public int QueueLength;
 
         public bool ActivateWavesAtStart;
@@ -49,6 +51,8 @@ namespace Scrips.Waves
 
         private IntCountdown _countdownVariable;
 
+        public Wave2[] WavesQueue => _wavesQueue.ToArray();
+
         private void Start()
         {
             _generator = GetComponent<WaveGenerator2>();
@@ -59,6 +63,7 @@ namespace Scrips.Waves
 
             if (WaveIndex != null) WaveIndex.Value = 0;
             if (EnemiesWaiting != null) EnemiesWaiting.Value = 0;
+            if (LastWave != null) LastWave.Value = false;
 
             InitQueue();
 
@@ -83,7 +88,11 @@ namespace Scrips.Waves
         private bool TryGetNextWave(out Wave2 result)
         {
             result = null;
-            if (_wavesQueue.Count == 0) return false;
+            if (_wavesQueue.Count == 0)
+            {
+                if (LastWave != null) LastWave.Value = true;
+                return false;
+            }
 
             if (_wavesEnumerator.MoveNext())
             {

@@ -153,6 +153,7 @@
             <e p="Utils.cs" t="Include" />
           </e>
           <e p="Variables" t="Include">
+            <e p="BooleanVariable.cs" t="Include" />
             <e p="EnemyCollection.cs" t="Include" />
             <e p="FloatVariable.cs" t="Include" />
             <e p="IntReference.cs" t="Include" />
@@ -173,6 +174,7 @@
             <e p="WaveCluster2.cs" t="Include" />
             <e p="WaveController.cs" t="Include" />
             <e p="WaveGenerator2.cs" t="Include" />
+            <e p="WaveUIQueue.cs" t="Include" />
           </e>
         </e>
         <e p="Simple UI" t="Include">

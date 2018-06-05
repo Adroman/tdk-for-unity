@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c93544418c846b2a038303ec8955aaf, type: 3}
-  m_Name: WaveCountdown
+  m_Script: {fileID: 11500000, guid: 9ef49b43c8704b6c9ef2a32728a1a639, type: 3}
+  m_Name: Last Wave
   m_EditorClassIdentifier: 
-  _value: 22
-  OnValueChanged: {fileID: 11400000, guid: bdcc9047b2eed1f4b84a6270204f0c7c, type: 2}
+  _value: 0
+  OnValueChanged: {fileID: 0}

@@ -1,9 +1,9 @@
-﻿using Scrips.EnemyData.Instances;
+﻿using System.Runtime.Serialization.Formatters;
+using Scrips.EnemyData.Instances;
 using Scrips.Events;
 using Scrips.Instances;
 using Scrips.Variables;
 using UnityEngine;
-
 
 namespace Scrips
 {
@@ -15,6 +15,10 @@ namespace Scrips
         public IntVariable WaveIndex;
         public IntVariable GoldAmount;
         public IntVariable LivesAmount;
+
+        public IntVariable ActiveEnemies;
+        public IntVariable WaitingEnemies;
+        public BooleanVariable LastWave;
 
         public GameEvent OnWaveIndexChanged;
         public GameEvent OnGoldAmountChanged;
@@ -49,9 +53,6 @@ namespace Scrips
             }
         }
 
-        public int EnemiesRemaining { get; set; }
-        public bool AllWavesDone { get; set; }
-
         // Use this for initialization
         void Start ()
         {
@@ -59,12 +60,11 @@ namespace Scrips
             Gold = InitialGold;
             Lives = InitialLives;
             Wave = 1;
-            EnemiesRemaining = 0;
         }
 
         public void CheckVictory()
         {
-            if(AllWavesDone && EnemiesRemaining == 0)
+            if (LastWave.Value && ActiveEnemies.Value == 0 && WaitingEnemies.Value == 0)
             {
                 Debug.Log("--------VICTORY--------");
             }
@@ -79,12 +79,6 @@ namespace Scrips
         public void CheckLives()
         {
             if (LivesAmount.Value <= 0) GameOver();
-        }
-
-        public void ReduceEnemyCount()
-        {
-            EnemiesRemaining--;
-            CheckVictory();
         }
 
         public void AddLoot(EnemyInstance target)

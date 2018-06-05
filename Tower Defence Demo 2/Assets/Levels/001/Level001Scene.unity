@@ -10655,6 +10655,88 @@ Transform:
   m_PrefabParentObject: {fileID: 4512732811091562, guid: 13e5f35fc3c9ab5498d491960ac4a7af,
     type: 2}
   m_PrefabInternal: {fileID: 186069487}
+--- !u!1 &341764663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 341764664}
+  - component: {fileID: 341764667}
+  - component: {fileID: 341764666}
+  - component: {fileID: 341764665}
+  m_Layer: 5
+  m_Name: WavesQueue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &341764664
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341764663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1788033124}
+  m_Father: {fileID: 545624927}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -71.69, y: -229.789}
+  m_SizeDelta: {x: 133.20001, y: 248.92}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &341764665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341764663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f502c542614aed9f6ff423c97bb55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveController: {fileID: 1633078042}
+--- !u!114 &341764666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341764663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &341764667
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341764663}
 --- !u!1 &344353592 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1829663917110156, guid: 72270341bdf3dcc4a8556ed36b6be882,
@@ -15146,6 +15228,7 @@ RectTransform:
   - {fileID: 115904925}
   - {fileID: 466360410}
   - {fileID: 1729712568}
+  - {fileID: 341764664}
   m_Father: {fileID: 832618639}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27860,6 +27943,7 @@ GameObject:
   - component: {fileID: 909013812}
   - component: {fileID: 909013814}
   - component: {fileID: 909013813}
+  - component: {fileID: 909013815}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -27897,6 +27981,9 @@ MonoBehaviour:
   WaveIndex: {fileID: 11400000, guid: 93c16032107e0484fa6af7676c4c0193, type: 2}
   GoldAmount: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
   LivesAmount: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
+  ActiveEnemies: {fileID: 11400000, guid: a743c49d938a94f44ad6b91555d6ac30, type: 2}
+  WaitingEnemies: {fileID: 11400000, guid: 69fc4b1c2ec70e549ab2847a68b8bf68, type: 2}
+  LastWave: {fileID: 11400000, guid: efc48612fee955846b3cbfdb58f0418e, type: 2}
   OnWaveIndexChanged: {fileID: 11400000, guid: 5ec8ce2989f9f294983b9835433cbea9, type: 2}
   OnGoldAmountChanged: {fileID: 11400000, guid: b4767da9346f5f044bd02d19fc8614d4,
     type: 2}
@@ -28691,6 +28778,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &909013815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909013807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5452a544e8a54bbe864a1f9bca976c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5f942074f28bf124da179b764e258aec, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 909013809}
+        m_MethodName: CheckVictory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &909072087
 Prefab:
   m_ObjectHideFlags: 0
@@ -30953,8 +31068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -231.14001, y: -57.13}
-  m_SizeDelta: {x: 462.27, y: 114.27}
+  m_AnchoredPosition: {x: -231.14001, y: -52.662}
+  m_SizeDelta: {x: 462.3, y: 105.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032273689
 MonoBehaviour:
@@ -38773,6 +38888,80 @@ Transform:
   m_PrefabParentObject: {fileID: 4784859341087148, guid: 72270341bdf3dcc4a8556ed36b6be882,
     type: 2}
   m_PrefabInternal: {fileID: 983254128}
+--- !u!1 &1364286159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1364286160}
+  - component: {fileID: 1364286162}
+  - component: {fileID: 1364286161}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1364286160
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364286159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1755197773}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -48.68998, y: -16.229992}
+  m_SizeDelta: {x: 32.46, y: 32.46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1364286161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364286159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 55
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '14 '
+--- !u!222 &1364286162
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364286159}
 --- !u!1 &1364674154 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1201073106139614, guid: 13e5f35fc3c9ab5498d491960ac4a7af,
@@ -48488,6 +48677,74 @@ Transform:
   m_PrefabParentObject: {fileID: 4512732811091562, guid: 13e5f35fc3c9ab5498d491960ac4a7af,
     type: 2}
   m_PrefabInternal: {fileID: 1580955951}
+--- !u!1 &1599352058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1599352059}
+  - component: {fileID: 1599352061}
+  - component: {fileID: 1599352060}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1599352059
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599352058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1755197773}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -16.229992, y: -16.229984}
+  m_SizeDelta: {x: 32.46, y: 32.46}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1599352060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599352058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8aa3adfb94e546c49baaf0710f4b7177, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1599352061
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599352058}
 --- !u!1001 &1600500801
 Prefab:
   m_ObjectHideFlags: 0
@@ -49383,6 +49640,7 @@ MonoBehaviour:
   ActiveEnemies: {fileID: 11400000, guid: a743c49d938a94f44ad6b91555d6ac30, type: 2}
   EnemiesWaiting: {fileID: 11400000, guid: 69fc4b1c2ec70e549ab2847a68b8bf68, type: 2}
   WaveIndex: {fileID: 11400000, guid: 93c16032107e0484fa6af7676c4c0193, type: 2}
+  LastWave: {fileID: 11400000, guid: efc48612fee955846b3cbfdb58f0418e, type: 2}
   QueueLength: 5
   ActivateWavesAtStart: 1
   RandomSeed: batat
@@ -49588,288 +49846,18 @@ MonoBehaviour:
   CountdownForEachWave: 30
   EnemiesToUse:
   - {fileID: 11400000, guid: 84f9487657ea0b940b0032b4151b6e3e, type: 2}
-  WavesTotal: 10
+  WavesTotal: 1
   MinClusters: 1
   MaxClusters: 1
   BaseDifficulty: 2000
-  Infinite: 0
+  Infinite: 1
   DifficultyIncrease: 1.4
   DifficultyDeviation: 0.05
   RandomSeed: batat
   SpawnpointsToUse:
   - {fileID: 234801288}
   ClusterIncreases: 
-  Waves:
-  - Number: 1
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 14
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 308
-          HitpointsDeviation: 0
-          InitialArmor: 28
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 60
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 2
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 11
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 568
-          HitpointsDeviation: 0
-          InitialArmor: 58
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 108
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 3
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 15
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 576
-          HitpointsDeviation: 0
-          InitialArmor: 52
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 113
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 4
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 15
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 837
-          HitpointsDeviation: 0
-          InitialArmor: 82
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 149
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 5
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 13
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 1236
-          HitpointsDeviation: 0
-          InitialArmor: 115
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 255
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 6
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 11
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 2082
-          HitpointsDeviation: 0
-          InitialArmor: 186
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 408
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 7
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 15
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 2282
-          HitpointsDeviation: 0
-          InitialArmor: 227
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 409
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 8
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 12
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 3663
-          HitpointsDeviation: 0
-          InitialArmor: 358
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 708
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 9
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 12
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 5254
-          HitpointsDeviation: 0
-          InitialArmor: 549
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 1007
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
-  - Number: 10
-    Wave:
-      Countdown: 30
-      WaveClusters:
-      - Amount: 15
-        Interval: 1
-        InitialCountDown: 1
-        SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
-        OverrideSpawnpoints: []
-        Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-          type: 2}
-        EnemyData:
-          InitialHitpoints: 5927
-          HitpointsDeviation: 0
-          InitialArmor: 526
-          ArmorDeviation: 0
-          InitialSpeed: 3
-          SpeedDeviation: 0
-          IntLoots:
-          - Amount: 1110
-            Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-          IntPunishments:
-          - Amount: 1
-            Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
-      Spawnpoints:
-      - {fileID: 234801288}
+  Waves: []
 --- !u!1001 &1636080760
 Prefab:
   m_ObjectHideFlags: 0
@@ -52159,7 +52147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5452a544e8a54bbe864a1f9bca976c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 5b949edce046fb84585dd042d52d82a6, type: 2}
+  Event: {fileID: 11400000, guid: bdcc9047b2eed1f4b84a6270204f0c7c, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -52681,6 +52669,41 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af727f5020bb55449b731e2710dd5795, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1755197772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1755197773}
+  m_Layer: 5
+  m_Name: WaveCluster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1755197773
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1755197772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1364286160}
+  - {fileID: 1599352059}
+  m_Father: {fileID: 1788033124}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -34.48, y: -16.00001}
+  m_SizeDelta: {x: 68.17, y: 32.46}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1756965551
 Prefab:
   m_ObjectHideFlags: 0
@@ -53804,6 +53827,40 @@ Transform:
   m_PrefabParentObject: {fileID: 4784859341087148, guid: 72270341bdf3dcc4a8556ed36b6be882,
     type: 2}
   m_PrefabInternal: {fileID: 94934665}
+--- !u!1 &1788033123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1788033124}
+  m_Layer: 5
+  m_Name: Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1788033124
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788033123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1755197773}
+  m_Father: {fileID: 341764664}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0012524, y: 108.23}
+  m_SizeDelta: {x: 133.2, y: 32.46}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1794059423
 Prefab:
   m_ObjectHideFlags: 0

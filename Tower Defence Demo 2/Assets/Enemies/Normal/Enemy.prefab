@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4022565735727932}
   - component: {fileID: 114745107886832420}
   - component: {fileID: 114702732903696958}
-  - component: {fileID: 114402503256405282}
-  - component: {fileID: 114570618087803986}
   - component: {fileID: 58282511126715198}
   - component: {fileID: 50809515837501902}
   m_Layer: 0
@@ -190,45 +188,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114402503256405282
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1033376988528498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb9ce65a58d493e953e746a127ab899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BaseIntLoot:
-  - Amount: 1
-    Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-  HitpointsModifiers: 1
-  ArmorModifiers: 1
-  SpeedModifiers: 1
-  LootModifiers: 1
-  MinimumAmount: 10
-  MaximumAmount: 15
-  IntervalModifiers: 1
---- !u!114 &114570618087803986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1033376988528498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf957d533c4d47c8bbe96d8bf37044a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitialHitpoints: 0
-  HitpointsDeviation: 0
-  InitialArmor: 0
-  ArmorDeviation: 0
-  InitialSpeed: 0
-  SpeedDeviation: 0
-  IntLoot: []
 --- !u!114 &114702732903696958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnDeath: {fileID: 11400000, guid: dd1452a077b9d064e848588063b22b93, type: 2}
-  OnSpawn: {fileID: 0}
+  OnSpawn: {fileID: 11400000, guid: 37d927d70f8ebda4099a48584ef3ad61, type: 2}
   OnFinish: {fileID: 0}
 --- !u!114 &114745107886832420
 MonoBehaviour:
