@@ -11,6 +11,10 @@ namespace Scrips.Variables
         [HideInInspector]
         private T _value;
 
+        public Sprite Icon;
+
+        public Color IconColor;
+
         public T Value
         {
             get { return _value; }

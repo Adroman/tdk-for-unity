@@ -17,6 +17,7 @@
             <e p="SimpleAudioEventCustomInspector.cs" t="Include" />
             <e p="TileDatabaseCustomInspector.cs" t="Include" />
             <e p="TileInspector.cs" t="Include" />
+            <e p="UiCurrencyIntTextWithImageInspector.cs" t="Include" />
             <e p="WaveGeneratorCustomInspector.cs" t="Include" />
           </e>
           <e p="CustomWindows" t="Include">
@@ -144,9 +145,14 @@
             <e p="TowerUpgradeNode.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="UiClusterInfo.cs" t="Include" />
+            <e p="UiCurrencyIntTextWithImage.cs" t="Include" />
             <e p="UiSkin.cs" t="Include" />
             <e p="UiSkinButton.cs" t="Include" />
             <e p="UISkinData.cs" t="Include" />
+            <e p="UIWave.cs" t="Include" />
+            <e p="UIWaveCluster.cs" t="Include" />
+            <e p="UiWaveQueue.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="DebugUtils.cs" t="Include" />
@@ -170,11 +176,10 @@
             <e p="EnemyWaveData.cs" t="Include" />
             <e p="IntEnemyStat.cs" t="Include" />
             <e p="IntLootStat.cs" t="Include" />
-            <e p="Wave2.cs" t="Include" />
-            <e p="WaveCluster2.cs" t="Include" />
+            <e p="Wave.cs" t="Include" />
+            <e p="WaveCluster.cs" t="Include" />
             <e p="WaveController.cs" t="Include" />
-            <e p="WaveGenerator2.cs" t="Include" />
-            <e p="WaveUIQueue.cs" t="Include" />
+            <e p="WaveGenerator.cs" t="Include" />
           </e>
         </e>
         <e p="Simple UI" t="Include">

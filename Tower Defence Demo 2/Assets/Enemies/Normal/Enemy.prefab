@@ -219,6 +219,7 @@ MonoBehaviour:
   IntLoot: []
   IntPunishments: []
   HealthImage: {fileID: 114326197292018630}
+  Sprite: {fileID: 21300000, guid: 8aa3adfb94e546c49baaf0710f4b7177, type: 3}
   RuntimeCollection: {fileID: 11400000, guid: 39943dabb991d5f41a54e86ae27ebadf, type: 2}
 --- !u!114 &114801245727604470
 MonoBehaviour:

@@ -24,6 +24,8 @@ namespace Scrips.EnemyData.Instances
 
         public Image HealthImage;
 
+        public Sprite Sprite;
+
         public EnemyCollection RuntimeCollection;
 
         public List<BaseBuffData> ActiveDebuffs = new List<BaseBuffData>();

@@ -7,10 +7,10 @@ namespace Scrips.Waves
 {
     [Serializable]
     [PublicAPI]
-    public class Wave2
+    public class Wave
     {
         public int Countdown;
-        public List<WaveCluster2> WaveClusters = new List<WaveCluster2>();
+        public List<WaveCluster> WaveClusters = new List<WaveCluster>();
         public List<Transform> Spawnpoints = new List<Transform>();
 
         public Transform GetRandomSpawnpoint(int clusterIndex, System.Random random)

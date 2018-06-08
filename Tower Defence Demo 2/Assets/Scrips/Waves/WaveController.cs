@@ -6,13 +6,14 @@ using Scrips.CustomTypes;
 using Scrips.EnemyData.Instances;
 using Scrips.Events;
 using Scrips.Events.Enemies;
+using Scrips.UI;
 using Scrips.Variables;
 using UnityEngine;
 
 namespace Scrips.Waves
 {
     [RequireComponent(typeof(IntCountdown))]
-    [RequireComponent(typeof(WaveGenerator2))]
+    [RequireComponent(typeof(WaveGenerator))]
     public class WaveController : MonoBehaviour
     {
         public LogLevel LogLevel;
@@ -35,28 +36,30 @@ namespace Scrips.Waves
 
         public string RandomSeed;
 
-        private WaveGenerator2 _generator;
+        public UiWaveQueue UiWaves;
+
+        private WaveGenerator _generator;
 
         private System.Random _random;
 
         private Coroutine _waveCountdown;
 
-        private Queue<Wave2> _wavesQueue;
+        private Queue<Wave> _wavesQueue;
 
-        private IEnumerator<Wave2> _wavesEnumerator;
+        private IEnumerator<Wave> _wavesEnumerator;
 
         private int _waveNumber;
 
-        private Wave2 _nextWaveWaiting;
+        private Wave _nextWaveWaiting;
 
         private IntCountdown _countdownVariable;
 
-        public Wave2[] WavesQueue => _wavesQueue.ToArray();
+        public Wave[] WavesQueue => _wavesQueue.ToArray();
 
         private void Start()
         {
-            _generator = GetComponent<WaveGenerator2>();
-            _wavesQueue = new Queue<Wave2>();
+            _generator = GetComponent<WaveGenerator>();
+            _wavesQueue = new Queue<Wave>();
             _wavesEnumerator = _generator.GetWaves().GetEnumerator();
             _waveNumber = 0;
             _countdownVariable = GetComponent<IntCountdown>();
@@ -76,16 +79,17 @@ namespace Scrips.Waves
 
         private void InitQueue()
         {
-            for (int i = 0; i < QueueLength; i++)
+            for (int i = 0; i < QueueLength - 1; i++)
             {
                 if (_wavesEnumerator.MoveNext())
                 {
                     _wavesQueue.Enqueue(_wavesEnumerator.Current);
+                    UiWaves.SpawnWave(_wavesEnumerator.Current);
                 }
             }
         }
 
-        private bool TryGetNextWave(out Wave2 result)
+        private bool TryGetNextWave(out Wave result)
         {
             result = null;
             if (_wavesQueue.Count == 0)
@@ -97,6 +101,7 @@ namespace Scrips.Waves
             if (_wavesEnumerator.MoveNext())
             {
                 _wavesQueue.Enqueue(_wavesEnumerator.Current);
+                UiWaves.SpawnWave(_wavesEnumerator.Current);
             }
 
             result = _wavesQueue.Dequeue();
@@ -143,9 +148,10 @@ namespace Scrips.Waves
             }
         }
 
-        private IEnumerator SpawnWave(Wave2 wave)
+        private IEnumerator SpawnWave(Wave wave)
         {
             _waveNumber++;
+            UiWaves.DespawnTopWave();
             if (WaveIndex != null) WaveIndex.Value++;
             TryGetNextWave(out _nextWaveWaiting);
             if (EnemiesWaiting != null) EnemiesWaiting.Value += wave.WaveClusters.Sum(c => c.Amount);
@@ -170,7 +176,7 @@ namespace Scrips.Waves
             }
         }
 
-        private IEnumerable SpawnCluster(Wave2 wave, int clusterIndex)
+        private IEnumerable SpawnCluster(Wave wave, int clusterIndex)
         {
             var cluster = wave.WaveClusters[clusterIndex];
             yield return new WaitForSeconds(cluster.InitialCountDown);
@@ -188,7 +194,7 @@ namespace Scrips.Waves
             }
         }
 
-        private void SpawnEnemy(Transform spawnpoint, WaveCluster2 cluster)
+        private void SpawnEnemy(Transform spawnpoint, WaveCluster cluster)
         {
             var enemy = Instantiate(cluster.Prefab, GameObject.Find("Enemies").transform, spawnpoint);
             enemy.transform.position = spawnpoint.position;

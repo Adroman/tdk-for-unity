@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Scrips.Waves
 {
     [Serializable]
-    public class WaveCluster2
+    public class WaveCluster
     {
         // cluster info
         public int Amount;

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Name: Wave Number
   m_EditorClassIdentifier: 
   _value: 0
+  Icon: {fileID: 21300000, guid: e413c39057e504cd4905222e867c3386, type: 3}
+  IconColor: {r: 0, g: 0.6415094, b: 0.08210985, a: 1}
   OnValueChanged: {fileID: 11400000, guid: 5ec8ce2989f9f294983b9835433cbea9, type: 2}

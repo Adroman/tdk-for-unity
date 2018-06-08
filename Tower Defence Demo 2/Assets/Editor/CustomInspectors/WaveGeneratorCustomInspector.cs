@@ -4,21 +4,28 @@ using UnityEngine;
 
 namespace Editor.CustomInspectors
 {
-    [CustomEditor(typeof(WaveGenerator2))]
+    [CustomEditor(typeof(WaveGenerator))]
     public class WaveGeneratorCustomInspector : UnityEditor.Editor
     {
-        private WaveGenerator2 _target;
+        private WaveGenerator _target;
 
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            _target = (WaveGenerator2) target;
+            _target = (WaveGenerator) target;
 
             if (GUILayout.Button("GenerateWaves") && !_target.Infinite)
             {
                 Undo.RecordObject(_target, "Generate waves");
                 _target.GenerateWaves();
+                EditorUtility.SetDirty(_target);
+            }
+
+            if (GUILayout.Button("Clear waves"))
+            {
+                Undo.RecordObject(_target, "Clear waves");
+                _target.Waves.Clear();
                 EditorUtility.SetDirty(_target);
             }
         }

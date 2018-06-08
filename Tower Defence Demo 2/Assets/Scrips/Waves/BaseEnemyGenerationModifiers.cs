@@ -47,7 +47,7 @@ namespace Scrips.Waves
         public float TestRatio;
         public string TestRandomSeed;
 
-        public WaveCluster2 GenerateCluster(int baseDifficulty, float ratio, System.Random rand = null)
+        public WaveCluster GenerateCluster(int baseDifficulty, float ratio, System.Random rand = null)
         {
             if (rand == null) rand = new System.Random();
 
@@ -67,7 +67,7 @@ namespace Scrips.Waves
                 Amount = p.DifficultyStat.GenerateValue(actualDifficulty, rand)
             }).ToList();
 
-            return new WaveCluster2
+            return new WaveCluster
             {
                 Amount = actualAmount,
                 InitialCountDown = Interval,

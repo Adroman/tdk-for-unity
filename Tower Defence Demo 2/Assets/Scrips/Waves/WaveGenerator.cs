@@ -8,19 +8,19 @@ namespace Scrips.Waves
 {
     [Serializable]
     [PublicAPI]
-    public struct WaveNumber
+    public class WaveNumber
     {
         public int Number;
-        public Wave2 Wave;
+        public Wave Wave;
 
-        public WaveNumber(int number, Wave2 wave)
+        public WaveNumber(int number, Wave wave)
         {
             Number = number;
             Wave = wave;
         }
     }
 
-    public class WaveGenerator2 : MonoBehaviour
+    public class WaveGenerator : MonoBehaviour
     {
         public int CountdownForEachWave;
         public List<BaseEnemyGenerationModifiers> EnemiesToUse = new List<BaseEnemyGenerationModifiers>();
@@ -42,7 +42,7 @@ namespace Scrips.Waves
         private int _currentDifficulty;
         private System.Random _random;
 
-        public IEnumerable<Wave2> GetWaves()
+        public IEnumerable<Wave> GetWaves()
         {
             if (!Infinite)
             {
@@ -61,14 +61,18 @@ namespace Scrips.Waves
             }
         }
 
-        private Wave2 GetNextWave()
+        private Wave GetNextWave()
         {
             _currentWave++;
             _currentDifficulty = (int) (_currentDifficulty * DifficultyIncrease);
             if (ClusterIncreases.Contains(_currentWave)) MaxClusters++;
             int clusters = _random.Next(MinClusters, MaxClusters + 1);
 
-            var wave = new Wave2
+            var wave = Waves.FirstOrDefault(w => w.Number == _currentWave)?.Wave;
+
+            if (wave != null) return wave;
+
+            wave = new Wave
             {
                 Countdown = CountdownForEachWave,
                 Spawnpoints = SpawnpointsToUse
@@ -82,7 +86,7 @@ namespace Scrips.Waves
             return wave;
         }
 
-        private WaveCluster2 GenerateWaveCluster(int clusterCount)
+        private WaveCluster GenerateWaveCluster(int clusterCount)
         {
             float ratio = 1f / clusterCount;
             return EnemiesToUse[_random.Next(0, EnemiesToUse.Count)]
