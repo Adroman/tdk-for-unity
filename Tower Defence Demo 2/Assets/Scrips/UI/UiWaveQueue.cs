@@ -9,22 +9,34 @@ namespace Scrips.UI
 
         public UiWaveCluster UiWaveClusterPrefab;
 
-        public void SpawnWave(Wave wave)
+        private UiWave _waveToDespawn;
+
+        public void SpawnWave(Wave wave, bool animate)
         {
             var uiWave = Instantiate(UiWavePrefab, transform);
+            if (_waveToDespawn == null) _waveToDespawn = uiWave;
+
             foreach (var cluster in wave.WaveClusters)
             {
-                var uiCluster = Instantiate(UiWaveClusterPrefab, uiWave.transform);
+                var uiCluster = Instantiate(UiWaveClusterPrefab, uiWave.Layout);
                 uiCluster.AmountIndicator.text = cluster.Amount.ToString();
                 uiCluster.ImageIndicator.sprite = cluster.Prefab.Sprite;
                 uiCluster.ClusterIndicator.SetUp(cluster);
                 uiCluster.ClusterIndicator.gameObject.SetActive(false);
             }
+            if (animate) uiWave.Spawn();
         }
 
         public void DespawnTopWave()
         {
-            if (transform.childCount > 0) transform.GetChild(0).GetComponent<UiWave>().Despawn();
+            var wave = _waveToDespawn;
+            int index = wave.transform.GetSiblingIndex();
+
+            _waveToDespawn = transform.childCount >= index + 2
+                ? transform.GetChild(index + 1).gameObject.GetComponent<UiWave>()
+                : null;
+
+            wave.Despawn();
         }
     }
 }

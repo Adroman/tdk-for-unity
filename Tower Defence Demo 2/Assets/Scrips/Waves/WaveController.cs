@@ -84,7 +84,7 @@ namespace Scrips.Waves
                 if (_wavesEnumerator.MoveNext())
                 {
                     _wavesQueue.Enqueue(_wavesEnumerator.Current);
-                    UiWaves.SpawnWave(_wavesEnumerator.Current);
+                    UiWaves.SpawnWave(_wavesEnumerator.Current, false);
                 }
             }
         }
@@ -101,7 +101,7 @@ namespace Scrips.Waves
             if (_wavesEnumerator.MoveNext())
             {
                 _wavesQueue.Enqueue(_wavesEnumerator.Current);
-                UiWaves.SpawnWave(_wavesEnumerator.Current);
+                UiWaves.SpawnWave(_wavesEnumerator.Current, _waveNumber > 0);
             }
 
             result = _wavesQueue.Dequeue();

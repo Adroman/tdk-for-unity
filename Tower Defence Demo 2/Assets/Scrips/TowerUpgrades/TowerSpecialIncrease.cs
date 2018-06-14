@@ -3,8 +3,8 @@
 namespace Scrips.TowerUpgrades
 {
     [Serializable]
-    public class TowerUpgradeBranch
+    public class TowerSpecialIncrease
     {
-        public TowerUpgradeNode[] Branches;
+        
     }
 }

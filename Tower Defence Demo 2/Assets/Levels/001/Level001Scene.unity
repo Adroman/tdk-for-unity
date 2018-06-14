@@ -6416,7 +6416,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 832618639}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10328,8 +10328,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PanSpeed: 30
-  PanBorderThickness: 10
   ScrollSpeed: 5
+  PanBorderThickness: 10
+  MobilePanSpeed: 1
+  MobileScrollSpeed: 1
   MinScrollDistance: 5
   MaxScrollDistance: 30
   LeftBorder: -15
@@ -10635,7 +10637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -204.05, y: -229.789}
+  m_AnchoredPosition: {x: -198.95, y: -229.78}
   m_SizeDelta: {x: 397.91, y: 248.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341764665
@@ -10649,9 +10651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f502c542614aed9f6ff423c97bb55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UiWavePrefab: {fileID: 114791493147678602, guid: 9f8373e4594d3a542bf8e5a619a49fff,
+  UiWavePrefab: {fileID: 114961284283406482, guid: 0b6bd398d1da11d47a2df42beffe8929,
     type: 2}
-  UiWaveClusterPrefab: {fileID: 114422163720455764, guid: 1f6193b34c44161458f36043a86bd6f2,
+  UiWaveClusterPrefab: {fileID: 114433440339905954, guid: 784e4d3d93268a742b723ce54889ff23,
     type: 2}
 --- !u!114 &341764666
 MonoBehaviour:
@@ -12260,7 +12262,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 203.79999, y: 50}
+  m_SizeDelta: {x: 227.47, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403059512
 MonoBehaviour:
@@ -12280,8 +12282,8 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
 --- !u!114 &403059513
@@ -12311,7 +12313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5452a544e8a54bbe864a1f9bca976c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: b4767da9346f5f044bd02d19fc8614d4, type: 2}
+  Event: {fileID: 11400000, guid: 5ec8ce2989f9f294983b9835433cbea9, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -16850,7 +16852,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 203.79999, y: 50}
+  m_SizeDelta: {x: 227.47, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &616091554
 MonoBehaviour:
@@ -16870,8 +16872,8 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
 --- !u!222 &616091555
@@ -17632,7 +17634,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 139.79, y: 50}
+  m_SizeDelta: {x: 177.47, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662067437
 MonoBehaviour:
@@ -23996,7 +23998,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 139.79, y: 50}
+  m_SizeDelta: {x: 177.47, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704129720
 MonoBehaviour:
@@ -26704,6 +26706,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 832618639}
+  - component: {fileID: 832618640}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -26723,11 +26726,60 @@ Transform:
   m_Children:
   - {fileID: 545624927}
   - {fileID: 1882641648}
-  - {fileID: 973119627}
   - {fileID: 162164845}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &832618640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 832618638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4830ba0c63ef432ebc11feec87972978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InGameUi: {fileID: 545624926}
+  PauseUi: {fileID: 1882641651}
+  VictoryUi: {fileID: 162164848}
+  DefeatUi: {fileID: 0}
+  KeyEvents:
+  - KeyCode: 19
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 832618640}
+          m_MethodName: TogglePause
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - KeyCode: 112
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 832618640}
+          m_MethodName: TogglePause
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1001 &832789516
 Prefab:
   m_ObjectHideFlags: 0
@@ -26879,7 +26931,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 203.79999, y: 50}
+  m_SizeDelta: {x: 227.47, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835975718
 MonoBehaviour:
@@ -26899,8 +26951,8 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
 --- !u!114 &835975719
@@ -26930,7 +26982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5452a544e8a54bbe864a1f9bca976c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: b4767da9346f5f044bd02d19fc8614d4, type: 2}
+  Event: {fileID: 11400000, guid: 784623221f42f3a4581a244e9b4c8644, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -30068,99 +30120,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4784859341087148, guid: af727f5020bb55449b731e2710dd5795,
     type: 2}
   m_PrefabInternal: {fileID: 1770760018}
---- !u!1 &973119626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 973119627}
-  - component: {fileID: 973119630}
-  - component: {fileID: 973119629}
-  - component: {fileID: 973119628}
-  m_Layer: 5
-  m_Name: GameOverUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &973119627
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973119626}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 832618639}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &973119628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973119626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &973119629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973119626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &973119630
-Canvas:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973119626}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &974244925 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1829663917110156, guid: af727f5020bb55449b731e2710dd5795,
@@ -30207,8 +30166,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 104.64, y: -77.668}
-  m_SizeDelta: {x: 209.27, y: 155.32}
+  m_AnchoredPosition: {x: 118.16998, y: -76.26001}
+  m_SizeDelta: {x: 236.34, y: 152.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977000926
 MonoBehaviour:
@@ -35386,7 +35345,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 8bba60bd272ff4978982a12a88f56b11, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36411,7 +36370,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 139.79, y: 50}
+  m_SizeDelta: {x: 177.47, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236366027
 MonoBehaviour:
@@ -41240,7 +41199,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 01e584fc9ff6d4a969400e68b97befc4, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -42448,7 +42407,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542588352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 832618640}
+        m_MethodName: Unpause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1542588352
@@ -42470,7 +42440,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 17ef8c2e6bda845ca82eb3e56635a961, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -50081,7 +50051,7 @@ MonoBehaviour:
   MaxClusters: 4
   BaseDifficulty: 2000
   Infinite: 1
-  DifficultyIncrease: 1.4
+  DifficultyIncrease: 1.1
   DifficultyDeviation: 0.05
   RandomSeed: batat
   SpawnpointsToUse:
@@ -50096,19 +50066,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1000
+        DifficultyPerMonster: 142
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 308
-          HitpointsDeviation: 0
-          InitialArmor: 28
-          ArmorDeviation: 0
+          InitialHitpoints: 14
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 60
+          - Amount: 2
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50117,19 +50089,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1000
+        DifficultyPerMonster: 142
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 282
-          HitpointsDeviation: 0
-          InitialArmor: 31
-          ArmorDeviation: 0
+          InitialHitpoints: 13
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 62
+          - Amount: 2
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50144,19 +50118,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 733
+        DifficultyPerMonster: 146
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 428
-          HitpointsDeviation: 0
-          InitialArmor: 41
-          ArmorDeviation: 0
+          InitialHitpoints: 15
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 76
+          - Amount: 2
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50165,19 +50141,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 733
+        DifficultyPerMonster: 244
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 704
-          HitpointsDeviation: 0
-          InitialArmor: 71
-          ArmorDeviation: 0
+          InitialHitpoints: 26
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 136
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50186,19 +50164,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 733
+        DifficultyPerMonster: 183
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 498
-          HitpointsDeviation: 0
-          InitialArmor: 46
-          ArmorDeviation: 0
+          InitialHitpoints: 18
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 98
+          - Amount: 3
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50213,19 +50193,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 806
+        DifficultyPerMonster: 161
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 549
-          HitpointsDeviation: 0
-          InitialArmor: 51
-          ArmorDeviation: 0
+          InitialHitpoints: 16
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 106
+          - Amount: 3
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50234,19 +50216,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 806
+        DifficultyPerMonster: 268
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 906
-          HitpointsDeviation: 0
-          InitialArmor: 97
-          ArmorDeviation: 0
+          InitialHitpoints: 26
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 191
+          - Amount: 5
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50255,19 +50239,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 806
+        DifficultyPerMonster: 161
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 592
-          HitpointsDeviation: 0
-          InitialArmor: 51
-          ArmorDeviation: 0
+          InitialHitpoints: 17
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 110
+          - Amount: 3
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50282,19 +50268,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 665
+        DifficultyPerMonster: 221
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 933
-          HitpointsDeviation: 0
-          InitialArmor: 88
-          ArmorDeviation: 0
+          InitialHitpoints: 21
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 197
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50303,19 +50291,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 665
+        DifficultyPerMonster: 221
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 977
-          HitpointsDeviation: 0
-          InitialArmor: 102
-          ArmorDeviation: 0
+          InitialHitpoints: 22
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 187
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50324,19 +50314,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 665
+        DifficultyPerMonster: 332
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 1558
-          HitpointsDeviation: 0
-          InitialArmor: 147
-          ArmorDeviation: 0
+          InitialHitpoints: 35
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 275
+          - Amount: 6
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50345,19 +50337,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 665
+        DifficultyPerMonster: 166
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 703
-          HitpointsDeviation: 0
-          InitialArmor: 73
-          ArmorDeviation: 0
+          InitialHitpoints: 16
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 142
+          - Amount: 3
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50372,19 +50366,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1464
+        DifficultyPerMonster: 244
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 1398
-          HitpointsDeviation: 0
-          InitialArmor: 141
-          ArmorDeviation: 0
+          InitialHitpoints: 25
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 268
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50393,19 +50389,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1464
+        DifficultyPerMonster: 244
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 1209
-          HitpointsDeviation: 0
-          InitialArmor: 123
-          ArmorDeviation: 0
+          InitialHitpoints: 21
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 281
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50420,19 +50418,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 805
+        DifficultyPerMonster: 402
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 2950
-          HitpointsDeviation: 0
-          InitialArmor: 260
-          ArmorDeviation: 0
+          InitialHitpoints: 42
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 584
+          - Amount: 8
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50441,19 +50441,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 805
+        DifficultyPerMonster: 201
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 1518
-          HitpointsDeviation: 0
-          InitialArmor: 136
-          ArmorDeviation: 0
+          InitialHitpoints: 21
+          HitpointsDeviation: 0.1
+          InitialArmor: 1
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 293
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50462,19 +50464,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 805
+        DifficultyPerMonster: 201
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 1535
-          HitpointsDeviation: 0
-          InitialArmor: 151
-          ArmorDeviation: 0
+          InitialHitpoints: 21
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 283
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50483,19 +50487,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 805
+        DifficultyPerMonster: 201
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 1480
-          HitpointsDeviation: 0
-          InitialArmor: 152
-          ArmorDeviation: 0
+          InitialHitpoints: 21
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 282
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50510,19 +50516,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1180
+        DifficultyPerMonster: 295
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 2754
-          HitpointsDeviation: 0
-          InitialArmor: 239
-          ArmorDeviation: 0
+          InitialHitpoints: 30
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 534
+          - Amount: 5
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50531,19 +50539,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1180
+        DifficultyPerMonster: 295
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 2562
-          HitpointsDeviation: 0
-          InitialArmor: 247
-          ArmorDeviation: 0
+          InitialHitpoints: 28
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 531
+          - Amount: 5
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50552,19 +50562,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1180
+        DifficultyPerMonster: 295
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 2847
-          HitpointsDeviation: 0
-          InitialArmor: 277
-          ArmorDeviation: 0
+          InitialHitpoints: 31
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 548
+          - Amount: 5
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50579,19 +50591,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 974
+        DifficultyPerMonster: 324
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 3708
-          HitpointsDeviation: 0
-          InitialArmor: 384
-          ArmorDeviation: 0
+          InitialHitpoints: 32
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 754
+          - Amount: 6
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50600,19 +50614,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 974
+        DifficultyPerMonster: 324
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 3565
-          HitpointsDeviation: 0
-          InitialArmor: 367
-          ArmorDeviation: 0
+          InitialHitpoints: 31
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 756
+          - Amount: 6
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50621,19 +50637,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 974
+        DifficultyPerMonster: 243
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 2889
-          HitpointsDeviation: 0
-          InitialArmor: 267
-          ArmorDeviation: 0
+          InitialHitpoints: 25
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 539
+          - Amount: 4
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50642,19 +50660,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 974
+        DifficultyPerMonster: 324
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 3402
-          HitpointsDeviation: 0
-          InitialArmor: 350
-          ArmorDeviation: 0
+          InitialHitpoints: 29
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 735
+          - Amount: 6
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50669,19 +50689,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1071
+        DifficultyPerMonster: 357
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 4750
-          HitpointsDeviation: 0
-          InitialArmor: 502
-          ArmorDeviation: 0
+          InitialHitpoints: 32
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 1033
+          - Amount: 7
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50690,19 +50712,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1071
+        DifficultyPerMonster: 357
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 5363
-          HitpointsDeviation: 0
-          InitialArmor: 533
-          ArmorDeviation: 0
+          InitialHitpoints: 37
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 984
+          - Amount: 7
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50711,19 +50735,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1071
+        DifficultyPerMonster: 357
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 4958
-          HitpointsDeviation: 0
-          InitialArmor: 465
-          ArmorDeviation: 0
+          InitialHitpoints: 34
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 1031
+          - Amount: 7
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50732,19 +50758,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1071
+        DifficultyPerMonster: 267
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 4158
-          HitpointsDeviation: 0
-          InitialArmor: 353
-          ArmorDeviation: 0
+          InitialHitpoints: 28
+          HitpointsDeviation: 0.1
+          InitialArmor: 2
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 746
+          - Amount: 5
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50759,19 +50787,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1571
+        DifficultyPerMonster: 314
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 5779
-          HitpointsDeviation: 0
-          InitialArmor: 560
-          ArmorDeviation: 0
+          InitialHitpoints: 31
+          HitpointsDeviation: 0.1
+          InitialArmor: 3
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 1172
+          - Amount: 6
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50780,19 +50810,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1571
+        DifficultyPerMonster: 392
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 7268
-          HitpointsDeviation: 0
-          InitialArmor: 766
-          ArmorDeviation: 0
+          InitialHitpoints: 39
+          HitpointsDeviation: 0.1
+          InitialArmor: 4
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 1487
+          - Amount: 7
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -50801,19 +50833,21 @@ MonoBehaviour:
         Interval: 1
         InitialCountDown: 1
         SpawnWithPreviousCluster: 0
-        IntervalDeviation: 0.1
+        Difficulty: 1571
+        DifficultyPerMonster: 392
+        IntervalDeviation: 0
         OverrideSpawnpoints: []
         Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
           type: 2}
         EnemyData:
-          InitialHitpoints: 7804
-          HitpointsDeviation: 0
-          InitialArmor: 772
-          ArmorDeviation: 0
+          InitialHitpoints: 42
+          HitpointsDeviation: 0.1
+          InitialArmor: 4
+          ArmorDeviation: 0.1
           InitialSpeed: 3
           SpeedDeviation: 0
           IntLoots:
-          - Amount: 1382
+          - Amount: 7
             Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
           IntPunishments:
           - Amount: 1
@@ -60900,20 +60934,9 @@ MonoBehaviour:
     ModifierFromDifficulty: 0.1
     Deviation: 0
   Upgrade:
-    MinAtkIncrease:
-      Type: {fileID: 11400000, guid: 6f267128084a36e42ac83fb8f995af48, type: 2}
-      Amount: 1
-    MaxAtkIncrease:
-      Type: {fileID: 11400000, guid: 6f267128084a36e42ac83fb8f995af48, type: 2}
-      Amount: 1
-    RangeIncrease:
-      Type: {fileID: 11400000, guid: 6f267128084a36e42ac83fb8f995af48, type: 2}
-      Amount: 1
-    FiringSpeedIncrease:
-      Type: {fileID: 11400000, guid: ad7b3f23cd115654aa272d770a891b41, type: 2}
-      Amount: 1
-    NextLineNodes:
-    - MinAtkIncrease:
+    UseInfinite: 0
+    InfiniteUpgradeNode:
+      MinAtkIncrease:
         Type: {fileID: 0}
         Amount: 0
       MaxAtkIncrease:
@@ -60925,17 +60948,9 @@ MonoBehaviour:
       FiringSpeedIncrease:
         Type: {fileID: 0}
         Amount: 0
-      NextLineNodes: []
-      LineNodesBranches: []
-      ChangeModel: {fileID: 0}
-      Price:
-        Amount: 0
-        Variable: {fileID: 0}
-    LineNodesBranches: []
-    ChangeModel: {fileID: 0}
-    Price:
-      Amount: 20
-      Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
+      SpecialIncreases: []
+      Price: []
+    UpgradeLineNodes: []
 --- !u!4 &2103912160
 Transform:
   m_ObjectHideFlags: 0

@@ -52,7 +52,7 @@ namespace Scrips.Waves
             if (rand == null) rand = new System.Random();
 
             int actualAmount = (int) Math.Round(rand.Next(MininumAmount, MaximumAmount + 1) * ratio);
-            int actualDifficulty = (int) (baseDifficulty * ratio * MaximumAmount / actualAmount);
+            int actualDifficulty = (int) (baseDifficulty * ratio / actualAmount);
             float initialHp = HitpointModifier.GenerateValue(actualDifficulty, rand);
             float initialArmor = ArmorModifier.GenerateValue(actualDifficulty, rand);
             float initialSpeed = SpeedModifier.GenerateValue(actualDifficulty, rand);
@@ -69,6 +69,8 @@ namespace Scrips.Waves
 
             return new WaveCluster
             {
+                DifficultyPerMonster = actualDifficulty,
+                Difficulty = (int) (baseDifficulty * ratio),
                 Amount = actualAmount,
                 InitialCountDown = Interval,
                 Interval = Interval,

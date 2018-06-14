@@ -20,13 +20,13 @@ MonoBehaviour:
     BaseValue: 0
     ModifierFromDifficulty: 0.1
     Deviation: 0.1
-  HitpointDeviation: 0
+  HitpointDeviation: 0.1
   ArmorModifier:
     UseBaseValue: 0
     BaseValue: 0
     ModifierFromDifficulty: 0.01
     Deviation: 0.1
-  ArmorDeviation: 0
+  ArmorDeviation: 0.1
   SpeedModifier:
     UseBaseValue: 1
     BaseValue: 3
@@ -34,14 +34,14 @@ MonoBehaviour:
     Deviation: 0
   SpeedDeviation: 0
   Interval: 1
-  IntervalDeviation: 0.1
+  IntervalDeviation: 0
   LootModifiers:
   - Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
     DifficultyStat:
       UseBaseValue: 0
       BaseValue: 0
       ModifierFromDifficulty: 0.02
-      Deviation: 0.05
+      Deviation: 0
   PunishmentModifiers:
   - Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
     DifficultyStat:

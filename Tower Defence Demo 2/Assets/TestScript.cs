@@ -15,5 +15,5 @@ public class TestScript : MonoBehaviour
 
     public IntEnemyStat Profit;
 
-    public TowerUpgradeNode Upgrade;
+    public TowerUpgradeLine Upgrade;
 }

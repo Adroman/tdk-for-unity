@@ -1,23 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using Scrips.Data;
 using UnityEngine;
 
 namespace Scrips.TowerUpgrades
 {
     [Serializable]
-    public class TowerUpgradeNode
+    public class TowerUpgradeLineNode
     {
         public FloatIncrease MinAtkIncrease;
         public FloatIncrease MaxAtkIncrease;
         public FloatIncrease RangeIncrease;
         public FloatIncrease FiringSpeedIncrease;
 
-        public TowerUpgradeNode[] NextLineNodes;
+        public List<TowerSpecialIncrease> SpecialIncreases;
 
-        public TowerUpgradeNode[] LineNodesBranches;
-
-        public GameObject ChangeModel;
-
-        public IntCurrency Price;
+        public List<IntCurrency> Price;
     }
 }

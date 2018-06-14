@@ -3,9 +3,12 @@ using System.Linq;
 using Scrips.EnemyData.Instances;
 using Scrips.Priorities;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Scrips.Instances
 {
+    [RequireComponent(typeof(LineRenderer))]
+    [RequireComponent(typeof(CircleCollider2D))]
     public class TowerInstance : MonoBehaviour
     {
         public float BaseRange;
@@ -24,6 +27,7 @@ namespace Scrips.Instances
                 var colliderLocal = GetComponent<CircleCollider2D>();
                 if (colliderLocal == null) return;
                 colliderLocal.radius = _actualRange;
+                SetupCircle();
             }
         }
 
@@ -34,6 +38,8 @@ namespace Scrips.Instances
 
         private float _cooldown;
         private float _cooldownLeft;
+
+        private LineRenderer _circleRenderer;
 
         public GameObject[] Priorities;
         public GameObject[] Filters;
@@ -60,6 +66,8 @@ namespace Scrips.Instances
         // Use this for initialization
         private void Start()
         {
+            _circleRenderer = GetComponent<LineRenderer>();
+
             _level = 1;
             ActualRange = BaseRange;
             _actualMinDamage = BaseMinDamage;
@@ -175,6 +183,33 @@ namespace Scrips.Instances
                 _enemiesInRange.Remove(enemy);
                 //Debug.Log("enemy exited");
             }
+        }
+
+        private void SetupCircle()
+        {
+            int vertices = 40;
+            float radius = ActualRange;
+            float deltaTheta = 2 * Mathf.PI / vertices;
+            float theta = 0;
+
+            _circleRenderer.positionCount = vertices;
+            _circleRenderer.loop = true;
+            for (int i = 0; i < vertices; i++)
+            {
+                var pos = new Vector3(radius * Mathf.Cos(theta), radius * Mathf.Sin(theta), 0);
+                _circleRenderer.SetPosition(i, pos);
+                theta += deltaTheta;
+            }
+        }
+
+        public void ShowRangeCircle()
+        {
+            _circleRenderer.enabled = true;
+        }
+
+        public void HideRangeCircle()
+        {
+            _circleRenderer.enabled = false;
         }
     }
 }

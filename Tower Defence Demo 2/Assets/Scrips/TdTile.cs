@@ -202,12 +202,14 @@ namespace Scrips
             {
                 _renderer.color = TileColor.InGameHoverColor;
             }
+            if (_currentTower != null) _currentTower.ShowRangeCircle();
         }
 
         private void OnMouseExit()
         {
             _renderer.color = TileColor.InGameColor;
             _readyToBuild = false;
+            if (_currentTower != null) _currentTower.HideRangeCircle();
         }
 
         private void OnMouseDown()
@@ -231,10 +233,11 @@ namespace Scrips
             if (SelectedTowerOption.Option.SelectedTowerPrefab == null) return;
             if (ScoreManager.Instance.Gold < SelectedTowerOption.Option.Price) return;
             ScoreManager.Instance.Gold -= SelectedTowerOption.Option.Price;
-            Instantiate(SelectedTowerOption.Option.SelectedTowerPrefab, transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform);
+            var tower = Instantiate(SelectedTowerOption.Option.SelectedTowerPrefab, transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform).GetComponent<TowerInstance>();
             Buildable = false;
             _readyToBuild = false;
             _renderer.color = TileColor.InGameColor;
+            _currentTower = tower;
         }
     }
 }

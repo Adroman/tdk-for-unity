@@ -64,7 +64,7 @@ namespace Scrips.Waves
         private Wave GetNextWave()
         {
             _currentWave++;
-            _currentDifficulty = (int) (_currentDifficulty * DifficultyIncrease);
+            if (_currentWave > 1) _currentDifficulty = (int) (_currentDifficulty * DifficultyIncrease);
             if (ClusterIncreases.Contains(_currentWave)) MaxClusters++;
             int clusters = _random.Next(MinClusters, MaxClusters + 1);
 
@@ -110,7 +110,7 @@ namespace Scrips.Waves
         {
             _currentWave = 0;
             _currentDifficulty = BaseDifficulty;
-            _random = new System.Random(RandomSeed.GetHashCode());
+            _random = RandomSeed != null ? new System.Random(RandomSeed.GetHashCode()) : new System.Random();
         }
     }
 }
