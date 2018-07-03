@@ -13,6 +13,6 @@ namespace Scrips.CustomTypes.IncreaseType
 
         public abstract int Increase(int fromValue, float byValue);
 
-        public abstract double Increase(float fromValue, float byValue);
+        public abstract float Increase(float fromValue, float byValue);
     }
 }

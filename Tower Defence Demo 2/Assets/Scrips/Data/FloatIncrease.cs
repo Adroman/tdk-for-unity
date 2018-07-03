@@ -8,5 +8,7 @@ namespace Scrips.Data
     {
         public BaseIncreaseType Type;
         public float Amount;
+
+        public float Apply(float from) => Type.Increase(@from, Amount);
     }
 }

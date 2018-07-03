@@ -7,6 +7,6 @@ namespace Scrips.CustomTypes.IncreaseType
     {
         public override int Increase(int fromValue, float byValue) => (int)byValue;
 
-        public override double Increase(float fromValue, float byValue) => byValue;
+        public override float Increase(float fromValue, float byValue) => byValue;
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using Scrips.EnemyData.Instances;
 using Scrips.Priorities;
+using Scrips.TowerUpgrades;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -48,7 +49,12 @@ namespace Scrips.Instances
         public Transform RotationPoint;
         public Transform ShootingPoint;
         public Sprite PreviewSprite;
-
+        
+        public List<TowerUpgradeLineNode> Upgrades = new List<TowerUpgradeLineNode>();
+        
+        private List<TowerUpgradeLineNode> _appliedUpgrades = new List<TowerUpgradeLineNode>();
+        private List<TowerUpgradeLineNode> _upgradesLeft = new List<TowerUpgradeLineNode>();
+        
         private List<EnemyInstance> _enemiesInRange;
 
         private static GameObject _bulletsParent;
@@ -78,6 +84,7 @@ namespace Scrips.Instances
             _cooldownLeft = 0;
 
             _enemiesInRange = new List<EnemyInstance>();
+            _upgradesLeft.AddRange(Upgrades);
         }
 
         // Update is called once per frame
@@ -154,15 +161,57 @@ namespace Scrips.Instances
             _cooldownLeft = _cooldown + _cooldownLeft;
         }
 
-        private void Upgrade()
+        public void Upgrade(TowerUpgradeLineNode upgrade)
         {
-            _level++;
-            _actualFiringSpeed = BaseFiringSpeed + 0.05f * (_level - 1) * BaseFiringSpeed;
-            _actualMinDamage = BaseMinDamage + 0.10f * (_level - 1) * BaseMinDamage;
-            _actualMaxDamage = BaseMaxDamage + 0.10f * (_level - 1) * BaseMaxDamage;
-            ActualRange = BaseRange + 0.05f * (_level - 1) * BaseRange;
+            if (!_upgradesLeft.Remove(upgrade))
+            {
+                Debug.LogError("Invalid upgrade");
+                return;
+            }
 
-            _cooldown = 1 / _actualFiringSpeed;
+            _actualMinDamage = upgrade.MinAtkIncrease.Apply(_actualMinDamage);
+            _actualMaxDamage = upgrade.MaxAtkIncrease.Apply(_actualMaxDamage);
+            ActualRange = upgrade.RangeIncrease.Apply(ActualRange);
+            _actualFiringSpeed = upgrade.FiringSpeedIncrease.Apply(_actualFiringSpeed);
+            
+            _appliedUpgrades.Add(upgrade);
+        }
+
+        public List<TowerUpgradeLineNode> GetPossibleUpgrades()
+        {
+            var result = new List<TowerUpgradeLineNode>();
+            
+            foreach (var upgrade in _upgradesLeft)
+            {
+                bool requirementsAllow = false;
+                bool exclusionsAllow = false;
+                
+                if (upgrade.Requirements.Count == 0)
+                {
+                    // does it require any previous upgrade?
+                    requirementsAllow = true;
+                }
+                else if (upgrade.RequirementAmount.MeetsTheRequirement(upgrade.Requirements, _appliedUpgrades))
+                {
+                    // does it have required upgrades?
+                    requirementsAllow = true;
+                }
+
+                if (upgrade.Exclusions.Count == 0)
+                {
+                    // no exclusions
+                    exclusionsAllow = true;
+                }
+                else if (!upgrade.ExclusionAmount.MeetsTheRequirement(upgrade.Exclusions, _appliedUpgrades))
+                {
+                    // is it blocked by other upgrades?
+                    exclusionsAllow = true;
+                }
+                
+                if (requirementsAllow && exclusionsAllow) result.Add(upgrade);
+            }
+
+            return result;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

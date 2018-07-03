@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Scrips.Instances;
 using Scrips.TowerUpgrades;
 using Scrips.Variables;
 using Scrips.Waves;
@@ -15,5 +16,18 @@ public class TestScript : MonoBehaviour
 
     public IntEnemyStat Profit;
 
-    public TowerUpgradeLine Upgrade;
+    public TowerInstance Tower;
+
+    public void TestAvailableUpgrades()
+    {
+        TowerUpgradeLineNode first = null;
+        
+        foreach (var upgrade in Tower.GetPossibleUpgrades())
+        {
+            first = upgrade;
+            Debug.Log(upgrade.name + " available");
+        }
+        
+        if (first != null) Tower.Upgrade(first);
+    }
 }

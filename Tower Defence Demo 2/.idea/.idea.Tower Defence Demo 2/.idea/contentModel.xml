@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Adrián\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Adrián\OneDrive\Programming\Tower Defense Kit For Unity\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
+    <e p="C:\coding\tdkfu\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -31,6 +31,7 @@
           <e p="PropertyDrawers" t="Include">
             <e p="IntReferencePropertyDrawer.cs" t="Include" />
           </e>
+          <e p="TestScriptCustomInspector.cs" t="Include" />
           <e p="Utils" t="Include">
             <e p="BulkRevertToPrefab.cs" t="Include" />
             <e p="GuiColor.cs" t="Include" />
@@ -39,6 +40,13 @@
             <e p="IsolatedScrollView.cs" t="Include" />
             <e p="ListUtils.cs" t="Include" />
             <e p="SceneUtils.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Scrips" t="Include">
@@ -66,6 +74,20 @@
               <e p="NoIncreaseType.cs" t="Include" />
             </e>
             <e p="LogLevel.cs" t="Include" />
+            <e p="Prerequisites" t="Include">
+              <e p="AllAmountRequired.cs" t="Include" />
+              <e p="AmountRequired.cs" t="Include" />
+              <e p="AnyAmountRequired.cs" t="Include" />
+              <e p="SetAmountRequired.cs" t="Include" />
+            </e>
+            <e p="SpecialType" t="Include">
+              <e p="Special.cs" t="Include" />
+              <e p="SpecialType.cs" t="Include" />
+              <e p="SplashDamage" t="Include">
+                <e p="SpashDamageType.cs" t="Include" />
+                <e p="SplashDamage.cs" t="Include" />
+              </e>
+            </e>
           </e>
           <e p="Data" t="Include">
             <e p="Currency.cs" t="Include" />
@@ -142,7 +164,6 @@
           <e p="TowerOption.cs" t="Include" />
           <e p="TowerUpgrades" t="Include">
             <e p="TowerSpecialIncrease.cs" t="Include" />
-            <e p="TowerUpgradeLine.cs" t="Include" />
             <e p="TowerUpgradeNode.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
@@ -201,6 +222,7 @@
       </e>
       <e p="Tower Defence Demo 2.sln" t="IncludeFlat" />
     </e>
+    <e p="C:\Users\adria\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Tower Defence Demo 2.1548570228.00" t="ExcludeRecursive" />
   </component>
   <component name="RiderRiderContentModelStore">
     <excludedPaths>
