@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Scrips.Data;
 using Scrips.Instances;
+using Scrips.Towers.BaseData;
 using UnityEngine;
 using TileWithDistance = Data.TileWithDistance;
 

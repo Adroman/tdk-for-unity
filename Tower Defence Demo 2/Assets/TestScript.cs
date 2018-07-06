@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Scrips.Instances;
-using Scrips.TowerUpgrades;
+using Scrips.Towers.BaseData;
 using Scrips.Variables;
 using Scrips.Waves;
 using UnityEngine;

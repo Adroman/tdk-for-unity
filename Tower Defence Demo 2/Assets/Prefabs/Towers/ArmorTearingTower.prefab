@@ -325,6 +325,7 @@ MonoBehaviour:
   RotationPoint: {fileID: 4263464875525906}
   ShootingPoint: {fileID: 4871150171106590}
   PreviewSprite: {fileID: 21300000, guid: bf52b413617f9714384e45a0b039051f, type: 3}
+  Upgrades: []
 --- !u!120 &120228634911908110
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -363,7 +364,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.05
+    widthMultiplier: 0.03
     widthCurve:
       serializedVersion: 2
       m_Curve:

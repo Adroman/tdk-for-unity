@@ -23,7 +23,8 @@ MonoBehaviour:
   FiringSpeedIncrease:
     Type: {fileID: 11400000, guid: 2917526a1b9becd48bb41757234ec08e, type: 2}
     Amount: 0
-  SpecialIncreases: []
+  SpecialIncreases:
+  - {fileID: 11400000, guid: 148dff04e2078c4439e116015fe1e58f, type: 2}
   Price: []
   Requirements: []
   RequirementAmount: {fileID: 0}
