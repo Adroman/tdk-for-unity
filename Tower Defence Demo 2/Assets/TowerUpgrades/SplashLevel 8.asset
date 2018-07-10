@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce4c376b04b472fb05381417fcfe7ff, type: 3}
   m_Name: SplashLevel 8
   m_EditorClassIdentifier: 
+  SpecialType: {fileID: 11400000, guid: 9dfc2ca9d5b438349a0904d894e6aa01, type: 2}
   RadiusIncrease: {fileID: 11400000, guid: 6f267128084a36e42ac83fb8f995af48, type: 2}
   ValueToUse: 0.1

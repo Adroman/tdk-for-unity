@@ -43,6 +43,7 @@ namespace Scrips.Instances
                 //SpecialEffect.GetComponent<BaseSpecialEffect>().InitSpecialEffect();
                 SpecialEffect.GetComponent<BaseSpecialEffect>().ApplySpecialEffect(Target);
             }
+
             PoolManager.Despawn(gameObject);
         }
     }

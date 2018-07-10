@@ -8,23 +8,10 @@ namespace Scrips
     public class TowerOption : MonoBehaviour
     {
         public int Price;
-        public GameObject TowerToSelect;
-        public GameObject TowerPrefab;
+        public TowerData TowerPrefab;
         public SelectedTowerOption CurrentlySelected;
 
         private bool _readyToSelect;
-
-        // Use this for initialization
-        void Start ()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update ()
-        {
-
-        }
 
         public void OnMouseDown()
         {
@@ -40,7 +27,7 @@ namespace Scrips
                 CurrentlySelected.Price = Price;
 
                 GameObject.Find("SelectedTowerImage").GetComponent<Image>().sprite =
-                    TowerPrefab.GetComponent<TowerInstance>().PreviewSprite;
+                    TowerPrefab.PreviewSprite;
             }
         }
 

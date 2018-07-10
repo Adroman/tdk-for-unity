@@ -35,7 +35,6 @@ namespace Scrips.Towers.BaseData
         public GameObject BulletPrefab;
         public Transform RotationPoint;
         public Transform ShootingPoint;
-        public Sprite PreviewSprite;
 
         public List<TowerUpgradeLineNode> Upgrades = new List<TowerUpgradeLineNode>();
 

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Level 2
+  m_EditorClassIdentifier: Assembly-CSharp:Scrips.Towers.BaseData:TowerUpgradeLineNode
+  MinAtkIncrease:
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 5
+  MaxAtkIncrease:
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 25
+  RangeIncrease:
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 3.2
+  FiringSpeedIncrease:
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 2.1
+  SpecialIncreases: []
+  SpecialUnlocks: []
+  Price:
+  - Amount: 20
+    Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
+  Requirements: []
+  RequirementAmount: {fileID: 0}
+  Exclusions: []
+  ExclusionAmount: {fileID: 0}
+  Model: {fileID: 0}

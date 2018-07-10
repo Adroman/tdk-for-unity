@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Scrips.Towers.BaseData
 {
+    [CreateAssetMenu(menuName = "Towers/Tower data")]
     public class TowerData : ScriptableObject
     {
         public TowerInstance Prefab;
@@ -20,6 +21,8 @@ namespace Scrips.Towers.BaseData
         public List<TowerUpgradeLineNode> Upgrades;
 
         public List<IntCurrency> Price;
+
+        public Sprite PreviewSprite;
 
         public TowerInstance BuildTower(Vector3 position, Quaternion rotation, Transform parent)
         {

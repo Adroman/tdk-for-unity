@@ -140,6 +140,7 @@
     <Compile Include="Assets\Scrips\UI\UiSkin.cs" />
     <Compile Include="Assets\Scrips\UI\UiSkinButton.cs" />
     <Compile Include="Assets\Scrips\UI\UiSkinData.cs" />
+    <Compile Include="Assets\Scrips\UI\UiTowerButton.cs" />
     <Compile Include="Assets\Scrips\UI\UiWave.cs" />
     <Compile Include="Assets\Scrips\UI\UiWaveCluster.cs" />
     <Compile Include="Assets\Scrips\UI\UiWaveQueue.cs" />

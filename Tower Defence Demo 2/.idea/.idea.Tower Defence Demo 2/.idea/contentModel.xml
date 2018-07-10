@@ -177,6 +177,7 @@
             <e p="UiSkin.cs" t="Include" />
             <e p="UiSkinButton.cs" t="Include" />
             <e p="UISkinData.cs" t="Include" />
+            <e p="UiTowerButton.cs" t="Include" />
             <e p="UIWave.cs" t="Include" />
             <e p="UIWaveCluster.cs" t="Include" />
             <e p="UiWaveQueue.cs" t="Include" />

@@ -234,7 +234,8 @@ namespace Scrips
             if (SelectedTowerOption.Option.SelectedTowerPrefab == null) return;
             if (ScoreManager.Instance.Gold < SelectedTowerOption.Option.Price) return;
             ScoreManager.Instance.Gold -= SelectedTowerOption.Option.Price;
-            var tower = Instantiate(SelectedTowerOption.Option.SelectedTowerPrefab, transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform).GetComponent<TowerInstance>();
+            var tower = SelectedTowerOption.Option.SelectedTowerPrefab.BuildTower(
+                transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform);
             Buildable = false;
             _readyToBuild = false;
             _renderer.color = TileColor.InGameColor;
