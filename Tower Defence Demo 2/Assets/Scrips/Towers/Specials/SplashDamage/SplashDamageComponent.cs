@@ -23,6 +23,7 @@ namespace Scrips.Towers.Specials.SplashDamage
     {
         public float SplashRadius;
 
+        public bool HasUpperLimit;
         public float UpperLimit;
 
         public AnimationCurve DamageCurve;
@@ -45,6 +46,11 @@ namespace Scrips.Towers.Specials.SplashDamage
                 float damage = Damage * EvaluateDamageMultiplier(enemyNearby.Distance);
                 enemyNearby.Enemy.TakeDamage(damage);
             }
+        }
+
+        public override string GetUiText()
+        {
+            return $"Splash radius: {SplashRadius}";
         }
 
         public float EvaluateDamageMultiplier(float distance)

@@ -9,6 +9,7 @@ namespace Scrips.UI
         public TowerData Tower;
         public Image ButtonImage;
         public Image SelectedTowerImage;
+        public UiTowerPreBuildInfo UiInfo;
 
         public void SelectTower()
         {
@@ -20,6 +21,18 @@ namespace Scrips.UI
         private void Start()
         {
             ButtonImage.sprite = Tower.PreviewSprite;
+        }
+
+        public void ShowInfo()
+        {
+            var rectTransform = UiInfo.GetComponent<RectTransform>();
+            rectTransform.position = new Vector3(rectTransform.position.x, transform.position.y + rectTransform.rect.height - 10);
+            UiInfo.gameObject.SetActive(true);
+        }
+
+        public void HideInfo()
+        {
+            UiInfo.gameObject.SetActive(false);
         }
     }
 }

@@ -20,9 +20,18 @@ namespace Scrips.Towers.Specials.SplashDamage
                 return;
             }
 
-            splashComponent.SplashRadius = Math.Min(
-                RadiusIncrease.Increase(splashComponent.SplashRadius, ValueToUse),
-                splashComponent.UpperLimit);
+            float newRadius = RadiusIncrease.Increase(splashComponent.SplashRadius, ValueToUse);
+
+            if (splashComponent.HasUpperLimit)
+            {
+                splashComponent.SplashRadius = Math.Min(
+                    newRadius,
+                    splashComponent.UpperLimit);
+            }
+            else
+            {
+                splashComponent.SplashRadius = newRadius;
+            }
         }
     }
 }

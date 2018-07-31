@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Scrips.Data;
 using Scrips.Towers.Specials;
@@ -9,6 +10,7 @@ namespace Scrips.Towers.BaseData
     [CreateAssetMenu(menuName = "Towers/Tower data")]
     public class TowerData : ScriptableObject
     {
+        public string TowerName;
         public TowerInstance Prefab;
 
         public float MinDamage;

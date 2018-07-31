@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Scrips.Towers.Specials.ReduceArmor
 {
@@ -10,6 +11,7 @@ namespace Scrips.Towers.Specials.ReduceArmor
         [Range(0, 1)]
         public float Chance;
 
+        public bool ChanceHasUpperLimit;
         [Range(0, 1)]
         public float ChanceUpperLimit;
 
@@ -21,12 +23,20 @@ namespace Scrips.Towers.Specials.ReduceArmor
             component.Amount = Amount;
             component.Chance = Chance;
             component.ChanceUpperLimit = ChanceUpperLimit;
+            component.ChanceHasUpperLimit = ChanceHasUpperLimit;
             return component;
         }
 
         public override SpecialComponent GetSpecialComponent(GameObject go)
         {
             return go.GetComponent<ReduceArmorComponent>();
+        }
+
+        public override string GetUiText()
+        {
+            return Math.Abs(Chance - 1f) < 0.001f
+                ? $"Reduces {Amount} of armor per hit"
+                : $"{Chance * 100:0}% chance to reduce armor by {Amount}";
         }
     }
 }

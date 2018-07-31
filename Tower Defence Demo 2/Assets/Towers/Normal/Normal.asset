@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b50c06ae2c49109904819e4652c087, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
+  TowerName: Basic Tower
   Prefab: {fileID: 114610687006769640, guid: 6a7cb150ace17804a920adc5f469e427, type: 2}
   MinDamage: 4
   MaxDamage: 16

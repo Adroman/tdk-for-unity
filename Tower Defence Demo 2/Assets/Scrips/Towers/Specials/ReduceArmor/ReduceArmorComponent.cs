@@ -12,6 +12,7 @@ namespace Scrips.Towers.Specials.ReduceArmor
         [Range(0, 1)]
         public float Chance;
 
+        public bool ChanceHasUpperLimit;
         [Range(0, 1)]
         public float ChanceUpperLimit;
 
@@ -25,6 +26,11 @@ namespace Scrips.Towers.Specials.ReduceArmor
             {
                 target.Armor = Math.Max(0, target.Armor - Amount);
             }
+        }
+
+        public override string GetUiText()
+        {
+            return Math.Abs(Chance - 1f) < 0.001f ? $"Reduces {Amount} of armor per hit" : $"{Chance * 100:0}% chance for reducing armor by {Amount}";
         }
     }
 }

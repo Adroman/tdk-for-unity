@@ -7,6 +7,7 @@ namespace Scrips.Towers.Specials.SplashDamage
     {
         public float SplashRadius;
 
+        public bool HasUpperLimit;
         public float UpperLimit;
 
         public AnimationCurve DamageCurve;
@@ -19,12 +20,18 @@ namespace Scrips.Towers.Specials.SplashDamage
             component.DamageCurve = DamageCurve;
             component.SplashRadius = SplashRadius;
             component.UpperLimit = UpperLimit;
+            component.HasUpperLimit = HasUpperLimit;
             return component;
         }
 
         public override SpecialComponent GetSpecialComponent(GameObject go)
         {
             return go.GetComponent<SplashDamageComponent>();
+        }
+
+        public override string GetUiText()
+        {
+            return $"Splash radius: {SplashRadius}";
         }
     }
 }

@@ -8,5 +8,7 @@ namespace Scrips.Towers.Specials
         public abstract SpecialType SpecialType { get; set; }
 
         public abstract void ApplySpecialEffect(EnemyInstance target);
+
+        public abstract string GetUiText();
     }
 }

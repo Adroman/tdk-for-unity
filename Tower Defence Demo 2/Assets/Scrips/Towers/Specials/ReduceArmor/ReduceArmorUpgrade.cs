@@ -24,9 +24,20 @@ namespace Scrips.Towers.Specials.ReduceArmor
             }
 
             reduceArmor.Amount = PowerIncreaseType.Increase(reduceArmor.Amount, PowerByAmount);
-            reduceArmor.Chance = Math.Min(
-                reduceArmor.ChanceUpperLimit,
-                ChanceIncreaseType.Increase(reduceArmor.Chance, ChanceByAmount));
+
+            float newChance = ChanceIncreaseType.Increase(reduceArmor.Chance, ChanceByAmount);
+
+            if (reduceArmor.ChanceHasUpperLimit)
+            {
+                reduceArmor.Chance = Math.Min(
+                    newChance,
+                    reduceArmor.ChanceUpperLimit
+                );
+            }
+            else
+            {
+                reduceArmor.Chance = newChance;
+            }
         }
     }
 }
