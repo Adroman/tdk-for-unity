@@ -21,7 +21,7 @@ public class TestScript : MonoBehaviour
 
     public void TestAvailableUpgrades()
     {
-        TowerUpgradeLineNode first = null;
+        TowerUpgradeNode first = null;
         
         foreach (var upgrade in Tower.GetPossibleUpgrades())
         {

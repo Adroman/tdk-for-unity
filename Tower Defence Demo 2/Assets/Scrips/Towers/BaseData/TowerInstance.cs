@@ -25,6 +25,7 @@ namespace Scrips.Towers.BaseData
             }
         }
 
+        public string Name;
         public float MinDamage;
         public float MaxDamage;
         public float FiringSpeed;
@@ -36,14 +37,14 @@ namespace Scrips.Towers.BaseData
         public Transform RotationPoint;
         public Transform ShootingPoint;
 
-        public List<TowerUpgradeLineNode> Upgrades = new List<TowerUpgradeLineNode>();
+        public List<TowerUpgradeNode> Upgrades = new List<TowerUpgradeNode>();
 
         private LineRenderer _circleRenderer;
         private float _cooldown;
         private float _cooldownLeft;
 
-        private readonly List<TowerUpgradeLineNode> _appliedUpgrades = new List<TowerUpgradeLineNode>();
-        private readonly List<TowerUpgradeLineNode> _upgradesLeft = new List<TowerUpgradeLineNode>();
+        private readonly List<TowerUpgradeNode> _appliedUpgrades = new List<TowerUpgradeNode>();
+        private readonly List<TowerUpgradeNode> _upgradesLeft = new List<TowerUpgradeNode>();
 
         private List<EnemyInstance> _enemiesInRange;
 
@@ -144,7 +145,7 @@ namespace Scrips.Towers.BaseData
             _cooldownLeft = _cooldown + _cooldownLeft;
         }
 
-        public void Upgrade(TowerUpgradeLineNode upgrade)
+        public void Upgrade(TowerUpgradeNode upgrade)
         {
             if (!_upgradesLeft.Remove(upgrade))
             {
@@ -152,6 +153,7 @@ namespace Scrips.Towers.BaseData
                 return;
             }
 
+            Name = string.IsNullOrWhiteSpace(upgrade.NewName) ? Name : upgrade.NewName;
             MinDamage = upgrade.MinAtkIncrease.Apply(MinDamage);
             MaxDamage = upgrade.MaxAtkIncrease.Apply(MaxDamage);
             ActualRange = upgrade.RangeIncrease.Apply(ActualRange);
@@ -171,9 +173,9 @@ namespace Scrips.Towers.BaseData
             _appliedUpgrades.Add(upgrade);
         }
 
-        public List<TowerUpgradeLineNode> GetPossibleUpgrades()
+        public List<TowerUpgradeNode> GetPossibleUpgrades()
         {
-            var result = new List<TowerUpgradeLineNode>();
+            var result = new List<TowerUpgradeNode>();
 
             foreach (var upgrade in _upgradesLeft)
             {

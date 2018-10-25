@@ -9,17 +9,17 @@ namespace Scrips.CustomTypes.Prerequisites
     public abstract class AmountRequired : ScriptableObject
     {
         public abstract bool MeetsTheRequirement(
-            ICollection<TowerUpgradeLineNode> objectsNeeded,
-            ICollection<TowerUpgradeLineNode> objectsHaving);
+            ICollection<TowerUpgradeNode> objectsNeeded,
+            ICollection<TowerUpgradeNode> objectsHaving);
 
-        protected ICollection<TowerUpgradeLineNode> ConvertToReadonlyCollection(ICollection<TowerUpgradeLineNode> source)
+        protected ICollection<TowerUpgradeNode> ConvertToReadonlyCollection(ICollection<TowerUpgradeNode> source)
         {
             if (source.Count > 20)
             {
-                return new HashSet<TowerUpgradeLineNode>(source);
+                return new HashSet<TowerUpgradeNode>(source);
             }
 
-            return new List<TowerUpgradeLineNode>(source.Distinct());
+            return new List<TowerUpgradeNode>(source.Distinct());
         }
     }
 }

@@ -7,8 +7,10 @@ using UnityEngine;
 namespace Scrips.Towers.BaseData
 {
     [CreateAssetMenu(menuName = "Tower Upgrades/Basic")]
-    public class TowerUpgradeLineNode : ScriptableObject
+    public class TowerUpgradeNode : ScriptableObject
     {
+        public string NewName;
+
         public FloatIncrease MinAtkIncrease;
         public FloatIncrease MaxAtkIncrease;
         public FloatIncrease RangeIncrease;
@@ -19,10 +21,10 @@ namespace Scrips.Towers.BaseData
 
         public List<IntCurrency> Price;
 
-        public List<TowerUpgradeLineNode> Requirements = new List<TowerUpgradeLineNode>();
+        public List<TowerUpgradeNode> Requirements = new List<TowerUpgradeNode>();
         public AmountRequired RequirementAmount;
 
-        public List<TowerUpgradeLineNode> Exclusions = new List<TowerUpgradeLineNode>();
+        public List<TowerUpgradeNode> Exclusions = new List<TowerUpgradeNode>();
         public AmountRequired ExclusionAmount;
 
         public GameObject Model;

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Adrián\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Adrián\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Adrián\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
     <e p="C:\Users\Adrián\OneDrive\Programming\Tower Defense Kit For Unity\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -13,6 +14,7 @@
             <e p="BaseEnemyGenerationModifiersInspector.cs" t="Include" />
             <e p="ComplexEnemyInstanceCustomInspector.cs" t="Include" />
             <e p="IntVariableCustomInspector.cs" t="Include" />
+            <e p="LevelConfigurationCustomInspector.cs" t="Include" />
             <e p="LevelCustomInspector.cs" t="Include" />
             <e p="SimpleAudioEventCustomInspector.cs" t="Include" />
             <e p="TileDatabaseCustomInspector.cs" t="Include" />
@@ -43,6 +45,9 @@
           </e>
         </e>
         <e p="Scrips" t="Include">
+          <e p="Audio" t="Include">
+            <e p="AudioAnimator.cs" t="Include" />
+          </e>
           <e p="BaseFilter.cs" t="Include" />
           <e p="BuffData" t="Include">
             <e p="BaseBuffData.cs" t="Include" />
@@ -129,6 +134,10 @@
             <e p="TextInstance.cs" t="Include" />
           </e>
           <e p="Level.cs" t="Include" />
+          <e p="LevelConfiguration.cs" t="Include" />
+          <e p="LevelLoader.cs" t="Include" />
+          <e p="MapLevelCollider.cs" t="Include" />
+          <e p="PlayerData.cs" t="Include" />
           <e p="PoolManager.cs" t="Include" />
           <e p="Priorities" t="Include">
             <e p="BasePriority.cs" t="Include" />
@@ -172,8 +181,10 @@
             <e p="UiClusterInfo.cs" t="Include" />
             <e p="UiController.cs" t="Include" />
             <e p="UiCurrencyIntTextWithImage.cs" t="Include" />
+            <e p="UiFader.cs" t="Include" />
             <e p="UiIntCurrencyCollection.cs" t="Include" />
             <e p="UiIntTextWithImage.cs" t="Include" />
+            <e p="UiLoadPercentage.cs" t="Include" />
             <e p="UiSkin.cs" t="Include" />
             <e p="UiSkinButton.cs" t="Include" />
             <e p="UISkinData.cs" t="Include" />
@@ -220,6 +231,7 @@
           </e>
         </e>
         <e p="TestScript.cs" t="Include" />
+        <e p="UILevel.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />

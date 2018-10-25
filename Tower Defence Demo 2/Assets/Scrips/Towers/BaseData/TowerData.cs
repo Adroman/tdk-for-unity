@@ -20,7 +20,7 @@ namespace Scrips.Towers.BaseData
 
         public List<SpecialType> Specials;
 
-        public List<TowerUpgradeLineNode> Upgrades;
+        public List<TowerUpgradeNode> Upgrades;
 
         public List<IntCurrency> Price;
 
@@ -37,6 +37,7 @@ namespace Scrips.Towers.BaseData
             Price.ForEach(p => p.Substract());
 
             var tower = Instantiate(Prefab, position, rotation, parent);
+            tower.Name = TowerName;
             tower.MinDamage = MinDamage;
             tower.MaxDamage = MaxDamage;
             tower.FiringSpeed = FiringSpeed;

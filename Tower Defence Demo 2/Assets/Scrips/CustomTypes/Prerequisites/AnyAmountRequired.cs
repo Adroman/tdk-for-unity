@@ -10,8 +10,8 @@ namespace Scrips.CustomTypes.Prerequisites
     public class AnyAmountRequired : AmountRequired
     {
         public override bool MeetsTheRequirement(
-            ICollection<TowerUpgradeLineNode> objectsNeeded,
-            ICollection<TowerUpgradeLineNode> objectsHaving)
+            ICollection<TowerUpgradeNode> objectsNeeded,
+            ICollection<TowerUpgradeNode> objectsHaving)
         {
             var data = ConvertToReadonlyCollection(objectsHaving);
 
