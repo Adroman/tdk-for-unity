@@ -53,6 +53,23 @@ namespace Scrips.Towers.Specials.SplashDamage
             return $"Splash radius: {SplashRadius}";
         }
 
+        public override void CopyDataToTargetComponent(SpecialComponent targetComponent)
+        {
+            var target = targetComponent as SplashDamageComponent;
+            if (target == null)
+            {
+                Debug.LogError("Invalid component");
+                return;
+            }
+
+            target.Damage = Damage;
+            target.SplashRadius = SplashRadius;
+            target.HasUpperLimit = target.HasUpperLimit;
+            target.UpperLimit = target.UpperLimit;
+            target.DamageCurve = DamageCurve;
+            target.Enemies = Enemies;
+        }
+
         public float EvaluateDamageMultiplier(float distance)
         {
             if (distance > SplashRadius) return 0;

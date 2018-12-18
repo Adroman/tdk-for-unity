@@ -3,6 +3,7 @@ using System.Linq;
 using Scrips.EnemyData.Instances;
 using Scrips.Instances;
 using Scrips.Priorities;
+using Scrips.Towers.Specials;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -141,17 +142,31 @@ namespace Scrips.Towers.BaseData
             var bullet = PoolManager.Spawn(BulletPrefab, shootingPoint.position, transform.rotation, BulletsParent.transform).GetComponent<BulletInstance>();
             bullet.Target = target;
             bullet.Damage = Random.Range(MinDamage, MaxDamage);
+            foreach (var component in GetComponents<SpecialComponent>())
+            {
+                var newComponent = (SpecialComponent)bullet.gameObject.AddComponent(component.GetType());
+                component.CopyDataToTargetComponent(newComponent);
+            }
             //bullet.SpecialEffect = SpecialEffect; TODO: change it
             _cooldownLeft = _cooldown + _cooldownLeft;
         }
 
         public void Upgrade(TowerUpgradeNode upgrade)
         {
-            if (!_upgradesLeft.Remove(upgrade))
+            if (!_upgradesLeft.Contains(upgrade))
             {
                 Debug.LogError("Invalid upgrade");
                 return;
             }
+
+            if (!upgrade.Price.All(p => p.HasEnough()))
+            {
+                Debug.Log("Not enough resources to upgrade");
+                return;
+            }
+
+            upgrade.Price.ForEach(p => p.Substract());
+            _upgradesLeft.Remove(upgrade);
 
             Name = string.IsNullOrWhiteSpace(upgrade.NewName) ? Name : upgrade.NewName;
             MinDamage = upgrade.MinAtkIncrease.Apply(MinDamage);

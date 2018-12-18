@@ -125,6 +125,8 @@
     <Compile Include="Assets\Scrips\SpecialEffects\ChainHit.cs" />
     <Compile Include="Assets\Scrips\SpecialEffects\ReduceArmor.cs" />
     <Compile Include="Assets\Scrips\SpecialEffects\SplashDamage.cs" />
+    <Compile Include="Assets\Scrips\Spells\DrainSpell.cs" />
+    <Compile Include="Assets\Scrips\Spells\EnemySpell.cs" />
     <Compile Include="Assets\Scrips\TdTile.cs" />
     <Compile Include="Assets\Scrips\TowerOption.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerData.cs" />

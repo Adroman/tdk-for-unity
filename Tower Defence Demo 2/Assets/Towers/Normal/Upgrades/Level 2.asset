@@ -11,21 +11,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4af7e2c3e5b45f3be49f98f9b8523b9, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
+  NewName: 
   MinAtkIncrease:
-    Type: {fileID: 0}
-    Amount: 0
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 5
   MaxAtkIncrease:
-    Type: {fileID: 0}
-    Amount: 0
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 25
   RangeIncrease:
-    Type: {fileID: 0}
-    Amount: 0
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 4
   FiringSpeedIncrease:
-    Type: {fileID: 0}
-    Amount: 0
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 2.5
   SpecialIncreases: []
   SpecialUnlocks: []
-  Price: []
+  Price:
+  - Amount: 20
+    Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
   Requirements: []
   RequirementAmount: {fileID: 0}
   Exclusions: []

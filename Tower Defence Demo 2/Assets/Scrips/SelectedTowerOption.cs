@@ -15,7 +15,7 @@ namespace Scrips
         private void Awake()
         {
             if (Option != null)
-                Debug.LogError("More than one selection dislplay");
+                Debug.LogError("More than one selection display");
             Option = this;
         }
     }

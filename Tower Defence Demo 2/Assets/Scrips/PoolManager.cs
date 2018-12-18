@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Scrips.Towers.Specials;
 using UnityEngine;
 
 namespace Scrips
@@ -23,6 +25,10 @@ namespace Scrips
             }
             else
             {
+                foreach (var component in go.GetComponents<SpecialComponent>().ToList())
+                {
+                    Object.Destroy(component);
+                }
                 poolComponent.Pool.Despawn(go);
             }
         }

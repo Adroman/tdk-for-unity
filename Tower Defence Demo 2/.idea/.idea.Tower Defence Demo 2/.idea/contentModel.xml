@@ -153,6 +153,10 @@
             <e p="ReduceArmor.cs" t="Include" />
             <e p="SplashDamage.cs" t="Include" />
           </e>
+          <e p="Spells" t="Include">
+            <e p="DrainSpell.cs" t="Include" />
+            <e p="EnemySpell.cs" t="Include" />
+          </e>
           <e p="TdTile.cs" t="Include" />
           <e p="TowerOption.cs" t="Include" />
           <e p="Towers" t="Include">

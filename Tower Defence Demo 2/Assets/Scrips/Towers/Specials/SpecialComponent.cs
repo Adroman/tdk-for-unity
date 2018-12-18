@@ -10,5 +10,7 @@ namespace Scrips.Towers.Specials
         public abstract void ApplySpecialEffect(EnemyInstance target);
 
         public abstract string GetUiText();
+
+        public abstract void CopyDataToTargetComponent(SpecialComponent targetComponent);
     }
 }

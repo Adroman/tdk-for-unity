@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Scrips.Data;
 using Scrips.Instances;
 using Scrips.Towers.BaseData;
@@ -215,7 +216,10 @@ namespace Scrips
 
         private void OnMouseDown()
         {
-            _readyToBuild = Buildable;
+            if (Buildable)
+                _readyToBuild = true;
+            else if (_currentTower != null)
+                _readyToBuild = true;
         }
 
         private void OnMouseUp()
@@ -223,7 +227,10 @@ namespace Scrips
             if (_readyToBuild)
             {
                 _readyToBuild = false;
-                BuildTower();
+                if (_currentTower == null)
+                    BuildTower();
+                else
+                    _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
             }
         }
 
@@ -232,10 +239,11 @@ namespace Scrips
             // Check, if we have enough resources
             //Debug.Log("Building");
             if (SelectedTowerOption.Option.SelectedTowerPrefab == null) return;
-            if (ScoreManager.Instance.Gold < SelectedTowerOption.Option.Price) return;
-            ScoreManager.Instance.Gold -= SelectedTowerOption.Option.Price;
+            //if (ScoreManager.Instance.Gold < SelectedTowerOption.Option.Price) return;
+            //ScoreManager.Instance.Gold -= SelectedTowerOption.Option.Price;
             var tower = SelectedTowerOption.Option.SelectedTowerPrefab.BuildTower(
                 transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform);
+            if (tower == null) return;
             Buildable = false;
             _readyToBuild = false;
             _renderer.color = TileColor.InGameColor;

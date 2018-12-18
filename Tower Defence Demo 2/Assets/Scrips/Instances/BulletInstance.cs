@@ -1,4 +1,5 @@
 ﻿using Scrips.SpecialEffects;
+using Scrips.Towers.Specials;
 using UnityEngine;
 
 namespace Scrips.Instances
@@ -42,6 +43,11 @@ namespace Scrips.Instances
                 var sp = SpecialEffect.GetComponent<BaseSpecialEffect>();
                 //SpecialEffect.GetComponent<BaseSpecialEffect>().InitSpecialEffect();
                 SpecialEffect.GetComponent<BaseSpecialEffect>().ApplySpecialEffect(Target);
+            }
+
+            foreach (var specialComponent in GetComponents<SpecialComponent>())
+            {
+                specialComponent.ApplySpecialEffect(Target);
             }
 
             PoolManager.Despawn(gameObject);

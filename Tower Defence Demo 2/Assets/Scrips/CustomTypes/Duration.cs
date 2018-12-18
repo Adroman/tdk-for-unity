@@ -9,6 +9,8 @@ namespace Scrips.CustomTypes
 
         public static Duration UntilDeath(EnemyInstance target) => new UntilDeathDuration(target);
 
+        public static Duration Instant() => InstantDuration.Instance;
+
         public abstract object UntilEnds();
 
         public abstract float ToFloat();
@@ -45,6 +47,19 @@ namespace Scrips.CustomTypes
             }
 
             public override float ToFloat() => _time;
+        }
+
+        private sealed class InstantDuration : Duration
+        {
+            public static readonly InstantDuration Instance = new InstantDuration();
+
+            private InstantDuration()
+            {
+            }
+
+            public override object UntilEnds() => null;
+
+            public override float ToFloat() => 0;
         }
     }
 }
