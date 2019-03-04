@@ -1,4 +1,5 @@
-﻿using Scrips.Towers.BaseData;
+﻿using Scrips.Spells;
+using Scrips.Towers.BaseData;
 using UnityEngine;
 
 namespace Scrips
@@ -10,7 +11,31 @@ namespace Scrips
 
         public static SelectedTowerOption Option { get; private set; }
 
-        public TowerData SelectedTowerPrefab;
+        [SerializeField]
+        private TowerData _selectedTower;
+
+        [SerializeField]
+        private EnemySpell _selectedSpell;
+
+        public TowerData SelectedTowerPrefab
+        {
+            get { return _selectedTower; }
+            set
+            {
+                _selectedTower = value;
+                _selectedSpell = null;
+            }
+        }
+
+        public EnemySpell SelectedSpell
+        {
+            get { return _selectedSpell; }
+            set
+            {
+                _selectedSpell = value;
+                _selectedTower = null;
+            }
+        }
 
         private void Awake()
         {

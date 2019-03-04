@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scrips\BuffData\PoisonBuffData.cs" />
     <Compile Include="Assets\Scrips\BuffData\SlownessBuffData.cs" />
     <Compile Include="Assets\Scrips\CameraController.cs" />
+    <Compile Include="Assets\Scrips\CircleRenderer.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\Amount.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\Duration.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\IncreaseType\AdditiveIncreaseType.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\Scrips\LevelConfiguration.cs" />
     <Compile Include="Assets\Scrips\LevelLoader.cs" />
     <Compile Include="Assets\Scrips\MapLevelCollider.cs" />
+    <Compile Include="Assets\Scrips\Particles\ParticleSpawner.cs" />
     <Compile Include="Assets\Scrips\PlayerData.cs" />
     <Compile Include="Assets\Scrips\PoolManager.cs" />
     <Compile Include="Assets\Scrips\Priorities\BasePriority.cs" />
@@ -126,7 +128,10 @@
     <Compile Include="Assets\Scrips\SpecialEffects\ReduceArmor.cs" />
     <Compile Include="Assets\Scrips\SpecialEffects\SplashDamage.cs" />
     <Compile Include="Assets\Scrips\Spells\DrainSpell.cs" />
+    <Compile Include="Assets\Scrips\Spells\DrainSpellInstance.cs" />
     <Compile Include="Assets\Scrips\Spells\EnemySpell.cs" />
+    <Compile Include="Assets\Scrips\Spells\SpellInstance.cs" />
+    <Compile Include="Assets\Scrips\Spells\SpellSpawner.cs" />
     <Compile Include="Assets\Scrips\TdTile.cs" />
     <Compile Include="Assets\Scrips\TowerOption.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerData.cs" />
@@ -153,6 +158,7 @@
     <Compile Include="Assets\Scrips\UI\UiSkinData.cs" />
     <Compile Include="Assets\Scrips\UI\UiSpecials.cs" />
     <Compile Include="Assets\Scrips\UI\UiSpecialText.cs" />
+    <Compile Include="Assets\Scrips\UI\UiSpellButton.cs" />
     <Compile Include="Assets\Scrips\UI\UiTowerButton.cs" />
     <Compile Include="Assets\Scrips\UI\UiTowerPreBuildInfo.cs" />
     <Compile Include="Assets\Scrips\UI\UiWave.cs" />
@@ -187,11 +193,11 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>

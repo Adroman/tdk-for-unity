@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Scrips.Data;
 using Scrips.Instances;
+using Scrips.Spells;
 using Scrips.Towers.BaseData;
 using UnityEngine;
 using TileWithDistance = Data.TileWithDistance;
@@ -28,6 +29,13 @@ namespace Scrips
         [HideInInspector]
         [SerializeField]
         private bool _isGoal;
+
+        [SerializeField]
+        private Camera _camera;
+
+        private CircleRenderer _spellCircle;
+
+        private SpellSpawner _spellSpawner;
 
         public TileColor TileColor;
 
@@ -196,15 +204,52 @@ namespace Scrips
         {
             _renderer = GetComponent<SpriteRenderer>();
             _renderer.color = Application.isPlaying ? TileColor.InGameColor : TileColor.EditorColor;
+            _camera = GameObject.Find("Main Camera")?.GetComponent<Camera>();
+            _spellCircle = GameObject.Find("SpellPoint")?.GetComponent<CircleRenderer>();
+            _spellSpawner = GameObject.Find("SpellPoint")?.GetComponent<SpellSpawner>();
         }
 
         private void OnMouseEnter()
         {
-            if (Buildable)
+            if (SelectedTowerOption.Option.SelectedTowerPrefab != null)
             {
-                _renderer.color = TileColor.InGameHoverColor;
+                if (Buildable)
+                {
+                    _renderer.color = TileColor.InGameHoverColor;
+                }
+
+                if (_currentTower != null) _currentTower.ShowRangeCircle();
             }
-            if (_currentTower != null) _currentTower.ShowRangeCircle();
+            else if (SelectedTowerOption.Option.SelectedSpell != null)
+            {
+                DrawSpellRangeCircle();
+            }
+        }
+
+        private void OnMouseOver()
+        {
+            if (SelectedTowerOption.Option.SelectedSpell != null)
+            {
+                DrawSpellRangeCircle();
+            }
+        }
+
+        private void DrawSpellRangeCircle()
+        {
+            if (_camera == null)
+            {
+                Debug.LogError("Camera is missing");
+            }
+
+            RaycastHit hit;
+            var mousePosition = Input.mousePosition;
+            var rayMouse = _camera.ScreenPointToRay(mousePosition);
+
+            if (Physics.Raycast(rayMouse.origin, rayMouse.direction, out hit))
+            {
+                _spellCircle.transform.position = new Vector3(hit.point.x, hit.point.y, -1);
+                _spellCircle.UpdateCircle(SelectedTowerOption.Option.SelectedSpell.Range);
+            }
         }
 
         private void OnMouseExit()
@@ -216,21 +261,40 @@ namespace Scrips
 
         private void OnMouseDown()
         {
-            if (Buildable)
-                _readyToBuild = true;
-            else if (_currentTower != null)
-                _readyToBuild = true;
+            if (SelectedTowerOption.Option.SelectedTowerPrefab != null)
+            {
+                if (Buildable)
+                    _readyToBuild = true;
+                else if (_currentTower != null)
+                    _readyToBuild = true;
+            }
+            else if (SelectedTowerOption.Option.SelectedSpell != null)
+            {
+                _spellSpawner.IsReady = true;
+            }
         }
 
         private void OnMouseUp()
         {
-            if (_readyToBuild)
+            if (SelectedTowerOption.Option.SelectedTowerPrefab != null)
             {
-                _readyToBuild = false;
-                if (_currentTower == null)
-                    BuildTower();
-                else
-                    _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
+                if (_readyToBuild)
+                {
+                    _readyToBuild = false;
+                    if (_currentTower == null)
+                        BuildTower();
+                    else
+                        _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
+                }
+            }
+            else if (SelectedTowerOption.Option.SelectedSpell != null)
+            {
+                if (_spellSpawner.IsReady)
+                {
+                    _spellSpawner.IsReady = false;
+                    Instantiate(SelectedTowerOption.Option.SelectedSpell.Prefab,
+                        _spellSpawner.transform.position, _spellSpawner.transform.rotation);
+                }
             }
         }
 

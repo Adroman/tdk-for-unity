@@ -61,6 +61,7 @@
             <e p="SlownessBuffData.cs" t="Include" />
           </e>
           <e p="CameraController.cs" t="Include" />
+          <e p="CircleRenderer.cs" t="Include" />
           <e p="CustomTypes" t="Include">
             <e p="Amount.cs" t="Include" />
             <e p="Duration.cs" t="Include" />
@@ -137,6 +138,9 @@
           <e p="LevelConfiguration.cs" t="Include" />
           <e p="LevelLoader.cs" t="Include" />
           <e p="MapLevelCollider.cs" t="Include" />
+          <e p="Particles" t="Include">
+            <e p="ParticleSpawner.cs" t="Include" />
+          </e>
           <e p="PlayerData.cs" t="Include" />
           <e p="PoolManager.cs" t="Include" />
           <e p="Priorities" t="Include">
@@ -155,7 +159,10 @@
           </e>
           <e p="Spells" t="Include">
             <e p="DrainSpell.cs" t="Include" />
+            <e p="DrainSpellInstance.cs" t="Include" />
             <e p="EnemySpell.cs" t="Include" />
+            <e p="SpellInstance.cs" t="Include" />
+            <e p="SpellSpawner.cs" t="Include" />
           </e>
           <e p="TdTile.cs" t="Include" />
           <e p="TowerOption.cs" t="Include" />
@@ -194,6 +201,7 @@
             <e p="UISkinData.cs" t="Include" />
             <e p="UiSpecials.cs" t="Include" />
             <e p="UiSpecialText.cs" t="Include" />
+            <e p="UiSpellButton.cs" t="Include" />
             <e p="UiTowerButton.cs" t="Include" />
             <e p="UiTowerPreBuildInfo.cs" t="Include" />
             <e p="UIWave.cs" t="Include" />

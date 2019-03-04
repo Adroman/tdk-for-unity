@@ -84,11 +84,11 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>

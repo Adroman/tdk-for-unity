@@ -11,6 +11,10 @@ namespace Scrips.Spells
 
         public float ChargeTime;
 
+        public Sprite PreviewSprite;
+
+        public SpellInstance Prefab;
+
         public abstract void ApplySpell(EnemyInstance enemy);
     }
 }
