@@ -1,5 +1,6 @@
 ﻿using Scrips.Spells;
 using Scrips.Towers.BaseData;
+using Scrips.UI;
 using UnityEngine;
 
 namespace Scrips
@@ -12,12 +13,12 @@ namespace Scrips
         public static SelectedTowerOption Option { get; private set; }
 
         [SerializeField]
-        private TowerData _selectedTower;
+        private UiTowerButton _selectedTower;
 
         [SerializeField]
-        private EnemySpell _selectedSpell;
+        private UiSpellButton _selectedSpell;
 
-        public TowerData SelectedTowerPrefab
+        public UiTowerButton SelectedTowerPrefab
         {
             get { return _selectedTower; }
             set
@@ -27,7 +28,7 @@ namespace Scrips
             }
         }
 
-        public EnemySpell SelectedSpell
+        public UiSpellButton SelectedSpell
         {
             get { return _selectedSpell; }
             set

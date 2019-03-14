@@ -264,11 +264,13 @@ namespace Scrips.Towers.BaseData
 
         public void ShowRangeCircle()
         {
+            if (_circleRenderer == null) return;
             _circleRenderer.enabled = true;
         }
 
         public void HideRangeCircle()
         {
+            if (_circleRenderer == null) return;
             _circleRenderer.enabled = false;
         }
     }

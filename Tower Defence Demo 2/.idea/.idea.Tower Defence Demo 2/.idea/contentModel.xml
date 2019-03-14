@@ -62,6 +62,9 @@
           </e>
           <e p="CameraController.cs" t="Include" />
           <e p="CircleRenderer.cs" t="Include" />
+          <e p="Controls" t="Include">
+            <e p="LevelMouseControls.cs" t="Include" />
+          </e>
           <e p="CustomTypes" t="Include">
             <e p="Amount.cs" t="Include" />
             <e p="Duration.cs" t="Include" />
@@ -150,6 +153,7 @@
           </e>
           <e p="ScoreManager.cs" t="Include" />
           <e p="SelectedTowerOption.cs" t="Include" />
+          <e p="SelfDisabler.cs" t="Include" />
           <e p="SpecialEffects" t="Include">
             <e p="BaseSpecialEffect.cs" t="Include" />
             <e p="BuffSpecialEffect.cs" t="Include" />

@@ -209,103 +209,46 @@ namespace Scrips
             _spellSpawner = GameObject.Find("SpellPoint")?.GetComponent<SpellSpawner>();
         }
 
-        private void OnMouseEnter()
+        public void HighlightTile()
         {
-            if (SelectedTowerOption.Option.SelectedTowerPrefab != null)
+            if (Buildable)
             {
-                if (Buildable)
-                {
-                    _renderer.color = TileColor.InGameHoverColor;
-                }
+                _renderer.color = TileColor.InGameHoverColor;
+            }
 
-                if (_currentTower != null) _currentTower.ShowRangeCircle();
-            }
-            else if (SelectedTowerOption.Option.SelectedSpell != null)
-            {
-                DrawSpellRangeCircle();
-            }
+            if (_currentTower != null) _currentTower.ShowRangeCircle();
         }
 
-        private void OnMouseOver()
-        {
-            if (SelectedTowerOption.Option.SelectedSpell != null)
-            {
-                DrawSpellRangeCircle();
-            }
-        }
-
-        private void DrawSpellRangeCircle()
-        {
-            if (_camera == null)
-            {
-                Debug.LogError("Camera is missing");
-            }
-
-            RaycastHit hit;
-            var mousePosition = Input.mousePosition;
-            var rayMouse = _camera.ScreenPointToRay(mousePosition);
-
-            if (Physics.Raycast(rayMouse.origin, rayMouse.direction, out hit))
-            {
-                _spellCircle.transform.position = new Vector3(hit.point.x, hit.point.y, -1);
-                _spellCircle.UpdateCircle(SelectedTowerOption.Option.SelectedSpell.Range);
-            }
-        }
-
-        private void OnMouseExit()
+        public void StopHighlightTile()
         {
             _renderer.color = TileColor.InGameColor;
             _readyToBuild = false;
             if (_currentTower != null) _currentTower.HideRangeCircle();
         }
 
-        private void OnMouseDown()
+        public void ReadyToBuild()
         {
-            if (SelectedTowerOption.Option.SelectedTowerPrefab != null)
+            if (Buildable)
+                _readyToBuild = true;
+            else if (_currentTower != null)
+                _readyToBuild = true;
+        }
+        
+        public void Build(TowerData selectedTower)
+        {
+            if (_readyToBuild)
             {
-                if (Buildable)
-                    _readyToBuild = true;
-                else if (_currentTower != null)
-                    _readyToBuild = true;
-            }
-            else if (SelectedTowerOption.Option.SelectedSpell != null)
-            {
-                _spellSpawner.IsReady = true;
+                _readyToBuild = false;
+                if (_currentTower == null)
+                    BuildTower(selectedTower);
+                else
+                    _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
             }
         }
 
-        private void OnMouseUp()
+        private void BuildTower(TowerData selectedTower)
         {
-            if (SelectedTowerOption.Option.SelectedTowerPrefab != null)
-            {
-                if (_readyToBuild)
-                {
-                    _readyToBuild = false;
-                    if (_currentTower == null)
-                        BuildTower();
-                    else
-                        _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
-                }
-            }
-            else if (SelectedTowerOption.Option.SelectedSpell != null)
-            {
-                if (_spellSpawner.IsReady)
-                {
-                    _spellSpawner.IsReady = false;
-                    Instantiate(SelectedTowerOption.Option.SelectedSpell.Prefab,
-                        _spellSpawner.transform.position, _spellSpawner.transform.rotation);
-                }
-            }
-        }
-
-        private void BuildTower()
-        {
-            // Check, if we have enough resources
-            //Debug.Log("Building");
-            if (SelectedTowerOption.Option.SelectedTowerPrefab == null) return;
-            //if (ScoreManager.Instance.Gold < SelectedTowerOption.Option.Price) return;
-            //ScoreManager.Instance.Gold -= SelectedTowerOption.Option.Price;
-            var tower = SelectedTowerOption.Option.SelectedTowerPrefab.BuildTower(
+            var tower = selectedTower.BuildTower(
                 transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform);
             if (tower == null) return;
             Buildable = false;

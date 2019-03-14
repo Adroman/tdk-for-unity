@@ -11,7 +11,7 @@ namespace Scrips.Spells
 
         public override void ApplySpell(EnemyInstance enemy)
         {
-            enemy.TakeDamage(enemy.Hitpoints * PercentageAmount);
+            enemy.TakeDamage(enemy.Hitpoints * PercentageAmount, true);
         }
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Scrips.Data
 {
-    [Serializable]
-    public class TileData
+    [CreateAssetMenu]
+    public class TileData : ScriptableObject
     {
         public string Name;
         public GameObject Prefab;

@@ -212,9 +212,9 @@ namespace Scrips.EnemyData.Instances
             Destroy(gameObject);
         }
 
-        public void TakeDamage(float amount)
+        public void TakeDamage(float amount, bool ignoreArmor = false)
         {
-            Hitpoints -= Math.Max(amount - Armor, 0);
+            Hitpoints -= Math.Max(amount - (ignoreArmor ? 0 : Armor), 0);
             UpdateHealthbar();
             // apply specialEffects
             if (Hitpoints <= 0)

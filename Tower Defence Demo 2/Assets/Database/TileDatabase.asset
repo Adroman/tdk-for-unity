@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,13 +13,8 @@ MonoBehaviour:
   m_Name: TileDatabase
   m_EditorClassIdentifier: Assembly-CSharp:Scrips.Data:TileDatabase
   Tiles:
-  - Name: Grass
-    Prefab: {fileID: 1829663917110156, guid: af727f5020bb55449b731e2710dd5795, type: 2}
-  - Name: Unbuildable
-    Prefab: {fileID: 1201073106139614, guid: 13e5f35fc3c9ab5498d491960ac4a7af, type: 2}
-  - Name: Goal
-    Prefab: {fileID: 1589357322978538, guid: 3263ea60a245f8e40a4cab04747acd5c, type: 2}
-  - Name: Spawn
-    Prefab: {fileID: 1373141242928416, guid: 364ddcaba680dce4986b92fbd2e85464, type: 2}
-  - Name: Waking
-    Prefab: {fileID: 1829663917110156, guid: 72270341bdf3dcc4a8556ed36b6be882, type: 2}
+  - {fileID: 11400000, guid: 471956017ed117d4aaaa658e656d5f30, type: 2}
+  - {fileID: 11400000, guid: 1ddd6fa609539bb4f8b024d5b30cf261, type: 2}
+  - {fileID: 11400000, guid: 4ee322ff9529c7d4db0495bc392a3d4d, type: 2}
+  - {fileID: 11400000, guid: fbad9bd5c79edb74c969265a96c94cbe, type: 2}
+  - {fileID: 11400000, guid: 118696fbec29df94ab5a61501c141fc8, type: 2}

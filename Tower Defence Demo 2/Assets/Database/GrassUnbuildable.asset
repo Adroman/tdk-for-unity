@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b85d1c8f4f04f9478efe1fabf85d03b, type: 3}
+  m_Name: GrassUnbuildable
+  m_EditorClassIdentifier: 
+  Name: Unbuildable
+  Prefab: {fileID: 1201073106139614, guid: 13e5f35fc3c9ab5498d491960ac4a7af, type: 3}

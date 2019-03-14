@@ -7,11 +7,8 @@ using UnityEngine;
 
 namespace Scrips.Spells
 {
-    [RequireComponent(typeof(CircleCollider2D))]
     public abstract class SpellInstance : MonoBehaviour
     {
-        protected CircleCollider2D Collider;
-
         protected ParticleSystem Particles;
 
         public EnemySpell Spell;
@@ -20,7 +17,6 @@ namespace Scrips.Spells
 
         private void OnEnable()
         {
-            Collider = GetComponent<CircleCollider2D>();
             Particles = GetComponent<ParticleSystem>();
             AdjustParticles();
             HitEnemies();

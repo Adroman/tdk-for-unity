@@ -13,7 +13,7 @@ namespace Scrips.UI
 
         public void SelectTower()
         {
-            SelectedTowerOption.Option.SelectedTowerPrefab = Tower;
+            SelectedTowerOption.Option.SelectedTowerPrefab = this;
             SelectedTowerImage.sprite = Tower.PreviewSprite;
             SelectedTowerImage.color = Color.white;
         }
@@ -33,6 +33,11 @@ namespace Scrips.UI
         public void HideInfo()
         {
             UiInfo.gameObject.SetActive(false);
+        }
+
+        public void BuildTower(TdTile tile)
+        {
+            tile.Build(Tower);
         }
     }
 }

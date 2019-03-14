@@ -11,6 +11,8 @@ namespace Scrips.Spells
 
         public float ChargeTime;
 
+        public float InitialCharge;
+
         public Sprite PreviewSprite;
 
         public SpellInstance Prefab;
