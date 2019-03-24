@@ -1,4 +1,6 @@
 using Scrips.Spells;
+using Scrips.UI.UiAmountDisplay;
+using Scrips.UI.UiProgressDisplay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +12,13 @@ namespace Scrips.UI
         {
             private float _currentCharge;
             private int _currentUsableCharges;
-            private readonly UiSpellButton _spellButton;
+            private readonly UiBaseProgress _progressDisplay;
+            private readonly UiBaseAmount _amountDisplay;
 
-            public CurrentSpellData(UiSpellButton button)
+            public CurrentSpellData(UiBaseProgress progressDisplay, UiBaseAmount amountDisplay)
             {
-                _spellButton = button;
+                _progressDisplay = progressDisplay;
+                _amountDisplay = amountDisplay;
             }
 
             public float CurrentCharge
@@ -23,7 +27,7 @@ namespace Scrips.UI
                 set
                 {
                     _currentCharge = value;
-                    _spellButton.SpellChargeMeter.fillAmount = 1 - _currentCharge;
+                    _progressDisplay.UpdateValue(value);
                 }
             }
 
@@ -33,7 +37,7 @@ namespace Scrips.UI
                 set
                 {
                     _currentUsableCharges = value;
-                    _spellButton.SpellChargeNumber.text = _currentUsableCharges.ToString();
+                    _amountDisplay.UpdateValue(value);
                 }
             }
 
@@ -45,8 +49,8 @@ namespace Scrips.UI
         public Image ButtonImage;
         public Image SelectedItemImage;
         public Color SpellColor;
-        public Image SpellChargeMeter;
-        public Text SpellChargeNumber;
+        public UiBaseProgress ProgressDisplay;
+        public UiBaseAmount AmountDisplay;
 
         private CurrentSpellData _spellData;
 
@@ -54,7 +58,7 @@ namespace Scrips.UI
         {
             ButtonImage.sprite = Spell.PreviewSprite;
 
-            _spellData = new CurrentSpellData(this)
+            _spellData = new CurrentSpellData(ProgressDisplay, AmountDisplay)
             {
                 CurrentCharge = Spell.InitialCharge,
                 CurrentUsableCharges = Mathf.FloorToInt(Spell.InitialCharge),
@@ -85,14 +89,6 @@ namespace Scrips.UI
                 _spellData.CurrentUsableCharges++;
                 _spellData.CurrentCharge -= 1f;
             }
-
-            AdjustGraphics();
-        }
-
-        private void AdjustGraphics()
-        {
-            SpellChargeMeter.fillAmount = 1 - _spellData.CurrentCharge;
-            SpellChargeNumber.text = _spellData.CurrentUsableCharges.ToString();
         }
 
         public void TryInstantiateSpell(SpellSpawner spawner)
@@ -101,7 +97,6 @@ namespace Scrips.UI
             {
                 _spellData.CurrentUsableCharges--;
                 Instantiate(Spell.Prefab, spawner.transform.position, spawner.transform.rotation);
-                AdjustGraphics();
             }
         }
     }

@@ -193,6 +193,11 @@
             </e>
           </e>
           <e p="UI" t="Include">
+            <e p="UiAmountDisplay" t="Include">
+              <e p="UiBaseAmount.cs" t="Include" />
+              <e p="UiBasicTextAmount.cs" t="Include" />
+              <e p="UiCharQuantityAmount.cs" t="Include" />
+            </e>
             <e p="UiClusterInfo.cs" t="Include" />
             <e p="UiController.cs" t="Include" />
             <e p="UiCurrencyIntTextWithImage.cs" t="Include" />
@@ -200,6 +205,12 @@
             <e p="UiIntCurrencyCollection.cs" t="Include" />
             <e p="UiIntTextWithImage.cs" t="Include" />
             <e p="UiLoadPercentage.cs" t="Include" />
+            <e p="UiProgressDisplay" t="Include">
+              <e p="UiBaseProgress.cs" t="Include" />
+              <e p="UiFillAmountProgressDisplay.cs" t="Include" />
+              <e p="UiReverseFillAmountProgressDisplay.cs" t="Include" />
+              <e p="UiSliderProgress.cs" t="Include" />
+            </e>
             <e p="UiSkin.cs" t="Include" />
             <e p="UiSkinButton.cs" t="Include" />
             <e p="UISkinData.cs" t="Include" />
