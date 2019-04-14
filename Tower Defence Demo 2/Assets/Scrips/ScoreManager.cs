@@ -2,6 +2,7 @@
 using Scrips.EnemyData.Instances;
 using Scrips.Events;
 using Scrips.Instances;
+using Scrips.UI;
 using Scrips.Variables;
 using UnityEngine;
 
@@ -23,6 +24,8 @@ namespace Scrips
         public GameEvent OnWaveIndexChanged;
         public GameEvent OnGoldAmountChanged;
         public GameEvent OnLivesAmountChanged;
+
+        public UiController Ui;
 
         public static ScoreManager Instance { get; private set; }
 
@@ -66,13 +69,13 @@ namespace Scrips
         {
             if (LastWave.Value && ActiveEnemies.Value == 0 && WaitingEnemies.Value == 0)
             {
-                Debug.Log("--------VICTORY--------");
+                Ui.SwitchToVictoryUi();
             }
         }
 
         public void GameOver()
         {
-            Debug.Log("--------DEFEAT--------");
+            Ui.SwitchToDefeatUi();
             Time.timeScale = 0;
         }
 
@@ -86,6 +89,14 @@ namespace Scrips
             foreach (var loot in target.IntLoot)
             {
                 loot.Add();
+            }
+        }
+
+        public void PunishPlayer(EnemyInstance target)
+        {
+            foreach (var punishment in target.IntPunishments)
+            {
+                punishment.Subtract();
             }
         }
     }

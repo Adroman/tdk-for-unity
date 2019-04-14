@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,4 +13,6 @@ MonoBehaviour:
   m_Name: EnemiesKilled
   m_EditorClassIdentifier: 
   _value: 0
-  OnValueChanged: {fileID: 0}
+  Icon: {fileID: 0}
+  IconColor: {r: 0, g: 0, b: 0, a: 0}
+  OnValueChanged: {fileID: 11400000, guid: 7f7952ecc73f0e346813580ea4090f5b, type: 2}

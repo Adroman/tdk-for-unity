@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,7 +13,7 @@ MonoBehaviour:
   m_Name: NormalEnemyGeneration
   m_EditorClassIdentifier: 
   PrefabToUse: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
-    type: 2}
+    type: 3}
   MininumAmount: 10
   MaximumAmount: 15
   HitpointModifier:
@@ -37,6 +38,12 @@ MonoBehaviour:
   IntervalDeviation: 0
   LootModifiers:
   - Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
+    DifficultyStat:
+      UseBaseValue: 0
+      BaseValue: 0
+      ModifierFromDifficulty: 0.02
+      Deviation: 0
+  - Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c, type: 2}
     DifficultyStat:
       UseBaseValue: 0
       BaseValue: 0

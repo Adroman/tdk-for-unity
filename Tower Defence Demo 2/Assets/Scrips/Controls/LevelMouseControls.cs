@@ -1,3 +1,4 @@
+using Scrips.Modifiers;
 using Scrips.Spells;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ namespace Scrips.Controls
         public CircleRenderer SpellCircle;
 
         public SpellSpawner SpellSpawner;
+
+        public ModifierController ModifierController;
 
         private Collider2D _collider;
 
@@ -106,7 +109,7 @@ namespace Scrips.Controls
             if (option.SelectedTowerPrefab != null)
             {
                 var tile = GetTile(hit);
-                if (tile == _lastTile && _lastTile != null) tile.Build(option.SelectedTowerPrefab.Tower);
+                if (tile == _lastTile && _lastTile != null) tile.Build(option.SelectedTowerPrefab.Tower, ModifierController);
                 else if (_lastTile != null) _lastTile.StopHighlightTile();
             }
 

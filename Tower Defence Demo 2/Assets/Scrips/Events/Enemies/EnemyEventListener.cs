@@ -35,7 +35,7 @@ namespace Scrips.Events.Enemies
 
         private IEnumerator InvokeAfterCaller(EnemyInstance target)
         {
-            Response.Invoke(target);
+            Response?.Invoke(target);
             yield break;
         }
     }

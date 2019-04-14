@@ -37,7 +37,7 @@ namespace Scrips.UI
 
         public void BuildTower(TdTile tile)
         {
-            tile.Build(Tower);
+            tile.Build(Tower, null);
         }
     }
 }

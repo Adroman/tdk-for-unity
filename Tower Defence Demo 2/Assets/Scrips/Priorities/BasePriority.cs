@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Scrips.Priorities
 {
-    public class BasePriority : MonoBehaviour
+    public abstract class BasePriority : ScriptableObject
     {
-        public virtual IOrderedEnumerable<Scrips.EnemyData.Instances.EnemyInstance> Prioritize(IEnumerable<Scrips.EnemyData.Instances.EnemyInstance> enemies)
-        {
-            throw new NotImplementedException("You should not use basePriority");
-        }
+        public abstract IOrderedEnumerable<Scrips.EnemyData.Instances.EnemyInstance> Prioritize(
+            [NoEnumeration] IEnumerable<Scrips.EnemyData.Instances.EnemyInstance> enemies);
     }
 }
 

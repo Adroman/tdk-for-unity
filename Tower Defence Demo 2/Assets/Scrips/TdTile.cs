@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Scrips.Data;
 using Scrips.Instances;
+using Scrips.Modifiers;
 using Scrips.Spells;
 using Scrips.Towers.BaseData;
 using UnityEngine;
@@ -10,7 +11,7 @@ using TileWithDistance = Data.TileWithDistance;
 
 namespace Scrips
 {
-    [Serializable]
+    //[Serializable]
     [ExecuteInEditMode]
     public class TdTile : MonoBehaviour
     {
@@ -234,22 +235,22 @@ namespace Scrips
                 _readyToBuild = true;
         }
         
-        public void Build(TowerData selectedTower)
+        public void Build(TowerData selectedTower, ModifierController modifierController)
         {
             if (_readyToBuild)
             {
                 _readyToBuild = false;
                 if (_currentTower == null)
-                    BuildTower(selectedTower);
+                    BuildTower(selectedTower, modifierController);
                 else
                     _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
             }
         }
 
-        private void BuildTower(TowerData selectedTower)
+        private void BuildTower(TowerData selectedTower, ModifierController modifierController)
         {
             var tower = selectedTower.BuildTower(
-                transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform);
+                transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform, modifierController);
             if (tower == null) return;
             Buildable = false;
             _readyToBuild = false;

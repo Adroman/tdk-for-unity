@@ -6,6 +6,7 @@ using Scrips.CustomTypes;
 using Scrips.EnemyData.Instances;
 using Scrips.Events;
 using Scrips.Events.Enemies;
+using Scrips.Events.Waves;
 using Scrips.UI;
 using Scrips.Variables;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace Scrips.Waves
     {
         public LogLevel LogLevel;
 
-        public GameEvent OnWaveStarted;
+        public WaveEvent OnWaveStarted;
 
         public EnemyEvent OnEnemySpawned;
 
@@ -112,7 +113,7 @@ namespace Scrips.Waves
         {
             if (_nextWaveWaiting != null)
             {
-                StartCoroutine(SpawnWave(_nextWaveWaiting));
+                StartCoroutine(SpawnWave(_nextWaveWaiting, true));
             }
 
             if (_nextWaveWaiting != null)
@@ -138,7 +139,7 @@ namespace Scrips.Waves
 
                 if (waveNumber == _waveNumber)
                 {
-                    StartCoroutine(SpawnWave(_nextWaveWaiting));
+                    StartCoroutine(SpawnWave(_nextWaveWaiting, false));
                     if (_nextWaveWaiting == null) yield break;
                 }
                 else
@@ -148,7 +149,7 @@ namespace Scrips.Waves
             }
         }
 
-        private IEnumerator SpawnWave(Wave wave)
+        private IEnumerator SpawnWave(Wave wave, bool calledEarly)
         {
             _waveNumber++;
             UiWaves.DespawnTopWave();
@@ -156,7 +157,9 @@ namespace Scrips.Waves
             TryGetNextWave(out _nextWaveWaiting);
             if (EnemiesWaiting != null) EnemiesWaiting.Value += wave.WaveClusters.Sum(c => c.Amount);
 
-            if (OnWaveStarted != null) OnWaveStarted.Invoke();
+            wave.CalledEarly = calledEarly;
+
+            if (OnWaveStarted != null) OnWaveStarted.Invoke(wave);
 
             for (int clusterIndex = 0; clusterIndex < wave.WaveClusters.Count; clusterIndex++)
             {
@@ -198,6 +201,7 @@ namespace Scrips.Waves
         {
             var enemy = Instantiate(cluster.Prefab, GameObject.Find("Enemies").transform, spawnpoint);
             enemy.transform.position = spawnpoint.position;
+            enemy.WaveNumber = cluster.WaveNumber;
             enemy.SetSpawnPoint(spawnpoint, true);
             cluster.EnemyData.SetEnemy(enemy, _random);
             if (OnEnemySpawned != null) OnEnemySpawned.Invoke(enemy);

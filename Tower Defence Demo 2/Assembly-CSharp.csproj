@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Box.cs" />
+    <Compile Include="Assets\Scrips\Attributes\BaseAttribute.cs" />
+    <Compile Include="Assets\Scrips\Attributes\EnemyAttribute.cs" />
     <Compile Include="Assets\Scrips\Audio\AudioAnimator.cs" />
     <Compile Include="Assets\Scrips\BaseFilter.cs" />
     <Compile Include="Assets\Scrips\BuffData\BaseBuffData.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Assets\Scrips\CircleRenderer.cs" />
     <Compile Include="Assets\Scrips\Controls\LevelMouseControls.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\Amount.cs" />
+    <Compile Include="Assets\Scrips\CustomTypes\ComparisonType.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\Duration.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\IncreaseType\AdditiveIncreaseType.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\IncreaseType\BaseIncreaseType.cs" />
@@ -107,6 +110,10 @@
     <Compile Include="Assets\Scrips\Events\Enemies\EnemyEventListener.cs" />
     <Compile Include="Assets\Scrips\Events\GameEvent.cs" />
     <Compile Include="Assets\Scrips\Events\GameEventListener.cs" />
+    <Compile Include="Assets\Scrips\Events\Towers\TowerEvent.cs" />
+    <Compile Include="Assets\Scrips\Events\Towers\TowerEventListener.cs" />
+    <Compile Include="Assets\Scrips\Events\Waves\WaveEvent.cs" />
+    <Compile Include="Assets\Scrips\Events\Waves\WaveEventListener.cs" />
     <Compile Include="Assets\Scrips\Extensions\FloatExtensions.cs" />
     <Compile Include="Assets\Scrips\HealthBar.cs" />
     <Compile Include="Assets\Scrips\Instances\BulletInstance.cs" />
@@ -115,6 +122,19 @@
     <Compile Include="Assets\Scrips\LevelConfiguration.cs" />
     <Compile Include="Assets\Scrips\LevelLoader.cs" />
     <Compile Include="Assets\Scrips\MapLevelCollider.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\BaseModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\ModifierController.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\BaseTowerModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerCostModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerFiringSpeedModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerMaxDamageModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerMinDamageModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerNumberOfTargetsModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerRangeModifier.cs" />
+    <Compile Include="Assets\Scrips\Objectives\BaseObjective.cs" />
+    <Compile Include="Assets\Scrips\Objectives\IntVariableObjective.cs" />
+    <Compile Include="Assets\Scrips\Objectives\Rewards\ActivateModifiersReward.cs" />
+    <Compile Include="Assets\Scrips\Objectives\Rewards\BaseReward.cs" />
     <Compile Include="Assets\Scrips\Particles\ParticleSpawner.cs" />
     <Compile Include="Assets\Scrips\PlayerData.cs" />
     <Compile Include="Assets\Scrips\PoolManager.cs" />
@@ -134,6 +154,10 @@
     <Compile Include="Assets\Scrips\Spells\EnemySpell.cs" />
     <Compile Include="Assets\Scrips\Spells\SpellInstance.cs" />
     <Compile Include="Assets\Scrips\Spells\SpellSpawner.cs" />
+    <Compile Include="Assets\Scrips\Statistics\EnemyStatistics.cs" />
+    <Compile Include="Assets\Scrips\Statistics\StatisticsReset.cs" />
+    <Compile Include="Assets\Scrips\Statistics\TowerStatistics.cs" />
+    <Compile Include="Assets\Scrips\Statistics\WaveStatistics.cs" />
     <Compile Include="Assets\Scrips\TdTile.cs" />
     <Compile Include="Assets\Scrips\TowerOption.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerData.cs" />
@@ -173,6 +197,7 @@
     <Compile Include="Assets\Scrips\UI\UiWave.cs" />
     <Compile Include="Assets\Scrips\UI\UiWaveCluster.cs" />
     <Compile Include="Assets\Scrips\UI\UiWaveQueue.cs" />
+    <Compile Include="Assets\Scrips\UI\VariableDisplays\TextIntVariableDisplay.cs" />
     <Compile Include="Assets\Scrips\Utils\DebugUtils.cs" />
     <Compile Include="Assets\Scrips\Utils\Utils.cs" />
     <Compile Include="Assets\Scrips\Utils\VectorUtils.cs" />

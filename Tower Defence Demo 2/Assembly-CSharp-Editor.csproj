@@ -57,6 +57,7 @@
     <Compile Include="Assets\Editor\CustomInspectors\AudioEventCustomInspector.cs" />
     <Compile Include="Assets\Editor\CustomInspectors\BaseEnemyGenerationModifiersInspector.cs" />
     <Compile Include="Assets\Editor\CustomInspectors\ComplexEnemyInstanceCustomInspector.cs" />
+    <Compile Include="Assets\Editor\CustomInspectors\EnemyStatisticsCustomInspector.cs" />
     <Compile Include="Assets\Editor\CustomInspectors\IntVariableCustomInspector.cs" />
     <Compile Include="Assets\Editor\CustomInspectors\LevelConfigurationCustomInspector.cs" />
     <Compile Include="Assets\Editor\CustomInspectors\LevelCustomInspector.cs" />

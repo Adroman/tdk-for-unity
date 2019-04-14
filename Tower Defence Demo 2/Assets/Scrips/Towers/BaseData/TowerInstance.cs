@@ -2,6 +2,8 @@
 using System.Linq;
 using Scrips.EnemyData.Instances;
 using Scrips.Instances;
+using Scrips.Modifiers;
+using Scrips.Modifiers.Towers;
 using Scrips.Priorities;
 using Scrips.Towers.Specials;
 using UnityEngine;
@@ -13,16 +15,78 @@ namespace Scrips.Towers.BaseData
     [RequireComponent(typeof(CircleCollider2D))]
     public class TowerInstance : MonoBehaviour
     {
-        private float ActualRange
+        public float ActualMinDamage
         {
-            get { return Range; }
+            get { return BaseTowerModifier.CalculateModifiedValue<TowerMinDamageModifier>(this, ModifierController); }
+            set
+            {
+                MinDamage = value;
+                LastModifiedMinDamageVersion = null;
+            }
+        }
+
+        public float ActualMaxDamage
+        {
+            get { return BaseTowerModifier.CalculateModifiedValue<TowerMaxDamageModifier>(this, ModifierController); }
+            set
+            {
+                MaxDamage = value;
+                LastModifiedMaxDamageVersion = null;
+            }
+        }
+
+        public float Damage =>
+            ActualMaxDamage > ActualMinDamage
+            ? Random.Range(ActualMinDamage, ActualMaxDamage)
+            : ActualMaxDamage;
+
+        public float ActualFiringSpeed
+        {
+            get { return BaseTowerModifier.CalculateModifiedValue<TowerFiringSpeedModifier>(this, ModifierController); }
+            set
+            {
+                FiringSpeed = value;
+                _cooldown = 1 / BaseTowerModifier.CalculateModifiedValue<TowerFiringSpeedModifier>(this, ModifierController);
+                LastModifiedFiringSpeedVersion = null;
+            }
+        }
+
+        public float ActualRange
+        {
+            get
+            {
+                // Do we need to apply same modifiers? If not, returned the modified value;
+                if (LastModifiedRangeVersion == ModifierController.Version) return ModifiedRange;
+
+                // If yes, update the circle graphics as well
+                BaseTowerModifier.CalculateModifiedValue<TowerRangeModifier>(this, ModifierController);
+                var colliderLocal = GetComponent<CircleCollider2D>();
+                if (colliderLocal != null)
+                {
+                    colliderLocal.radius = ModifiedRange;
+                    SetupCircle();
+                }
+
+                return ModifiedRange;
+            }
             set
             {
                 Range = value;
+                LastModifiedRangeVersion = null;
                 var colliderLocal = GetComponent<CircleCollider2D>();
                 if (colliderLocal == null) return;
-                colliderLocal.radius = Range;
+                colliderLocal.radius = BaseTowerModifier.CalculateModifiedValue<TowerRangeModifier>(this, ModifierController);
                 SetupCircle();
+            }
+        }
+
+        public int ActualNumberOfTargets
+        {
+            get { return (int) BaseTowerModifier.CalculateModifiedValue<TowerNumberOfTargetsModifier>(this, ModifierController); }
+            set
+            {
+                NumberOfTargets = value;
+                LastModifiedNumberOfTargetsVersion = null;
             }
         }
 
@@ -31,14 +95,30 @@ namespace Scrips.Towers.BaseData
         public float MaxDamage;
         public float FiringSpeed;
         public float Range;
+        public int NumberOfTargets;
 
-        public GameObject[] Priorities;
+        // these values should be changed only on modifier's calculation
+        public float ModifiedMinDamage;
+        public float ModifiedMaxDamage;
+        public float ModifiedFiringSpeed;
+        public float ModifiedRange;
+        public int ModifiedNumberOfTargets;
+
+        public BasePriority[] Priorities;
         public GameObject[] Filters;
         public GameObject BulletPrefab;
         public Transform RotationPoint;
         public Transform ShootingPoint;
 
         public List<TowerUpgradeNode> Upgrades = new List<TowerUpgradeNode>();
+
+        public ModifierController ModifierController;
+
+        public int? LastModifiedMinDamageVersion;
+        public int? LastModifiedMaxDamageVersion;
+        public int? LastModifiedFiringSpeedVersion;
+        public int? LastModifiedRangeVersion;
+        public int? LastModifiedNumberOfTargetsVersion;
 
         private LineRenderer _circleRenderer;
         private float _cooldown;
@@ -66,9 +146,9 @@ namespace Scrips.Towers.BaseData
         {
             _circleRenderer = GetComponent<LineRenderer>();
 
-            ActualRange = Range;
+            //ActualRange = Range;
 
-            _cooldown = 1 / FiringSpeed;
+            //_cooldown = 1 / ActualFiringSpeed;
             _cooldownLeft = 0;
 
             _enemiesInRange = new List<EnemyInstance>();
@@ -108,26 +188,32 @@ namespace Scrips.Towers.BaseData
 
             foreach (var priority in Priorities)
             {
-                targets = priority.GetComponent<BasePriority>().Prioritize(targets);
+                targets = priority.Prioritize(targets);
             }
 
-            var target = targets.FirstOrDefault();
+            var finalTargets = targets.Take(ActualNumberOfTargets).ToArray();
 
-            if (target == null)
+            if (finalTargets.Length == 0)    // no valid target
             {
                 _cooldownLeft = 0;
                 return;
             }
 
-            RotateTurret(target.transform);
-            Fire(target);
+            RotateTurret(finalTargets.Select(t => t.transform));
+            foreach (var target in finalTargets)
+            {
+                Fire(target);
+            }
+            _cooldownLeft = _cooldown + _cooldownLeft;
         }
 
-        private void RotateTurret(Transform target)
+        private void RotateTurret(IEnumerable<Transform> targets)
         {
             if (RotationPoint == null) return; // do not rotate
 
-            var vectorToTarget = target.position - transform.position;
+            var vectorsToTarget = targets.Select(t => t.position - transform.position).ToArray();
+
+            var vectorToTarget = new Vector3(vectorsToTarget.Average(v => v.x), vectorsToTarget.Average(v => v.y));
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
             var q = Quaternion.AngleAxis(-angle, Vector3.up);
             RotationPoint.localRotation = Quaternion.Slerp(RotationPoint.rotation, q, 10000 * Time.deltaTime);
@@ -141,14 +227,14 @@ namespace Scrips.Towers.BaseData
 
             var bullet = PoolManager.Spawn(BulletPrefab, shootingPoint.position, transform.rotation, BulletsParent.transform).GetComponent<BulletInstance>();
             bullet.Target = target;
-            bullet.Damage = Random.Range(MinDamage, MaxDamage);
+            bullet.Damage = Damage;
             foreach (var component in GetComponents<SpecialComponent>())
             {
                 var newComponent = (SpecialComponent)bullet.gameObject.AddComponent(component.GetType());
                 component.CopyDataToTargetComponent(newComponent);
             }
             //bullet.SpecialEffect = SpecialEffect; TODO: change it
-            _cooldownLeft = _cooldown + _cooldownLeft;
+            
         }
 
         public void Upgrade(TowerUpgradeNode upgrade)
@@ -165,14 +251,14 @@ namespace Scrips.Towers.BaseData
                 return;
             }
 
-            upgrade.Price.ForEach(p => p.Substract());
+            upgrade.Price.ForEach(p => p.Subtract());
             _upgradesLeft.Remove(upgrade);
 
             Name = string.IsNullOrWhiteSpace(upgrade.NewName) ? Name : upgrade.NewName;
-            MinDamage = upgrade.MinAtkIncrease.Apply(MinDamage);
-            MaxDamage = upgrade.MaxAtkIncrease.Apply(MaxDamage);
-            ActualRange = upgrade.RangeIncrease.Apply(ActualRange);
-            FiringSpeed = upgrade.FiringSpeedIncrease.Apply(FiringSpeed);
+            ActualMinDamage = upgrade.MinAtkIncrease.Apply(MinDamage);
+            ActualMaxDamage = upgrade.MaxAtkIncrease.Apply(MaxDamage);
+            ActualRange = upgrade.RangeIncrease.Apply(Range);
+            ActualFiringSpeed = upgrade.FiringSpeedIncrease.Apply(FiringSpeed);
             foreach (var special in upgrade.SpecialIncreases)
             {
                 var c = special.SpecialType.GetSpecialComponent(gameObject);
@@ -185,6 +271,7 @@ namespace Scrips.Towers.BaseData
                 special.Upgrade(c);
             }
 
+            LastModifiedMinDamageVersion = null;
             _appliedUpgrades.Add(upgrade);
         }
 
@@ -247,6 +334,11 @@ namespace Scrips.Towers.BaseData
 
         private void SetupCircle()
         {
+            if (_circleRenderer == null)
+            {
+                LastModifiedRangeVersion = null;
+                return;
+            }
             int vertices = 100;
             float radius = ActualRange;
             float deltaTheta = 2 * Mathf.PI / vertices;
@@ -265,6 +357,7 @@ namespace Scrips.Towers.BaseData
         public void ShowRangeCircle()
         {
             if (_circleRenderer == null) return;
+            var range = ActualRange;    // this will trigger the modified range calculation
             _circleRenderer.enabled = true;
         }
 

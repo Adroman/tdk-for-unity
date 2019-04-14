@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Scrips.Attributes;
 using Scrips.BuffData;
 using Scrips.Data;
 using Scrips.EnemyData.Triggers;
@@ -15,6 +16,8 @@ namespace Scrips.EnemyData.Instances
     [RequireComponent(typeof(BaseTriggers))]
     public class EnemyInstance : MonoBehaviour
     {
+        public List<EnemyAttribute> Attributes;
+
         public float Hitpoints;
         public float Armor;
         public float Speed;
@@ -42,6 +45,8 @@ namespace Scrips.EnemyData.Instances
 
         [NonSerialized]
         public float InitialSpeed;
+
+        public int WaveNumber;
 
         protected BaseTriggers TriggersComponent;        // we need this for sure
 
@@ -82,7 +87,7 @@ namespace Scrips.EnemyData.Instances
             Speed = InitialSpeed;
             Armor = InitialArmor;
             Hitpoints = InitialHitpoints;
-            
+
             ActiveDebuffs.Clear();
         }
 
@@ -90,12 +95,12 @@ namespace Scrips.EnemyData.Instances
         private void Update ()
         {
             // direction
-            var thispos = transform.position;
-            thispos.z = 0;
-            var thatpos = _target.transform.position;
-            thatpos.z = 0;
+            var thisPosition = transform.position;
+            thisPosition.z = 0;
+            var thatPosition = _target.transform.position;
+            thatPosition.z = 0;
 
-            var dir = thatpos - thispos;
+            var dir = thatPosition - thisPosition;
 
             // distance to target
             float distanceLeft = dir.magnitude;
@@ -116,12 +121,12 @@ namespace Scrips.EnemyData.Instances
                 var nextTargets = _target.GetComponent<TdTile>().NextTiles;
                 _target = nextTargets[GetRandom(0, nextTargets.Count)].gameObject;
 
-                thispos = transform.position;
-                thispos.z = 0;
-                thatpos = _target.transform.position;
-                thatpos.z = 0;
+                thisPosition = transform.position;
+                thisPosition.z = 0;
+                thatPosition = _target.transform.position;
+                thatPosition.z = 0;
 
-                dir = thatpos - thispos;
+                dir = thatPosition - thisPosition;
                 distanceLeft = dir.magnitude;
             }
 
@@ -146,14 +151,31 @@ namespace Scrips.EnemyData.Instances
 
         private void TargetReached()
         {
+            if (TriggersComponent != null) TriggersComponent.OnFinish.Invoke(this);
+
             // take life, drain mana, grab item
-            if (--ScoreManager.Instance.Lives <= 0)
-            {
+            //if (--ScoreManager.Instance.Lives <= 0)
+            //{
                 // Game over
-            }
+            //}
 
             // destroy
-            Destroy(gameObject);
+            //Destroy(gameObject);
+        }
+
+        public void Despawn(EnemyInstance target)
+        {
+            if (this == target)
+                Destroy(gameObject);
+        }
+
+        public void TeleportToStart(EnemyInstance target)
+        {
+            if (this == target)
+            {
+                transform.position = new Vector3(_spawnpoint.position.x, _spawnpoint.position.y);
+                SetSpawnPoint(_spawnpoint, true);
+            }
         }
 
         public void SetSpawnPoint(Transform sp, bool move)
@@ -173,11 +195,11 @@ namespace Scrips.EnemyData.Instances
         {
             foreach (var tile in tdTiles)
             {
-                var thispos = transform.position;
-                thispos.z = 0;
-                var thatpos = tile.transform.position;
-                thatpos.z = 0;
-                if ((thispos - thatpos).magnitude < 0.0001f)
+                var thisPosition = transform.position;
+                thisPosition.z = 0;
+                var thatPosition = tile.transform.position;
+                thatPosition.z = 0;
+                if ((thisPosition - thatPosition).magnitude < 0.0001f)
                 {
                     return tile;
                 }
@@ -201,7 +223,7 @@ namespace Scrips.EnemyData.Instances
             ScoreManager.Instance.Lives -= amount;
             foreach (var punishment in IntPunishments)
             {
-                punishment.Substract();
+                punishment.Subtract();
             }
         }
 

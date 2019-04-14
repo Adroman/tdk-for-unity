@@ -15,6 +15,7 @@ namespace Scrips.Waves
         public bool SpawnWithPreviousCluster;
         public int Difficulty;
         public int DifficultyPerMonster;
+        public int WaveNumber;
 
         [Range(0, 1)]
         public float IntervalDeviation;

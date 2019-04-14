@@ -47,7 +47,7 @@ namespace Scrips.Waves
         public float TestRatio;
         public string TestRandomSeed;
 
-        public WaveCluster GenerateCluster(int baseDifficulty, float ratio, System.Random rand = null)
+        public WaveCluster GenerateCluster(int baseDifficulty, float ratio, int waveNumber, System.Random rand = null)
         {
             if (rand == null) rand = new System.Random();
 
@@ -77,6 +77,7 @@ namespace Scrips.Waves
                 Prefab = PrefabToUse,
                 IntervalDeviation = IntervalDeviation,
                 SpawnWithPreviousCluster = false,
+                WaveNumber = waveNumber,
                 EnemyData = new EnemyWaveData
                 {
                     InitialHitpoints = initialHp,

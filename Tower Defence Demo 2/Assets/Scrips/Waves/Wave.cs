@@ -12,6 +12,8 @@ namespace Scrips.Waves
         public int Countdown;
         public List<WaveCluster> WaveClusters = new List<WaveCluster>();
         public List<Transform> Spawnpoints = new List<Transform>();
+        public int WaveNumber;
+        public bool CalledEarly;
 
         public Transform GetRandomSpawnpoint(int clusterIndex, System.Random random)
         {

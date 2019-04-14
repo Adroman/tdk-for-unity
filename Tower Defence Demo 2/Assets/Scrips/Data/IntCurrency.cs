@@ -25,7 +25,7 @@ namespace Scrips.Data
             Variable.Value += Amount;
         }
 
-        public void Substract()
+        public void Subtract()
         {
             Variable.Value -= Amount;
         }

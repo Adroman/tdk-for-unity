@@ -26,8 +26,11 @@ namespace Scrips.UI
 
         private bool _paused;
 
+        private bool _pausingEnabled;
+
         public void Pause()
         {
+            if (!_pausingEnabled) return;
             Time.timeScale = 0;
             InGameUi.gameObject.SetActive(false);
             PauseUi.gameObject.SetActive(true);
@@ -36,6 +39,7 @@ namespace Scrips.UI
 
         public void Unpause()
         {
+            if (!_pausingEnabled) return;
             Time.timeScale = 1;
             PauseUi.gameObject.SetActive(false);
             InGameUi.gameObject.SetActive(true);
@@ -57,6 +61,7 @@ namespace Scrips.UI
         private void Start()
         {
             _paused = false;
+            _pausingEnabled = true;
         }
 
         private void Update()
@@ -68,6 +73,26 @@ namespace Scrips.UI
                     keyEvent.Response.Invoke();
                 }
             }
+        }
+
+        public void SwitchToVictoryUi()
+        {
+            _pausingEnabled = false;
+            Time.timeScale = 0;
+            InGameUi.gameObject.SetActive(false);
+            PauseUi.gameObject.SetActive(false);
+            DefeatUi.gameObject.SetActive(false);
+            VictoryUi.gameObject.SetActive(true);
+        }
+
+        public void SwitchToDefeatUi()
+        {
+            _pausingEnabled = false;
+            Time.timeScale = 0;
+            InGameUi.gameObject.SetActive(false);
+            PauseUi.gameObject.SetActive(false);
+            VictoryUi.gameObject.SetActive(false);
+            DefeatUi.gameObject.SetActive(true);
         }
     }
 }

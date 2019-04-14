@@ -20,7 +20,7 @@ namespace Editor.CustomInspectors
             {
                 var rand = new System.Random(_target.TestRandomSeed.GetHashCode());
 
-                var generatedCluster = _target.GenerateCluster(_target.TestDifficulty, _target.TestRatio, rand);
+                var generatedCluster = _target.GenerateCluster(_target.TestDifficulty, _target.TestRatio, 1, rand);
 
                 var builder = new StringBuilder()
                     .Append("Test Cluster: ").AppendLine()
