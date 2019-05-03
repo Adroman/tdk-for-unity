@@ -28,13 +28,13 @@ namespace Editor.EditorToolsMenu
 
         static SquareHandle()
         {
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
-            SceneView.onSceneGUIDelegate += OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
+            SceneView.duringSceneGui += OnSceneGUI;
         }
 
         void OnDestroy()
         {
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
         }
 
         static void OnSceneGUI(SceneView sceneView)

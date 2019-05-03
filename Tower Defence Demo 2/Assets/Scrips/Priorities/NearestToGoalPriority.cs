@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Scrips.Priorities
 {
-    [CreateAssetMenu(menuName = "Towers/Priorities/Nearest to goal")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Towers/Priorities/Nearest to goal")]
     public class NearestToGoalPriority : BasePriority
     {
         public override IOrderedEnumerable<Scrips.EnemyData.Instances.EnemyInstance> Prioritize(

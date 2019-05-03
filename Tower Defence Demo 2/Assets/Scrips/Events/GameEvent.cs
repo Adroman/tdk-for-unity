@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scrips.Events
 {
-    [CreateAssetMenu(menuName = "Events/Game event", order = 0)]
+    [CreateAssetMenu(menuName = "Tower defense kit/Events/Game event", order = 0)]
     public class GameEvent : ScriptableObject
     {
         private List<GameEventListener> _listeners = new List<GameEventListener>();

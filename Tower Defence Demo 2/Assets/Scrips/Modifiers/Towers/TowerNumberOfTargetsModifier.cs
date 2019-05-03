@@ -14,5 +14,15 @@ namespace Scrips.Modifiers.Towers
 
         public override void SetLastModifiedVersion(TowerInstance tower, int value) =>
             tower.LastModifiedNumberOfTargetsVersion = value;
+
+        public override float GetBaseAmount(TowerUiData tower) => tower.BaseTowerData.NumberOfTargets;
+
+        public override float GetModifiedAmount(TowerUiData tower) => tower.ModifiedNumberOfTargets;
+
+        public override void SetModifiedAmount(TowerUiData tower, float value) => tower.ModifiedNumberOfTargets = (int) value;
+
+        public override int? GetLastModifiedVersion(TowerUiData tower) => tower.LastModifiedNumberOfTargetsVersion;
+
+        public override void SetLastModifiedVersion(TowerUiData tower, int value) => tower.LastModifiedNumberOfTargetsVersion = value;
     }
 }

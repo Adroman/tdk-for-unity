@@ -1,4 +1,5 @@
 ﻿using Scrips.Variables;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ namespace Scrips.UI
 
         public Text TextToUse;
 
+        public TextMeshProUGUI TmpTextToUse;
+
         public string Prefix;
 
         public string Postfix;
@@ -24,6 +27,11 @@ namespace Scrips.UI
                 ImageToUse.color = Variable.IconColor;
             }
 
+            if (TmpTextToUse != null)
+            {
+                UpdateTmpText();
+            }
+            
             if (TextToUse != null)
             {
                 UpdateText();
@@ -33,6 +41,11 @@ namespace Scrips.UI
         public void UpdateText()
         {
             TextToUse.text = $"{Prefix}{Variable.Value}{Postfix}";
+        }
+
+        public void UpdateTmpText()
+        {
+            TmpTextToUse.text = $"{Prefix}{Variable.Value}{Postfix}";
         }
     }
 }

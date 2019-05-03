@@ -2,7 +2,7 @@
 
 namespace Scrips.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Tower defense kit/Tile Color")]
     public class TileColor : ScriptableObject
     {
         public Color EditorColor;

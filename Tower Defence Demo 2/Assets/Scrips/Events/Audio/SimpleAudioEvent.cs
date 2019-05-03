@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scrips.Events.Audio
 {
-    [CreateAssetMenu(menuName = "Audio Events/Simple", order = 0)]
+    [CreateAssetMenu(menuName = "Tower defense kit/Audio Events/Simple", order = 0)]
     public class SimpleAudioEvent : AudioEvent
     {
         [HideInInspector] public List<AudioClip> AudioClips = new List<AudioClip>();

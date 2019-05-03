@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scrips.Spells
 {
-    [CreateAssetMenu(menuName = "Spells/Drain Spell")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Spells/Drain Spell")]
     public class DrainSpell : EnemySpell
     {
         [Range(0, 1)]

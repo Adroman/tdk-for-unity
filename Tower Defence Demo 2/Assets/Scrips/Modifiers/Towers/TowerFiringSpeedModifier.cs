@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scrips.Modifiers.Towers
 {
-    [CreateAssetMenu(menuName = "Modifiers/Tower/Firing speed modifier")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Modifiers/Tower/Firing speed modifier")]
     public class TowerFiringSpeedModifier : BaseTowerModifier
     {
         public override float GetBaseAmount(TowerInstance tower) => tower.FiringSpeed;
@@ -16,5 +16,15 @@ namespace Scrips.Modifiers.Towers
 
         public override void SetLastModifiedVersion(TowerInstance tower, int value) =>
             tower.LastModifiedFiringSpeedVersion = value;
+
+        public override float GetBaseAmount(TowerUiData tower) => tower.BaseTowerData.FiringSpeed;
+
+        public override float GetModifiedAmount(TowerUiData tower) => tower.ModifiedFiringSpeed;
+
+        public override void SetModifiedAmount(TowerUiData tower, float value) => tower.ModifiedFiringSpeed = value;
+
+        public override int? GetLastModifiedVersion(TowerUiData tower) => tower.LastModifiedFiringSpeedVersion;
+
+        public override void SetLastModifiedVersion(TowerUiData tower, int value) => tower.LastModifiedFiringSpeedVersion = value;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Scrips.CustomTypes.Prerequisites
 {
-    [CreateAssetMenu(menuName = "Prerequisites/Int/All")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Prerequisites/Int/All")]
     public class AllAmountRequired : AmountRequired
     {
         public override bool MeetsTheRequirement(

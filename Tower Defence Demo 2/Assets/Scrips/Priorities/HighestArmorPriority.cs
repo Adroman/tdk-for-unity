@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Scrips.Priorities
 {
-    [CreateAssetMenu(menuName = "Towers/Priorities/Highest armor")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Towers/Priorities/Highest armor")]
     public class HighestArmorPriority : BasePriority
     {
         public override IOrderedEnumerable<Scrips.EnemyData.Instances.EnemyInstance> Prioritize(

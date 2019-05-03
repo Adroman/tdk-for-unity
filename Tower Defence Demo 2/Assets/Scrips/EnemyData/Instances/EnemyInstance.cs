@@ -220,7 +220,7 @@ namespace Scrips.EnemyData.Instances
 
         public void TakeLife(int amount)
         {
-            ScoreManager.Instance.Lives -= amount;
+            //ScoreManager.Instance.Lives -= amount;
             foreach (var punishment in IntPunishments)
             {
                 punishment.Subtract();

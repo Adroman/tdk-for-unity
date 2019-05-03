@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scrips.Events.Waves
 {
-    [CreateAssetMenu(menuName = "Events/Wave event")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Events/Wave event")]
     public class WaveEvent : ScriptableObject
     {
         private readonly List<WaveEventListener> _listeners = new List<WaveEventListener>();

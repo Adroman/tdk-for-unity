@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Scrips.Waves
 {
-    [CreateAssetMenu(menuName = "Data/Enemy Generation Data")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Data/Enemy Generation Data")]
     public class BaseEnemyGenerationModifiers : ScriptableObject
     {
         public EnemyInstance PrefabToUse;

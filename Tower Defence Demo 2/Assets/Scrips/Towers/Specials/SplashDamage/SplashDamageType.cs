@@ -2,7 +2,7 @@
 
 namespace Scrips.Towers.Specials.SplashDamage
 {
-    [CreateAssetMenu(menuName = "Tower Specials/Splash damage")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Tower Specials/Splash damage")]
     public class SplashDamageType : SpecialType
     {
         public float SplashRadius;

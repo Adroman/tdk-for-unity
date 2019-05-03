@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Scrips.Towers.BaseData
 {
-    [CreateAssetMenu(menuName = "Tower Upgrades/Basic")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Tower Upgrades/Basic")]
     public class TowerUpgradeNode : ScriptableObject
     {
         public string NewName;

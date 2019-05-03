@@ -109,7 +109,7 @@ namespace Scrips.Controls
             if (option.SelectedTowerPrefab != null)
             {
                 var tile = GetTile(hit);
-                if (tile == _lastTile && _lastTile != null) tile.Build(option.SelectedTowerPrefab.Tower, ModifierController);
+                if (tile == _lastTile && _lastTile != null) tile.Build(option.SelectedTowerPrefab.Tower);
                 else if (_lastTile != null) _lastTile.StopHighlightTile();
             }
 

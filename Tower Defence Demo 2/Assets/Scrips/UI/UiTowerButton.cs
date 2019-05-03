@@ -6,7 +6,7 @@ namespace Scrips.UI
 {
     public class UiTowerButton : MonoBehaviour
     {
-        public TowerData Tower;
+        public TowerUiData Tower;
         public Image ButtonImage;
         public Image SelectedTowerImage;
         public UiTowerPreBuildInfo UiInfo;
@@ -14,13 +14,13 @@ namespace Scrips.UI
         public void SelectTower()
         {
             SelectedTowerOption.Option.SelectedTowerPrefab = this;
-            SelectedTowerImage.sprite = Tower.PreviewSprite;
+            SelectedTowerImage.sprite = Tower.BaseTowerData.PreviewSprite;
             SelectedTowerImage.color = Color.white;
         }
 
         private void Start()
         {
-            ButtonImage.sprite = Tower.PreviewSprite;
+            ButtonImage.sprite = Tower.BaseTowerData.PreviewSprite;
         }
 
         public void ShowInfo()
@@ -37,7 +37,7 @@ namespace Scrips.UI
 
         public void BuildTower(TdTile tile)
         {
-            tile.Build(Tower, null);
+            tile.Build(Tower);
         }
     }
 }

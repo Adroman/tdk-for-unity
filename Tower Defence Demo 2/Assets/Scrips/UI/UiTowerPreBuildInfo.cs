@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using Scrips.Towers.BaseData;
 using Scrips.Towers.Specials;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace Scrips.UI
 {
     public class UiTowerPreBuildInfo : MonoBehaviour
     {
-        public TowerData Tower;
+        public TowerUiData Tower;
 
         public Text Name;
         public Text Damage;
@@ -19,18 +20,18 @@ namespace Scrips.UI
 
         private void Start()
         {
-            Name.text = Tower.TowerName;
-            Damage.text = $"Damage: {Tower.MinDamage} - {Tower.MaxDamage}";
-            FiringSpeed.text = $"Firing speed: {Tower.FiringSpeed}";
-            Range.text = $"Range: {Tower.Range}";
+            Name.text = Tower.BaseTowerData.TowerName;
+            Damage.text = $"Damage: {Tower.ActualMinDamage} - {Tower.ActualMaxDamage}";
+            FiringSpeed.text = $"Firing speed: {Tower.ActualFiringSpeed}";
+            Range.text = $"Range: {Tower.ActualRange}";
 
-            foreach (var special in Tower.Specials)
+            foreach (var special in Tower.BaseTowerData.Specials)
             {
                 var uiSpecial = Instantiate(Specials.PrefabsToGenerate, Specials.transform);
                 StartCoroutine(UpdateTextAfterFrame(uiSpecial, special));
             }
 
-            Price.InitValue(Tower.Price[0]);
+            Price.InitValue(Tower.GetModifiedPrice().First());
         }
 
         private IEnumerator UpdateTextAfterFrame(UiSpecialText uiSpecial, SpecialType special)

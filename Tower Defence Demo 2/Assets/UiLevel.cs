@@ -17,7 +17,7 @@ public class UiLevel : MonoBehaviour
     public void LoadLevel()
     {
         PlayerData.Counter++;
-        return;
+        //return;
         
         
         if (Fader != null)

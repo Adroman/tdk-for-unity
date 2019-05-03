@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scrips.Events.Towers
 {
-    [CreateAssetMenu(menuName = "Events/Tower event")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Events/Tower event")]
     public class TowerEvent : ScriptableObject
     {
         private readonly List<TowerEventListener> _listeners = new List<TowerEventListener>();

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scrips.Towers.Specials.ReduceArmor
 {
-    [CreateAssetMenu(menuName = "Tower Specials/Reduce Armor")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Tower Specials/Reduce Armor")]
     public class ReduceArmorType : SpecialType
     {
         public float Amount;

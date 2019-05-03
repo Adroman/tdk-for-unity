@@ -2,7 +2,7 @@
 
 namespace Scrips.Variables
 {
-    [CreateAssetMenu(menuName = "Variables/Float variable")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Variables/Float variable")]
     public class FloatVariable : Variable<float>
     {
     }

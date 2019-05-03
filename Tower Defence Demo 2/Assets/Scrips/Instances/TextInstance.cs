@@ -1,4 +1,5 @@
 ﻿using Scrips.Variables;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ namespace Scrips.Instances
 
 		private Text _textField;
 
+		private TextMeshProUGUI _tmpTextField;
+
 		public IntReference ValueData;
 
 
@@ -17,11 +20,13 @@ namespace Scrips.Instances
 		void Awake ()
 		{
 			_textField = GetComponent<Text>();
+			_tmpTextField = GetComponent<TextMeshProUGUI>();
 		}
 
 		public void UpdateTextValue()
 		{
-			_textField.text = Prefix + ValueData.Value;
+			if (_tmpTextField != null) _tmpTextField.text = Prefix + ValueData.Value;
+			if (_textField != null) _textField.text = Prefix + ValueData.Value;
 		}
 	}
 }

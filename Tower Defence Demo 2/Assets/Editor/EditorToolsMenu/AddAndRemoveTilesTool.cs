@@ -60,13 +60,13 @@ namespace Editor.EditorToolsMenu
 
         static AddAndRemoveTilesTool()
         {
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
-            SceneView.onSceneGUIDelegate += OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
+            SceneView.duringSceneGui += OnSceneGUI;
         }
 
         void OnDestroy()
         {
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
         }
 
         private static void OnSceneGUI(SceneView sceneView)

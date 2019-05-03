@@ -14,4 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:Scrips.Modifiers:TowerCostModifier
   Amount: -0.2
   IncreaseType: {fileID: 11400000, guid: ad7b3f23cd115654aa272d770a891b41, type: 2}
-  Currency: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}

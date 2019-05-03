@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scrips.Events.Enemies
 {
-    [CreateAssetMenu(menuName = "Events/Enemy event", order = 10)]
+    [CreateAssetMenu(menuName = "Tower defense kit/Events/Enemy event", order = 10)]
     public class EnemyEvent : ScriptableObject
     {
         private readonly List<EnemyEventListener> _listeners = new List<EnemyEventListener>();

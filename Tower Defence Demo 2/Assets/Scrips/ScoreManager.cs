@@ -10,8 +10,7 @@ namespace Scrips
 {
     public class ScoreManager : MonoBehaviour
     {
-        public int InitialGold;
-        public int InitialLives;
+        public LevelConfiguration Configuration;
 
         public IntVariable WaveIndex;
         public IntVariable GoldAmount;
@@ -27,42 +26,14 @@ namespace Scrips
 
         public UiController Ui;
 
-        public static ScoreManager Instance { get; private set; }
-
-        public int Gold
-        {
-            get { return GoldAmount.Value; }
-            set
-            {
-                GoldAmount.Value = value;
-            }
-        }
-
-        public int Lives
-        {
-            get { return LivesAmount.Value; }
-            set
-            {
-                LivesAmount.Value = value;
-            }
-        }
-
-        public int Wave
-        {
-            get { return WaveIndex.Value; }
-            set
-            {
-                WaveIndex.Value = value;
-            }
-        }
-
         // Use this for initialization
-        void Start ()
+        private void Start ()
         {
-            Instance = this;
-            Gold = InitialGold;
-            Lives = InitialLives;
-            Wave = 1;
+            foreach (var resource in Configuration.StartingResources)
+            {
+                resource.SetToAmount();
+            }
+            WaveIndex.Value = 1;
         }
 
         public void CheckVictory()

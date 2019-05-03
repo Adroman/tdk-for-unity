@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scrips.Towers.Specials.SplashDamage
 {
-    [CreateAssetMenu(menuName = "Tower Upgrades/Splash Damage")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Tower Upgrades/Splash Damage")]
     public class SplashDamageUpgrade : SpecialUpgrade
     {
         public BaseIncreaseType RadiusIncrease;

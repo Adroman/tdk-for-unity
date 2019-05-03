@@ -19,6 +19,8 @@ public class TestScript : MonoBehaviour
 
     public TowerInstance Tower;
 
+    public IntPlayerStatRecord[] SomeValues;
+
     public void TestAvailableUpgrades()
     {
         TowerUpgradeNode first = null;
@@ -31,4 +33,11 @@ public class TestScript : MonoBehaviour
         
         if (first != null) Tower.Upgrade(first);
     }
+}
+
+[Serializable]
+public class IntPlayerStatRecord
+{
+    public IntVariable Variable;
+    public int SavedValue;
 }

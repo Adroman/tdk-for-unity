@@ -235,22 +235,23 @@ namespace Scrips
                 _readyToBuild = true;
         }
         
-        public void Build(TowerData selectedTower, ModifierController modifierController)
+        public void Build(TowerUiData selectedTower)
         {
             if (_readyToBuild)
             {
                 _readyToBuild = false;
                 if (_currentTower == null)
-                    BuildTower(selectedTower, modifierController);
+                    BuildTower(selectedTower);
                 else
                     _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
             }
         }
 
-        private void BuildTower(TowerData selectedTower, ModifierController modifierController)
+        private void BuildTower(TowerUiData selectedTower)
         {
-            var tower = selectedTower.BuildTower(
-                transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform, modifierController);
+            var tower = selectedTower.BaseTowerData.BuildTower(
+                transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform,
+                selectedTower);
             if (tower == null) return;
             Buildable = false;
             _readyToBuild = false;

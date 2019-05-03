@@ -39,5 +39,10 @@ namespace Scrips.Data
         {
             return Variable.Value >= Amount;
         }
+
+        public void SetToAmount()
+        {
+            Variable.Value = Amount;
+        }
     }
 }

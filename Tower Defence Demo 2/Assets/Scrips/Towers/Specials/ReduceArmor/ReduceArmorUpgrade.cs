@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scrips.Towers.Specials.ReduceArmor
 {
-    [CreateAssetMenu(menuName = "Tower Upgrades/Reduce Armor")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Tower Upgrades/Reduce Armor")]
     public class ReduceArmorUpgrade : SpecialUpgrade
     {
         public BaseIncreaseType ChanceIncreaseType;

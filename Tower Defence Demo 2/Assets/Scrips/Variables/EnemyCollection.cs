@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Scrips.Variables
 {
     [Serializable]
-    [CreateAssetMenu(menuName = "Collections/Enemies collection")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Collections/Enemies collection")]
     public class EnemyCollection : RuntimeCollection<EnemyInstance>
     {
     }

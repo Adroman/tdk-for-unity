@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Scrips.CustomTypes.Prerequisites
 {
-    [CreateAssetMenu(menuName = "Prerequisites/Int/Set amount")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Prerequisites/Int/Set amount")]
     public class SetAmountRequired : AmountRequired
     {
         public int RequiredAmount;

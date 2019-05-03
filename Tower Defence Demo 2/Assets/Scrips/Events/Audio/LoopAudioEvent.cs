@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Scrips.Events.Audio
 {
-    [CreateAssetMenu(menuName = "Audio Events/Loop", order = 10)]
+    [CreateAssetMenu(menuName = "Tower defense kit/Audio Events/Loop", order = 10)]
     public class LoopAudioEvent : ScriptableObject
     {
         public LogLevel LogLevel;

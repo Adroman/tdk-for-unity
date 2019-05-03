@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Scrips.UI
 {
-    [CreateAssetMenu(menuName = "UI/Skin data")]
+    [CreateAssetMenu(menuName = "Tower defense kit/UI/Skin data")]
     public class UiSkinData : ScriptableObject
     {
         public Sprite ButtonSprite;

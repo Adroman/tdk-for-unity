@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Adrián\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Adrián\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Adrián\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Adrián\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
     <e p="C:\Users\Adrián\OneDrive\Programming\Tower Defense Kit For Unity\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -12,6 +12,7 @@
           <e p="CustomInspectors" t="Include">
             <e p="AudioEventCustomInspector.cs" t="Include" />
             <e p="BaseEnemyGenerationModifiersInspector.cs" t="Include" />
+            <e p="BaseModifierCustomInspector.cs" t="Include" />
             <e p="ComplexEnemyInstanceCustomInspector.cs" t="Include" />
             <e p="EnemyStatisticsCustomInspector.cs" t="Include" />
             <e p="IntVariableCustomInspector.cs" t="Include" />
@@ -92,6 +93,10 @@
           <e p="Data" t="Include">
             <e p="Currency.cs" t="Include" />
             <e p="FloatIncrease.cs" t="Include" />
+            <e p="Formula" t="Include">
+              <e p="BaseFormula.cs" t="Include" />
+              <e p="SimpleExponentialFormula.cs" t="Include" />
+            </e>
             <e p="Goal.cs" t="Include" />
             <e p="IntCountdown.cs" t="Include" />
             <e p="IntCurrency.cs" t="Include" />
@@ -105,6 +110,7 @@
               <e p="TileWithDistance.cs" t="Include" />
             </e>
             <e p="TileData.cs" t="Include" />
+            <e p="TileDatabase.cs" t="Include" />
           </e>
           <e p="Direction.cs" t="Include" />
           <e p="EnemyData" t="Include">
@@ -157,6 +163,10 @@
           <e p="MapLevelCollider.cs" t="Include" />
           <e p="Modifiers" t="Include">
             <e p="BaseModifier.cs" t="Include" />
+            <e p="Currency" t="Include">
+              <e p="ModifiedCurrency.cs" t="Include" />
+            </e>
+            <e p="ModifiedAmount.cs" t="Include" />
             <e p="ModifierController.cs" t="Include" />
             <e p="Towers" t="Include">
               <e p="BaseTowerModifier.cs" t="Include" />
@@ -215,6 +225,7 @@
             <e p="BaseData" t="Include">
               <e p="TowerData.cs" t="Include" />
               <e p="TowerInstance.cs" t="Include" />
+              <e p="TowerUiData.cs" t="Include" />
               <e p="TowerUpgradeNode.cs" t="Include" />
             </e>
             <e p="Specials" t="Include">
@@ -302,14 +313,81 @@
           </e>
         </e>
         <e p="TestScript.cs" t="Include" />
+        <e p="TextMesh Pro" t="Include">
+          <e p="Examples &amp; Extras" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="Anton OFL.txt" t="Include" />
+              <e p="Bangers - OFL.txt" t="Include" />
+              <e p="Oswald-Bold - OFL.txt" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Benchmark01.cs" t="Include" />
+              <e p="Benchmark01_UGUI.cs" t="Include" />
+              <e p="Benchmark02.cs" t="Include" />
+              <e p="Benchmark03.cs" t="Include" />
+              <e p="Benchmark04.cs" t="Include" />
+              <e p="CameraController.cs" t="Include" />
+              <e p="ChatController.cs" t="Include" />
+              <e p="EnvMapAnimator.cs" t="Include" />
+              <e p="ObjectSpin.cs" t="Include" />
+              <e p="ShaderPropAnimator.cs" t="Include" />
+              <e p="SimpleScript.cs" t="Include" />
+              <e p="SkewTextExample.cs" t="Include" />
+              <e p="TeleType.cs" t="Include" />
+              <e p="TextConsoleSimulator.cs" t="Include" />
+              <e p="TextMeshProFloatingText.cs" t="Include" />
+              <e p="TextMeshSpawner.cs" t="Include" />
+              <e p="TMP_DigitValidator.cs" t="Include" />
+              <e p="TMP_ExampleScript_01.cs" t="Include" />
+              <e p="TMP_FrameRateCounter.cs" t="Include" />
+              <e p="TMP_PhoneNumberValidator.cs" t="Include" />
+              <e p="TMP_TextEventCheck.cs" t="Include" />
+              <e p="TMP_TextEventHandler.cs" t="Include" />
+              <e p="TMP_TextInfoDebugTool.cs" t="Include" />
+              <e p="TMP_TextSelector_A.cs" t="Include" />
+              <e p="TMP_TextSelector_B.cs" t="Include" />
+              <e p="TMP_UiFrameRateCounter.cs" t="Include" />
+              <e p="TMPro_InstructionOverlay.cs" t="Include" />
+              <e p="VertexColorCycler.cs" t="Include" />
+              <e p="VertexJitter.cs" t="Include" />
+              <e p="VertexShakeA.cs" t="Include" />
+              <e p="VertexShakeB.cs" t="Include" />
+              <e p="VertexZoom.cs" t="Include" />
+              <e p="WarpTextExample.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
         <e p="UILevel.cs" t="Include" />
       </e>
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Tower Defence Demo 2.sln" t="IncludeFlat" />
     </e>
   </component>

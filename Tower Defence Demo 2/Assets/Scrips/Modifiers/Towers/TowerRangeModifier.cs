@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scrips.Modifiers.Towers
 {
-    [CreateAssetMenu(menuName = "Modifiers/Tower/Range modifier")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Modifiers/Tower/Range modifier")]
     public class TowerRangeModifier : BaseTowerModifier
     {
         public override float GetBaseAmount(TowerInstance tower) => tower.Range;
@@ -16,5 +16,15 @@ namespace Scrips.Modifiers.Towers
 
         public override void SetLastModifiedVersion(TowerInstance tower, int value) =>
             tower.LastModifiedRangeVersion = value;
+
+        public override float GetBaseAmount(TowerUiData tower) => tower.BaseTowerData.Range;
+
+        public override float GetModifiedAmount(TowerUiData tower) => tower.ModifiedRange;
+
+        public override void SetModifiedAmount(TowerUiData tower, float value) => tower.ModifiedRange = value;
+
+        public override int? GetLastModifiedVersion(TowerUiData tower) => tower.LastModifiedRangeVersion;
+
+        public override void SetLastModifiedVersion(TowerUiData tower, int value) => tower.LastModifiedRangeVersion = value;
     }
 }

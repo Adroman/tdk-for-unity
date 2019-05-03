@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Scrips.Towers.BaseData
 {
-    [CreateAssetMenu(menuName = "Towers/Tower data")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Towers/Tower data")]
     public class TowerData : ScriptableObject
     {
         public string TowerName;
@@ -32,19 +32,25 @@ namespace Scrips.Towers.BaseData
 
         public TowerEvent OnTowerBuilt;
 
-        public TowerInstance BuildTower(Vector3 position, Quaternion rotation, Transform parent, ModifierController modifierController)
+        public TowerInstance BuildTower(
+            Vector3 position,
+            Quaternion rotation,
+            Transform parent,
+            TowerUiData data)
         {
-            if (!Price.All(p => p.HasEnough()))
+            var modifiedPrice = data.GetModifiedPrice().ToList();
+
+            if (!modifiedPrice.All(p => p.HasEnough()))
             {
                 // not enough resources
                 return null;
             }
 
-            Price.ForEach(p => p.Subtract());
+            modifiedPrice.ForEach(p => p.Subtract());
 
             var tower = Instantiate(Prefab, position, rotation, parent);
             tower.Name = TowerName;
-            tower.ModifierController = modifierController;
+            tower.ModifierController = data.ModifierController;
             tower.ActualMinDamage = MinDamage;
             tower.ActualMaxDamage = MaxDamage;
             tower.ActualFiringSpeed = FiringSpeed;

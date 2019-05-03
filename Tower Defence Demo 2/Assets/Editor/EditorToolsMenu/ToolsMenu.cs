@@ -43,8 +43,8 @@ namespace Editor.EditorToolsMenu
 
         static ToolsMenu()
         {
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
-            SceneView.onSceneGUIDelegate += OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
+            SceneView.duringSceneGui += OnSceneGUI;
 
             EditorApplication.hierarchyChanged -= OnSceneChanged;
             EditorApplication.hierarchyChanged += OnSceneChanged;
@@ -52,7 +52,7 @@ namespace Editor.EditorToolsMenu
 
         void Destroy()
         {
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
 
             EditorApplication.hierarchyChanged -= OnSceneChanged;
         }

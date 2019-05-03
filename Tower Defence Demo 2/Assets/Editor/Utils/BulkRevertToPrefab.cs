@@ -14,7 +14,7 @@ namespace Utils
             {
                 foreach (var t in selection)
                 {
-                    PrefabUtility.RevertPrefabInstance(t);
+                    PrefabUtility.RevertPrefabInstance(t, InteractionMode.UserAction);
                 }
             }
             else

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scrips.Modifiers.Towers
 {
-    [CreateAssetMenu(menuName = "Modifiers/Tower/Minimum damage modifier")]
+    [CreateAssetMenu(menuName = "Tower defense kit/Modifiers/Tower/Minimum damage modifier")]
     public class TowerMinDamageModifier : BaseTowerModifier
     {
         public override float GetBaseAmount(TowerInstance tower) => tower.MinDamage;
@@ -16,5 +16,15 @@ namespace Scrips.Modifiers.Towers
 
         public override void SetLastModifiedVersion(TowerInstance tower, int value) =>
             tower.LastModifiedMinDamageVersion = value;
+
+        public override float GetBaseAmount(TowerUiData tower) => tower.BaseTowerData.MinDamage;
+
+        public override float GetModifiedAmount(TowerUiData tower) => tower.ModifiedMinDamage;
+
+        public override void SetModifiedAmount(TowerUiData tower, float value) => tower.ModifiedMinDamage = value;
+
+        public override int? GetLastModifiedVersion(TowerUiData tower) => tower.LastModifiedMinDamageVersion;
+
+        public override void SetLastModifiedVersion(TowerUiData tower, int value) => tower.LastModifiedMinDamageVersion = value;
     }
 }
