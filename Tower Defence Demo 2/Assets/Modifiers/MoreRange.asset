@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb99ba377a748948d46c38327c4c735, type: 3}
   m_Name: MoreRange
   m_EditorClassIdentifier: 
+  Level: 1
   Amount: 0.1
   IncreaseType: {fileID: 11400000, guid: ad7b3f23cd115654aa272d770a891b41, type: 2}

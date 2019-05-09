@@ -1,4 +1,5 @@
 ﻿using System.Runtime.Serialization.Formatters;
+using Scrips.Data;
 using Scrips.EnemyData.Instances;
 using Scrips.Events;
 using Scrips.Instances;
@@ -18,6 +19,7 @@ namespace Scrips
 
         public IntVariable ActiveEnemies;
         public IntVariable WaitingEnemies;
+        public IntVariable Score;
         public BooleanVariable LastWave;
 
         public GameEvent OnWaveIndexChanged;
@@ -25,6 +27,8 @@ namespace Scrips
         public GameEvent OnLivesAmountChanged;
 
         public UiController Ui;
+
+        private PlayerData _playerData;
 
         // Use this for initialization
         private void Start ()
@@ -34,6 +38,7 @@ namespace Scrips
                 resource.SetToAmount();
             }
             WaveIndex.Value = 1;
+            _playerData = PlayerData.ActivePlayer;
         }
 
         public void CheckVictory()
@@ -44,6 +49,33 @@ namespace Scrips
             }
         }
 
+        public void ReturnToMap(bool victory)
+        {
+            if (victory)
+            {
+                var newScore = new IntCurrency
+                {
+                    Variable = _playerData.TotalScore.Variable,
+                    Amount = Score.Value
+                };
+
+                var diff = _playerData.SetOrAddScore(Configuration, newScore);
+
+                int playerLevel = _playerData.PlayerLevel;
+                
+                _playerData.TotalScore.Amount += diff.Amount;
+
+                while (_playerData.TotalScore.Amount >= _playerData.ScoreFormula.GetLevelRequirement(playerLevel))
+                {
+                    playerLevel++;
+                }
+
+                _playerData.PlayerLevel = playerLevel;
+            }
+            Time.timeScale = 1;
+            GetComponent<UiLevel>().LoadLevel();
+        }
+        
         public void GameOver()
         {
             Ui.SwitchToDefeatUi();

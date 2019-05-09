@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Level Up Formula
   m_EditorClassIdentifier: 
   Exponent: 1.5
-  BaseValue: 2000
+  BaseValue: 1000

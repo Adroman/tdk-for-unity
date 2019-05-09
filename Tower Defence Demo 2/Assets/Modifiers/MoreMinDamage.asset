@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5bf12b8e224195a58dae80deab97a9, type: 3}
   m_Name: MoreMinDamage
   m_EditorClassIdentifier: Assembly-CSharp:Scrips.Modifiers:TowerDamageModifier
+  Level: 1
   Amount: 0.1
   IncreaseType: {fileID: 11400000, guid: ad7b3f23cd115654aa272d770a891b41, type: 2}

@@ -4,11 +4,27 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f1c4508612940b581817f0e3941b48d, type: 3}
   m_Name: pd
   m_EditorClassIdentifier: 
-  Counter: 0
+  PlayerLevel: 2
+  TotalScore:
+    Amount: 1071
+    Variable: {fileID: 11400000, guid: 5fbaf9fcb453ca8489d37c517b6eac49, type: 2}
+  TotalEnemiesKilled:
+    Amount: 0
+    Variable: {fileID: 11400000, guid: aa62f4e47ad55d847a39ea1b2fe87d41, type: 2}
+  TotalTowersBuilt:
+    Amount: 0
+    Variable: {fileID: 11400000, guid: 1de3d206eff951449b374a9c79b904cd, type: 2}
+  CompletedLevels:
+  - Level: {fileID: 11400000, guid: b7253e8c84d35f548837147dd58a88d0, type: 2}
+    HighestScore:
+      Amount: 1071
+      Variable: {fileID: 11400000, guid: 5fbaf9fcb453ca8489d37c517b6eac49, type: 2}
+  ScoreFormula: {fileID: 11400000, guid: e85f208ed4b867f4e87216c1b3f2bd32, type: 2}

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Adrián\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Adrián\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Adrián\OneDrive\Programming\Tower Defense Kit For Unity\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
+    <e p="C:\coding\tdkfu\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -12,6 +10,7 @@
           <e p="CustomInspectors" t="Include">
             <e p="AudioEventCustomInspector.cs" t="Include" />
             <e p="BaseEnemyGenerationModifiersInspector.cs" t="Include" />
+            <e p="BaseFormulaCustomInspector.cs" t="Include" />
             <e p="BaseModifierCustomInspector.cs" t="Include" />
             <e p="ComplexEnemyInstanceCustomInspector.cs" t="Include" />
             <e p="EnemyStatisticsCustomInspector.cs" t="Include" />
@@ -47,6 +46,7 @@
           </e>
         </e>
         <e p="Scrips" t="Include">
+          <e p="ActivePlayer.cs" t="Include" />
           <e p="Attributes" t="Include">
             <e p="BaseAttribute.cs" t="Include" />
             <e p="EnemyAttribute.cs" t="Include" />
@@ -153,11 +153,13 @@
             <e p="FloatExtensions.cs" t="Include" />
           </e>
           <e p="HealthBar.cs" t="Include" />
+          <e p="HighestScorePerLevel.cs" t="Include" />
           <e p="Instances" t="Include">
             <e p="BulletInstance.cs" t="Include" />
             <e p="TextInstance.cs" t="Include" />
           </e>
           <e p="Level.cs" t="Include" />
+          <e p="LevelCompletionCheck.cs" t="Include" />
           <e p="LevelConfiguration.cs" t="Include" />
           <e p="LevelLoader.cs" t="Include" />
           <e p="MapLevelCollider.cs" t="Include" />
@@ -383,13 +385,15 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
-        <e p="UILevel.cs" t="Include" />
+        <e p="UiLevel.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Tower Defence Demo 2.sln" t="IncludeFlat" />
     </e>
+    <e p="C:\Users\adria\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\adria\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Tower Defence Demo 2.1548570228.00" t="ExcludeRecursive" />
   </component>
   <component name="RiderRiderContentModelStore">
     <excludedPaths>

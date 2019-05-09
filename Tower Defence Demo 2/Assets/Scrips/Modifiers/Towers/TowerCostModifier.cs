@@ -66,9 +66,9 @@ namespace Scrips.Modifiers.Towers
                 if (desiredModifier != null)
                 {
                     if (desiredModifier.IncreaseType is MultiplicativeIncreaseType)
-                        percentageAmount += desiredModifier.Amount;
+                        percentageAmount += desiredModifier.Amount * desiredModifier.Level;
                     else if (desiredModifier.IncreaseType is AdditiveIncreaseType)
-                        flatAmount += desiredModifier.Amount;
+                        flatAmount += desiredModifier.Amount * desiredModifier.Level;
                 }
             }
 
