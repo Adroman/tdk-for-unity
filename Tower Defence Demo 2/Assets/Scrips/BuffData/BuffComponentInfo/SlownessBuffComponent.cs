@@ -1,4 +1,5 @@
 ﻿using Scrips.CustomTypes;
+using Scrips.CustomTypes.IncreaseType;
 using Scrips.EnemyData.Instances;
 
 namespace Scrips.BuffData.BuffComponentInfo
@@ -7,14 +8,15 @@ namespace Scrips.BuffData.BuffComponentInfo
     {
         public float SpeedAmount;
 
-        public bool PercentageAmount;
+        public BaseIncreaseType AmountType;
 
         public override BaseBuffData CreateBuff(EnemyInstance target)
         {
             return new SlownessBuffData(
                 target,
-                InfiniteDuration ? CustomTypes.Duration.UntilDeath(target) : CustomTypes.Duration.FromFixedTime(Duration),
-                PercentageAmount ? Amount.Percenatage(SpeedAmount) : Amount.Flat(SpeedAmount));
+                SpeedAmount,
+                AmountType,
+                InfiniteDuration ? float.PositiveInfinity : Duration);
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Scrips.Data;
 using Scrips.EnemyData.Instances;
+using Scrips.Modifiers;
+using Scrips.Modifiers.Currency;
 using UnityEngine;
 
 namespace Scrips.Waves
@@ -27,14 +29,36 @@ namespace Scrips.Waves
 
         public List<IntCurrency> IntPunishments;
 
-        public virtual void SetEnemy(EnemyInstance enemy, System.Random random)
+        public virtual void SetEnemy(EnemyInstance enemy, ModifierController modifierController, System.Random random)
         {
-            enemy.InitialHitpoints = Utils.Utils.GetDeviatedValue(InitialHitpoints, HitpointsDeviation, random);
-            enemy.InitialArmor = Utils.Utils.GetDeviatedValue(InitialArmor, ArmorDeviation, random);
-            enemy.InitialSpeed = Utils.Utils.GetDeviatedValue(InitialSpeed, SpeedDeviation, random);
+            // import modifiers
 
-            enemy.IntLoot = new List<IntCurrency>(IntLoots);
-            enemy.IntPunishments = new List<IntCurrency>(IntPunishments);
+            enemy.InitialHitpoints.Value = Utils.Utils.GetDeviatedValue(InitialHitpoints, HitpointsDeviation, random);
+            enemy.InitialArmor.Value = Utils.Utils.GetDeviatedValue(InitialArmor, ArmorDeviation, random);
+            enemy.InitialSpeed.Value = Utils.Utils.GetDeviatedValue(InitialSpeed, SpeedDeviation, random);
+
+            enemy.IntLoot = new List<ModifiedCurrency>();
+            enemy.IntPunishments = new List<ModifiedCurrency>();
+
+            foreach (var intLoot in IntLoots)
+            {
+                var modLoot = new ModifiedCurrency();
+                modLoot.Currency = intLoot;
+                // import modifiers
+                modLoot.Amount.Value = intLoot.Amount;
+                enemy.IntLoot.Add(modLoot);
+            }
+
+            foreach (var intPunishment in IntPunishments)
+            {
+                var modPunishment = new ModifiedCurrency();
+                modPunishment.Currency = intPunishment;
+                // import modifiers
+                modPunishment.Amount.Value = intPunishment.Amount;
+                enemy.IntPunishments.Add(modPunishment);
+            }
+
+            modifierController.ImportModifiers(enemy);
         }
     }
 }

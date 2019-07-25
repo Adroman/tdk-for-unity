@@ -1,20 +1,34 @@
 using System;
 using Scrips.Data;
+using Scrips.Modifiers.Stats;
 
 namespace Scrips.Modifiers.Currency
 {
-    [System.Serializable]
+    [Serializable]
     public class ModifiedCurrency
     {
         public IntCurrency Currency;
 
-        public int? LastModifiedVersion;
+        public IntModifiableStat Amount;
 
-        public int ModifiedAmount;
-
-        public int GetModifiedValue(Func<int> calculation)
+        public ModifiedCurrency()
         {
-            return calculation();
+            Amount = new IntModifiableStat();
+        }
+
+        public void Add()
+        {
+            Currency.Variable.Value += Amount.Value;
+        }
+
+        public void Subtract()
+        {
+            Currency.Variable.Value -= Amount.Value;
+        }
+
+        public bool HasEnough()
+        {
+            return Currency.Variable.Value >= Amount.Value;
         }
     }
 }

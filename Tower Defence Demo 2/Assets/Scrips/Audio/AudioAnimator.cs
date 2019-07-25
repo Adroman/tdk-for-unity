@@ -9,6 +9,7 @@ namespace Scrips.Audio
         private AudioSource _source;
 
         private Animator _animator;
+        private static readonly int FadeOut = Animator.StringToHash("FadeOut");
 
         private void OnEnable()
         {
@@ -18,7 +19,7 @@ namespace Scrips.Audio
 
         public void TurnOffAudio()
         {
-            _animator.SetTrigger("FadeOut");
+            _animator.SetTrigger(FadeOut);
         }
     }
 }

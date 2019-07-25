@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Scrips.Instances;
+using Scrips.Modifiers.Stats;
 using Scrips.Towers.BaseData;
 using Scrips.Variables;
 using Scrips.Waves;
@@ -9,6 +10,8 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
+    public FloatModifiableStat Stat = new FloatModifiableStat();
+    
     public IntVariable Lives;
 
     public IntVariable Gold;

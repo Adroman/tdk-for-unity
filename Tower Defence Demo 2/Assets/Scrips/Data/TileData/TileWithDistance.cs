@@ -1,16 +1,17 @@
-﻿using UnityEngine;
+﻿using Scrips;
+using UnityEngine;
 
 namespace Data
 {
     public class TileWithDistance
     {
-        public GameObject gameObject;
-        public float distance;
+        public readonly TdTile Tile;
+        public readonly float Distance;
 
-        public TileWithDistance(GameObject go, float distance)
+        public TileWithDistance(TdTile tile, float distance)
         {
-            gameObject = go;
-            this.distance = distance;
+            Tile = tile;
+            Distance = distance;
         }
     }
 }

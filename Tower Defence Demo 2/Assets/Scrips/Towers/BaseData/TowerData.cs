@@ -51,11 +51,12 @@ namespace Scrips.Towers.BaseData
             var tower = Instantiate(Prefab, position, rotation, parent);
             tower.Name = TowerName;
             tower.ModifierController = data.ModifierController;
-            tower.ActualMinDamage = MinDamage;
-            tower.ActualMaxDamage = MaxDamage;
+            tower.ModifierController.ImportModifiers(tower);
+            tower.MinDamage.Value = MinDamage;
+            tower.MaxDamage.Value = MaxDamage;
             tower.ActualFiringSpeed = FiringSpeed;
             tower.ActualRange = Range;
-            tower.ActualNumberOfTargets = NumberOfTargets;
+            tower.NumberOfTargets.Value = NumberOfTargets;
             tower.Upgrades = Upgrades.ToList();
             foreach (var special in Specials)
             {

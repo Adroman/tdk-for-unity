@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b50c06ae2c49109904819e4652c087, type: 3}
+  m_Name: Frost
+  m_EditorClassIdentifier: 
+  TowerName: 
+  Prefab: {fileID: 8002297372219925914, guid: c4de6baa75d67bd42a9d45bd91774350, type: 3}
+  MinDamage: 1
+  MaxDamage: 3
+  FiringSpeed: 1
+  Range: 3
+  NumberOfTargets: 1
+  Specials:
+  - {fileID: 11400000, guid: ce2c7aff0f0b6c043b31b02ceba5d240, type: 2}
+  Upgrades: []
+  Price:
+  - Amount: 20
+    Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
+  PreviewSprite: {fileID: 21300000, guid: 9fc5cb6651cc68e409532f8356b8ec8e, type: 3}
+  OnTowerBuilt: {fileID: 11400000, guid: a71cba6b40214454589bb14a06c36636, type: 2}

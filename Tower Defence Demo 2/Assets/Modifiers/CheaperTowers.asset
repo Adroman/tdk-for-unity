@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: CheaperTowers
   m_EditorClassIdentifier: Assembly-CSharp:Scrips.Modifiers:TowerCostModifier
   Level: 1
-  Amount: -0.2
+  Amount: -0.08
   IncreaseType: {fileID: 11400000, guid: ad7b3f23cd115654aa272d770a891b41, type: 2}
+  BlackList: []
+  WhiteList: []

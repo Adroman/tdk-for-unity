@@ -17,7 +17,7 @@ namespace Scrips.SpecialEffects
             }
 
             var buff = Buff.CreateBuff(target);
-            buff.ActivateEffect();
+            buff.Activate();
         }
     }
 }

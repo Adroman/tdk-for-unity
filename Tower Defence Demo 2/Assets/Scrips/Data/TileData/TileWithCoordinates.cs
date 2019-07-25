@@ -1,28 +1,29 @@
 ﻿using System;
+using Scrips;
 using UnityEngine;
 
 namespace Data
 {
     public class TileWithCoordinates : IEquatable<TileWithCoordinates>
     {
-        public readonly GameObject gameObject;
-        public readonly int x;
-        public readonly int y;
+        public readonly TdTile Tile;
+        public readonly int X;
+        public readonly int Y;
 
-        public TileWithCoordinates(int x, int y, GameObject go)
+        public TileWithCoordinates(int x, int y, TdTile tile)
         {
-            gameObject = go;
-            this.x = x;
-            this.y = y;
+            Tile = tile;
+            X = x;
+            Y = y;
         }
 
         public bool Equals(TileWithCoordinates other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return gameObject == other.gameObject
-                   && x == other.x
-                   && y == other.y;
+            return Tile == other.Tile
+                   && X == other.X
+                   && Y == other.Y;
         }
 
         public override bool Equals(object obj)
@@ -34,9 +35,9 @@ namespace Data
         {
             unchecked
             {
-                int hashCode = (gameObject != null ? gameObject.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ x;
-                hashCode = (hashCode * 397) ^ y;
+                int hashCode = (Tile != null ? Tile.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ X;
+                hashCode = (hashCode * 397) ^ Y;
                 return hashCode;
             }
         }

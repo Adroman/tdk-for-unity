@@ -7,6 +7,7 @@ using Scrips.EnemyData.Instances;
 using Scrips.Events;
 using Scrips.Events.Enemies;
 using Scrips.Events.Waves;
+using Scrips.Modifiers;
 using Scrips.UI;
 using Scrips.Variables;
 using UnityEngine;
@@ -30,6 +31,8 @@ namespace Scrips.Waves
         public IntVariable WaveIndex;
 
         public BooleanVariable LastWave;
+
+        public ModifierController ModifierController;
 
         public int QueueLength;
 
@@ -203,7 +206,7 @@ namespace Scrips.Waves
             enemy.transform.position = spawnpoint.position;
             enemy.WaveNumber = cluster.WaveNumber;
             enemy.SetSpawnPoint(spawnpoint, true);
-            cluster.EnemyData.SetEnemy(enemy, _random);
+            cluster.EnemyData.SetEnemy(enemy, ModifierController, _random);
             if (OnEnemySpawned != null) OnEnemySpawned.Invoke(enemy);
             if (EnemiesWaiting != null) EnemiesWaiting.Value--;
         }

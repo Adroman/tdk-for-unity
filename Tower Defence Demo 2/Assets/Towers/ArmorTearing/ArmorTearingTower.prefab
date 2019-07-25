@@ -144,16 +144,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95aa188028ffc441832b7cb536f2441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MinDamage:
+    _baseValue: 0
+    _modifiedValue: 0
+    _isDirty: 0
+  MaxDamage:
+    _baseValue: 0
+    _modifiedValue: 0
+    _isDirty: 0
+  FiringSpeed:
+    _baseValue: 0
+    _modifiedValue: 0
+    _isDirty: 0
+  Range:
+    _baseValue: 0
+    _modifiedValue: 0
+    _isDirty: 0
+  NumberOfTargets:
+    _baseValue: 0
+    _modifiedValue: 0
+    _isDirty: 0
   Name: 
-  MinDamage: 0
-  MaxDamage: 0
-  FiringSpeed: 0
-  Range: 0
-  NumberOfTargets: 0
-  ModifiedMinDamage: 0
-  ModifiedMaxDamage: 0
-  ModifiedFiringSpeed: 0
-  ModifiedRange: 0
   ModifiedNumberOfTargets: 0
   Priorities:
   - {fileID: 11400000, guid: c0c6f57172ec6924eb85014a9822e9a0, type: 2}
@@ -165,6 +176,7 @@ MonoBehaviour:
   ShootingPoint: {fileID: 4914038436506044}
   Upgrades: []
   ModifierController: {fileID: 0}
+  TowerCollection: {fileID: 11400000, guid: c2903d913bb3a6c439e3fa68b3893a81, type: 2}
 --- !u!58 &58578588570720596
 CircleCollider2D:
   m_ObjectHideFlags: 0

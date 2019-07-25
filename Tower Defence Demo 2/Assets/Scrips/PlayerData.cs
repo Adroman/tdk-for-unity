@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Scrips.Data;
 using Scrips.Data.Formula;
+using Scrips.Skills;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,7 +13,9 @@ namespace Scrips
         public static PlayerData ActivePlayer;
 
         public int PlayerLevel;
-            
+
+        public IntCurrency SkillPoints;
+
         public IntCurrency TotalScore;
 
         public IntCurrency TotalEnemiesKilled;
@@ -22,6 +25,8 @@ namespace Scrips
         public List<HighestScorePerLevel> CompletedLevels;
 
         public BaseFormula ScoreFormula;
+
+        public List<PlayerSkill> Skills;
 
         public HighestScorePerLevel GetLevelOrDefault(LevelConfiguration level)
         {

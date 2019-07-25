@@ -7,7 +7,7 @@ namespace Scrips.Modifiers
     {
         [Min(1)]
         public int Level;
-        
+
         public float Amount;
 
         public BaseIncreaseType IncreaseType;
@@ -15,7 +15,5 @@ namespace Scrips.Modifiers
 
 
 
-    public abstract class BaseEnemyModifer : BaseModifier
-    {
-    }
+
 }

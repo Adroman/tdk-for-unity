@@ -6,6 +6,8 @@ using Scrips.BuffData;
 using Scrips.Data;
 using Scrips.EnemyData.Triggers;
 using Scrips.Extensions;
+using Scrips.Modifiers.Currency;
+using Scrips.Modifiers.Stats;
 using Scrips.Variables;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,8 +24,8 @@ namespace Scrips.EnemyData.Instances
         public float Armor;
         public float Speed;
 
-        public List<IntCurrency> IntLoot;
-        public List<IntCurrency> IntPunishments;
+        public List<ModifiedCurrency> IntLoot;
+        public List<ModifiedCurrency> IntPunishments;
 
         public Image HealthImage;
 
@@ -33,24 +35,34 @@ namespace Scrips.EnemyData.Instances
 
         public List<BaseBuffData> ActiveDebuffs = new List<BaseBuffData>();
 
-        private GameObject _target;
+        private TdTile _target;
         private Transform _spawnpoint;
         private Rigidbody2D _rigidbody;
 
-        [NonSerialized]
-        public float InitialHitpoints;
+        //[NonSerialized]
+        public FloatModifiableStat InitialHitpoints;
 
-        [NonSerialized]
-        public float InitialArmor;
+        //[NonSerialized]
+        public FloatModifiableStat InitialArmor;
 
-        [NonSerialized]
-        public float InitialSpeed;
+        //[NonSerialized]
+        public FloatModifiableStat InitialSpeed;
 
         public int WaveNumber;
 
         protected BaseTriggers TriggersComponent;        // we need this for sure
 
+        private TdTile[] _tiles;
+
         public float DistanceToGoal => _target.GetComponent<TdTile>().DistanceToGoal + (transform.position - _target.transform.position).magnitude;
+
+        private void Awake()
+        {
+            _tiles = GameObject.Find("Tiles").GetComponentsInChildren<TdTile>();
+            InitialHitpoints = new FloatModifiableStat();
+            InitialArmor = new FloatModifiableStat();
+            InitialSpeed = new FloatModifiableStat();
+        }
 
         private void OnEnable()
         {
@@ -74,19 +86,17 @@ namespace Scrips.EnemyData.Instances
             TriggersComponent = GetComponent<BaseTriggers>();
             _rigidbody = GetComponent<Rigidbody2D>();
 
-            var a = GameObject.Find("Tiles");
-            var b = a.GetComponentsInChildren<TdTile>();
-            var firstTargets = FindNearestTile(b).NextTiles;
-            _target = firstTargets[GetRandom(0, firstTargets.Count)].gameObject;
+            var firstTargets = FindNearestTile(_tiles).NextTiles;
+            _target = firstTargets[GetRandom(0, firstTargets.Count)];
 
             ResetStats();
         }
 
         private void ResetStats()
         {
-            Speed = InitialSpeed;
-            Armor = InitialArmor;
-            Hitpoints = InitialHitpoints;
+            Speed = InitialSpeed.Value;
+            Armor = InitialArmor.Value;
+            Hitpoints = InitialHitpoints.Value;
 
             ActiveDebuffs.Clear();
         }
@@ -112,14 +122,14 @@ namespace Scrips.EnemyData.Instances
                 //transform.Translate(dir.normalized * distanceToTravel, Space.World);
                 distanceToTravel -= distanceLeft;
 
-                if (_target.GetComponent<TdTile>().IsGoal)
+                if (_target.IsGoal)
                 {
                     TargetReached();
                     return;
                 }
 
-                var nextTargets = _target.GetComponent<TdTile>().NextTiles;
-                _target = nextTargets[GetRandom(0, nextTargets.Count)].gameObject;
+                var nextTargets = _target.NextTiles;
+                _target = nextTargets[GetRandom(0, nextTargets.Count)];
 
                 thisPosition = transform.position;
                 thisPosition.z = 0;
@@ -132,8 +142,6 @@ namespace Scrips.EnemyData.Instances
 
             foreach (var activeDebuff in ActiveDebuffs.ToArray())
             {
-                if (!activeDebuff.IsActive) ActiveDebuffs.Remove(activeDebuff);
-
                 activeDebuff.Update(Time.deltaTime);
             }
 
@@ -151,16 +159,7 @@ namespace Scrips.EnemyData.Instances
 
         private void TargetReached()
         {
-            if (TriggersComponent != null) TriggersComponent.OnFinish.Invoke(this);
-
-            // take life, drain mana, grab item
-            //if (--ScoreManager.Instance.Lives <= 0)
-            //{
-                // Game over
-            //}
-
-            // destroy
-            //Destroy(gameObject);
+            if (TriggersComponent.HasOnFinishTrigger) TriggersComponent.OnFinish.Invoke(this);
         }
 
         public void Despawn(EnemyInstance target)
@@ -181,13 +180,12 @@ namespace Scrips.EnemyData.Instances
         public void SetSpawnPoint(Transform sp, bool move)
         {
             _spawnpoint = sp;
+            var position = sp.position;
             if (move)
             {
-                var a = GameObject.Find("Tiles");
-                var b = a.GetComponentsInChildren<TdTile>();
-                var firstTargets = FindNearestTile(b).NextTiles;
-                transform.position = new Vector3(sp.position.x, sp.position.y);
-                _target = firstTargets[GetRandom(0, firstTargets.Count)].gameObject;
+                var firstTargets = FindNearestTile(_tiles).NextTiles;
+                transform.position = new Vector3(position.x, position.y);
+                _target = firstTargets[GetRandom(0, firstTargets.Count)];
             }
         }
 
@@ -204,6 +202,7 @@ namespace Scrips.EnemyData.Instances
                     return tile;
                 }
             }
+            // ReSharper disable once Unity.PerformanceCriticalCodeInvocation - this is a special case, which is not supposed to happen
             Debug.LogError($"Invalid position {transform.position}");
             return null;
         }
@@ -229,7 +228,7 @@ namespace Scrips.EnemyData.Instances
 
         private void Die()
         {
-            if (TriggersComponent.OnDeath != null) TriggersComponent.OnDeath.Invoke(this);
+            if (TriggersComponent.HasOnDeathTrigger) TriggersComponent.OnDeath.Invoke(this);
 
             Destroy(gameObject);
         }
@@ -238,29 +237,13 @@ namespace Scrips.EnemyData.Instances
         {
             Hitpoints -= Math.Max(amount - (ignoreArmor ? 0 : Armor), 0);
             UpdateHealthbar();
-            // apply specialEffects
-            if (Hitpoints <= 0)
-                Die();
-        }
-
-        public void TakeCumulutativeDamage(float dps, bool ignoreArmor, float deltaTime)
-        {
-            float trueAmount = dps * deltaTime;
-
-            if (ignoreArmor)
-            {
-                // magic with armor
-            }
-
-            Hitpoints -= trueAmount;
-            UpdateHealthbar();
             if (Hitpoints <= 0)
                 Die();
         }
 
         private void UpdateHealthbar()
         {
-            HealthImage.fillAmount = InitialHitpoints > 0 ? Hitpoints / InitialHitpoints : 0;
+            HealthImage.fillAmount = InitialHitpoints.Value > 0 ? Hitpoints / InitialHitpoints.Value : 0;
         }
 
         public void ReduceArmor(float amount)
@@ -273,23 +256,6 @@ namespace Scrips.EnemyData.Instances
         {
             if (rand == null) rand = new System.Random();
             return (float)rand.NextDouble() * (maximum - minimum) + minimum;
-        }
-
-        public void CalculateCurrentSpeed()
-        {
-            float minimumSpeed = InitialSpeed;
-            foreach (var speedDebuff in ActiveDebuffs.OfType<SlownessBuffData>())
-            {
-                if (!speedDebuff.IsActive)
-                {
-                    ActiveDebuffs.Remove(speedDebuff);
-                }
-
-                float speedFromThisDebuff = InitialSpeed.Substract(speedDebuff.Amount);
-                minimumSpeed = Mathf.Min(minimumSpeed, speedFromThisDebuff);
-            }
-
-            Speed = minimumSpeed;
         }
     }
 }

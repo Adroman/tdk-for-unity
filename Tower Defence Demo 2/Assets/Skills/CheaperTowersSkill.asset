@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acf1a0d5aa94d5c8f7c2562a26111cc, type: 3}
+  m_Name: CheaperTowersSkill
+  m_EditorClassIdentifier: 
+  Name: Cheaper towers
+  DescriptionFormat: 'Towers are {0} % cheaper to build and upgrade.
+
+    Enemies give {1} % more gold when killed.'
+  DisplayNegatedAmount: 1
+  DisplayMultipliedBy100: 1
+  SkillRequirements: []
+  PlayerLevelRequirement: 0
+  Modifiers:
+  - Modifier: {fileID: 11400000, guid: d8e4a4af389f109458b879523b96393d, type: 2}
+    PerLevelsApplied: 1
+  - Modifier: {fileID: 11400000, guid: 551a5296fafe24a4b94aa96c890f7d0c, type: 2}
+    PerLevelsApplied: 3
+  LevelCostFormula: {fileID: 11400000, guid: 4810a981417d6f644856f6122426e6c4, type: 2}
+  MaxLevel: 10

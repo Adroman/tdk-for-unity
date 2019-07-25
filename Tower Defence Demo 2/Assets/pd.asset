@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: pd
   m_EditorClassIdentifier: 
   PlayerLevel: 2
+  SkillPoints:
+    Amount: 160
+    Variable: {fileID: 0}
   TotalScore:
     Amount: 1071
     Variable: {fileID: 11400000, guid: 5fbaf9fcb453ca8489d37c517b6eac49, type: 2}
@@ -28,3 +31,6 @@ MonoBehaviour:
       Amount: 1071
       Variable: {fileID: 11400000, guid: 5fbaf9fcb453ca8489d37c517b6eac49, type: 2}
   ScoreFormula: {fileID: 11400000, guid: e85f208ed4b867f4e87216c1b3f2bd32, type: 2}
+  Skills:
+  - Skill: {fileID: 11400000, guid: 775b2720228b7924b8e192f7667df9ab, type: 2}
+    Level: 0

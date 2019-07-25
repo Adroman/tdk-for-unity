@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Goal
   m_EditorClassIdentifier: 
   Name: Goal
-  Prefab: {fileID: 1589357322978538, guid: 3263ea60a245f8e40a4cab04747acd5c, type: 3}
+  Prefab: {fileID: 114107984357474068, guid: 3263ea60a245f8e40a4cab04747acd5c, type: 3}

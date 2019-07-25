@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Scrips.Attributes;
 using Scrips.EnemyData.Instances;
 
 namespace Scrips.BuffData.BuffComponentInfo
@@ -14,14 +16,14 @@ namespace Scrips.BuffData.BuffComponentInfo
         public override BaseBuffData CreateBuff(EnemyInstance target)
         {
             if (TotalAmount && InfiniteDuration)
-                throw new InvalidOperationException("Cannot use total posion damage if we don't know how long it lasts.");
+                throw new InvalidOperationException("Cannot use total poison damage if we don't know how long it lasts.");
 
             if (InfiniteDuration)
-                return PoisonBuffData.FromDps(target, PoisonAmount, CustomTypes.Duration.UntilDeath(target));
+                return PoisonBuffData.FromDps(target, PoisonAmount, float.PositiveInfinity);
 
             return TotalAmount
                 ? PoisonBuffData.FromTotalDamage(target, PoisonAmount, Duration)
-                : PoisonBuffData.FromDps(target, PoisonAmount, CustomTypes.Duration.FromFixedTime(Duration));
+                : PoisonBuffData.FromDps(target, PoisonAmount, Duration);
         }
     }
 }

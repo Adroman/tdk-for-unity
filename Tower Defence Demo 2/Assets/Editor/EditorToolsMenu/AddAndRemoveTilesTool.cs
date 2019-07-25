@@ -35,14 +35,8 @@ namespace Editor.EditorToolsMenu
 
         public static int SelectedTile
         {
-            get
-            {
-                return EditorPrefs.GetInt("EditorSelectedTile", 0);
-            }
-            set
-            {
-                EditorPrefs.SetInt("EditorSelectedTile", value);
-            }
+            get => EditorPrefs.GetInt("EditorSelectedTile", 0);
+            set => EditorPrefs.SetInt("EditorSelectedTile", value);
         }
 
         private static TileDatabase TileDatabase
@@ -161,10 +155,12 @@ namespace Editor.EditorToolsMenu
             int actualX = Mathf.FloorToInt(position.x - minX);
             int actualY = Mathf.FloorToInt(position.y - minY);
 
-            var newTile = (GameObject)PrefabUtility.InstantiatePrefab(LevelProperty.GetComponent<Level>().TilePrefab);
-            newTile.transform.parent = LevelProperty.transform.Find("Tiles");
+            var newTile = (TdTile)PrefabUtility.InstantiatePrefab(LevelProperty.GetComponent<Level>().TilePrefab);
+            var newTileTransform = newTile.transform;
+            
+            newTileTransform.parent = GameObject.Find("Tiles").transform;
 
-            newTile.transform.position = new Vector3(position.x, position.y, 1);
+            newTileTransform.position = new Vector3(position.x, position.y, 1);
             //newTile.transform.localScale = new Vector3(7, 7, 1);
 
             if (levelComponent[actualX, actualY] != null)
@@ -180,25 +176,22 @@ namespace Editor.EditorToolsMenu
             UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
         }
 
-        private static void CreateSpecialPoints(GameObject tile)
+        private static void CreateSpecialPoints(TdTile tile)
         {
-            var t = tile.GetComponent<TdTile>();
-            if (t == null) return;
-
-                if(t.IsSpawnpoint)
-                {
-                    var sp = new GameObject("SpawnPoint");
-                    sp.transform.position = t.transform.position;
-                    var s = sp.AddComponent<Spawnpoint>();
-                    sp.transform.parent = GameObject.Find("SpawnPoints").transform;
-                }
-                else if(t.IsGoal)
-                {
-                    var goal = new GameObject("Goal");
-                    goal.transform.position = t.transform.position;
-                    var g = goal.AddComponent<Goal>();
-                    goal.transform.parent = GameObject.Find("Goals").transform;
-                }
+            if(tile.IsSpawnpoint)
+            {
+                var sp = new GameObject("SpawnPoint");
+                sp.transform.position = tile.transform.position;
+                var s = sp.AddComponent<Spawnpoint>();
+                sp.transform.parent = GameObject.Find("SpawnPoints").transform;
+            }
+            else if(tile.IsGoal)
+            {
+                var goal = new GameObject("Goal");
+                goal.transform.position = tile.transform.position;
+                var g = goal.AddComponent<Goal>();
+                goal.transform.parent = GameObject.Find("Goals").transform;
+            }
         }
 
         public static void RemoveTile(Vector2 position)
@@ -250,8 +243,8 @@ namespace Editor.EditorToolsMenu
                     }
                 }
 
-                Undo.DestroyObjectImmediate(objectToDestroy);
-                DestroyImmediate(objectToDestroy);
+                Undo.DestroyObjectImmediate(objectToDestroy.gameObject);
+                //DestroyImmediate(objectToDestroy.gameObject);
                 UnityEditor.SceneManagement.EditorSceneManager.MarkAllScenesDirty();
             }
         }

@@ -4,25 +4,24 @@ namespace Scrips.Modifiers.Towers
 {
     public class TowerNumberOfTargetsModifier : BaseTowerModifier
     {
-        public override float GetBaseAmount(TowerInstance tower) => tower.NumberOfTargets;
+        public override void AddToTower(TowerUiData tower)
+        {
+            tower.NumberOfTargets.AddModifier(this);
+        }
 
-        public override float GetModifiedAmount(TowerInstance tower) => tower.ModifiedNumberOfTargets;
+        public override void RemoveFromTower(TowerUiData tower)
+        {
+            tower.NumberOfTargets.RemoveModifier(this);
+        }
 
-        public override void SetModifiedAmount(TowerInstance tower, float value) => tower.ModifiedNumberOfTargets = (int) value;
+        public override void AddToTower(TowerInstance tower)
+        {
+            tower.NumberOfTargets.AddModifier(this);
+        }
 
-        public override int? GetLastModifiedVersion(TowerInstance tower) => tower.LastModifiedNumberOfTargetsVersion;
-
-        public override void SetLastModifiedVersion(TowerInstance tower, int value) =>
-            tower.LastModifiedNumberOfTargetsVersion = value;
-
-        public override float GetBaseAmount(TowerUiData tower) => tower.BaseTowerData.NumberOfTargets;
-
-        public override float GetModifiedAmount(TowerUiData tower) => tower.ModifiedNumberOfTargets;
-
-        public override void SetModifiedAmount(TowerUiData tower, float value) => tower.ModifiedNumberOfTargets = (int) value;
-
-        public override int? GetLastModifiedVersion(TowerUiData tower) => tower.LastModifiedNumberOfTargetsVersion;
-
-        public override void SetLastModifiedVersion(TowerUiData tower, int value) => tower.LastModifiedNumberOfTargetsVersion = value;
+        public override void RemoveFromTower(TowerInstance tower)
+        {
+            tower.NumberOfTargets.RemoveModifier(this);
+        }
     }
 }

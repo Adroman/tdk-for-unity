@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using Scrips.CustomTypes;
 using Scrips.EnemyData.Instances;
 using UnityEngine;
@@ -8,79 +9,66 @@ namespace Scrips.BuffData
 {
     public abstract class BaseBuffData
     {
-        public bool IsActive { get; private set; }
         public float TimeLeft { get; private set; }
-        public bool Ended { get; private set; }
+        public bool Ended => TimeLeft > 0;
 
-        public Coroutine ActiveCoroutine;
-
-        protected bool FailedToStart;
+        public abstract float Power { get; }
 
         public EnemyInstance Target { get; }
 
-        private readonly Duration _duration;
-
-        protected BaseBuffData(EnemyInstance target, Duration duration)
+        protected BaseBuffData(EnemyInstance target, float duration)
         {
             Target = target;
-            _duration = duration;
-            TimeLeft = duration.ToFloat();
-
-            OnStartEffect += TryAddDebuff;
-            OnStopEffect += () => Target.ActiveDebuffs.Remove(this);
-            OnUpdate += UpdateRemainingTime;
-        }
-
-        public event Action OnStartEffect;
-        public event Action OnStopEffect;
-        public event Action<float> OnUpdate;
-
-        private void StartEffect()
-        {
-            if (IsActive || Ended) return;
-
-            IsActive = true;
-            OnStartEffect?.Invoke();
-        }
-
-        protected void StopEffect()
-        {
-            if (!IsActive || Ended) return;
-
-            IsActive = false;
-            Ended = true;
-            OnStopEffect?.Invoke();
+            TimeLeft = duration;
         }
 
         public void Update(float deltaTime)
         {
-            if (!IsActive) return;
+            float timeLeft = TimeLeft - deltaTime;
 
-            OnUpdate?.Invoke(deltaTime);
+            if (timeLeft < 0)    // buff has ended
+            {
+                UpdateEffect(TimeLeft);    // use the remaining time
+                FinishEffect();
+            }
+            else
+            {
+                UpdateEffect(deltaTime);
+            }
+
+            TimeLeft = timeLeft;
         }
 
-        public void UpdateRemainingTime(float deltaTime)
+        public void Activate()
         {
-            TimeLeft -= deltaTime;
+            if (TryAddBuff())
+                ActivateEffect();
         }
 
-        public void ActivateEffect()
+        public void End()
         {
-            if (FailedToStart) return;
-            ActiveCoroutine = Target.StartCoroutine(UntilEnd());
+            Target.ActiveDebuffs.Remove(this);
+            FinishEffect();
         }
 
-        protected virtual void TryAddDebuff()
+        protected abstract void ActivateEffect();
+
+        protected abstract void FinishEffect();
+
+        protected abstract void UpdateEffect(float deltaTime);
+
+        private bool TryAddBuff()
         {
+            foreach (var debuff in Target.ActiveDebuffs.Where(b => b.GetType() == GetType()))
+            {
+                if (debuff.Power > Power && debuff.TimeLeft > TimeLeft)
+                {
+                    return false;    // there is more powerful buff, no need to add this one
+                }
+            }
+
             Target.ActiveDebuffs.Add(this);
-            FailedToStart = false;
-        }
-
-        private IEnumerator UntilEnd()
-        {
-            StartEffect();
-            yield return _duration.UntilEnds();
-            StopEffect();
+            return true;
         }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Scrips
 {
+    [RequireComponent(typeof(Camera))]
     public class CameraController : MonoBehaviour
     {
         public float PanSpeed = 30;
@@ -20,6 +21,12 @@ namespace Scrips
         public float UpperBorder = 10;
         public float LowerBorder = -10;
 
+        private Camera _camera;
+
+        private void Awake()
+        {
+            _camera = GetComponent<Camera>();
+        }
 
         // Update is called once per frame
         private void Update ()
@@ -27,67 +34,74 @@ namespace Scrips
             if (Input.GetKey("w"))
             {
                 if (transform.position.y < UpperBorder)
-                    transform.Translate(Vector3.up * PanSpeed * Time.deltaTime);
+                    transform.Translate(PanSpeed * Time.deltaTime * Vector3.up);
             }
 
             if (Input.GetKey("s"))
             {
                 if (transform.position.y > LowerBorder)
-                    transform.Translate(Vector3.down * PanSpeed * Time.deltaTime);
+                    transform.Translate(PanSpeed * Time.deltaTime * Vector3.down);
             }
 
             if (Input.GetKey("a"))
             {
                 if (transform.position.x > LeftBorder)
-                    transform.Translate(Vector3.left * PanSpeed * Time.deltaTime);
+                    transform.Translate(PanSpeed * Time.deltaTime * Vector3.left);
             }
 
             if (Input.GetKey("d"))
             {
                 if (transform.position.x < RightBorder)
-                    transform.Translate(Vector3.right * PanSpeed * Time.deltaTime);
+                    transform.Translate(PanSpeed * Time.deltaTime * Vector3.right);
             }
 
             float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-            float newOrtographicSize = transform.GetComponent<Camera>().orthographicSize - scroll * ScrollSpeed;
-            newOrtographicSize = Mathf.Clamp(newOrtographicSize, MinScrollDistance, MaxScrollDistance);
+            float newOrthographicSize = _camera.orthographicSize - scroll * ScrollSpeed;
+            newOrthographicSize = Mathf.Clamp(newOrthographicSize, MinScrollDistance, MaxScrollDistance);
 
-            transform.GetComponent<Camera>().orthographicSize = newOrtographicSize;
+            _camera.orthographicSize = newOrthographicSize;
 
-            if (Input.touchCount == 1 /*&& Input.GetTouch(0).phase == TouchPhase.Moved*/)
+            switch (Input.touchCount)
             {
-                var touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-                transform.Translate(-touchDeltaPosition.x * MobilePanSpeed * Time.deltaTime, -touchDeltaPosition.y * MobilePanSpeed * Time.deltaTime, 0);
+                /*&& Input.GetTouch(0).phase == TouchPhase.Moved*/
+                case 1:
+                {
+                    var transformLocal = transform;
 
-                var tmpPosX = transform.position;
-                tmpPosX.x = Mathf.Clamp(tmpPosX.x, LeftBorder, RightBorder);
-                transform.position = tmpPosX;
+                    var touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+                    transformLocal.Translate(-touchDeltaPosition.x * MobilePanSpeed * Time.deltaTime, -touchDeltaPosition.y * MobilePanSpeed * Time.deltaTime, 0);
 
-                var tmpPosY = transform.position;
-                tmpPosY.y = Mathf.Clamp(tmpPosY.y, LowerBorder , UpperBorder);
-                transform.position = tmpPosY;
-            }
-            else if (Input.touchCount == 2)
-            {
-                var touchZero = Input.GetTouch(0);
-                var touchOne = Input.GetTouch(1);
+                    var position = transformLocal.position;
+                    position.x = Mathf.Clamp(position.x, LeftBorder, RightBorder);
+                    position.y = Mathf.Clamp(position.y, LowerBorder , UpperBorder);
 
-                // Find the position in the previous frame of each touch.
-                var touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-                var touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+                    transformLocal.position = position;
+                    break;
+                }
 
-                // Find the magnitude of the vector (the distance) between the touches in each frame.
-                float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-                float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+                case 2:
+                {
+                    var touchZero = Input.GetTouch(0);
+                    var touchOne = Input.GetTouch(1);
 
-                // Find the difference in the distances between each frame.
-                float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+                    // Find the position in the previous frame of each touch.
+                    var touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+                    var touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-                newOrtographicSize = transform.GetComponent<Camera>().orthographicSize + deltaMagnitudeDiff * MobileScrollSpeed;
-                newOrtographicSize = Mathf.Clamp(newOrtographicSize, MinScrollDistance, MaxScrollDistance);
-                
-                transform.GetComponent<Camera>().orthographicSize = newOrtographicSize;
+                    // Find the magnitude of the vector (the distance) between the touches in each frame.
+                    float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+                    float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+                    // Find the difference in the distances between each frame.
+                    float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+                    newOrthographicSize = _camera.orthographicSize + deltaMagnitudeDiff * MobileScrollSpeed;
+                    newOrthographicSize = Mathf.Clamp(newOrthographicSize, MinScrollDistance, MaxScrollDistance);
+
+                    _camera.orthographicSize = newOrthographicSize;
+                    break;
+                }
             }
         }
     }

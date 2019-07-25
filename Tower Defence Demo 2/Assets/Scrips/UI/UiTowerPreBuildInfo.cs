@@ -21,9 +21,9 @@ namespace Scrips.UI
         private void Start()
         {
             Name.text = Tower.BaseTowerData.TowerName;
-            Damage.text = $"Damage: {Tower.ActualMinDamage} - {Tower.ActualMaxDamage}";
-            FiringSpeed.text = $"Firing speed: {Tower.ActualFiringSpeed}";
-            Range.text = $"Range: {Tower.ActualRange}";
+            Damage.text = $"Damage: {Tower.MinDamage.Value} - {Tower.MaxDamage.Value}";
+            FiringSpeed.text = $"Firing speed: {Tower.FiringSpeed.Value}";
+            Range.text = $"Range: {Tower.Range.Value}";
 
             foreach (var special in Tower.BaseTowerData.Specials)
             {

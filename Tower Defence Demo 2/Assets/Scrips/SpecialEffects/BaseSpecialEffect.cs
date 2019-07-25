@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Scrips.Attributes;
+using Scrips.EnemyData.Instances;
+using UnityEngine;
 
 namespace Scrips.SpecialEffects
 {

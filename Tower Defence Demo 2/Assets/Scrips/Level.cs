@@ -9,18 +9,18 @@ namespace Scrips
 {
     public class Level : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _serializedTiles;
+        [SerializeField] private TdTile[] _serializedTiles;
 
         [HideInInspector]
         public int Width, Height;
 
         [HideInInspector]
-        public GameObject TilePrefab;
+        public TdTile TilePrefab;
 
-        public GameObject this[int x, int y]
+        public TdTile this[int x, int y]
         {
-            get { return _serializedTiles[y * Width + x]; }
-            set { _serializedTiles[y * Width + x] = value; }
+            get => _serializedTiles[y * Width + x];
+            set => _serializedTiles[y * Width + x] = value;
         }
 
         public void Start()
@@ -32,7 +32,7 @@ namespace Scrips
 
         public void RecreateTiles()
         {
-            _serializedTiles = new GameObject[Width * Height];
+            _serializedTiles = new TdTile[Width * Height];
             var tilesGo = GameObject.Find("Tiles");
 
             for (int i = tilesGo.transform.childCount - 1; i >= 0; i--)
@@ -50,16 +50,16 @@ namespace Scrips
             while(queue.Count > 0)
             {
                 var go = queue.Dequeue();
-                var tile = go.gameObject.GetComponent<TdTile>();
-                var neighbors = GetNeighbors(go.x, go.y);
+                var tile = go.Tile.GetComponent<TdTile>();
+                var neighbors = GetNeighbors(go.X, go.Y);
                 //Debug.Log($"Tile {go.x}, {go.y}");
                 var nextNeighbors = tile.CalculateDistance(neighbors.Select(
                     kv => new TileWithDistance(
-                        kv.gameObject,
-                        (new Vector2(kv.x, kv.y) - new Vector2(go.x, go.y)).magnitude
+                        kv.Tile,
+                        (new Vector2(kv.X, kv.Y) - new Vector2(go.X, go.Y)).magnitude
                     )
                 ).ToList()).ToList();
-                foreach(var nextN in neighbors.Where(n => nextNeighbors.Contains(n.gameObject)))
+                foreach(var nextN in neighbors.Where(n => nextNeighbors.Contains(n.Tile)))
                 {
                     if (!queue.Contains(nextN))
                     {

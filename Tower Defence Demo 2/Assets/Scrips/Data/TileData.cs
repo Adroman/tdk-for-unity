@@ -6,6 +6,6 @@ namespace Scrips.Data
     public class TileData : ScriptableObject
     {
         public string Name;
-        public GameObject Prefab;
+        public TdTile Prefab;
     }
 }

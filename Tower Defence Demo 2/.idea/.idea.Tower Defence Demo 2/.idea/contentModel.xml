@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\coding\tdkfu\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
+    <e p="C:\Users\Adrián\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Adrián\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Adrián\OneDrive\Programming\Tower Defense Kit For Unity\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -33,6 +35,7 @@
           </e>
           <e p="PropertyDrawers" t="Include">
             <e p="IntReferencePropertyDrawer.cs" t="Include" />
+            <e p="ModifiableStatDrawer.cs" t="Include" />
           </e>
           <e p="TestScriptCustomInspector.cs" t="Include" />
           <e p="Utils" t="Include">
@@ -43,6 +46,13 @@
             <e p="IsolatedScrollView.cs" t="Include" />
             <e p="ListUtils.cs" t="Include" />
             <e p="SceneUtils.cs" t="Include" />
+          </e>
+          <e p="WaveEditor" t="Include">
+            <e p="WaveClusterNode.cs" t="Include" />
+            <e p="WaveEditorWindow.cs" t="Include" />
+            <e p="WaveGeneratorHeader.cs" t="Include" />
+            <e p="WaveListNode.cs" t="Include" />
+            <e p="WaveNode.cs" t="Include" />
           </e>
         </e>
         <e p="Scrips" t="Include">
@@ -65,6 +75,7 @@
             <e p="BurningBuffData.cs" t="Include" />
             <e p="PoisonBuffData.cs" t="Include" />
             <e p="SlownessBuffData.cs" t="Include" />
+            <e p="StatChangeBuffData.cs" t="Include" />
           </e>
           <e p="CameraController.cs" t="Include" />
           <e p="CircleRenderer.cs" t="Include" />
@@ -95,7 +106,8 @@
             <e p="FloatIncrease.cs" t="Include" />
             <e p="Formula" t="Include">
               <e p="BaseFormula.cs" t="Include" />
-              <e p="SimpleExponentialFormula.cs" t="Include" />
+              <e p="LinearFormula.cs" t="Include" />
+              <e p="SimplePowerFormula.cs" t="Include" />
             </e>
             <e p="Goal.cs" t="Include" />
             <e p="IntCountdown.cs" t="Include" />
@@ -168,8 +180,21 @@
             <e p="Currency" t="Include">
               <e p="ModifiedCurrency.cs" t="Include" />
             </e>
+            <e p="Enemies" t="Include">
+              <e p="BaseEnemyCurrencyModifier.cs" t="Include" />
+              <e p="BaseEnemyModifier.cs" t="Include" />
+              <e p="EnemyArmorModifier.cs" t="Include" />
+              <e p="EnemyHpModifier.cs" t="Include" />
+              <e p="EnemyLootModifier.cs" t="Include" />
+              <e p="EnemyPunishmentModifier.cs" t="Include" />
+              <e p="EnemySpeedModifier.cs" t="Include" />
+            </e>
             <e p="ModifiedAmount.cs" t="Include" />
             <e p="ModifierController.cs" t="Include" />
+            <e p="Stats" t="Include">
+              <e p="FloatModifiableStat.cs" t="Include" />
+              <e p="IntModifiableStat.cs" t="Include" />
+            </e>
             <e p="Towers" t="Include">
               <e p="BaseTowerModifier.cs" t="Include" />
               <e p="TowerCostModifier.cs" t="Include" />
@@ -201,6 +226,10 @@
           <e p="ScoreManager.cs" t="Include" />
           <e p="SelectedTowerOption.cs" t="Include" />
           <e p="SelfDisabler.cs" t="Include" />
+          <e p="Skills" t="Include">
+            <e p="PlayerSkill.cs" t="Include" />
+            <e p="Skill.cs" t="Include" />
+          </e>
           <e p="SpecialEffects" t="Include">
             <e p="BaseSpecialEffect.cs" t="Include" />
             <e p="BuffSpecialEffect.cs" t="Include" />
@@ -231,10 +260,18 @@
               <e p="TowerUpgradeNode.cs" t="Include" />
             </e>
             <e p="Specials" t="Include">
+              <e p="PoisonDamage" t="Include">
+                <e p="PoisonComponent.cs" t="Include" />
+                <e p="PoisonType.cs" t="Include" />
+              </e>
               <e p="ReduceArmor" t="Include">
                 <e p="ReduceArmorComponent.cs" t="Include" />
                 <e p="ReduceArmorType.cs" t="Include" />
                 <e p="ReduceArmorUpgrade.cs" t="Include" />
+              </e>
+              <e p="ReduceSpeed" t="Include">
+                <e p="ReduceSpeedComponent.cs" t="Include" />
+                <e p="ReduceSpeedType.cs" t="Include" />
               </e>
               <e p="SpecialComponent.cs" t="Include" />
               <e p="SpecialType.cs" t="Include" />
@@ -265,12 +302,23 @@
               <e p="UiReverseFillAmountProgressDisplay.cs" t="Include" />
               <e p="UiSliderProgress.cs" t="Include" />
             </e>
+            <e p="UiSkills" t="Include">
+              <e p="UiDowngradeMouseDetector.cs" t="Include" />
+              <e p="UiMouseDetector.cs" t="Include" />
+              <e p="UiSkill.cs" t="Include" />
+              <e p="UiUpgradeMouseDetector.cs" t="Include" />
+            </e>
             <e p="UiSkin.cs" t="Include" />
             <e p="UiSkinButton.cs" t="Include" />
             <e p="UISkinData.cs" t="Include" />
             <e p="UiSpecials.cs" t="Include" />
             <e p="UiSpecialText.cs" t="Include" />
             <e p="UiSpellButton.cs" t="Include" />
+            <e p="UiTextDisplay" t="Include">
+              <e p="BaseUiTextDisplay.cs" t="Include" />
+              <e p="UiTextDisplay.cs" t="Include" />
+              <e p="UiTmpTextDisplay.cs" t="Include" />
+            </e>
             <e p="UiTowerButton.cs" t="Include" />
             <e p="UiTowerPreBuildInfo.cs" t="Include" />
             <e p="UIWave.cs" t="Include" />
@@ -293,6 +341,7 @@
             <e p="IntVariable.cs" t="Include" />
             <e p="Reference.cs" t="Include" />
             <e p="RuntimeCollection.cs" t="Include" />
+            <e p="TowerCollection.cs" t="Include" />
             <e p="Variable.cs" t="Include" />
           </e>
           <e p="WaveModifiers" t="Include">
@@ -385,15 +434,13 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
-        <e p="UiLevel.cs" t="Include" />
+        <e p="UILevel.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Tower Defence Demo 2.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\adria\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\adria\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Tower Defence Demo 2.1548570228.00" t="ExcludeRecursive" />
   </component>
   <component name="RiderRiderContentModelStore">
     <excludedPaths>

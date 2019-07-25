@@ -64,8 +64,8 @@ namespace Scrips.Towers.Specials.SplashDamage
 
             target.Damage = Damage;
             target.SplashRadius = SplashRadius;
-            target.HasUpperLimit = target.HasUpperLimit;
-            target.UpperLimit = target.UpperLimit;
+            target.HasUpperLimit = HasUpperLimit;
+            target.UpperLimit = UpperLimit;
             target.DamageCurve = DamageCurve;
             target.Enemies = Enemies;
         }
