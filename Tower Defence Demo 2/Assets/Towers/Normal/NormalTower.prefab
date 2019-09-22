@@ -167,6 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4250231798937154}
+  - component: {fileID: 1165749411118953568}
   m_Layer: 0
   m_Name: TowerModel
   m_TagString: Untagged
@@ -190,6 +191,22 @@ Transform:
   m_Father: {fileID: 4096817647756100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1165749411118953568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317569548096708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b70cc38aef4a03a342bcf092b64fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationPoint: {fileID: 4612292578712164}
+  RotationDirection: {x: 0, y: 1, z: 0}
+  InitialRotationOffset: {x: -90, y: 0, z: 0, w: 0}
+  ShootingPoint: {fileID: 4933639789149158}
 --- !u!1 &1485404857153242
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,28 +253,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95aa188028ffc441832b7cb536f2441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   MinDamage:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   MaxDamage:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   FiringSpeed:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   Range:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   NumberOfTargets:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
-  Name: 
-  ModifiedNumberOfTargets: 0
+    _modifiers: []
   Priorities:
   - {fileID: 11400000, guid: 8aa2e1b4eddfd54469cba2ac5e4d07df, type: 2}
   Filters: []
@@ -265,6 +286,8 @@ MonoBehaviour:
     type: 3}
   RotationPoint: {fileID: 4612292578712164}
   ShootingPoint: {fileID: 4933639789149158}
+  TowerModelToUse: {fileID: 8716333050747899750, guid: ed0039f5c5d09244b9476d29f9b964dd,
+    type: 3}
   Upgrades: []
   ModifierController: {fileID: 0}
   TowerCollection: {fileID: 11400000, guid: c2903d913bb3a6c439e3fa68b3893a81, type: 2}

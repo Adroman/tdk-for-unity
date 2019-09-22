@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scrips\Data\Goal.cs" />
     <Compile Include="Assets\Scrips\Data\IntCountdown.cs" />
     <Compile Include="Assets\Scrips\Data\IntCurrency.cs" />
+    <Compile Include="Assets\Scrips\Data\IntIncrease.cs" />
     <Compile Include="Assets\Scrips\Data\Spawnpoint.cs" />
     <Compile Include="Assets\Scrips\Data\TileColor.cs" />
     <Compile Include="Assets\Scrips\Data\TileData.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Assets\Scrips\TowerOption.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerData.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerInstance.cs" />
+    <Compile Include="Assets\Scrips\Towers\BaseData\TowerModel.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerUiData.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerUpgradeNode.cs" />
     <Compile Include="Assets\Scrips\Towers\Specials\PoisonDamage\PoisonComponent.cs" />

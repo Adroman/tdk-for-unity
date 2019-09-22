@@ -70,6 +70,7 @@ namespace Scrips.Towers.BaseData
         public Transform RotationPoint;
         private bool _hasRotatingPoint;
         public Transform ShootingPoint;
+        public TowerModel TowerModelToUse;
 
         public List<TowerUpgradeNode> Upgrades = new List<TowerUpgradeNode>();
 
@@ -108,6 +109,16 @@ namespace Scrips.Towers.BaseData
             Range = new FloatModifiableStat();
             NumberOfTargets = new IntModifiableStat();
             _circleRenderer = GetComponent<LineRenderer>();
+            var tr = transform;
+            for (int i = tr.childCount -1; i >= 0; i--)
+            {
+                Destroy(transform.GetChild(i).gameObject);
+            }
+
+            TowerModelToUse = Instantiate(TowerModelToUse,
+                tr.position - Vector3.forward,
+                tr.rotation * Quaternion.Euler(TowerModelToUse.InitialRotationOffset),
+                tr);
         }
 
         private void OnEnable()
@@ -176,7 +187,8 @@ namespace Scrips.Towers.BaseData
                 return;
             }
 
-            RotateTurret(finalTargets.Select(t => t.transform));
+            TowerModelToUse.RotateTurret(finalTargets.Select(t => t.transform));
+            //RotateTurret(finalTargets.Select(t => t.transform));
             foreach (var target in finalTargets)
             {
                 Fire(target);
@@ -184,23 +196,14 @@ namespace Scrips.Towers.BaseData
             _cooldownLeft = _cooldown + _cooldownLeft;
         }
 
-        private void RotateTurret(IEnumerable<Transform> targets)
-        {
-            if (!_hasRotatingPoint) return; // do not rotate
-
-            var vectorsToTarget = targets.Select(t => t.position - transform.position).ToArray();
-
-            var vectorToTarget = new Vector3(vectorsToTarget.Average(v => v.x), vectorsToTarget.Average(v => v.y));
-            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
-            var q = Quaternion.AngleAxis(-angle, Vector3.up);
-            RotationPoint.localRotation = Quaternion.Slerp(RotationPoint.rotation, q, 10000 * Time.deltaTime);
-        }
-
         private Transform ShootingPointPosition => ShootingPoint != null ? ShootingPoint : transform;
 
         private void Fire(EnemyInstance target)
         {
-            var shootingPoint = ShootingPointPosition;
+            //var shootingPoint = ShootingPointPosition;
+            
+            
+            var shootingPoint = TowerModelToUse.GetShootingPoint();
 
             var bullet = PoolManager.Spawn(BulletPrefab, shootingPoint.position, transform.rotation, BulletsParent.transform).GetComponent<BulletInstance>();
             bullet.Target = target;
@@ -236,6 +239,7 @@ namespace Scrips.Towers.BaseData
             MaxDamage.Value = upgrade.MaxAtkIncrease.Apply(MaxDamage.BaseValue);
             ActualRange = upgrade.RangeIncrease.Apply(Range.BaseValue);
             ActualFiringSpeed = upgrade.FiringSpeedIncrease.Apply(FiringSpeed.BaseValue);
+            NumberOfTargets.Value = upgrade.NumberOfTargetsIncrease.Apply(NumberOfTargets.BaseValue);
             foreach (var special in upgrade.SpecialIncreases)
             {
                 var c = special.SpecialType.GetSpecialComponent(gameObject);
@@ -247,6 +251,21 @@ namespace Scrips.Towers.BaseData
 
                 special.Upgrade(c);
             }
+
+            if (upgrade.NewModel != null)
+            {
+                var oldRotation = TowerModelToUse.RotationPoint.localRotation;
+                Destroy(TowerModelToUse.gameObject);
+                TowerModelToUse = Instantiate(
+                    upgrade.NewModel,
+                    Vector3.zero,
+                    Quaternion.identity * Quaternion.Euler(upgrade.NewModel.InitialRotationOffset),
+                    transform);
+                TowerModelToUse.transform.position = transform.position - Vector3.forward;
+                TowerModelToUse.RotationPoint.localRotation = oldRotation;
+            }
+
+            TowerModelToUse.SetDisplay(upgrade.TextToDisplay);
 
             _appliedUpgrades.Add(upgrade);
         }

@@ -144,28 +144,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95aa188028ffc441832b7cb536f2441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   MinDamage:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   MaxDamage:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   FiringSpeed:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   Range:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   NumberOfTargets:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
-  Name: 
-  ModifiedNumberOfTargets: 0
+    _modifiers: []
   Priorities:
   - {fileID: 11400000, guid: c0c6f57172ec6924eb85014a9822e9a0, type: 2}
   - {fileID: 11400000, guid: 8aa2e1b4eddfd54469cba2ac5e4d07df, type: 2}
@@ -174,6 +178,8 @@ MonoBehaviour:
     type: 3}
   RotationPoint: {fileID: 4014817400014328}
   ShootingPoint: {fileID: 4914038436506044}
+  TowerModelToUse: {fileID: 7514545629271264690, guid: e8e319b43bf8097478e2f3b092437e97,
+    type: 3}
   Upgrades: []
   ModifierController: {fileID: 0}
   TowerCollection: {fileID: 11400000, guid: c2903d913bb3a6c439e3fa68b3893a81, type: 2}

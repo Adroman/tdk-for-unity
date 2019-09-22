@@ -15,6 +15,7 @@ namespace Scrips.Towers.BaseData
         public FloatIncrease MaxAtkIncrease;
         public FloatIncrease RangeIncrease;
         public FloatIncrease FiringSpeedIncrease;
+        public IntIncrease NumberOfTargetsIncrease;
 
         public List<SpecialUpgrade> SpecialIncreases;
         public List<SpecialType> SpecialUnlocks;
@@ -27,6 +28,7 @@ namespace Scrips.Towers.BaseData
         public List<TowerUpgradeNode> Exclusions = new List<TowerUpgradeNode>();
         public AmountRequired ExclusionAmount;
 
-        public GameObject Model;
+        public TowerModel NewModel;
+        public string TextToDisplay;
     }
 }

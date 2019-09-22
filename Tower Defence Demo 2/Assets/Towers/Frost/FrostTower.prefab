@@ -46,36 +46,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95aa188028ffc441832b7cb536f2441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   MinDamage:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   MaxDamage:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   FiringSpeed:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   Range:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
+    _modifiers: []
   NumberOfTargets:
     _baseValue: 0
     _modifiedValue: 0
     _isDirty: 0
-  Name: 
-  ModifiedNumberOfTargets: 0
+    _modifiers: []
   Priorities:
   - {fileID: 11400000, guid: 8aa2e1b4eddfd54469cba2ac5e4d07df, type: 2}
   Filters:
-  - {fileID: 1861017177246540, guid: a5666f9b7f9b2f54c842fc7fe127a3a0, type: 3}
+  - {fileID: 0}
   BulletPrefab: {fileID: 1296288116114184, guid: a4f73ec0cda35a64a8643c002599690e,
     type: 3}
   RotationPoint: {fileID: 0}
   ShootingPoint: {fileID: 7965474526371487262}
+  TowerModelToUse: {fileID: 1403946394262408931, guid: e8b3ac9efa0f9ae448aecb29622aebf0,
+    type: 3}
   Upgrades: []
   ModifierController: {fileID: 0}
   TowerCollection: {fileID: 11400000, guid: c2903d913bb3a6c439e3fa68b3893a81, type: 2}

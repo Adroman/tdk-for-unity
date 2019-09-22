@@ -22,6 +22,7 @@ MonoBehaviour:
   Specials: []
   Upgrades:
   - {fileID: 11400000, guid: 24787c47d65539f44b0984ecb44969e9, type: 2}
+  - {fileID: 11400000, guid: fb9770fe5fc357c45a3aef3ce0684ce5, type: 2}
   Price:
   - Amount: 10
     Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}

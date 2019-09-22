@@ -112,6 +112,7 @@
             <e p="Goal.cs" t="Include" />
             <e p="IntCountdown.cs" t="Include" />
             <e p="IntCurrency.cs" t="Include" />
+            <e p="IntIncrease.cs" t="Include" />
             <e p="Spawnpoint.cs" t="Include" />
             <e p="TileColor.cs" t="Include" />
             <e p="TileData" t="Include">
@@ -256,6 +257,7 @@
             <e p="BaseData" t="Include">
               <e p="TowerData.cs" t="Include" />
               <e p="TowerInstance.cs" t="Include" />
+              <e p="TowerModel.cs" t="Include" />
               <e p="TowerUiData.cs" t="Include" />
               <e p="TowerUpgradeNode.cs" t="Include" />
             </e>

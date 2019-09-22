@@ -10,33 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4af7e2c3e5b45f3be49f98f9b8523b9, type: 3}
-  m_Name: Level 2
+  m_Name: Level 3
   m_EditorClassIdentifier: 
   NewName: 
   MinAtkIncrease:
     Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
-    Amount: 5
+    Amount: 6
   MaxAtkIncrease:
     Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
-    Amount: 25
+    Amount: 36
   RangeIncrease:
     Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
-    Amount: 4
+    Amount: 5
   FiringSpeedIncrease:
     Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
     Amount: 2.5
   NumberOfTargetsIncrease:
-    Type: {fileID: 11400000, guid: 2917526a1b9becd48bb41757234ec08e, type: 2}
-    Amount: 0
+    Type: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+    Amount: 2
   SpecialIncreases: []
   SpecialUnlocks: []
   Price:
-  - Amount: 20
+  - Amount: 100
     Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
-  Requirements: []
-  RequirementAmount: {fileID: 0}
+  Requirements:
+  - {fileID: 11400000, guid: 24787c47d65539f44b0984ecb44969e9, type: 2}
+  RequirementAmount: {fileID: 11400000, guid: 1bbf81e056fa9a444aacc1d1eb65d7ee, type: 2}
   Exclusions: []
   ExclusionAmount: {fileID: 0}
-  NewModel: {fileID: 5887108584604049796, guid: 6125e739747cae94b84a5a2b4c8e7e59,
+  NewModel: {fileID: 3347267055498157741, guid: 9046cd9698feb33438bfe4ffe2333034,
     type: 3}
-  TextToDisplay: '*'
+  TextToDisplay: '**'
