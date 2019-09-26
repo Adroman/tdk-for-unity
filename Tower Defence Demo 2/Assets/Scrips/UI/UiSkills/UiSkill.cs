@@ -23,6 +23,8 @@ namespace Scrips.UI.UiSkills
 
         public Button DowngradeButton;
 
+        public SkillUpgradeChecker SkillUpgradeChecker;
+
         [HideInInspector]
         public PlayerSkill PlayerSkill;
 
@@ -44,8 +46,8 @@ namespace Scrips.UI.UiSkills
             SkillDescriptionDisplay.DisplayFormat(SkillToUse.DescriptionFormat,
                 SkillToUse.Modifiers
                     .Select(m => (m.Modifier.Amount * (PlayerSkill.Level / m.PerLevelsApplied)
-                                  * (SkillToUse.DisplayMultipliedBy100 ? 100 : 1)
-                                  * (SkillToUse.DisplayNegatedAmount ? -1 : 1))
+                                  * (m.DisplayMultipliedBy100 ? 100 : 1)
+                                  * (m.DisplayNegatedAmount ? -1 : 1))
                         .ToString(CultureInfo.InvariantCulture))
                     .Cast<object>().ToArray());
             SkillLevelDisplay.Display(PlayerSkill.Level.ToString());
@@ -53,7 +55,16 @@ namespace Scrips.UI.UiSkills
 
         private void ImportPlayerSkills(PlayerData player)
         {
-            PlayerSkill = player.Skills.Single(s => s.Skill == SkillToUse);
+            PlayerSkill = player.Skills.SingleOrDefault(s => s.Skill == SkillToUse);
+            if (PlayerSkill != null) return;
+
+            PlayerSkill = new PlayerSkill
+            {
+                Level = 0,
+                Skill = SkillToUse
+            };
+
+            player.Skills.Add(PlayerSkill);
         }
 
         public void CheckUpgradeButton(PlayerData player)
@@ -93,17 +104,33 @@ namespace Scrips.UI.UiSkills
         public void UpgradeSkill(PlayerData pd)
         {
             pd.SkillPoints.Amount -= PlayerSkill.Skill.LevelCostFormula.GetLevelRequirement(++PlayerSkill.Level);
-            CheckUpgradeButton(pd);
-            CheckDowngradeButton();
-            UpdateTexts();
+
+            if (SkillUpgradeChecker != null)
+            {
+                SkillUpgradeChecker.RefreshRequirements(pd);
+            }
+            else
+            {
+                CheckUpgradeButton(pd);
+                CheckDowngradeButton();
+                UpdateTexts();
+            }
         }
 
         public void DowngradeSkill(PlayerData pd)
         {
             pd.SkillPoints.Amount += PlayerSkill.Skill.LevelCostFormula.GetLevelRequirement(PlayerSkill.Level--);
-            CheckUpgradeButton(pd);
-            CheckDowngradeButton();
-            UpdateTexts();
+
+            if (SkillUpgradeChecker != null)
+            {
+                SkillUpgradeChecker.RefreshRequirements(pd);
+            }
+            else
+            {
+                CheckUpgradeButton(pd);
+                CheckDowngradeButton();
+                UpdateTexts();
+            }
         }
     }
 }

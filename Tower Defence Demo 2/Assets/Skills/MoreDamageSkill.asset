@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: More damage
   DescriptionFormat: Towers deal {0} % more damage.
-  DisplayNegatedAmount: 1
-  DisplayMultipliedBy100: 1
   SkillRequirements: []
   PlayerLevelRequirement: 10
   Modifiers:
   - Modifier: {fileID: 11400000, guid: 360d29fc77383964b852818cc585b4fb, type: 2}
     PerLevelsApplied: 1
+    DisplayNegatedAmount: 0
+    DisplayMultipliedBy100: 1
   - Modifier: {fileID: 11400000, guid: 6cc301b96275cf0498ca3ec59b3d26e1, type: 2}
     PerLevelsApplied: 1
+    DisplayNegatedAmount: 0
+    DisplayMultipliedBy100: 0
   LevelCostFormula: {fileID: 11400000, guid: 4810a981417d6f644856f6122426e6c4, type: 2}
   MaxLevel: 10

@@ -230,6 +230,7 @@
           <e p="Skills" t="Include">
             <e p="PlayerSkill.cs" t="Include" />
             <e p="Skill.cs" t="Include" />
+            <e p="SkillUpgradeChecker.cs" t="Include" />
           </e>
           <e p="SpecialEffects" t="Include">
             <e p="BaseSpecialEffect.cs" t="Include" />
@@ -328,6 +329,7 @@
             <e p="UiWaveQueue.cs" t="Include" />
             <e p="VariableDisplays" t="Include">
               <e p="TextIntVariableDisplay.cs" t="Include" />
+              <e p="TextTmpIntVariableDisplay.cs" t="Include" />
             </e>
           </e>
           <e p="Utils" t="Include">

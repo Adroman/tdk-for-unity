@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1c4508612940b581817f0e3941b48d, type: 3}
   m_Name: pd
   m_EditorClassIdentifier: 
-  PlayerLevel: 2
+  PlayerLevel: 12
   SkillPoints:
     Amount: 160
     Variable: {fileID: 0}
   TotalScore:
-    Amount: 1071
+    Amount: 2505
     Variable: {fileID: 11400000, guid: 5fbaf9fcb453ca8489d37c517b6eac49, type: 2}
   TotalEnemiesKilled:
     Amount: 0
@@ -28,9 +28,13 @@ MonoBehaviour:
   CompletedLevels:
   - Level: {fileID: 11400000, guid: b7253e8c84d35f548837147dd58a88d0, type: 2}
     HighestScore:
-      Amount: 1071
+      Amount: 2505
       Variable: {fileID: 11400000, guid: 5fbaf9fcb453ca8489d37c517b6eac49, type: 2}
   ScoreFormula: {fileID: 11400000, guid: e85f208ed4b867f4e87216c1b3f2bd32, type: 2}
   Skills:
   - Skill: {fileID: 11400000, guid: 775b2720228b7924b8e192f7667df9ab, type: 2}
     Level: 0
+  - Skill: {fileID: 11400000, guid: 7df423251b17f824fb814c778b5b661d, type: 2}
+    Level: 0
+  - Skill: {fileID: 11400000, guid: e10764ef652bd24428bc48cedf8e5355, type: 2}
+    Level: 2

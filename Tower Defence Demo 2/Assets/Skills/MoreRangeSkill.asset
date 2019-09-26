@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: More range
   DescriptionFormat: Towers have {0} % more range.
-  DisplayNegatedAmount: 1
-  DisplayMultipliedBy100: 1
   SkillRequirements:
-  - RequiredSkill: {fileID: 11400000}
-    RequiredLevel: 3
+  - RequiredSkill: {fileID: 11400000, guid: 775b2720228b7924b8e192f7667df9ab, type: 2}
+    RequiredLevel: 5
   PlayerLevelRequirement: 0
   Modifiers:
   - Modifier: {fileID: 11400000, guid: 2daa72238dfb2cc419321e829b435eb0, type: 2}
-    PerLevelsApplied: 0
+    PerLevelsApplied: 1
+    DisplayNegatedAmount: 0
+    DisplayMultipliedBy100: 1
   LevelCostFormula: {fileID: 11400000, guid: 4810a981417d6f644856f6122426e6c4, type: 2}
   MaxLevel: 10

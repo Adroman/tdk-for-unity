@@ -171,6 +171,7 @@
     <Compile Include="Assets\Scrips\SelfDisabler.cs" />
     <Compile Include="Assets\Scrips\Skills\PlayerSkill.cs" />
     <Compile Include="Assets\Scrips\Skills\Skill.cs" />
+    <Compile Include="Assets\Scrips\Skills\SkillUpgradeChecker.cs" />
     <Compile Include="Assets\Scrips\SpecialEffects\BaseSpecialEffect.cs" />
     <Compile Include="Assets\Scrips\SpecialEffects\BuffSpecialEffect.cs" />
     <Compile Include="Assets\Scrips\SpecialEffects\ChainHit.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Assets\Scrips\UI\UiWaveCluster.cs" />
     <Compile Include="Assets\Scrips\UI\UiWaveQueue.cs" />
     <Compile Include="Assets\Scrips\UI\VariableDisplays\TextIntVariableDisplay.cs" />
+    <Compile Include="Assets\Scrips\UI\VariableDisplays\TextTmpIntVariableDisplay.cs" />
     <Compile Include="Assets\Scrips\Utils\DebugUtils.cs" />
     <Compile Include="Assets\Scrips\Utils\Utils.cs" />
     <Compile Include="Assets\Scrips\Utils\VectorUtils.cs" />

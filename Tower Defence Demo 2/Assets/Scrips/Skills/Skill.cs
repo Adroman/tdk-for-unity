@@ -15,10 +15,6 @@ namespace Scrips.Skills
         [Multiline]
         public string DescriptionFormat;
 
-        public bool DisplayNegatedAmount;
-
-        public bool DisplayMultipliedBy100;
-
         public SkillDependency[] SkillRequirements;
 
         public int PlayerLevelRequirement;
@@ -57,5 +53,7 @@ namespace Scrips.Skills
     {
         public BaseModifier Modifier;
         public int PerLevelsApplied;
+        public bool DisplayNegatedAmount;
+        public bool DisplayMultipliedBy100;
     }
 }
