@@ -1,8 +1,10 @@
-﻿using Scrips.SpecialEffects;
+﻿using System;
+using Scrips.Pooling;
+using Scrips.SpecialEffects;
 using Scrips.Towers.Specials;
 using UnityEngine;
 
-namespace Scrips.Instances
+namespace Scrips.Towers.Bullets
 {
     public class BulletInstance : MonoBehaviour
     {
@@ -10,13 +12,25 @@ namespace Scrips.Instances
         public float Damage;
         public Scrips.EnemyData.Instances.EnemyInstance Target;
         public GameObject SpecialEffect;
+        public BulletManager BulletManager;
+
+        [HideInInspector]
+        public PoolComponent PoolComponent;
+
+        public bool HasPoolComponent { get; private set; }
+
+        private void Start()
+        {
+            PoolComponent = GetComponent<PoolComponent>();
+            HasPoolComponent = PoolComponent != null;
+        }
 
         // Update is called once per frame
         private void Update ()
         {
             if (Target == null)
             {
-                PoolManager.Despawn(gameObject);
+                BulletManager.DespawnBullet(gameObject);
                 return;
             }
             // direction
@@ -50,7 +64,7 @@ namespace Scrips.Instances
                 specialComponent.ApplySpecialEffect(Target);
             }
 
-            PoolManager.Despawn(gameObject);
+            BulletManager.DespawnBullet(gameObject);
         }
     }
 }

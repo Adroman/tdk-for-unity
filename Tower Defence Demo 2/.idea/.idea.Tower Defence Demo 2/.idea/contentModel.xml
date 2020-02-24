@@ -168,7 +168,6 @@
           <e p="HealthBar.cs" t="Include" />
           <e p="HighestScorePerLevel.cs" t="Include" />
           <e p="Instances" t="Include">
-            <e p="BulletInstance.cs" t="Include" />
             <e p="TextInstance.cs" t="Include" />
           </e>
           <e p="Level.cs" t="Include" />
@@ -218,6 +217,11 @@
             <e p="ParticleSpawner.cs" t="Include" />
           </e>
           <e p="PlayerData.cs" t="Include" />
+          <e p="Pooling" t="Include">
+            <e p="Pool.cs" t="Include" />
+            <e p="PoolComponent.cs" t="Include" />
+            <e p="PoolManager.cs" t="Include" />
+          </e>
           <e p="PoolManager.cs" t="Include" />
           <e p="Priorities" t="Include">
             <e p="BasePriority.cs" t="Include" />
@@ -261,6 +265,12 @@
               <e p="TowerModel.cs" t="Include" />
               <e p="TowerUiData.cs" t="Include" />
               <e p="TowerUpgradeNode.cs" t="Include" />
+            </e>
+            <e p="Bullets" t="Include">
+              <e p="BulletInstance.cs" t="Include" />
+              <e p="BulletManager.cs" t="Include" />
+              <e p="PooledBulletManager.cs" t="Include" />
+              <e p="SimpleBulletManager.cs" t="Include" />
             </e>
             <e p="Specials" t="Include">
               <e p="PoisonDamage" t="Include">

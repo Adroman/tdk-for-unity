@@ -76458,7 +76458,7 @@ MonoBehaviour:
   MinClusters: 1
   MaxClusters: 3
   BaseDifficulty: 2000
-  Infinite: 0
+  Infinite: 1
   DifficultyIncrease: 1.1
   DifficultyDeviation: 0.05
   RandomSeed: randomness

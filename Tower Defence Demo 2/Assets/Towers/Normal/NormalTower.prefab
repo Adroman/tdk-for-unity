@@ -205,8 +205,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationPoint: {fileID: 4612292578712164}
   RotationDirection: {x: 0, y: 1, z: 0}
-  InitialRotationOffset: {x: -90, y: 0, z: 0, w: 0}
+  InitialRotationOffset: {x: -90, y: 0, z: 0}
   ShootingPoint: {fileID: 4933639789149158}
+  TextDisplay: {fileID: 0}
 --- !u!1 &1485404857153242
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +285,7 @@ MonoBehaviour:
   Filters: []
   BulletPrefab: {fileID: 1296288116114184, guid: a4f73ec0cda35a64a8643c002599690e,
     type: 3}
+  BulletManager: {fileID: 11400000, guid: 97a5778e51465cf4c84cc25e136daa1d, type: 2}
   RotationPoint: {fileID: 4612292578712164}
   ShootingPoint: {fileID: 4933639789149158}
   TowerModelToUse: {fileID: 8716333050747899750, guid: ed0039f5c5d09244b9476d29f9b964dd,

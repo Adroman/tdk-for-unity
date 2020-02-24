@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Scrips.Instances;
+using Scrips.Towers.Bullets;
 using UnityEngine;
 
 namespace Scrips.SpecialEffects

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Scrips.Attributes;
 using Scrips.BuffData;
-using Scrips.Data;
 using Scrips.EnemyData.Triggers;
-using Scrips.Extensions;
 using Scrips.Modifiers.Currency;
 using Scrips.Modifiers.Stats;
 using Scrips.Variables;
@@ -172,7 +169,8 @@ namespace Scrips.EnemyData.Instances
         {
             if (this == target)
             {
-                transform.position = new Vector3(_spawnpoint.position.x, _spawnpoint.position.y);
+                var spawnpointPosition = _spawnpoint.position;
+                transform.position = new Vector3(spawnpointPosition.x, spawnpointPosition.y);
                 SetSpawnPoint(_spawnpoint, true);
             }
         }

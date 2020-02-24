@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Scrips.Towers.Specials;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Scrips
 {
+    [Obsolete]
     public static class PoolManager
     {
         private static readonly Dictionary<GameObject,Pool> Pools = new Dictionary<GameObject, Pool>();
@@ -78,7 +81,7 @@ namespace Scrips
 
                 go.transform.position = position;
                 go.transform.rotation = rotation;
-                go.transform.parent = parent ?? go.transform;
+                go.transform.parent = !ReferenceEquals(parent,null) ? parent : go.transform;
                 go.SetActive(true);
                 return go;
             }

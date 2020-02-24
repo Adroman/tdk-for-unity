@@ -7,6 +7,7 @@ using Scrips.Modifiers;
 using Scrips.Modifiers.Stats;
 using Scrips.Modifiers.Towers;
 using Scrips.Priorities;
+using Scrips.Towers.Bullets;
 using Scrips.Towers.Specials;
 using Scrips.Variables;
 using UnityEngine;
@@ -67,6 +68,7 @@ namespace Scrips.Towers.BaseData
         public BasePriority[] Priorities;
         public BaseFilter[] Filters;
         public GameObject BulletPrefab;
+        public BulletManager BulletManager;
         public Transform RotationPoint;
         private bool _hasRotatingPoint;
         public Transform ShootingPoint;
@@ -201,11 +203,9 @@ namespace Scrips.Towers.BaseData
         private void Fire(EnemyInstance target)
         {
             //var shootingPoint = ShootingPointPosition;
-            
-            
             var shootingPoint = TowerModelToUse.GetShootingPoint();
 
-            var bullet = PoolManager.Spawn(BulletPrefab, shootingPoint.position, transform.rotation, BulletsParent.transform).GetComponent<BulletInstance>();
+            var bullet = BulletManager.SpawnBullet(BulletPrefab, shootingPoint.position, transform.rotation, BulletsParent.transform);
             bullet.Target = target;
             bullet.Damage = Damage;
             foreach (var component in _specialComponents)

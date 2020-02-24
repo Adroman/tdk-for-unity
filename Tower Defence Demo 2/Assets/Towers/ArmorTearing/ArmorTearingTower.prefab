@@ -176,6 +176,7 @@ MonoBehaviour:
   Filters: []
   BulletPrefab: {fileID: 1296288116114184, guid: a4f73ec0cda35a64a8643c002599690e,
     type: 3}
+  BulletManager: {fileID: 11400000, guid: 54f7bef9eee86ef40830aa42c59b89c0, type: 2}
   RotationPoint: {fileID: 4014817400014328}
   ShootingPoint: {fileID: 4914038436506044}
   TowerModelToUse: {fileID: 7514545629271264690, guid: e8e319b43bf8097478e2f3b092437e97,

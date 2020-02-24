@@ -129,7 +129,6 @@
     <Compile Include="Assets\Scrips\Extensions\FloatExtensions.cs" />
     <Compile Include="Assets\Scrips\HealthBar.cs" />
     <Compile Include="Assets\Scrips\HighestScorePerLevel.cs" />
-    <Compile Include="Assets\Scrips\Instances\BulletInstance.cs" />
     <Compile Include="Assets\Scrips\Instances\TextInstance.cs" />
     <Compile Include="Assets\Scrips\Level.cs" />
     <Compile Include="Assets\Scrips\LevelCompletionCheck.cs" />
@@ -162,6 +161,9 @@
     <Compile Include="Assets\Scrips\Objectives\Rewards\BaseReward.cs" />
     <Compile Include="Assets\Scrips\Particles\ParticleSpawner.cs" />
     <Compile Include="Assets\Scrips\PlayerData.cs" />
+    <Compile Include="Assets\Scrips\Pooling\Pool.cs" />
+    <Compile Include="Assets\Scrips\Pooling\PoolComponent.cs" />
+    <Compile Include="Assets\Scrips\Pooling\PoolManager.cs" />
     <Compile Include="Assets\Scrips\PoolManager.cs" />
     <Compile Include="Assets\Scrips\Priorities\BasePriority.cs" />
     <Compile Include="Assets\Scrips\Priorities\HighestArmorPriority.cs" />
@@ -193,6 +195,10 @@
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerModel.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerUiData.cs" />
     <Compile Include="Assets\Scrips\Towers\BaseData\TowerUpgradeNode.cs" />
+    <Compile Include="Assets\Scrips\Towers\Bullets\BulletInstance.cs" />
+    <Compile Include="Assets\Scrips\Towers\Bullets\BulletManager.cs" />
+    <Compile Include="Assets\Scrips\Towers\Bullets\PooledBulletManager.cs" />
+    <Compile Include="Assets\Scrips\Towers\Bullets\SimpleBulletManager.cs" />
     <Compile Include="Assets\Scrips\Towers\Specials\PoisonDamage\PoisonComponent.cs" />
     <Compile Include="Assets\Scrips\Towers\Specials\PoisonDamage\PoisonType.cs" />
     <Compile Include="Assets\Scrips\Towers\Specials\ReduceArmor\ReduceArmorComponent.cs" />
