@@ -1,297 +1,867 @@
 fileFormatVersion: 2
 guid: c1754d8bf97260b4bb55c04ec08eb4d4
-timeCreated: 1524422641
-licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: cave_0
-    21300002: cave_1
-    21300004: cave_2
-    21300006: cave_3
-    21300008: cave_4
-    21300010: cave_5
-    21300012: cave_6
-    21300014: cave_7
-    21300016: cave_8
-    21300018: cave_9
-    21300020: cave_10
-    21300022: cave_11
-    21300024: cave_12
-    21300026: cave_13
-    21300028: cave_14
-    21300030: cave_15
-    21300032: cave_16
-    21300034: cave_17
-    21300036: cave_18
-    21300038: cave_19
-    21300040: cave_20
-    21300042: cave_21
-    21300044: cave_22
-    21300046: cave_23
-    21300048: cave_24
-    21300050: cave_25
-    21300052: cave_26
-    21300054: cave_27
-    21300056: cave_28
-    21300058: cave_29
-    21300060: cave_30
-    21300062: cave_31
-    21300064: cave_32
-    21300066: cave_33
-    21300068: cave_34
-    21300070: cave_35
-    21300072: cave_36
-    21300074: cave_37
-    21300076: cave_38
-    21300078: cave_39
-    21300080: cave_40
-    21300082: cave_41
-    21300084: cave_42
-    21300086: cave_43
-    21300088: cave_44
-    21300090: cave_45
-    21300092: cave_46
-    21300094: cave_47
-    21300096: cave_48
-    21300098: cave_49
-    21300100: cave_50
-    21300102: cave_51
-    21300104: cave_52
-    21300106: cave_53
-    21300108: cave_54
-    21300110: cave_55
-    21300112: cave_56
-    21300114: cave_57
-    21300116: cave_58
-    21300118: cave_59
-    21300120: cave_60
-    21300122: cave_61
-    21300124: cave_62
-    21300126: cave_63
-    21300128: cave_64
-    21300130: cave_65
-    21300132: cave_66
-    21300134: cave_67
-    21300136: cave_68
-    21300138: cave_69
-    21300140: cave_70
-    21300142: cave_71
-    21300144: cave_72
-    21300146: cave_73
-    21300148: cave_74
-    21300150: cave_75
-    21300152: cave_76
-    21300154: cave_77
-    21300156: cave_78
-    21300158: cave_79
-    21300160: cave_80
-    21300162: cave_81
-    21300164: cave_82
-    21300166: cave_83
-    21300168: cave_84
-    21300170: cave_85
-    21300172: cave_86
-    21300174: cave_87
-    21300176: cave_88
-    21300178: cave_89
-    21300180: cave_90
-    21300182: cave_91
-    21300184: cave_92
-    21300186: cave_93
-    21300188: cave_94
-    21300190: cave_95
-    21300192: cave_96
-    21300194: cave_97
-    21300196: cave_98
-    21300198: cave_99
-    21300200: cave_100
-    21300202: cave_101
-    21300204: cave_102
-    21300206: cave_103
-    21300208: cave_104
-    21300210: cave_105
-    21300212: cave_106
-    21300214: cave_107
-    21300216: cave_108
-    21300218: cave_109
-    21300220: cave_110
-    21300222: cave_111
-    21300224: cave_112
-    21300226: cave_113
-    21300228: cave_114
-    21300230: cave_115
-    21300232: cave_116
-    21300234: cave_117
-    21300236: cave_118
-    21300238: cave_119
-    21300240: cave_120
-    21300242: cave_121
-    21300244: cave_122
-    21300246: cave_123
-    21300248: cave_124
-    21300250: cave_125
-    21300252: cave_126
-    21300254: cave_127
-    21300256: cave_128
-    21300258: cave_129
-    21300260: cave_130
-    21300262: cave_131
-    21300264: cave_132
-    21300266: cave_133
-    21300268: cave_134
-    21300270: cave_135
-    21300272: cave_136
-    21300274: cave_137
-    21300276: cave_138
-    21300278: cave_139
-    21300280: cave_140
-    21300282: cave_141
-    21300284: cave_142
-    21300286: cave_143
-    21300288: cave_144
-    21300290: cave_145
-    21300292: cave_146
-    21300294: cave_147
-    21300296: cave_148
-    21300298: cave_149
-    21300300: cave_150
-    21300302: cave_151
-    21300304: cave_152
-    21300306: cave_153
-    21300308: cave_154
-    21300310: cave_155
-    21300312: cave_156
-    21300314: cave_157
-    21300316: cave_158
-    21300318: cave_159
-    21300320: cave_160
-    21300322: cave_161
-    21300324: cave_162
-    21300326: cave_163
-    21300328: cave_164
-    21300330: cave_165
-    21300332: cave_166
-    21300334: cave_167
-    21300336: cave_168
-    21300338: cave_169
-    21300340: cave_170
-    21300342: cave_171
-    21300344: cave_172
-    21300346: cave_173
-    21300348: cave_174
-    21300350: cave_175
-    21300352: cave_176
-    21300354: cave_177
-    21300356: cave_178
-    21300358: cave_179
-    21300360: cave_180
-    21300362: cave_181
-    21300364: cave_182
-    21300366: cave_183
-    21300368: cave_184
-    21300370: cave_185
-    21300372: cave_186
-    21300374: cave_187
-    21300376: cave_188
-    21300378: cave_189
-    21300380: cave_190
-    21300382: cave_191
-    21300384: cave_192
-    21300386: cave_193
-    21300388: cave_194
-    21300390: cave_195
-    21300392: cave_196
-    21300394: cave_197
-    21300396: cave_198
-    21300398: cave_199
-    21300400: cave_200
-    21300402: cave_201
-    21300404: cave_202
-    21300406: cave_203
-    21300408: cave_204
-    21300410: cave_205
-    21300412: cave_206
-    21300414: cave_207
-    21300416: cave_208
-    21300418: cave_209
-    21300420: cave_210
-    21300422: cave_211
-    21300424: cave_212
-    21300426: cave_213
-    21300428: cave_214
-    21300430: cave_215
-    21300432: cave_216
-    21300434: cave_217
-    21300436: cave_218
-    21300438: cave_219
-    21300440: cave_220
-    21300442: cave_221
-    21300444: cave_222
-    21300446: cave_223
-    21300448: cave_224
-    21300450: cave_225
-    21300452: cave_226
-    21300454: cave_227
-    21300456: cave_228
-    21300458: cave_229
-    21300460: cave_230
-    21300462: cave_231
-    21300464: cave_232
-    21300466: cave_233
-    21300468: cave_234
-    21300470: cave_235
-    21300472: cave_236
-    21300474: cave_237
-    21300476: cave_238
-    21300478: cave_239
-    21300480: cave_240
-    21300482: cave_241
-    21300484: cave_242
-    21300486: cave_243
-    21300488: cave_244
-    21300490: cave_245
-    21300492: cave_246
-    21300494: cave_247
-    21300496: cave_248
-    21300498: cave_249
-    21300500: cave_250
-    21300502: cave_251
-    21300504: cave_252
-    21300506: cave_253
-    21300508: cave_254
-    21300510: cave_255
-    21300512: cave_256
-    21300514: cave_257
-    21300516: cave_258
-    21300518: cave_259
-    21300520: cave_260
-    21300522: cave_261
-    21300524: cave_262
-    21300526: cave_263
-    21300528: cave_264
-    21300530: cave_265
-    21300532: cave_266
-    21300534: cave_267
-    21300536: cave_268
-    21300538: cave_269
-    21300540: cave_270
-    21300542: cave_271
-    21300544: cave_272
-    21300546: cave_273
-    21300548: cave_274
-    21300550: cave_275
-    21300552: cave_276
-    21300554: cave_277
-    21300556: cave_278
-    21300558: cave_279
-    21300560: cave_280
-    21300562: cave_281
-    21300564: cave_282
-    21300566: cave_283
-    21300568: cave_284
-    21300570: cave_285
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: cave_0
+  - first:
+      213: 21300002
+    second: cave_1
+  - first:
+      213: 21300004
+    second: cave_2
+  - first:
+      213: 21300006
+    second: cave_3
+  - first:
+      213: 21300008
+    second: cave_4
+  - first:
+      213: 21300010
+    second: cave_5
+  - first:
+      213: 21300012
+    second: cave_6
+  - first:
+      213: 21300014
+    second: cave_7
+  - first:
+      213: 21300016
+    second: cave_8
+  - first:
+      213: 21300018
+    second: cave_9
+  - first:
+      213: 21300020
+    second: cave_10
+  - first:
+      213: 21300022
+    second: cave_11
+  - first:
+      213: 21300024
+    second: cave_12
+  - first:
+      213: 21300026
+    second: cave_13
+  - first:
+      213: 21300028
+    second: cave_14
+  - first:
+      213: 21300030
+    second: cave_15
+  - first:
+      213: 21300032
+    second: cave_16
+  - first:
+      213: 21300034
+    second: cave_17
+  - first:
+      213: 21300036
+    second: cave_18
+  - first:
+      213: 21300038
+    second: cave_19
+  - first:
+      213: 21300040
+    second: cave_20
+  - first:
+      213: 21300042
+    second: cave_21
+  - first:
+      213: 21300044
+    second: cave_22
+  - first:
+      213: 21300046
+    second: cave_23
+  - first:
+      213: 21300048
+    second: cave_24
+  - first:
+      213: 21300050
+    second: cave_25
+  - first:
+      213: 21300052
+    second: cave_26
+  - first:
+      213: 21300054
+    second: cave_27
+  - first:
+      213: 21300056
+    second: cave_28
+  - first:
+      213: 21300058
+    second: cave_29
+  - first:
+      213: 21300060
+    second: cave_30
+  - first:
+      213: 21300062
+    second: cave_31
+  - first:
+      213: 21300064
+    second: cave_32
+  - first:
+      213: 21300066
+    second: cave_33
+  - first:
+      213: 21300068
+    second: cave_34
+  - first:
+      213: 21300070
+    second: cave_35
+  - first:
+      213: 21300072
+    second: cave_36
+  - first:
+      213: 21300074
+    second: cave_37
+  - first:
+      213: 21300076
+    second: cave_38
+  - first:
+      213: 21300078
+    second: cave_39
+  - first:
+      213: 21300080
+    second: cave_40
+  - first:
+      213: 21300082
+    second: cave_41
+  - first:
+      213: 21300084
+    second: cave_42
+  - first:
+      213: 21300086
+    second: cave_43
+  - first:
+      213: 21300088
+    second: cave_44
+  - first:
+      213: 21300090
+    second: cave_45
+  - first:
+      213: 21300092
+    second: cave_46
+  - first:
+      213: 21300094
+    second: cave_47
+  - first:
+      213: 21300096
+    second: cave_48
+  - first:
+      213: 21300098
+    second: cave_49
+  - first:
+      213: 21300100
+    second: cave_50
+  - first:
+      213: 21300102
+    second: cave_51
+  - first:
+      213: 21300104
+    second: cave_52
+  - first:
+      213: 21300106
+    second: cave_53
+  - first:
+      213: 21300108
+    second: cave_54
+  - first:
+      213: 21300110
+    second: cave_55
+  - first:
+      213: 21300112
+    second: cave_56
+  - first:
+      213: 21300114
+    second: cave_57
+  - first:
+      213: 21300116
+    second: cave_58
+  - first:
+      213: 21300118
+    second: cave_59
+  - first:
+      213: 21300120
+    second: cave_60
+  - first:
+      213: 21300122
+    second: cave_61
+  - first:
+      213: 21300124
+    second: cave_62
+  - first:
+      213: 21300126
+    second: cave_63
+  - first:
+      213: 21300128
+    second: cave_64
+  - first:
+      213: 21300130
+    second: cave_65
+  - first:
+      213: 21300132
+    second: cave_66
+  - first:
+      213: 21300134
+    second: cave_67
+  - first:
+      213: 21300136
+    second: cave_68
+  - first:
+      213: 21300138
+    second: cave_69
+  - first:
+      213: 21300140
+    second: cave_70
+  - first:
+      213: 21300142
+    second: cave_71
+  - first:
+      213: 21300144
+    second: cave_72
+  - first:
+      213: 21300146
+    second: cave_73
+  - first:
+      213: 21300148
+    second: cave_74
+  - first:
+      213: 21300150
+    second: cave_75
+  - first:
+      213: 21300152
+    second: cave_76
+  - first:
+      213: 21300154
+    second: cave_77
+  - first:
+      213: 21300156
+    second: cave_78
+  - first:
+      213: 21300158
+    second: cave_79
+  - first:
+      213: 21300160
+    second: cave_80
+  - first:
+      213: 21300162
+    second: cave_81
+  - first:
+      213: 21300164
+    second: cave_82
+  - first:
+      213: 21300166
+    second: cave_83
+  - first:
+      213: 21300168
+    second: cave_84
+  - first:
+      213: 21300170
+    second: cave_85
+  - first:
+      213: 21300172
+    second: cave_86
+  - first:
+      213: 21300174
+    second: cave_87
+  - first:
+      213: 21300176
+    second: cave_88
+  - first:
+      213: 21300178
+    second: cave_89
+  - first:
+      213: 21300180
+    second: cave_90
+  - first:
+      213: 21300182
+    second: cave_91
+  - first:
+      213: 21300184
+    second: cave_92
+  - first:
+      213: 21300186
+    second: cave_93
+  - first:
+      213: 21300188
+    second: cave_94
+  - first:
+      213: 21300190
+    second: cave_95
+  - first:
+      213: 21300192
+    second: cave_96
+  - first:
+      213: 21300194
+    second: cave_97
+  - first:
+      213: 21300196
+    second: cave_98
+  - first:
+      213: 21300198
+    second: cave_99
+  - first:
+      213: 21300200
+    second: cave_100
+  - first:
+      213: 21300202
+    second: cave_101
+  - first:
+      213: 21300204
+    second: cave_102
+  - first:
+      213: 21300206
+    second: cave_103
+  - first:
+      213: 21300208
+    second: cave_104
+  - first:
+      213: 21300210
+    second: cave_105
+  - first:
+      213: 21300212
+    second: cave_106
+  - first:
+      213: 21300214
+    second: cave_107
+  - first:
+      213: 21300216
+    second: cave_108
+  - first:
+      213: 21300218
+    second: cave_109
+  - first:
+      213: 21300220
+    second: cave_110
+  - first:
+      213: 21300222
+    second: cave_111
+  - first:
+      213: 21300224
+    second: cave_112
+  - first:
+      213: 21300226
+    second: cave_113
+  - first:
+      213: 21300228
+    second: cave_114
+  - first:
+      213: 21300230
+    second: cave_115
+  - first:
+      213: 21300232
+    second: cave_116
+  - first:
+      213: 21300234
+    second: cave_117
+  - first:
+      213: 21300236
+    second: cave_118
+  - first:
+      213: 21300238
+    second: cave_119
+  - first:
+      213: 21300240
+    second: cave_120
+  - first:
+      213: 21300242
+    second: cave_121
+  - first:
+      213: 21300244
+    second: cave_122
+  - first:
+      213: 21300246
+    second: cave_123
+  - first:
+      213: 21300248
+    second: cave_124
+  - first:
+      213: 21300250
+    second: cave_125
+  - first:
+      213: 21300252
+    second: cave_126
+  - first:
+      213: 21300254
+    second: cave_127
+  - first:
+      213: 21300256
+    second: cave_128
+  - first:
+      213: 21300258
+    second: cave_129
+  - first:
+      213: 21300260
+    second: cave_130
+  - first:
+      213: 21300262
+    second: cave_131
+  - first:
+      213: 21300264
+    second: cave_132
+  - first:
+      213: 21300266
+    second: cave_133
+  - first:
+      213: 21300268
+    second: cave_134
+  - first:
+      213: 21300270
+    second: cave_135
+  - first:
+      213: 21300272
+    second: cave_136
+  - first:
+      213: 21300274
+    second: cave_137
+  - first:
+      213: 21300276
+    second: cave_138
+  - first:
+      213: 21300278
+    second: cave_139
+  - first:
+      213: 21300280
+    second: cave_140
+  - first:
+      213: 21300282
+    second: cave_141
+  - first:
+      213: 21300284
+    second: cave_142
+  - first:
+      213: 21300286
+    second: cave_143
+  - first:
+      213: 21300288
+    second: cave_144
+  - first:
+      213: 21300290
+    second: cave_145
+  - first:
+      213: 21300292
+    second: cave_146
+  - first:
+      213: 21300294
+    second: cave_147
+  - first:
+      213: 21300296
+    second: cave_148
+  - first:
+      213: 21300298
+    second: cave_149
+  - first:
+      213: 21300300
+    second: cave_150
+  - first:
+      213: 21300302
+    second: cave_151
+  - first:
+      213: 21300304
+    second: cave_152
+  - first:
+      213: 21300306
+    second: cave_153
+  - first:
+      213: 21300308
+    second: cave_154
+  - first:
+      213: 21300310
+    second: cave_155
+  - first:
+      213: 21300312
+    second: cave_156
+  - first:
+      213: 21300314
+    second: cave_157
+  - first:
+      213: 21300316
+    second: cave_158
+  - first:
+      213: 21300318
+    second: cave_159
+  - first:
+      213: 21300320
+    second: cave_160
+  - first:
+      213: 21300322
+    second: cave_161
+  - first:
+      213: 21300324
+    second: cave_162
+  - first:
+      213: 21300326
+    second: cave_163
+  - first:
+      213: 21300328
+    second: cave_164
+  - first:
+      213: 21300330
+    second: cave_165
+  - first:
+      213: 21300332
+    second: cave_166
+  - first:
+      213: 21300334
+    second: cave_167
+  - first:
+      213: 21300336
+    second: cave_168
+  - first:
+      213: 21300338
+    second: cave_169
+  - first:
+      213: 21300340
+    second: cave_170
+  - first:
+      213: 21300342
+    second: cave_171
+  - first:
+      213: 21300344
+    second: cave_172
+  - first:
+      213: 21300346
+    second: cave_173
+  - first:
+      213: 21300348
+    second: cave_174
+  - first:
+      213: 21300350
+    second: cave_175
+  - first:
+      213: 21300352
+    second: cave_176
+  - first:
+      213: 21300354
+    second: cave_177
+  - first:
+      213: 21300356
+    second: cave_178
+  - first:
+      213: 21300358
+    second: cave_179
+  - first:
+      213: 21300360
+    second: cave_180
+  - first:
+      213: 21300362
+    second: cave_181
+  - first:
+      213: 21300364
+    second: cave_182
+  - first:
+      213: 21300366
+    second: cave_183
+  - first:
+      213: 21300368
+    second: cave_184
+  - first:
+      213: 21300370
+    second: cave_185
+  - first:
+      213: 21300372
+    second: cave_186
+  - first:
+      213: 21300374
+    second: cave_187
+  - first:
+      213: 21300376
+    second: cave_188
+  - first:
+      213: 21300378
+    second: cave_189
+  - first:
+      213: 21300380
+    second: cave_190
+  - first:
+      213: 21300382
+    second: cave_191
+  - first:
+      213: 21300384
+    second: cave_192
+  - first:
+      213: 21300386
+    second: cave_193
+  - first:
+      213: 21300388
+    second: cave_194
+  - first:
+      213: 21300390
+    second: cave_195
+  - first:
+      213: 21300392
+    second: cave_196
+  - first:
+      213: 21300394
+    second: cave_197
+  - first:
+      213: 21300396
+    second: cave_198
+  - first:
+      213: 21300398
+    second: cave_199
+  - first:
+      213: 21300400
+    second: cave_200
+  - first:
+      213: 21300402
+    second: cave_201
+  - first:
+      213: 21300404
+    second: cave_202
+  - first:
+      213: 21300406
+    second: cave_203
+  - first:
+      213: 21300408
+    second: cave_204
+  - first:
+      213: 21300410
+    second: cave_205
+  - first:
+      213: 21300412
+    second: cave_206
+  - first:
+      213: 21300414
+    second: cave_207
+  - first:
+      213: 21300416
+    second: cave_208
+  - first:
+      213: 21300418
+    second: cave_209
+  - first:
+      213: 21300420
+    second: cave_210
+  - first:
+      213: 21300422
+    second: cave_211
+  - first:
+      213: 21300424
+    second: cave_212
+  - first:
+      213: 21300426
+    second: cave_213
+  - first:
+      213: 21300428
+    second: cave_214
+  - first:
+      213: 21300430
+    second: cave_215
+  - first:
+      213: 21300432
+    second: cave_216
+  - first:
+      213: 21300434
+    second: cave_217
+  - first:
+      213: 21300436
+    second: cave_218
+  - first:
+      213: 21300438
+    second: cave_219
+  - first:
+      213: 21300440
+    second: cave_220
+  - first:
+      213: 21300442
+    second: cave_221
+  - first:
+      213: 21300444
+    second: cave_222
+  - first:
+      213: 21300446
+    second: cave_223
+  - first:
+      213: 21300448
+    second: cave_224
+  - first:
+      213: 21300450
+    second: cave_225
+  - first:
+      213: 21300452
+    second: cave_226
+  - first:
+      213: 21300454
+    second: cave_227
+  - first:
+      213: 21300456
+    second: cave_228
+  - first:
+      213: 21300458
+    second: cave_229
+  - first:
+      213: 21300460
+    second: cave_230
+  - first:
+      213: 21300462
+    second: cave_231
+  - first:
+      213: 21300464
+    second: cave_232
+  - first:
+      213: 21300466
+    second: cave_233
+  - first:
+      213: 21300468
+    second: cave_234
+  - first:
+      213: 21300470
+    second: cave_235
+  - first:
+      213: 21300472
+    second: cave_236
+  - first:
+      213: 21300474
+    second: cave_237
+  - first:
+      213: 21300476
+    second: cave_238
+  - first:
+      213: 21300478
+    second: cave_239
+  - first:
+      213: 21300480
+    second: cave_240
+  - first:
+      213: 21300482
+    second: cave_241
+  - first:
+      213: 21300484
+    second: cave_242
+  - first:
+      213: 21300486
+    second: cave_243
+  - first:
+      213: 21300488
+    second: cave_244
+  - first:
+      213: 21300490
+    second: cave_245
+  - first:
+      213: 21300492
+    second: cave_246
+  - first:
+      213: 21300494
+    second: cave_247
+  - first:
+      213: 21300496
+    second: cave_248
+  - first:
+      213: 21300498
+    second: cave_249
+  - first:
+      213: 21300500
+    second: cave_250
+  - first:
+      213: 21300502
+    second: cave_251
+  - first:
+      213: 21300504
+    second: cave_252
+  - first:
+      213: 21300506
+    second: cave_253
+  - first:
+      213: 21300508
+    second: cave_254
+  - first:
+      213: 21300510
+    second: cave_255
+  - first:
+      213: 21300512
+    second: cave_256
+  - first:
+      213: 21300514
+    second: cave_257
+  - first:
+      213: 21300516
+    second: cave_258
+  - first:
+      213: 21300518
+    second: cave_259
+  - first:
+      213: 21300520
+    second: cave_260
+  - first:
+      213: 21300522
+    second: cave_261
+  - first:
+      213: 21300524
+    second: cave_262
+  - first:
+      213: 21300526
+    second: cave_263
+  - first:
+      213: 21300528
+    second: cave_264
+  - first:
+      213: 21300530
+    second: cave_265
+  - first:
+      213: 21300532
+    second: cave_266
+  - first:
+      213: 21300534
+    second: cave_267
+  - first:
+      213: 21300536
+    second: cave_268
+  - first:
+      213: 21300538
+    second: cave_269
+  - first:
+      213: 21300540
+    second: cave_270
+  - first:
+      213: 21300542
+    second: cave_271
+  - first:
+      213: 21300544
+    second: cave_272
+  - first:
+      213: 21300546
+    second: cave_273
+  - first:
+      213: 21300548
+    second: cave_274
+  - first:
+      213: 21300550
+    second: cave_275
+  - first:
+      213: 21300552
+    second: cave_276
+  - first:
+      213: 21300554
+    second: cave_277
+  - first:
+      213: 21300556
+    second: cave_278
+  - first:
+      213: 21300558
+    second: cave_279
+  - first:
+      213: 21300560
+    second: cave_280
+  - first:
+      213: 21300562
+    second: cave_281
+  - first:
+      213: 21300564
+    second: cave_282
+  - first:
+      213: 21300566
+    second: cave_283
+  - first:
+      213: 21300568
+    second: cave_284
+  - first:
+      213: 21300570
+    second: cave_285
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -309,6 +879,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -319,7 +891,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -331,18 +903,21 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -352,7 +927,9 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Standalone
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -362,7 +939,9 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: iPhone
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -372,7 +951,9 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Android
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -382,6 +963,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -399,6 +981,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_1
       rect:
@@ -413,6 +1002,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_2
       rect:
@@ -427,6 +1023,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_3
       rect:
@@ -441,6 +1044,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_4
       rect:
@@ -455,6 +1065,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_5
       rect:
@@ -469,6 +1086,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_6
       rect:
@@ -483,6 +1107,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_7
       rect:
@@ -497,6 +1128,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_8
       rect:
@@ -511,6 +1149,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_9
       rect:
@@ -525,6 +1170,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_10
       rect:
@@ -539,6 +1191,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_11
       rect:
@@ -553,6 +1212,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_12
       rect:
@@ -567,6 +1233,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_13
       rect:
@@ -581,6 +1254,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_14
       rect:
@@ -595,6 +1275,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_15
       rect:
@@ -609,6 +1296,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_16
       rect:
@@ -623,6 +1317,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_17
       rect:
@@ -637,6 +1338,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_18
       rect:
@@ -651,6 +1359,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_19
       rect:
@@ -665,6 +1380,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_20
       rect:
@@ -679,6 +1401,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_21
       rect:
@@ -693,6 +1422,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_22
       rect:
@@ -707,6 +1443,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_23
       rect:
@@ -721,6 +1464,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_24
       rect:
@@ -735,6 +1485,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_25
       rect:
@@ -749,6 +1506,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_26
       rect:
@@ -763,6 +1527,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_27
       rect:
@@ -777,6 +1548,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_28
       rect:
@@ -791,6 +1569,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_29
       rect:
@@ -805,6 +1590,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_30
       rect:
@@ -819,6 +1611,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_31
       rect:
@@ -833,6 +1632,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_32
       rect:
@@ -847,6 +1653,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_33
       rect:
@@ -861,6 +1674,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26305410000000000800000000000000
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_34
       rect:
@@ -875,6 +1695,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_35
       rect:
@@ -889,6 +1716,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_36
       rect:
@@ -903,6 +1737,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 86305410000000000800000000000000
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_37
       rect:
@@ -917,6 +1758,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a6305410000000000800000000000000
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_38
       rect:
@@ -931,6 +1779,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6305410000000000800000000000000
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_39
       rect:
@@ -945,6 +1800,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e6305410000000000800000000000000
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_40
       rect:
@@ -959,6 +1821,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 07305410000000000800000000000000
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_41
       rect:
@@ -973,6 +1842,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 27305410000000000800000000000000
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_42
       rect:
@@ -987,6 +1863,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 47305410000000000800000000000000
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_43
       rect:
@@ -1001,6 +1884,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 67305410000000000800000000000000
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_44
       rect:
@@ -1015,6 +1905,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 87305410000000000800000000000000
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_45
       rect:
@@ -1029,6 +1926,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a7305410000000000800000000000000
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_46
       rect:
@@ -1043,6 +1947,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c7305410000000000800000000000000
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_47
       rect:
@@ -1057,6 +1968,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e7305410000000000800000000000000
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_48
       rect:
@@ -1071,6 +1989,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 08305410000000000800000000000000
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_49
       rect:
@@ -1085,6 +2010,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 28305410000000000800000000000000
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_50
       rect:
@@ -1099,6 +2031,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 48305410000000000800000000000000
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_51
       rect:
@@ -1113,6 +2052,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 68305410000000000800000000000000
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_52
       rect:
@@ -1127,6 +2073,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 88305410000000000800000000000000
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_53
       rect:
@@ -1141,6 +2094,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a8305410000000000800000000000000
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_54
       rect:
@@ -1155,6 +2115,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c8305410000000000800000000000000
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_55
       rect:
@@ -1169,6 +2136,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e8305410000000000800000000000000
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_56
       rect:
@@ -1183,6 +2157,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 09305410000000000800000000000000
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_57
       rect:
@@ -1197,6 +2178,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 29305410000000000800000000000000
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_58
       rect:
@@ -1211,6 +2199,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 49305410000000000800000000000000
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_59
       rect:
@@ -1225,6 +2220,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 69305410000000000800000000000000
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_60
       rect:
@@ -1239,6 +2241,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 89305410000000000800000000000000
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_61
       rect:
@@ -1253,6 +2262,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a9305410000000000800000000000000
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_62
       rect:
@@ -1267,6 +2283,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c9305410000000000800000000000000
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_63
       rect:
@@ -1281,6 +2304,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e9305410000000000800000000000000
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_64
       rect:
@@ -1295,6 +2325,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0a305410000000000800000000000000
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_65
       rect:
@@ -1309,6 +2346,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2a305410000000000800000000000000
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_66
       rect:
@@ -1323,6 +2367,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4a305410000000000800000000000000
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_67
       rect:
@@ -1337,6 +2388,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6a305410000000000800000000000000
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_68
       rect:
@@ -1351,6 +2409,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8a305410000000000800000000000000
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_69
       rect:
@@ -1365,6 +2430,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: aa305410000000000800000000000000
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_70
       rect:
@@ -1379,6 +2451,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ca305410000000000800000000000000
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_71
       rect:
@@ -1393,6 +2472,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ea305410000000000800000000000000
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_72
       rect:
@@ -1407,6 +2493,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0b305410000000000800000000000000
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_73
       rect:
@@ -1421,6 +2514,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2b305410000000000800000000000000
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_74
       rect:
@@ -1435,6 +2535,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4b305410000000000800000000000000
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_75
       rect:
@@ -1449,6 +2556,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6b305410000000000800000000000000
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_76
       rect:
@@ -1463,6 +2577,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8b305410000000000800000000000000
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_77
       rect:
@@ -1477,6 +2598,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ab305410000000000800000000000000
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_78
       rect:
@@ -1491,6 +2619,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cb305410000000000800000000000000
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_79
       rect:
@@ -1505,6 +2640,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: eb305410000000000800000000000000
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_80
       rect:
@@ -1519,6 +2661,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0c305410000000000800000000000000
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_81
       rect:
@@ -1533,6 +2682,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2c305410000000000800000000000000
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_82
       rect:
@@ -1547,6 +2703,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4c305410000000000800000000000000
+      internalID: 21300164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_83
       rect:
@@ -1561,6 +2724,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6c305410000000000800000000000000
+      internalID: 21300166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_84
       rect:
@@ -1575,6 +2745,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8c305410000000000800000000000000
+      internalID: 21300168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_85
       rect:
@@ -1589,6 +2766,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ac305410000000000800000000000000
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_86
       rect:
@@ -1603,6 +2787,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cc305410000000000800000000000000
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_87
       rect:
@@ -1617,6 +2808,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ec305410000000000800000000000000
+      internalID: 21300174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_88
       rect:
@@ -1631,6 +2829,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0d305410000000000800000000000000
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_89
       rect:
@@ -1645,6 +2850,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2d305410000000000800000000000000
+      internalID: 21300178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_90
       rect:
@@ -1659,6 +2871,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4d305410000000000800000000000000
+      internalID: 21300180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_91
       rect:
@@ -1673,6 +2892,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6d305410000000000800000000000000
+      internalID: 21300182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_92
       rect:
@@ -1687,6 +2913,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8d305410000000000800000000000000
+      internalID: 21300184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_93
       rect:
@@ -1701,6 +2934,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ad305410000000000800000000000000
+      internalID: 21300186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_94
       rect:
@@ -1715,6 +2955,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cd305410000000000800000000000000
+      internalID: 21300188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_95
       rect:
@@ -1729,6 +2976,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ed305410000000000800000000000000
+      internalID: 21300190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_96
       rect:
@@ -1743,6 +2997,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0e305410000000000800000000000000
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_97
       rect:
@@ -1757,6 +3018,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2e305410000000000800000000000000
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_98
       rect:
@@ -1771,6 +3039,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4e305410000000000800000000000000
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_99
       rect:
@@ -1785,6 +3060,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6e305410000000000800000000000000
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_100
       rect:
@@ -1799,6 +3081,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8e305410000000000800000000000000
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_101
       rect:
@@ -1813,6 +3102,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ae305410000000000800000000000000
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_102
       rect:
@@ -1827,6 +3123,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ce305410000000000800000000000000
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_103
       rect:
@@ -1841,6 +3144,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ee305410000000000800000000000000
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_104
       rect:
@@ -1855,6 +3165,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0f305410000000000800000000000000
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_105
       rect:
@@ -1869,6 +3186,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2f305410000000000800000000000000
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_106
       rect:
@@ -1883,6 +3207,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4f305410000000000800000000000000
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_107
       rect:
@@ -1897,6 +3228,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6f305410000000000800000000000000
+      internalID: 21300214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_108
       rect:
@@ -1911,6 +3249,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8f305410000000000800000000000000
+      internalID: 21300216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_109
       rect:
@@ -1925,6 +3270,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: af305410000000000800000000000000
+      internalID: 21300218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_110
       rect:
@@ -1939,6 +3291,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cf305410000000000800000000000000
+      internalID: 21300220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_111
       rect:
@@ -1953,6 +3312,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ef305410000000000800000000000000
+      internalID: 21300222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_112
       rect:
@@ -1967,6 +3333,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 00405410000000000800000000000000
+      internalID: 21300224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_113
       rect:
@@ -1981,6 +3354,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 20405410000000000800000000000000
+      internalID: 21300226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_114
       rect:
@@ -1995,6 +3375,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 40405410000000000800000000000000
+      internalID: 21300228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_115
       rect:
@@ -2009,6 +3396,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 60405410000000000800000000000000
+      internalID: 21300230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_116
       rect:
@@ -2023,6 +3417,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 80405410000000000800000000000000
+      internalID: 21300232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_117
       rect:
@@ -2037,6 +3438,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a0405410000000000800000000000000
+      internalID: 21300234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_118
       rect:
@@ -2051,6 +3459,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c0405410000000000800000000000000
+      internalID: 21300236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_119
       rect:
@@ -2065,6 +3480,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e0405410000000000800000000000000
+      internalID: 21300238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_120
       rect:
@@ -2079,6 +3501,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 01405410000000000800000000000000
+      internalID: 21300240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_121
       rect:
@@ -2093,6 +3522,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 21405410000000000800000000000000
+      internalID: 21300242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_122
       rect:
@@ -2107,6 +3543,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 41405410000000000800000000000000
+      internalID: 21300244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_123
       rect:
@@ -2121,6 +3564,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 61405410000000000800000000000000
+      internalID: 21300246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_124
       rect:
@@ -2135,6 +3585,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 81405410000000000800000000000000
+      internalID: 21300248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_125
       rect:
@@ -2149,6 +3606,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a1405410000000000800000000000000
+      internalID: 21300250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_126
       rect:
@@ -2163,6 +3627,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c1405410000000000800000000000000
+      internalID: 21300252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_127
       rect:
@@ -2177,6 +3648,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e1405410000000000800000000000000
+      internalID: 21300254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_128
       rect:
@@ -2191,6 +3669,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02405410000000000800000000000000
+      internalID: 21300256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_129
       rect:
@@ -2205,6 +3690,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22405410000000000800000000000000
+      internalID: 21300258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_130
       rect:
@@ -2219,6 +3711,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42405410000000000800000000000000
+      internalID: 21300260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_131
       rect:
@@ -2233,6 +3732,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62405410000000000800000000000000
+      internalID: 21300262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_132
       rect:
@@ -2247,6 +3753,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82405410000000000800000000000000
+      internalID: 21300264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_133
       rect:
@@ -2261,6 +3774,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2405410000000000800000000000000
+      internalID: 21300266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_134
       rect:
@@ -2275,6 +3795,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2405410000000000800000000000000
+      internalID: 21300268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_135
       rect:
@@ -2289,6 +3816,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2405410000000000800000000000000
+      internalID: 21300270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_136
       rect:
@@ -2303,6 +3837,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03405410000000000800000000000000
+      internalID: 21300272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_137
       rect:
@@ -2317,6 +3858,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23405410000000000800000000000000
+      internalID: 21300274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_138
       rect:
@@ -2331,6 +3879,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43405410000000000800000000000000
+      internalID: 21300276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_139
       rect:
@@ -2345,6 +3900,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63405410000000000800000000000000
+      internalID: 21300278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_140
       rect:
@@ -2359,6 +3921,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83405410000000000800000000000000
+      internalID: 21300280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_141
       rect:
@@ -2373,6 +3942,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3405410000000000800000000000000
+      internalID: 21300282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_142
       rect:
@@ -2387,6 +3963,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3405410000000000800000000000000
+      internalID: 21300284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_143
       rect:
@@ -2401,6 +3984,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3405410000000000800000000000000
+      internalID: 21300286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_144
       rect:
@@ -2415,6 +4005,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04405410000000000800000000000000
+      internalID: 21300288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_145
       rect:
@@ -2429,6 +4026,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24405410000000000800000000000000
+      internalID: 21300290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_146
       rect:
@@ -2443,6 +4047,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44405410000000000800000000000000
+      internalID: 21300292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_147
       rect:
@@ -2457,6 +4068,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64405410000000000800000000000000
+      internalID: 21300294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_148
       rect:
@@ -2471,6 +4089,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84405410000000000800000000000000
+      internalID: 21300296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_149
       rect:
@@ -2485,6 +4110,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4405410000000000800000000000000
+      internalID: 21300298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_150
       rect:
@@ -2499,6 +4131,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4405410000000000800000000000000
+      internalID: 21300300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_151
       rect:
@@ -2513,6 +4152,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4405410000000000800000000000000
+      internalID: 21300302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_152
       rect:
@@ -2527,6 +4173,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05405410000000000800000000000000
+      internalID: 21300304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_153
       rect:
@@ -2541,6 +4194,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25405410000000000800000000000000
+      internalID: 21300306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_154
       rect:
@@ -2555,6 +4215,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45405410000000000800000000000000
+      internalID: 21300308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_155
       rect:
@@ -2569,6 +4236,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65405410000000000800000000000000
+      internalID: 21300310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_156
       rect:
@@ -2583,6 +4257,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85405410000000000800000000000000
+      internalID: 21300312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_157
       rect:
@@ -2597,6 +4278,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5405410000000000800000000000000
+      internalID: 21300314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_158
       rect:
@@ -2611,6 +4299,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5405410000000000800000000000000
+      internalID: 21300316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_159
       rect:
@@ -2625,6 +4320,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5405410000000000800000000000000
+      internalID: 21300318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_160
       rect:
@@ -2639,6 +4341,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06405410000000000800000000000000
+      internalID: 21300320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_161
       rect:
@@ -2653,6 +4362,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 26405410000000000800000000000000
+      internalID: 21300322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_162
       rect:
@@ -2667,6 +4383,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46405410000000000800000000000000
+      internalID: 21300324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_163
       rect:
@@ -2681,6 +4404,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66405410000000000800000000000000
+      internalID: 21300326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_164
       rect:
@@ -2695,6 +4425,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 86405410000000000800000000000000
+      internalID: 21300328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_165
       rect:
@@ -2709,6 +4446,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a6405410000000000800000000000000
+      internalID: 21300330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_166
       rect:
@@ -2723,6 +4467,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6405410000000000800000000000000
+      internalID: 21300332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_167
       rect:
@@ -2737,6 +4488,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e6405410000000000800000000000000
+      internalID: 21300334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_168
       rect:
@@ -2751,6 +4509,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 07405410000000000800000000000000
+      internalID: 21300336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_169
       rect:
@@ -2765,6 +4530,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 27405410000000000800000000000000
+      internalID: 21300338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_170
       rect:
@@ -2779,6 +4551,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 47405410000000000800000000000000
+      internalID: 21300340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_171
       rect:
@@ -2793,6 +4572,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 67405410000000000800000000000000
+      internalID: 21300342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_172
       rect:
@@ -2807,6 +4593,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 87405410000000000800000000000000
+      internalID: 21300344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_173
       rect:
@@ -2821,6 +4614,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a7405410000000000800000000000000
+      internalID: 21300346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_174
       rect:
@@ -2835,6 +4635,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c7405410000000000800000000000000
+      internalID: 21300348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_175
       rect:
@@ -2849,6 +4656,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e7405410000000000800000000000000
+      internalID: 21300350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_176
       rect:
@@ -2863,6 +4677,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 08405410000000000800000000000000
+      internalID: 21300352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_177
       rect:
@@ -2877,6 +4698,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 28405410000000000800000000000000
+      internalID: 21300354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_178
       rect:
@@ -2891,6 +4719,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 48405410000000000800000000000000
+      internalID: 21300356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_179
       rect:
@@ -2905,6 +4740,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 68405410000000000800000000000000
+      internalID: 21300358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_180
       rect:
@@ -2919,6 +4761,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 88405410000000000800000000000000
+      internalID: 21300360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_181
       rect:
@@ -2933,6 +4782,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a8405410000000000800000000000000
+      internalID: 21300362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_182
       rect:
@@ -2947,6 +4803,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c8405410000000000800000000000000
+      internalID: 21300364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_183
       rect:
@@ -2961,6 +4824,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e8405410000000000800000000000000
+      internalID: 21300366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_184
       rect:
@@ -2975,6 +4845,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 09405410000000000800000000000000
+      internalID: 21300368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_185
       rect:
@@ -2989,6 +4866,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 29405410000000000800000000000000
+      internalID: 21300370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_186
       rect:
@@ -3003,6 +4887,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 49405410000000000800000000000000
+      internalID: 21300372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_187
       rect:
@@ -3017,6 +4908,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 69405410000000000800000000000000
+      internalID: 21300374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_188
       rect:
@@ -3031,6 +4929,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 89405410000000000800000000000000
+      internalID: 21300376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_189
       rect:
@@ -3045,6 +4950,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a9405410000000000800000000000000
+      internalID: 21300378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_190
       rect:
@@ -3059,6 +4971,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c9405410000000000800000000000000
+      internalID: 21300380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_191
       rect:
@@ -3073,6 +4992,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e9405410000000000800000000000000
+      internalID: 21300382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_192
       rect:
@@ -3087,6 +5013,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0a405410000000000800000000000000
+      internalID: 21300384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_193
       rect:
@@ -3101,6 +5034,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2a405410000000000800000000000000
+      internalID: 21300386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_194
       rect:
@@ -3115,6 +5055,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4a405410000000000800000000000000
+      internalID: 21300388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_195
       rect:
@@ -3129,6 +5076,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6a405410000000000800000000000000
+      internalID: 21300390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_196
       rect:
@@ -3143,6 +5097,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8a405410000000000800000000000000
+      internalID: 21300392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_197
       rect:
@@ -3157,6 +5118,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: aa405410000000000800000000000000
+      internalID: 21300394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_198
       rect:
@@ -3171,6 +5139,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ca405410000000000800000000000000
+      internalID: 21300396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_199
       rect:
@@ -3185,6 +5160,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ea405410000000000800000000000000
+      internalID: 21300398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_200
       rect:
@@ -3199,6 +5181,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0b405410000000000800000000000000
+      internalID: 21300400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_201
       rect:
@@ -3213,6 +5202,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2b405410000000000800000000000000
+      internalID: 21300402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_202
       rect:
@@ -3227,6 +5223,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4b405410000000000800000000000000
+      internalID: 21300404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_203
       rect:
@@ -3241,6 +5244,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6b405410000000000800000000000000
+      internalID: 21300406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_204
       rect:
@@ -3255,6 +5265,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8b405410000000000800000000000000
+      internalID: 21300408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_205
       rect:
@@ -3269,6 +5286,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ab405410000000000800000000000000
+      internalID: 21300410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_206
       rect:
@@ -3283,6 +5307,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cb405410000000000800000000000000
+      internalID: 21300412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_207
       rect:
@@ -3297,6 +5328,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: eb405410000000000800000000000000
+      internalID: 21300414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_208
       rect:
@@ -3311,6 +5349,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0c405410000000000800000000000000
+      internalID: 21300416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_209
       rect:
@@ -3325,6 +5370,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2c405410000000000800000000000000
+      internalID: 21300418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_210
       rect:
@@ -3339,6 +5391,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4c405410000000000800000000000000
+      internalID: 21300420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_211
       rect:
@@ -3353,6 +5412,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6c405410000000000800000000000000
+      internalID: 21300422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_212
       rect:
@@ -3367,6 +5433,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8c405410000000000800000000000000
+      internalID: 21300424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_213
       rect:
@@ -3381,6 +5454,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ac405410000000000800000000000000
+      internalID: 21300426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_214
       rect:
@@ -3395,6 +5475,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cc405410000000000800000000000000
+      internalID: 21300428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_215
       rect:
@@ -3409,6 +5496,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ec405410000000000800000000000000
+      internalID: 21300430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_216
       rect:
@@ -3423,6 +5517,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0d405410000000000800000000000000
+      internalID: 21300432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_217
       rect:
@@ -3437,6 +5538,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2d405410000000000800000000000000
+      internalID: 21300434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_218
       rect:
@@ -3451,6 +5559,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4d405410000000000800000000000000
+      internalID: 21300436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_219
       rect:
@@ -3465,6 +5580,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6d405410000000000800000000000000
+      internalID: 21300438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_220
       rect:
@@ -3479,6 +5601,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8d405410000000000800000000000000
+      internalID: 21300440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_221
       rect:
@@ -3493,6 +5622,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ad405410000000000800000000000000
+      internalID: 21300442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_222
       rect:
@@ -3507,6 +5643,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cd405410000000000800000000000000
+      internalID: 21300444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_223
       rect:
@@ -3521,6 +5664,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ed405410000000000800000000000000
+      internalID: 21300446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_224
       rect:
@@ -3535,6 +5685,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0e405410000000000800000000000000
+      internalID: 21300448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_225
       rect:
@@ -3549,6 +5706,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2e405410000000000800000000000000
+      internalID: 21300450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_226
       rect:
@@ -3563,6 +5727,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4e405410000000000800000000000000
+      internalID: 21300452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_227
       rect:
@@ -3577,6 +5748,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6e405410000000000800000000000000
+      internalID: 21300454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_228
       rect:
@@ -3591,6 +5769,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8e405410000000000800000000000000
+      internalID: 21300456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_229
       rect:
@@ -3605,6 +5790,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ae405410000000000800000000000000
+      internalID: 21300458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_230
       rect:
@@ -3619,6 +5811,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ce405410000000000800000000000000
+      internalID: 21300460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_231
       rect:
@@ -3633,6 +5832,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ee405410000000000800000000000000
+      internalID: 21300462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_232
       rect:
@@ -3647,6 +5853,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0f405410000000000800000000000000
+      internalID: 21300464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_233
       rect:
@@ -3661,6 +5874,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2f405410000000000800000000000000
+      internalID: 21300466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_234
       rect:
@@ -3675,6 +5895,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4f405410000000000800000000000000
+      internalID: 21300468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_235
       rect:
@@ -3689,6 +5916,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6f405410000000000800000000000000
+      internalID: 21300470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_236
       rect:
@@ -3703,6 +5937,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8f405410000000000800000000000000
+      internalID: 21300472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_237
       rect:
@@ -3717,6 +5958,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: af405410000000000800000000000000
+      internalID: 21300474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_238
       rect:
@@ -3731,6 +5979,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cf405410000000000800000000000000
+      internalID: 21300476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_239
       rect:
@@ -3745,6 +6000,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ef405410000000000800000000000000
+      internalID: 21300478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_240
       rect:
@@ -3759,6 +6021,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 00505410000000000800000000000000
+      internalID: 21300480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_241
       rect:
@@ -3773,6 +6042,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 20505410000000000800000000000000
+      internalID: 21300482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_242
       rect:
@@ -3787,6 +6063,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 40505410000000000800000000000000
+      internalID: 21300484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_243
       rect:
@@ -3801,6 +6084,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 60505410000000000800000000000000
+      internalID: 21300486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_244
       rect:
@@ -3815,6 +6105,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 80505410000000000800000000000000
+      internalID: 21300488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_245
       rect:
@@ -3829,6 +6126,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a0505410000000000800000000000000
+      internalID: 21300490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_246
       rect:
@@ -3843,6 +6147,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c0505410000000000800000000000000
+      internalID: 21300492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_247
       rect:
@@ -3857,6 +6168,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e0505410000000000800000000000000
+      internalID: 21300494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_248
       rect:
@@ -3871,6 +6189,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 01505410000000000800000000000000
+      internalID: 21300496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_249
       rect:
@@ -3885,6 +6210,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 21505410000000000800000000000000
+      internalID: 21300498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_250
       rect:
@@ -3899,6 +6231,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 41505410000000000800000000000000
+      internalID: 21300500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_251
       rect:
@@ -3913,6 +6252,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 61505410000000000800000000000000
+      internalID: 21300502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_252
       rect:
@@ -3927,6 +6273,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 81505410000000000800000000000000
+      internalID: 21300504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_253
       rect:
@@ -3941,6 +6294,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a1505410000000000800000000000000
+      internalID: 21300506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_254
       rect:
@@ -3955,6 +6315,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c1505410000000000800000000000000
+      internalID: 21300508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_255
       rect:
@@ -3969,6 +6336,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e1505410000000000800000000000000
+      internalID: 21300510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_256
       rect:
@@ -3983,6 +6357,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 02505410000000000800000000000000
+      internalID: 21300512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_257
       rect:
@@ -3997,6 +6378,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 22505410000000000800000000000000
+      internalID: 21300514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_258
       rect:
@@ -4011,6 +6399,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 42505410000000000800000000000000
+      internalID: 21300516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_259
       rect:
@@ -4025,6 +6420,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 62505410000000000800000000000000
+      internalID: 21300518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_260
       rect:
@@ -4039,6 +6441,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 82505410000000000800000000000000
+      internalID: 21300520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_261
       rect:
@@ -4053,6 +6462,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a2505410000000000800000000000000
+      internalID: 21300522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_262
       rect:
@@ -4067,6 +6483,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c2505410000000000800000000000000
+      internalID: 21300524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_263
       rect:
@@ -4081,6 +6504,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e2505410000000000800000000000000
+      internalID: 21300526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_264
       rect:
@@ -4095,6 +6525,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 03505410000000000800000000000000
+      internalID: 21300528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_265
       rect:
@@ -4109,6 +6546,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23505410000000000800000000000000
+      internalID: 21300530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_266
       rect:
@@ -4123,6 +6567,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 43505410000000000800000000000000
+      internalID: 21300532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_267
       rect:
@@ -4137,6 +6588,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 63505410000000000800000000000000
+      internalID: 21300534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_268
       rect:
@@ -4151,6 +6609,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83505410000000000800000000000000
+      internalID: 21300536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_269
       rect:
@@ -4165,6 +6630,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3505410000000000800000000000000
+      internalID: 21300538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_270
       rect:
@@ -4179,6 +6651,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c3505410000000000800000000000000
+      internalID: 21300540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_271
       rect:
@@ -4193,6 +6672,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e3505410000000000800000000000000
+      internalID: 21300542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_272
       rect:
@@ -4207,6 +6693,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 04505410000000000800000000000000
+      internalID: 21300544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_273
       rect:
@@ -4221,6 +6714,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 24505410000000000800000000000000
+      internalID: 21300546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_274
       rect:
@@ -4235,6 +6735,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 44505410000000000800000000000000
+      internalID: 21300548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_275
       rect:
@@ -4249,6 +6756,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 64505410000000000800000000000000
+      internalID: 21300550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_276
       rect:
@@ -4263,6 +6777,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 84505410000000000800000000000000
+      internalID: 21300552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_277
       rect:
@@ -4277,6 +6798,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a4505410000000000800000000000000
+      internalID: 21300554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_278
       rect:
@@ -4291,6 +6819,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c4505410000000000800000000000000
+      internalID: 21300556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_279
       rect:
@@ -4305,6 +6840,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e4505410000000000800000000000000
+      internalID: 21300558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_280
       rect:
@@ -4319,6 +6861,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05505410000000000800000000000000
+      internalID: 21300560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_281
       rect:
@@ -4333,6 +6882,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 25505410000000000800000000000000
+      internalID: 21300562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_282
       rect:
@@ -4347,6 +6903,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45505410000000000800000000000000
+      internalID: 21300564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_283
       rect:
@@ -4361,6 +6924,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 65505410000000000800000000000000
+      internalID: 21300566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_284
       rect:
@@ -4375,6 +6945,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 85505410000000000800000000000000
+      internalID: 21300568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: cave_285
       rect:
@@ -4389,6 +6966,13 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5505410000000000800000000000000
+      internalID: 21300570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline:
     - - {x: -41, y: -134}
       - {x: -33, y: -131}
@@ -4477,7 +7061,17 @@ TextureImporter:
       - {x: -19, y: 101}
       - {x: -19, y: 91}
       - {x: -29, y: 91}
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
