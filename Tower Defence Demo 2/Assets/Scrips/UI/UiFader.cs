@@ -10,11 +10,12 @@ namespace Scrips.UI
         public LevelLoader LevelLoader;
 
         private string _levelToLoad;
+        private static readonly int FadeOut = Animator.StringToHash("FadeOut");
 
         public void FadeToLevel(string levelName)
         {
             _levelToLoad = levelName;
-            Animator.SetTrigger("FadeOut");
+            Animator.SetTrigger(FadeOut);
         }
 
         public void OnFadeComplete()

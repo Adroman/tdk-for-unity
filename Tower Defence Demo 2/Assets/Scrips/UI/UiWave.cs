@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Scrips.UI
@@ -11,16 +12,38 @@ namespace Scrips.UI
 
         private Vector3 _originalPosition;
 
+        public Animator UIWaveAnimator;
+        private static readonly int RightToLeft = Animator.StringToHash("RightToLeft");
+        private static readonly int LeftToRight = Animator.StringToHash("LeftToRight");
+
+        public void OnEnable()
+        {
+            if (UIWaveAnimator == null)
+            {
+                UIWaveAnimator = GetComponent<Animator>();
+            }
+        }
+
         public void Spawn()
         {
             _originalPosition = PartToMove.localPosition;
             PartToMove.Translate(PartToMove.rect.width, 0, 0);
-            StartCoroutine(Move(-1, PartToMove.rect.width, 1));
+
+            UIWaveAnimator.SetTrigger(RightToLeft);
+
+            //StartCoroutine(Move(-1, PartToMove.rect.width, 1));
         }
 
         public void Despawn()
         {
-            StartCoroutine(Move(1, PartToMove.rect.width, 1, true));
+            UIWaveAnimator.SetTrigger(LeftToRight);
+
+            //StartCoroutine(Move(1, PartToMove.rect.width, 1, true));
+        }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
         }
 
         private IEnumerator Move(float speed, float distance, float lerpTime, bool destroy = false)

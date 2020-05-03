@@ -572,6 +572,9 @@
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>C:/Users/Adrián/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Library/PackageCache/com.unity.purchasing@2.0.6/UnityEngine.Purchasing.dll</HintPath>
+ </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
  </Reference>
