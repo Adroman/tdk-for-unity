@@ -17,7 +17,7 @@ namespace Editor.CustomInspectors
 
             if (GUILayout.Button("Apply image and text from variable."))
             {
-                Undo.RecordObject(_target, "Generate waves");
+                Undo.RecordObject(_target, "Update variable text");
                 _target.UpdateText();
 
                 var image = _target.GetComponentInChildren<Image>();

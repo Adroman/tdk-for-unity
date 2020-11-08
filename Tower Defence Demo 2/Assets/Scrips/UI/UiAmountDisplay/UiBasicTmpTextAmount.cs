@@ -1,16 +1,16 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Scrips.UI.UiAmountDisplay
 {
-    [RequireComponent(typeof(Text))]
-    public class UiBasicTextAmount : UiBaseAmount
+    [RequireComponent(typeof(TextMeshProUGUI))]
+    public class UiBasicTmpTextAmount : UiBaseAmount
     {
-        private Text _text;
+        private TextMeshProUGUI _text;
 
         public void Awake()
         {
-            _text = GetComponent<Text>();
+            _text = GetComponent<TextMeshProUGUI>();
         }
 
         public override void UpdateValue(int amount)

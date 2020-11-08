@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Adrián\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Adrián\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Adrián\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Adrián\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_Tower Defence Demo 2.2080163067.00" t="ExcludeRecursive" />
     <e p="C:\Users\Adrián\OneDrive\Programming\Tower Defense Kit For Unity\tdk-for-unity\Tower Defence Demo 2" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -300,7 +300,9 @@
             <e p="UiAmountDisplay" t="Include">
               <e p="UiBaseAmount.cs" t="Include" />
               <e p="UiBasicTextAmount.cs" t="Include" />
+              <e p="UiBasicTmpTextAmount.cs" t="Include" />
               <e p="UiCharQuantityAmount.cs" t="Include" />
+              <e p="UiCharQuantityTmpAmount.cs" t="Include" />
             </e>
             <e p="UiClusterInfo.cs" t="Include" />
             <e p="UiController.cs" t="Include" />
@@ -332,6 +334,7 @@
               <e p="UiTextDisplay.cs" t="Include" />
               <e p="UiTmpTextDisplay.cs" t="Include" />
             </e>
+            <e p="UITextWithImage.cs" t="Include" />
             <e p="UiTowerButton.cs" t="Include" />
             <e p="UiTowerPreBuildInfo.cs" t="Include" />
             <e p="UIWave.cs" t="Include" />
@@ -357,6 +360,9 @@
             <e p="RuntimeCollection.cs" t="Include" />
             <e p="TowerCollection.cs" t="Include" />
             <e p="Variable.cs" t="Include" />
+            <e p="Watchers" t="Include">
+              <e p="VariableWatcher.cs" t="Include" />
+            </e>
           </e>
           <e p="WaveModifiers" t="Include">
             <e p="BasicWaveModifier.cs" t="Include" />
