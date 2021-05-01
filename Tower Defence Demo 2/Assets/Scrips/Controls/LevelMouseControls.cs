@@ -59,7 +59,7 @@ namespace Scrips.Controls
             {
                 SpellCircle.gameObject.SetActive(true);
                 SpellCircle.transform.position = new Vector3(hit.point.x, hit.point.y, -1);
-                SpellCircle.UpdateCircle(SelectedTowerOption.Option.SelectedSpell.Spell.Range);
+                SpellCircle.UpdateCircle(SelectedTowerOption.Option.SelectedSpell.Spell.Range); // CHANGE THIS
             }
             else
             {

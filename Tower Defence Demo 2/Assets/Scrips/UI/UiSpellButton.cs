@@ -1,3 +1,5 @@
+using Scrips.Modifiers;
+using Scrips.Modifiers.Stats;
 using Scrips.Spells;
 using Scrips.UI.UiAmountDisplay;
 using Scrips.UI.UiProgressDisplay;
@@ -10,7 +12,7 @@ namespace Scrips.UI
     {
         private class CurrentSpellData
         {
-            private float _currentCharge;
+            private readonly FloatModifiableStat _currentCharge;
             private int _currentUsableCharges;
             private readonly UiBaseProgress _progressDisplay;
             private readonly UiBaseAmount _amountDisplay;
@@ -19,14 +21,15 @@ namespace Scrips.UI
             {
                 _progressDisplay = progressDisplay;
                 _amountDisplay = amountDisplay;
+                _currentCharge = new FloatModifiableStat();
             }
 
             public float CurrentCharge
             {
-                get { return _currentCharge; }
+                get { return _currentCharge.Value; }
                 set
                 {
-                    _currentCharge = value;
+                    _currentCharge.Value = value;
                     _progressDisplay.UpdateValue(value);
                 }
             }
@@ -45,6 +48,7 @@ namespace Scrips.UI
             public float ActualMaxCharges { get; set; }
         }
 
+        public ModifierController ModifierController;
         public EnemySpell Spell;
         public Image ButtonImage;
         public Image SelectedItemImage;
@@ -54,16 +58,28 @@ namespace Scrips.UI
 
         private CurrentSpellData _spellData;
 
+        private FloatModifiableStat _spellRange;
+        private FloatModifiableStat _spellInitialCharge;
+        private FloatModifiableStat _spellChargeTime;
+        private FloatModifiableStat _spellCharges;
+
         private void Start()
         {
             ButtonImage.sprite = Spell.PreviewSprite;
 
+            _spellRange = new FloatModifiableStat{Value = Spell.Range};
+            _spellInitialCharge = new FloatModifiableStat{Value = Spell.InitialCharge};
+            _spellChargeTime = new FloatModifiableStat{Value = Spell.ChargeTime};
+            _spellCharges = new FloatModifiableStat{Value = Spell.Charges};
+
+            ModifierController.ImportModifiers(this);
+
             _spellData = new CurrentSpellData(ProgressDisplay, AmountDisplay)
             {
-                CurrentCharge = Spell.InitialCharge,
-                CurrentUsableCharges = Mathf.FloorToInt(Spell.InitialCharge),
-                ActualChargeTime = Spell.ChargeTime,
-                ActualMaxCharges = Spell.Charges
+                CurrentCharge = _spellInitialCharge.Value,
+                CurrentUsableCharges = Mathf.FloorToInt(_spellInitialCharge.Value),
+                ActualChargeTime = _spellChargeTime.Value,
+                ActualMaxCharges = _spellCharges.Value
             };
         }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Linq;
+using Scrips.Modifiers.Stats;
 using Scrips.Utils;
 using Scrips.Variables;
 using UnityEngine;
@@ -15,8 +16,11 @@ namespace Scrips.Spells
 
         public EnemyCollection Enemies;
 
+        protected FloatModifiableStat Range;
+        
         private void OnEnable()
         {
+            Range = new FloatModifiableStat{Value = Spell.Range};
             Particles = GetComponent<ParticleSystem>();
             AdjustParticles();
             HitEnemies();
@@ -46,7 +50,7 @@ namespace Scrips.Spells
 
         private void HitEnemies()
         {
-            foreach (var enemy in Enemies.Instances.Where(e => e.transform.position.Distance2D(transform.position) <= Spell.Range))
+            foreach (var enemy in Enemies.Instances.Where(e => e.transform.position.Distance2D(transform.position) <= Range.Value))
             {
                 Spell.ApplySpell(enemy);
             }

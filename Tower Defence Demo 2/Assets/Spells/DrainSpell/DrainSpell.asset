@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82716f399394e098bf24692a53f7a78, type: 3}
   m_Name: DrainSpell
   m_EditorClassIdentifier: 
-  Range: 2
-  Charges: 2
-  ChargeTime: 5
+  Range: 0
+  Charges: 0
+  ChargeTime: 0
   InitialCharge: 0
   PreviewSprite: {fileID: 21300000, guid: 450e0fb9d04cc4ad6b5ee0226f3e1ea2, type: 3}
   Prefab: {fileID: 8681358081951267991, guid: 7c21d4e7e2bf738419db4343f73e0ee6, type: 3}

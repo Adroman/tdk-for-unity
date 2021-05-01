@@ -11,12 +11,14 @@ namespace Scrips.Waves
     public class WaveNumber
     {
         public int Number;
+
+        [SerializeReference]
         public Wave Wave;
 
-        public WaveNumber(int number, Wave wave)
+        public WaveNumber(int number, Wave wave = null)
         {
             Number = number;
-            Wave = wave;
+            Wave = wave ?? new Wave();
         }
     }
 

@@ -23,7 +23,7 @@ namespace Scrips.Towers.Specials.ReduceArmor
                 return;
             }
 
-            reduceArmor.Amount = PowerIncreaseType.Increase(reduceArmor.Amount, PowerByAmount);
+            reduceArmor.Amount.Value = PowerIncreaseType.Increase(reduceArmor.Amount.Value, PowerByAmount);
 
             float newChance = ChanceIncreaseType.Increase(reduceArmor.Chance, ChanceByAmount);
 

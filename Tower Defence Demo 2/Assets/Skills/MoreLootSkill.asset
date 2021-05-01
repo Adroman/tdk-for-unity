@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9acf1a0d5aa94d5c8f7c2562a26111cc, type: 3}
-  m_Name: CheaperTowersSkill
+  m_Name: MoreLootSkill
   m_EditorClassIdentifier: 
-  Name: Cheaper towers
-  DescriptionFormat: Towers are {0} % cheaper to build and upgrade.
+  Name: More gold from enemies
+  DescriptionFormat: Enemies drop {0} % more gold per kill.
   SkillRequirements: []
   PlayerLevelRequirement: 0
-  Modifiers:
-  - Modifier: {fileID: 11400000, guid: d8e4a4af389f109458b879523b96393d, type: 2}
-    PerLevelsApplied: 1
-    DisplayNegatedAmount: 1
-    DisplayMultipliedBy100: 1
+  Modifiers: []
   LevelCostFormula: {fileID: 11400000, guid: 4810a981417d6f644856f6122426e6c4, type: 2}
   MaxLevel: 10

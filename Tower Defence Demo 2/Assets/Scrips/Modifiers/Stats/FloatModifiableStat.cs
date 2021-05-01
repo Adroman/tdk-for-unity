@@ -46,7 +46,7 @@ namespace Scrips.Modifiers.Stats
 
         public void RemoveModifier(BaseModifier modifier)
         {
-            _isDirty = _modifiers.Remove(modifier);
+            _isDirty |= _modifiers.Remove(modifier);
         }
 
         [SerializeField]

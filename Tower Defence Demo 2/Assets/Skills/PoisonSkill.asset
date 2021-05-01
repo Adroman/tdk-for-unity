@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9acf1a0d5aa94d5c8f7c2562a26111cc, type: 3}
-  m_Name: CheaperTowersSkill
+  m_Name: PoisonSkill
   m_EditorClassIdentifier: 
-  Name: Cheaper towers
-  DescriptionFormat: Towers are {0} % cheaper to build and upgrade.
+  Name: Poison
+  DescriptionFormat: Poison towers take {0} % more poison damage.
   SkillRequirements: []
   PlayerLevelRequirement: 0
-  Modifiers:
-  - Modifier: {fileID: 11400000, guid: d8e4a4af389f109458b879523b96393d, type: 2}
-    PerLevelsApplied: 1
-    DisplayNegatedAmount: 1
-    DisplayMultipliedBy100: 1
-  LevelCostFormula: {fileID: 11400000, guid: 4810a981417d6f644856f6122426e6c4, type: 2}
-  MaxLevel: 10
+  Modifiers: []
+  LevelCostFormula: {fileID: 11400000, guid: e85f208ed4b867f4e87216c1b3f2bd32, type: 2}
+  MaxLevel: 0

@@ -93,6 +93,8 @@ namespace Scrips.Towers.BaseData
 
         private SpecialComponent[] _specialComponents;
 
+        public IReadOnlyCollection<SpecialComponent> SpecialComponents => _specialComponents ?? GetComponents<SpecialComponent>();
+
         private static GameObject BulletsParent
         {
             get

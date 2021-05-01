@@ -1,4 +1,5 @@
 using Scrips.EnemyData.Instances;
+using Scrips.Modifiers.Stats;
 using UnityEngine;
 
 namespace Scrips.Spells

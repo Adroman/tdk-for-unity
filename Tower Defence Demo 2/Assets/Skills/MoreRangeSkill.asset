@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: More range
   DescriptionFormat: Towers have {0} % more range.
-  SkillRequirements:
-  - RequiredSkill: {fileID: 11400000, guid: 775b2720228b7924b8e192f7667df9ab, type: 2}
-    RequiredLevel: 5
+  SkillRequirements: []
   PlayerLevelRequirement: 0
   Modifiers:
   - Modifier: {fileID: 11400000, guid: 2daa72238dfb2cc419321e829b435eb0, type: 2}

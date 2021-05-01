@@ -1,4 +1,5 @@
 ﻿using System;
+using Scrips.Modifiers.Stats;
 using UnityEngine;
 
 namespace Scrips.Towers.Specials.ReduceArmor
@@ -20,7 +21,7 @@ namespace Scrips.Towers.Specials.ReduceArmor
             var component = go.GetComponent<ReduceArmorComponent>();
             if (component == null) component = go.AddComponent<ReduceArmorComponent>();
             component.SpecialType = this;
-            component.Amount = Amount;
+            component.Amount = new FloatModifiableStat {Value = Amount};
             component.Chance = Chance;
             component.ChanceUpperLimit = ChanceUpperLimit;
             component.ChanceHasUpperLimit = ChanceHasUpperLimit;

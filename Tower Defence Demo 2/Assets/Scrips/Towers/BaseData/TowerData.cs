@@ -51,6 +51,10 @@ namespace Scrips.Towers.BaseData
             var tower = Instantiate(Prefab, position, rotation, parent);
             tower.Name = TowerName;
             tower.ModifierController = data.ModifierController;
+            foreach (var special in Specials)
+            {
+                special.GetOrCreateSpecialComponent(tower.gameObject);
+            }
             tower.ModifierController.ImportModifiers(tower);
             tower.MinDamage.Value = MinDamage;
             tower.MaxDamage.Value = MaxDamage;
@@ -58,11 +62,7 @@ namespace Scrips.Towers.BaseData
             tower.ActualRange = Range;
             tower.NumberOfTargets.Value = NumberOfTargets;
             tower.Upgrades = Upgrades.ToList();
-            foreach (var special in Specials)
-            {
-                special.GetOrCreateSpecialComponent(tower.gameObject);
-            }
-
+            
             if (OnTowerBuilt != null) OnTowerBuilt.Invoke(tower);
             return tower;
         }

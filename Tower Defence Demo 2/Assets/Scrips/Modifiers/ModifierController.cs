@@ -1,10 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Scrips.Data;
 using Scrips.EnemyData.Instances;
 using Scrips.Modifiers.Enemies;
 using Scrips.Modifiers.Towers;
+using Scrips.Modifiers.Towers.TowerSpecials;
 using Scrips.Towers.BaseData;
+using Scrips.Towers.Specials;
+using Scrips.Towers.Specials.ReduceArmor;
+using Scrips.Towers.Specials.ReduceSpeed;
+using Scrips.UI;
 using Scrips.Variables;
 using UnityEngine;
 
@@ -123,12 +129,26 @@ namespace Scrips.Modifiers
 
         public void ImportModifiers(TowerInstance tower)
         {
+            var specials = tower.SpecialComponents.ToLookup(sc => sc.GetType());
+            
             foreach (var modifier in _allModifiers)
             {
                 switch (modifier)
                 {
                     case BaseTowerModifier towerModifier:
                         towerModifier.AddToTower(tower);
+                        break;
+                    case ReduceArmorModifier reduceArmorModifier:
+                        foreach (var reduceArmorComponent in specials[typeof(ReduceArmorComponent)])
+                        {
+                            reduceArmorModifier.AddToTowerSpecial((ReduceArmorComponent) reduceArmorComponent);
+                        }
+                        break;
+                    case ReduceSpeedAmountModifier reduceSpeedAmountModifier:
+                        foreach (var reduceSpeedComponent in specials[typeof(ReduceSpeedComponent)])
+                        {
+                            reduceSpeedAmountModifier.AddToTowerSpecial((ReduceSpeedComponent)reduceSpeedComponent);
+                        }
                         break;
                     // add more stuff
                 }
@@ -167,6 +187,17 @@ namespace Scrips.Modifiers
                     case BaseEnemyCurrencyModifier enemyCurrencyModifier:
                         enemyCurrencyModifier.AddToEnemy(enemy);
                         break;
+                }
+            }
+        }
+
+        public void ImportModifiers(UiSpellButton spell)
+        {
+            foreach (var modifier in Modifiers)
+            {
+                switch (modifier)
+                {
+                    
                 }
             }
         }

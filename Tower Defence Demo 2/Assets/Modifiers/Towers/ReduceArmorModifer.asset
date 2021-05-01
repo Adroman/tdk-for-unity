@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7212a230335e450a86b86e6bb1bf95a9, type: 3}
-  m_Name: CheaperTowers
-  m_EditorClassIdentifier: Assembly-CSharp:Scrips.Modifiers:TowerCostModifier
-  Level: 0
-  Amount: -0.08
+  m_Script: {fileID: 11500000, guid: f1b92935185d4a0f913118dd2e4bb31d, type: 3}
+  m_Name: ReduceArmorModifer
+  m_EditorClassIdentifier: 
+  Level: 1
+  Amount: 0.2
   IncreaseType: {fileID: 11400000, guid: ad7b3f23cd115654aa272d770a891b41, type: 2}
-  BlackList: []
-  WhiteList: []

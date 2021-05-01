@@ -1,5 +1,6 @@
 ﻿using System;
 using Scrips.EnemyData.Instances;
+using Scrips.Modifiers.Stats;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,7 +8,7 @@ namespace Scrips.Towers.Specials.ReduceArmor
 {
     public class ReduceArmorComponent : SpecialComponent
     {
-        public float Amount;
+        public FloatModifiableStat Amount;
 
         [Range(0, 1)]
         public float Chance;
@@ -24,13 +25,13 @@ namespace Scrips.Towers.Specials.ReduceArmor
 
             if (random <= Chance)
             {
-                target.Armor = Math.Max(0, target.Armor - Amount);
+                target.Armor = Math.Max(0, target.Armor - Amount.Value);
             }
         }
 
         public override string GetUiText()
         {
-            return Math.Abs(Chance - 1f) < 0.001f ? $"Reduces {Amount} of armor per hit" : $"{Chance * 100:0}% chance for reducing armor by {Amount}";
+            return Math.Abs(Chance - 1f) < 0.001f ? $"Reduces {Amount.Value} of armor per hit" : $"{Chance * 100:0}% chance for reducing armor by {Amount.Value}";
         }
 
         public override void CopyDataToTargetComponent(SpecialComponent targetComponent)

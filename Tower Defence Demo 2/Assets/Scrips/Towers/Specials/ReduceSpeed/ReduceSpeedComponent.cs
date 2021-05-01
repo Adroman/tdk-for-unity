@@ -2,23 +2,24 @@ using Scrips.BuffData;
 using Scrips.BuffData.BuffComponentInfo;
 using Scrips.CustomTypes.IncreaseType;
 using Scrips.EnemyData.Instances;
+using Scrips.Modifiers.Stats;
 using UnityEngine;
 
 namespace Scrips.Towers.Specials.ReduceSpeed
 {
     public class ReduceSpeedComponent : SpecialComponent
     {
-        public float Amount;
+        public FloatModifiableStat Amount;
 
         public BaseIncreaseType AmountType;
 
-        public float Duration;
+        public FloatModifiableStat Duration;
 
         public override SpecialType SpecialType { get; set; }
 
         public override void ApplySpecialEffect(EnemyInstance target)
         {
-            var slownessBuff = new SlownessBuffData(target, Amount, AmountType, Duration);
+            var slownessBuff = new SlownessBuffData(target, Amount.Value, AmountType, Duration.Value);
             slownessBuff.Activate();
         }
 
@@ -27,11 +28,11 @@ namespace Scrips.Towers.Specials.ReduceSpeed
             switch (AmountType)
             {
                 case MultiplicativeIncreaseType _:
-                    return $"Reduces speed by {Amount * 100:2} percent for {Duration} second(s)";
+                    return $"Reduces speed by {Amount.Value * 100:P2} for {Duration.Value} second(s)";
                 case AdditiveIncreaseType _:
-                    return $"Reduces speed by {Amount} for {Duration} second(s)";
+                    return $"Reduces speed by {Amount.Value} for {Duration.Value} second(s)";
                 case FixedIncreaseType _:
-                    return $"Changes speed to {Amount} for {Duration} second(s)";
+                    return $"Changes speed to {Amount.Value} for {Duration.Value} second(s)";
                 default:
                     return "Does nothing";
             }

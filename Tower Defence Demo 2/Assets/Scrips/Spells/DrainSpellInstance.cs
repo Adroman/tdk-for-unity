@@ -5,7 +5,7 @@ namespace Scrips.Spells
         protected override void ChangeParticles()
         {
             var mainParticle = Particles.main;
-            mainParticle.startSize = Spell.Range * 2f;
+            mainParticle.startSize = Range.Value * 2f;
         }
     }
 }

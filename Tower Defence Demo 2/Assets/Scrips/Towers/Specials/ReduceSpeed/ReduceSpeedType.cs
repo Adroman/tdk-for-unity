@@ -1,4 +1,5 @@
 using Scrips.CustomTypes.IncreaseType;
+using Scrips.Modifiers.Stats;
 using UnityEngine;
 
 namespace Scrips.Towers.Specials.ReduceSpeed
@@ -17,9 +18,9 @@ namespace Scrips.Towers.Specials.ReduceSpeed
             var component = go.GetComponent<ReduceSpeedComponent>();
             if (component == null) component = go.AddComponent<ReduceSpeedComponent>();
             component.SpecialType = this;
-            component.Amount = Amount;
+            component.Amount = new FloatModifiableStat {Value = Amount};
             component.AmountType = AmountType;
-            component.Duration = Duration;
+            component.Duration = new FloatModifiableStat {Value = Duration};
             return component;
         }
 
