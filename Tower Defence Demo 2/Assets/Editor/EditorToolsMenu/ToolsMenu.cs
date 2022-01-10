@@ -72,7 +72,7 @@ namespace Editor.EditorToolsMenu
         {
             Handles.BeginGUI();
 
-            GUILayout.BeginArea(new Rect(0, position.height - 35, position.width, 20), EditorStyles.toolbar);
+            GUILayout.BeginArea(new Rect(0, position.height - 40, position.width, 20), EditorStyles.toolbar);
             {
                 string[] buttonLabels = new string[] { "None", "Delete Tile", "New Tile" };
 

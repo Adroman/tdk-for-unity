@@ -34,7 +34,7 @@ MonoBehaviour:
     ModifierFromDifficulty: 0
     Deviation: 0
   SpeedDeviation: 0
-  Interval: 1
+  Interval: 0.5
   IntervalDeviation: 0
   LootModifiers:
   - Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}

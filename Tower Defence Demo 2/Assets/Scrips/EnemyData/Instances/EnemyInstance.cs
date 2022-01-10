@@ -5,9 +5,11 @@ using Scrips.BuffData;
 using Scrips.EnemyData.Triggers;
 using Scrips.Modifiers.Currency;
 using Scrips.Modifiers.Stats;
+using Scrips.Utils;
 using Scrips.Variables;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Scrips.EnemyData.Instances
 {
@@ -24,6 +26,9 @@ namespace Scrips.EnemyData.Instances
         public List<ModifiedCurrency> IntLoot;
         public List<ModifiedCurrency> IntPunishments;
 
+        [Range(0, 0.5f)]
+        public float RandomTargetOffset;
+
         public Image HealthImage;
 
         public Sprite Sprite;
@@ -33,6 +38,10 @@ namespace Scrips.EnemyData.Instances
         public List<BaseBuffData> ActiveDebuffs = new List<BaseBuffData>();
 
         private TdTile _target;
+        private Vector3 _targetNoiseOffset = Vector3.zero;
+
+        private Vector3 TargetWithNoise => _target.transform.position + _targetNoiseOffset;
+        
         private Transform _spawnpoint;
         private Rigidbody2D _rigidbody;
 
@@ -84,9 +93,18 @@ namespace Scrips.EnemyData.Instances
             _rigidbody = GetComponent<Rigidbody2D>();
 
             var firstTargets = FindNearestTile(_tiles).NextTiles;
-            _target = firstTargets[GetRandom(0, firstTargets.Count)];
-
+            SetNextTarget(firstTargets);
+            
             ResetStats();
+        }
+        
+        private void SetNextTarget(List<TdTile> targets)
+        {
+            _target = targets[GetRandom(0, targets.Count)];
+            if (!_target.IsGoal)
+            {
+                _targetNoiseOffset = new Vector3(Random.Range(-RandomTargetOffset, RandomTargetOffset), Random.Range(-RandomTargetOffset, RandomTargetOffset), 0);
+            }
         }
 
         private void ResetStats()
@@ -104,7 +122,7 @@ namespace Scrips.EnemyData.Instances
             // direction
             var thisPosition = transform.position;
             thisPosition.z = 0;
-            var thatPosition = _target.transform.position;
+            var thatPosition = TargetWithNoise;
             thatPosition.z = 0;
 
             var dir = thatPosition - thisPosition;
@@ -126,11 +144,11 @@ namespace Scrips.EnemyData.Instances
                 }
 
                 var nextTargets = _target.NextTiles;
-                _target = nextTargets[GetRandom(0, nextTargets.Count)];
+                SetNextTarget(nextTargets);
 
                 thisPosition = transform.position;
                 thisPosition.z = 0;
-                thatPosition = _target.transform.position;
+                thatPosition = TargetWithNoise;
                 thatPosition.z = 0;
 
                 dir = thatPosition - thisPosition;
@@ -141,16 +159,22 @@ namespace Scrips.EnemyData.Instances
             {
                 activeDebuff.Update(Time.deltaTime);
             }
-
+            
             // rotation
             var vectorToTarget = dir;
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
+
+            // some random noise
+            //float randomAngleNoise = Random.Range(-10, 10);
+            //angle += randomAngleNoise;
+
             var q = Quaternion.AngleAxis(angle, Vector3.forward);
             var rotatingPart = transform.GetChild(0);
             rotatingPart.rotation = Quaternion.Slerp(rotatingPart.rotation, q, 10000 * Time.deltaTime);
 
             // movement
             //transform.Translate(dir.normalized * distanceToTravel, Space.World);
+            //dir = Quaternion.Euler(0, 0, randomAngleNoise) * dir;
             _rigidbody.MovePosition(transform.position + dir.normalized * distanceToTravel);
         }
 

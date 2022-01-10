@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff8000a4401d4e6fba4d34007eb91868, type: 3}
-  m_Name: NormalEnemyGeneration
+  m_Name: ImmuneEnemyGeneration
   m_EditorClassIdentifier: 
-  PrefabToUse: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
+  PrefabToUse: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
     type: 3}
-  MininumAmount: 10
-  MaximumAmount: 15
+  MininumAmount: 9
+  MaximumAmount: 14
   HitpointModifier:
     UseBaseValue: 0
     BaseValue: 0
@@ -34,28 +34,28 @@ MonoBehaviour:
     ModifierFromDifficulty: 0
     Deviation: 0
   SpeedDeviation: 0
-  Interval: 1.5
+  Interval: 0
   IntervalDeviation: 0
   LootModifiers:
   - Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122, type: 2}
     DifficultyStat:
       UseBaseValue: 0
       BaseValue: 0
-      ModifierFromDifficulty: 0.02
+      ModifierFromDifficulty: 0.021
       Deviation: 0
   - Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c, type: 2}
     DifficultyStat:
       UseBaseValue: 0
       BaseValue: 0
-      ModifierFromDifficulty: 0.02
+      ModifierFromDifficulty: 0.021
       Deviation: 0
   PunishmentModifiers:
   - Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327, type: 2}
     DifficultyStat:
-      UseBaseValue: 1
-      BaseValue: 1
+      UseBaseValue: 0
+      BaseValue: 0
       ModifierFromDifficulty: 0
       Deviation: 0
-  TestDifficulty: 1000
-  TestRatio: 1
-  TestRandomSeed: randomness
+  TestDifficulty: 0
+  TestRatio: 0
+  TestRandomSeed: 
