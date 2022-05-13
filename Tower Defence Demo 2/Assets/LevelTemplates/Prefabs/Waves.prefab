@@ -1,0 +1,1584 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8837993218722933696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8837993218722933698}
+  - component: {fileID: 8837993218722933699}
+  - component: {fileID: 8837993218722933703}
+  - component: {fileID: 8837993218722933700}
+  - component: {fileID: 8837993218722933701}
+  - component: {fileID: 8837993218722933702}
+  - component: {fileID: 8837993218722933753}
+  - component: {fileID: 8837993218722933752}
+  - component: {fileID: 8242942507865915229}
+  - component: {fileID: -5274768497651865903}
+  m_Layer: 0
+  m_Name: Waves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8837993218722933698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8837993218722933699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c398263eb25a0c4d8e5110d5a5ee556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LogLevel: 100
+  OnWaveStarted: {fileID: 11400000, guid: d999b43d3723f274a918057d52e01765, type: 2}
+  OnEnemySpawned: {fileID: 11400000, guid: 37d927d70f8ebda4099a48584ef3ad61, type: 2}
+  ActiveEnemies: {fileID: 11400000, guid: a743c49d938a94f44ad6b91555d6ac30, type: 2}
+  EnemiesWaiting: {fileID: 11400000, guid: 69fc4b1c2ec70e549ab2847a68b8bf68, type: 2}
+  WaveIndex: {fileID: 11400000, guid: 93c16032107e0484fa6af7676c4c0193, type: 2}
+  LastWave: {fileID: 11400000, guid: efc48612fee955846b3cbfdb58f0418e, type: 2}
+  ModifierController: {fileID: 0}
+  QueueLength: 3
+  ActivateWavesAtStart: 1
+  RandomSeed: randomness
+  UiWaves: {fileID: 0}
+--- !u!82 &8837993218722933703
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8837993218722933700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52304faef13e417185c95a8a90bbdbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioEvent: {fileID: 11400000, guid: 8ace9150b5a43624dbcba1b520621d7e, type: 2}
+--- !u!114 &8837993218722933701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6f9d3ed3c54ec19d7b091ab019fbe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d999b43d3723f274a918057d52e01765, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8837993218722933700}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8837993218722933702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077120c9aa3746f7a70736036ed7dbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 37d927d70f8ebda4099a48584ef3ad61, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8837993218722933699}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: SubstractOneWaitingEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8837993218722933753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defc2b8c388f4bba926dc7ef9df08bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VariableToUse: {fileID: 11400000, guid: c2da8f9544b4ddf468f316a152c9322e, type: 2}
+--- !u!114 &8837993218722933752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58410d68abf486483623acefebf0476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CountdownForEachWave: 30
+  EnemiesToUse:
+  - {fileID: 11400000, guid: 84f9487657ea0b940b0032b4151b6e3e, type: 2}
+  - {fileID: 11400000, guid: 31c04445c14c9fa429cb1b542b82265f, type: 2}
+  - {fileID: 11400000, guid: cb9330d9d2260d644bdddba4b57988e8, type: 2}
+  - {fileID: 11400000, guid: 83682a2faa46e9b48b02c888df77a592, type: 2}
+  - {fileID: 11400000, guid: 837eff004c39d8a49ba7fff876cbb5d0, type: 2}
+  WavesTotal: 20
+  MinClusters: 1
+  MaxClusters: 3
+  BaseDifficulty: 2000
+  Infinite: 0
+  DifficultyIncrease: 1.1
+  DifficultyDeviation: 0.05
+  RandomSeed: randomness
+  SpawnpointsToUse:
+  - {fileID: 0}
+  ClusterIncreases: 
+  Waves:
+  - Number: 1
+    Wave:
+      id: 0
+  - Number: 2
+    Wave:
+      id: 1
+  - Number: 3
+    Wave:
+      id: 2
+  - Number: 4
+    Wave:
+      id: 3
+  - Number: 5
+    Wave:
+      id: 4
+  - Number: 6
+    Wave:
+      id: 5
+  - Number: 7
+    Wave:
+      id: 6
+  - Number: 8
+    Wave:
+      id: 7
+  - Number: 9
+    Wave:
+      id: 8
+  - Number: 10
+    Wave:
+      id: 9
+  - Number: 11
+    Wave:
+      id: 10
+  - Number: 12
+    Wave:
+      id: 11
+  - Number: 13
+    Wave:
+      id: 12
+  - Number: 14
+    Wave:
+      id: 13
+  - Number: 15
+    Wave:
+      id: 14
+  - Number: 16
+    Wave:
+      id: 15
+  - Number: 17
+    Wave:
+      id: 16
+  - Number: 18
+    Wave:
+      id: 17
+  - Number: 19
+    Wave:
+      id: 18
+  - Number: 20
+    Wave:
+      id: 19
+  references:
+    version: 1
+    00000000:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 34
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2000
+          DifficultyPerMonster: 58
+          WaveNumber: 1
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 1
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 1
+        CalledEarly: 0
+    00000001:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 4
+          Interval: 1.75
+          InitialCountDown: 1.75
+          SpawnWithPreviousCluster: 0
+          Difficulty: 733
+          DifficultyPerMonster: 183
+          WaveNumber: 2
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1134147189202715965, guid: 5ce7bfbb3b0d2cd4f8bd7330ec799f32,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 19
+            HitpointsDeviation: 0.1
+            InitialArmor: 4
+            ArmorDeviation: 0.1
+            InitialSpeed: 2
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 4
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 4
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 12
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 733
+          DifficultyPerMonster: 61
+          WaveNumber: 2
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 2
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 5
+          Interval: 1.5
+          InitialCountDown: 1.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 733
+          DifficultyPerMonster: 146
+          WaveNumber: 2
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 15
+            HitpointsDeviation: 0.1
+            InitialArmor: 1
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 2
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 2
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 2
+        CalledEarly: 0
+    00000002:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 12
+          Interval: 1.75
+          InitialCountDown: 1.75
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2420
+          DifficultyPerMonster: 201
+          WaveNumber: 3
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1134147189202715965, guid: 5ce7bfbb3b0d2cd4f8bd7330ec799f32,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 18
+            HitpointsDeviation: 0.1
+            InitialArmor: 5
+            ArmorDeviation: 0.1
+            InitialSpeed: 2
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 3
+        CalledEarly: 0
+    00000003:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 45
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2662
+          DifficultyPerMonster: 59
+          WaveNumber: 4
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 1
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 4
+        CalledEarly: 0
+    00000004:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 5
+          Interval: 1.5
+          InitialCountDown: 1.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1464
+          DifficultyPerMonster: 292
+          WaveNumber: 5
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 30
+            HitpointsDeviation: 0.1
+            InitialArmor: 3
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 6
+          Interval: 1.75
+          InitialCountDown: 1.75
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1464
+          DifficultyPerMonster: 244
+          WaveNumber: 5
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1134147189202715965, guid: 5ce7bfbb3b0d2cd4f8bd7330ec799f32,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 26
+            HitpointsDeviation: 0.1
+            InitialArmor: 6
+            ArmorDeviation: 0.1
+            InitialSpeed: 2
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 6
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 6
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 5
+        CalledEarly: 0
+    00000005:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 3
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1073
+          DifficultyPerMonster: 357
+          WaveNumber: 6
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 34
+            HitpointsDeviation: 0.1
+            InitialArmor: 3
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 7
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 7
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 15
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1073
+          DifficultyPerMonster: 71
+          WaveNumber: 6
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 2
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 3
+          Interval: 1
+          InitialCountDown: 1
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1073
+          DifficultyPerMonster: 357
+          WaveNumber: 6
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1628555269102808474, guid: 9a795825ef098b440b34903b91285ab2,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 34
+            HitpointsDeviation: 0.1
+            InitialArmor: 20
+            ArmorDeviation: 0.1
+            InitialSpeed: 6
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 7
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 7
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 6
+        CalledEarly: 0
+    00000006:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 8
+          Interval: 1.75
+          InitialCountDown: 1.75
+          SpawnWithPreviousCluster: 0
+          Difficulty: 3542
+          DifficultyPerMonster: 442
+          WaveNumber: 7
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1134147189202715965, guid: 5ce7bfbb3b0d2cd4f8bd7330ec799f32,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 45
+            HitpointsDeviation: 0.1
+            InitialArmor: 10
+            ArmorDeviation: 0.1
+            InitialSpeed: 2
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 11
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 11
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 7
+        CalledEarly: 0
+    00000007:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 15
+          Interval: 1
+          InitialCountDown: 1
+          SpawnWithPreviousCluster: 0
+          Difficulty: 3896
+          DifficultyPerMonster: 259
+          WaveNumber: 8
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1628555269102808474, guid: 9a795825ef098b440b34903b91285ab2,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 28
+            HitpointsDeviation: 0.1
+            InitialArmor: 15
+            ArmorDeviation: 0.1
+            InitialSpeed: 6
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 8
+        CalledEarly: 0
+    00000008:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 10
+          Interval: 1.5
+          InitialCountDown: 1.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 4285
+          DifficultyPerMonster: 428
+          WaveNumber: 9
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 43
+            HitpointsDeviation: 0.1
+            InitialArmor: 4
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 8
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 8
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 9
+        CalledEarly: 0
+    00000009:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 10
+          Interval: 1.5
+          InitialCountDown: 1.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 4713
+          DifficultyPerMonster: 471
+          WaveNumber: 10
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 49
+            HitpointsDeviation: 0.1
+            InitialArmor: 4
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 9
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 9
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 10
+        CalledEarly: 0
+    0000000A:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 17
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2592
+          DifficultyPerMonster: 152
+          WaveNumber: 11
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 5
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 3
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 3
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 22
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2592
+          DifficultyPerMonster: 117
+          WaveNumber: 11
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 4
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 2
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 2
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 11
+        CalledEarly: 0
+    0000000B:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 12
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1900
+          DifficultyPerMonster: 158
+          WaveNumber: 12
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 6
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 3
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 3
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 4
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1900
+          DifficultyPerMonster: 475
+          WaveNumber: 12
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 43
+            HitpointsDeviation: 0.1
+            InitialArmor: 5
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 9
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 9
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 4
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 1900
+          DifficultyPerMonster: 475
+          WaveNumber: 12
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 52
+            HitpointsDeviation: 0.1
+            InitialArmor: 5
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 9
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 9
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 12
+        CalledEarly: 0
+    0000000C:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 13
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2090
+          DifficultyPerMonster: 160
+          WaveNumber: 13
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 5
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 3
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 3
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 3
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2090
+          DifficultyPerMonster: 696
+          WaveNumber: 13
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 69
+            HitpointsDeviation: 0.1
+            InitialArmor: 6
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 14
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 14
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 5
+          Interval: 1.5
+          InitialCountDown: 1.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2090
+          DifficultyPerMonster: 418
+          WaveNumber: 13
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 114745107886832420, guid: a9c72a7b4eac0f24b80376a5f6f9624f,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 38
+            HitpointsDeviation: 0.1
+            InitialArmor: 4
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 8
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 8
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 13
+        CalledEarly: 0
+    0000000D:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 6
+          Interval: 1
+          InitialCountDown: 1
+          SpawnWithPreviousCluster: 0
+          Difficulty: 3449
+          DifficultyPerMonster: 574
+          WaveNumber: 14
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1628555269102808474, guid: 9a795825ef098b440b34903b91285ab2,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 57
+            HitpointsDeviation: 0.1
+            InitialArmor: 31
+            ArmorDeviation: 0.1
+            InitialSpeed: 6
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 11
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 11
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 7
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 3449
+          DifficultyPerMonster: 492
+          WaveNumber: 14
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 53
+            HitpointsDeviation: 0.1
+            InitialArmor: 5
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 10
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 10
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 14
+        CalledEarly: 0
+    0000000E:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 5
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2529
+          DifficultyPerMonster: 505
+          WaveNumber: 15
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 52
+            HitpointsDeviation: 0.1
+            InitialArmor: 4
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 10
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 10
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 3
+          Interval: 1.75
+          InitialCountDown: 1.75
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2529
+          DifficultyPerMonster: 843
+          WaveNumber: 15
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1134147189202715965, guid: 5ce7bfbb3b0d2cd4f8bd7330ec799f32,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 80
+            HitpointsDeviation: 0.1
+            InitialArmor: 22
+            ArmorDeviation: 0.1
+            InitialSpeed: 2
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 21
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 21
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 4
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 2529
+          DifficultyPerMonster: 632
+          WaveNumber: 15
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 68
+            HitpointsDeviation: 0.1
+            InitialArmor: 5
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 13
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 13
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 15
+        CalledEarly: 0
+    0000000F:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 9
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 8346
+          DifficultyPerMonster: 927
+          WaveNumber: 16
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 86
+            HitpointsDeviation: 0.1
+            InitialArmor: 8
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 19
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 19
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 16
+        CalledEarly: 0
+    00000010:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 11
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 9180
+          DifficultyPerMonster: 834
+          WaveNumber: 17
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 78
+            HitpointsDeviation: 0.1
+            InitialArmor: 9
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 17
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 17
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 17
+        CalledEarly: 0
+    00000011:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 20
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 5049
+          DifficultyPerMonster: 252
+          WaveNumber: 18
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 8
+            HitpointsDeviation: 0.1
+            InitialArmor: 0
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 5
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 16
+          Interval: 0.5
+          InitialCountDown: 0.5
+          SpawnWithPreviousCluster: 0
+          Difficulty: 5049
+          DifficultyPerMonster: 315
+          WaveNumber: 18
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 2671393622586088091, guid: b9ae2829f6e89f140875e82715461242,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 9
+            HitpointsDeviation: 0.1
+            InitialArmor: 1
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 6
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 6
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 18
+        CalledEarly: 0
+    00000012:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 10
+          Interval: 1.75
+          InitialCountDown: 1.75
+          SpawnWithPreviousCluster: 0
+          Difficulty: 11107
+          DifficultyPerMonster: 1110
+          WaveNumber: 19
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1134147189202715965, guid: 5ce7bfbb3b0d2cd4f8bd7330ec799f32,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 103
+            HitpointsDeviation: 0.1
+            InitialArmor: 29
+            ArmorDeviation: 0.1
+            InitialSpeed: 2
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 27
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 27
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 19
+        CalledEarly: 0
+    00000013:
+      type: {class: Wave, ns: Scrips.Waves, asm: Assembly-CSharp}
+      data:
+        Countdown: 30
+        WaveClusters:
+        - Amount: 3
+          Interval: 1.75
+          InitialCountDown: 1.75
+          SpawnWithPreviousCluster: 0
+          Difficulty: 4072
+          DifficultyPerMonster: 1357
+          WaveNumber: 20
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1134147189202715965, guid: 5ce7bfbb3b0d2cd4f8bd7330ec799f32,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 147
+            HitpointsDeviation: 0.1
+            InitialArmor: 33
+            ArmorDeviation: 0.1
+            InitialSpeed: 2
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 33
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 33
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 5
+          Interval: 1
+          InitialCountDown: 1
+          SpawnWithPreviousCluster: 0
+          Difficulty: 4072
+          DifficultyPerMonster: 814
+          WaveNumber: 20
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 1628555269102808474, guid: 9a795825ef098b440b34903b91285ab2,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 84
+            HitpointsDeviation: 0.1
+            InitialArmor: 45
+            ArmorDeviation: 0.1
+            InitialSpeed: 6
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 16
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 16
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 1
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        - Amount: 4
+          Interval: 0
+          InitialCountDown: 0
+          SpawnWithPreviousCluster: 0
+          Difficulty: 4072
+          DifficultyPerMonster: 1018
+          WaveNumber: 20
+          IntervalDeviation: 0
+          OverrideSpawnpoints: []
+          Prefab: {fileID: 3248683524182563493, guid: 2dec1e22cd2c2cc498d1e88e10878d07,
+            type: 3}
+          EnemyData:
+            InitialHitpoints: 110
+            HitpointsDeviation: 0.1
+            InitialArmor: 11
+            ArmorDeviation: 0.1
+            InitialSpeed: 3
+            SpeedDeviation: 0
+            IntLoots:
+            - Amount: 21
+              Variable: {fileID: 11400000, guid: 3b3a7321d4ef7324b841a73c5395a122,
+                type: 2}
+            - Amount: 21
+              Variable: {fileID: 11400000, guid: ac2ecca9e32df804b9ba1c272855466c,
+                type: 2}
+            IntPunishments:
+            - Amount: 0
+              Variable: {fileID: 11400000, guid: 207c8f4dba4729e418eecf3fa6ac8327,
+                type: 2}
+        Spawnpoints:
+        - {fileID: 0}
+        WaveNumber: 20
+        CalledEarly: 0
+--- !u!114 &8242942507865915229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f825615864ad4834bf5c9bf57cf4647c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5274768497651865903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837993218722933696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904b921b883549c9981300e9aee747c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

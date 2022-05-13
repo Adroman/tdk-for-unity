@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scrips\Variables\IntReference.cs" />
      <Compile Include="Assets\Scrips\Priorities\NearestToGoalPriority.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\TileLinker.cs" />
      <Compile Include="Assets\Scrips\Towers\Specials\ReduceArmor\ReduceArmorUpgrade.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Scrips\BuffData\BuffComponentInfo\SlownessBuffComponent.cs" />
@@ -87,17 +88,20 @@
      <Compile Include="Assets\Scrips\Spells\SpellSpawner.cs" />
      <Compile Include="Assets\Scrips\Modifiers\Towers\BaseTowerModifier.cs" />
      <Compile Include="Assets\Scrips\Waves\WaveGenerator.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\PostImportComponent.cs" />
      <Compile Include="Assets\Scrips\Modifiers\Stats\IntModifiableStat.cs" />
      <Compile Include="Assets\Scrips\UI\UiProgressDisplay\UiBaseProgress.cs" />
      <Compile Include="Assets\Scrips\EnemyData\Instances\EnemyInstance.cs" />
      <Compile Include="Assets\Scrips\UI\UiSkills\UiDowngradeMouseDetector.cs" />
      <Compile Include="Assets\Scrips\SpecialEffects\BaseSpecialEffect.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\WaveControllerLinker.cs" />
      <Compile Include="Assets\Scrips\UI\UiSkills\UiUpgradeMouseDetector.cs" />
      <Compile Include="Assets\Scrips\Utils\DebugUtils.cs" />
      <Compile Include="Assets\Scrips\UI\UiAmountDisplay\UiBaseAmount.cs" />
      <Compile Include="Assets\Scrips\Towers\Bullets\SimpleBulletManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\Scrips\Skills\PlayerSkill.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\SpellLinker.cs" />
      <Compile Include="Assets\Scrips\Waves\EnemyWaveData.cs" />
      <Compile Include="Assets\Scrips\Towers\BaseData\TowerUpgradeNode.cs" />
      <Compile Include="Assets\Box.cs" />
@@ -195,6 +199,7 @@
      <Compile Include="Assets\Scrips\Towers\Specials\SplashDamage\SplashDamageUpgrade.cs" />
      <Compile Include="Assets\Scrips\UI\VariableDisplays\TextIntVariableDisplay.cs" />
      <Compile Include="Assets\Scrips\UI\UiAmountDisplay\UiCharQuantityAmount.cs" />
+     <Compile Include="Assets\Scrips\LevelData\PrefabTemplate.cs" />
      <Compile Include="Assets\Scrips\BuffData\PoisonBuffData.cs" />
      <Compile Include="Assets\Scrips\Data\Goal.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -229,6 +234,8 @@
      <Compile Include="Assets\Scrips\Objectives\IntVariableObjective.cs" />
      <Compile Include="Assets\Scrips\Spells\EnemySpell.cs" />
      <Compile Include="Assets\Scrips\Modifiers\Towers\TowerRangeModifier.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\LevelMouseControlsLinker.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\UILinker.cs" />
      <Compile Include="Assets\Scrips\Events\Enemies\EnemyEvent.cs" />
      <Compile Include="Assets\Scrips\Spells\DrainSpellInstance.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -292,6 +299,8 @@
      <Compile Include="Assets\Scrips\Modifiers\ModifiedAmount.cs" />
      <Compile Include="Assets\Scrips\EnemyData\WaveData\MoreWaveData.cs" />
      <Compile Include="Assets\Scrips\Waves\WaveCluster.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\TowerUiDataModifierLinker.cs" />
+     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\SpawnpointFinder.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

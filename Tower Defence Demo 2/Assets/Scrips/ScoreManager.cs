@@ -9,6 +9,7 @@ using UnityEngine;
 
 namespace Scrips
 {
+    [DisallowMultipleComponent]
     public class ScoreManager : MonoBehaviour
     {
         public LevelConfiguration Configuration;

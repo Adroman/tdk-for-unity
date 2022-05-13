@@ -43,6 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets\Editor\CustomInspectors\AudioEventCustomInspector.cs" />
      <Compile Include="Assets\Editor\CustomInspectors\TileInspector.cs" />
+     <Compile Include="Assets\Editor\CustomWindows\PrefabImporter.cs" />
      <Compile Include="Assets\Editor\CustomInspectors\BaseModifierCustomInspector.cs" />
      <Compile Include="Assets\Editor\WaveEditor\WaveClusterNode.cs" />
      <Compile Include="Assets\Editor\CustomInspectors\WaveGeneratorCustomInspector.cs" />
