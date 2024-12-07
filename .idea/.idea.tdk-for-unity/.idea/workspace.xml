@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f5b5a4d-72fd-422d-90e2-c5c5efead97a" name="Default Changelist" comment="" />
+    <list default="true" id="8f5b5a4d-72fd-422d-90e2-c5c5efead97a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.tdk-for-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdk-for-unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Animations/WaveInfo/WafeInfoController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Animations/WaveInfo/WafeInfoController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Enemies/Normal/NormalEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Enemies/Normal/NormalEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Levels/001/Level001Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Levels/001/Level001Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.bmp.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.bmp.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.bmp.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,17 +39,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="1rw5GiMLA6pQQBxsdAXdvMG4Hsn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -30,13 +70,15 @@
       <option name="presentableId" value="Default" />
       <updated>1619874219245</updated>
       <workItem from="1619874233882" duration="127000" />
+      <workItem from="1728976037614" duration="608000" />
+      <workItem from="1731848177063" duration="1227000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
