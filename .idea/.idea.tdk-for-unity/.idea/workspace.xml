@@ -6,30 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8f5b5a4d-72fd-422d-90e2-c5c5efead97a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.tdk-for-unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tdk-for-unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Animations/WaveInfo/WafeInfoController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Animations/WaveInfo/WafeInfoController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Enemies/Normal/NormalEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Enemies/Normal/NormalEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Levels/001/Level001Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Levels/001/Level001Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.bmp.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/armored.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.bmp.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/fast.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.bmp.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Assets/Sprites/Enemies/normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/.idea/.idea.Tower Defence Demo 2/.idea/indexLayout.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tower Defence Demo 2/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Tower Defence Demo 2/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +19,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/adria/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/adria/OneDrive/Programming/Tower Defense Kit For Unity/tdk-for-unity/Tower Defence Demo 2/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -59,6 +44,13 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\adria\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\adria\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\adria\\AppData\\Local\\Symbols\\src"
+    ]
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,15 +64,28 @@
       <workItem from="1619874233882" duration="127000" />
       <workItem from="1728976037614" duration="608000" />
       <workItem from="1731848177063" duration="1227000" />
+      <workItem from="1733578433321" duration="820000" />
     </task>
+    <task id="LOCAL-00001" summary="Pre-prefab brush update">
+      <option name="closed" value="true" />
+      <created>1733605886695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733605886695</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Pre-prefab brush update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pre-prefab brush update" />
   </component>
 </project>

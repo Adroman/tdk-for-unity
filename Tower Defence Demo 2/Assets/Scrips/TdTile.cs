@@ -255,5 +255,15 @@ namespace Scrips
             _renderer.color = TileColor.InGameColor;
             _currentTower = tower;
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log("Entered");
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            Debug.Log("Exited");
+        }
     }
 }

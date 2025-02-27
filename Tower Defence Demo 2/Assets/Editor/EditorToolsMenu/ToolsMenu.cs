@@ -6,8 +6,6 @@ namespace Editor.EditorToolsMenu
     [InitializeOnLoad]
     public class ToolsMenu : UnityEditor.Editor
     {
-
-
         public static int SelectedTool
         {
             get
