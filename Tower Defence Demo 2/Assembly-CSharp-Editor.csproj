@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CustomInspectors\AudioEventCustomInspector.cs" />
+    <Compile Include="Assets\Editor\CustomInspectors\TileManagerCustomInspector.cs" />
     <Compile Include="Assets\Editor\CustomInspectors\TileInspector.cs" />
     <Compile Include="Assets\Editor\CustomWindows\PrefabImporter.cs" />
     <Compile Include="Assets\Editor\CustomInspectors\BaseModifierCustomInspector.cs" />

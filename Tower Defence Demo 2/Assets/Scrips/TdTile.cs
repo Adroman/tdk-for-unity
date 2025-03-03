@@ -12,7 +12,7 @@ using TileWithDistance = Data.TileWithDistance;
 namespace Scrips
 {
     //[Serializable]
-    [ExecuteInEditMode]
+    [ExecuteAlways]
     public class TdTile : MonoBehaviour
     {
         [HideInInspector]
@@ -40,6 +40,8 @@ namespace Scrips
 
         public TileColor TileColor;
 
+        private TileManager _tileManager;
+        
         private TowerInstance _currentTower;
         private bool _readyToBuild;
         private SpriteRenderer _renderer;
@@ -124,6 +126,18 @@ namespace Scrips
             }
         }
 
+        private void OnDisable()
+        {
+            Debug.Log("Disabling tile");
+            if (_tileManager == null)
+                Debug.LogError("This TdTile instance is not TileManager's child GameObject.");
+            else
+            {
+                if (IsSpawnpoint) _tileManager.RemoveSpawnpoint(this);
+                else if (IsGoal) _tileManager.RemoveGoal(this);
+            }
+        }
+
         public List<TdTile> CalculateDistance(List<TileWithDistance> allNeighbors)
         {
             var result = new List<TdTile>();
@@ -153,7 +167,7 @@ namespace Scrips
                 if (float.IsPositiveInfinity(t.DistanceToGoal)) result.Add(n.Tile);
                 else
                 {
-                    float dist = t.DistanceToGoal + n.Distance;
+                    var dist = t.DistanceToGoal + n.Distance;
                     if (dist < DistanceToGoal)
                     {
                         DistanceToGoal = dist;
@@ -205,6 +219,17 @@ namespace Scrips
             _camera = GameObject.Find("Main Camera")?.GetComponent<Camera>();
             _spellCircle = GameObject.Find("SpellPoint")?.GetComponent<CircleRenderer>();
             _spellSpawner = GameObject.Find("SpellPoint")?.GetComponent<SpellSpawner>();
+            
+            _tileManager = GetComponentInParent<TileManager>();
+            Debug.Log($"Parent is: {transform.parent}");
+
+            if (_tileManager == null)
+                Debug.LogError("This TdTile instance is not TileManager's child GameObject.");
+            else
+            {
+                if (IsSpawnpoint) _tileManager.RegisterSpawnpoint(this);
+                else if (IsGoal) _tileManager.RegisterGoal(this);
+            }
         }
 
         public void HighlightTile()
@@ -256,14 +281,21 @@ namespace Scrips
             _currentTower = tower;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnMouseEnter()
         {
             Debug.Log("Entered");
+            HighlightTile();
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        private void OnMouseExit()
         {
             Debug.Log("Exited");
+            StopHighlightTile();
+        }
+
+        private void OnMouseUpAsButton()
+        {
+            Debug.Log("Clicked");
         }
     }
 }

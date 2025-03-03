@@ -177,6 +177,7 @@
     <Compile Include="Assets\Scrips\UI\UiProgressDisplay\UiReverseFillAmountProgressDisplay.cs" />
     <Compile Include="Assets\Scrips\Pooling\PoolManager.cs" />
     <Compile Include="Assets\Scrips\Waves\Wave.cs" />
+    <Compile Include="Assets\Scrips\TileManager.cs" />
     <Compile Include="Assets\Scrips\Utils\VectorUtils.cs" />
     <Compile Include="Assets\Scrips\Events\Audio\AudioEvent.cs" />
     <Compile Include="Assets\Scrips\Events\Enemies\EnemyEventListener.cs" />
@@ -301,7 +302,7 @@
     <Compile Include="Assets\Scrips\Modifiers\ModifiedAmount.cs" />
     <Compile Include="Assets\Scrips\EnemyData\WaveData\MoreWaveData.cs" />
     <Compile Include="Assets\Scrips\Waves\WaveCluster.cs" />
-    <Compile Include="Assets\Scrips\TileManager.cs" />
+    <Compile Include="Assets\Scrips\TdTileReference.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
