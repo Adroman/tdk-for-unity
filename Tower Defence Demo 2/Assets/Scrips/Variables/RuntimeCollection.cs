@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Scrips.Variables
 {
     [PublicAPI]
-    public class RuntimeCollection<T> : ScriptableObject
+    public class RuntimeCollection<T> : ScriptableObject, IEnumerable<T>
     {
         public List<T> Instances;
 
@@ -32,5 +33,9 @@ namespace Scrips.Variables
         {
             if (Count != null && Count.Value != Instances.Count) Count.Value = Instances.Count;
         }
+
+        public IEnumerator<T> GetEnumerator() => Instances.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

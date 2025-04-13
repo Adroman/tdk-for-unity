@@ -29,14 +29,14 @@ namespace Scrips.UI
             _originalPosition = PartToMove.localPosition;
             PartToMove.Translate(PartToMove.rect.width, 0, 0);
 
-            UIWaveAnimator.SetTrigger(RightToLeft);
+            //UIWaveAnimator.SetTrigger(RightToLeft);
 
             //StartCoroutine(Move(-1, PartToMove.rect.width, 1));
         }
 
         public void Despawn()
         {
-            UIWaveAnimator.SetTrigger(LeftToRight);
+            //UIWaveAnimator.SetTrigger(LeftToRight);
 
             //StartCoroutine(Move(1, PartToMove.rect.width, 1, true));
         }

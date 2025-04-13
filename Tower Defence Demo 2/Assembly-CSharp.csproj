@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scrips\TdTileReference.cs" />
     <Compile Include="Assets\Scrips\Variables\Watchers\VariableWatcher.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\Prerequisites\AllAmountRequired.cs" />
     <Compile Include="Assets\TestScript.cs" />
@@ -271,6 +272,7 @@
     <Compile Include="Assets\Scrips\Variables\EnemyCollection.cs" />
     <Compile Include="Assets\Scrips\Data\Formula\SimplePowerFormula.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\Scrips\Towers\TowerSelector.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\Prerequisites\SetAmountRequired.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\IncreaseType\NoIncreaseType.cs" />
     <Compile Include="Assets\Scrips\BuffData\SlownessBuffData.cs" />
@@ -302,7 +304,7 @@
     <Compile Include="Assets\Scrips\Modifiers\ModifiedAmount.cs" />
     <Compile Include="Assets\Scrips\EnemyData\WaveData\MoreWaveData.cs" />
     <Compile Include="Assets\Scrips\Waves\WaveCluster.cs" />
-    <Compile Include="Assets\Scrips\TdTileReference.cs" />
+    <Compile Include="Assets\Scrips\Waves\WaypointManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

@@ -36,15 +36,19 @@ namespace Scrips.Towers.BaseData
                 Variable = mp.Currency.Variable
             });
 
-        private void Start()
+        private void OnEnable()
         {
             SetUpModifiedPrice();
-            ModifierController.ImportModifiers(this);
             MinDamage.Value = BaseTowerData.MinDamage;
             MaxDamage.Value = BaseTowerData.MaxDamage;
             FiringSpeed.Value = BaseTowerData.FiringSpeed;
             Range.Value = BaseTowerData.Range;
             NumberOfTargets.Value = BaseTowerData.NumberOfTargets;
+        }
+
+        private void Start()
+        {
+            ModifierController.ImportModifiers(this);
         }
 
         private void SetUpModifiedPrice()

@@ -38,6 +38,7 @@ namespace Scrips.EnemyData.Instances
         public List<BaseBuffData> ActiveDebuffs = new List<BaseBuffData>();
 
         private TdTile _target;
+        public TdTile ActiveTile { get; private set; }
         private Vector3 _targetNoiseOffset = Vector3.zero;
 
         private Vector3 TargetWithNoise => _target.transform.position + _targetNoiseOffset;
@@ -64,7 +65,7 @@ namespace Scrips.EnemyData.Instances
 
         private void Awake()
         {
-            _tiles = GameObject.Find("Tiles").GetComponentsInChildren<TdTile>();
+            _tiles = GameObject.Find("TilemapTiles").GetComponentsInChildren<TdTile>();
             InitialHitpoints = new FloatModifiableStat();
             InitialArmor = new FloatModifiableStat();
             InitialSpeed = new FloatModifiableStat();

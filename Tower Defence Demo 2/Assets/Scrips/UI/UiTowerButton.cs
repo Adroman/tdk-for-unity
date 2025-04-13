@@ -1,4 +1,5 @@
-﻿using Scrips.Towers.BaseData;
+﻿using Scrips.Towers;
+using Scrips.Towers.BaseData;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,14 @@ namespace Scrips.UI
         public Image ButtonImage;
         public Image SelectedTowerImage;
         public UiTowerPreBuildInfo UiInfo;
+        public TowerSelector TowerSelector;
 
         public void SelectTower()
         {
             SelectedTowerOption.Option.SelectedTowerPrefab = this;
             SelectedTowerImage.sprite = Tower.BaseTowerData.PreviewSprite;
             SelectedTowerImage.color = Color.white;
+            TowerSelector.SelectTower(Tower);
         }
 
         private void Start()
@@ -37,7 +40,7 @@ namespace Scrips.UI
 
         public void BuildTower(TdTile tile)
         {
-            tile.Build(Tower);
+            tile.SelectTile();
         }
     }
 }

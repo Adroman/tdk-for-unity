@@ -83,7 +83,7 @@ namespace Scrips.Waves
 
         private void InitQueue()
         {
-            for (int i = 0; i < QueueLength - 1; i++)
+            for (var i = 0; i < QueueLength - 1; i++)
             {
                 if (_wavesEnumerator.MoveNext())
                 {

@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using Scrips.Data;
-using Scrips.Instances;
-using Scrips.Modifiers;
 using Scrips.Spells;
+using Scrips.Towers;
 using Scrips.Towers.BaseData;
 using UnityEngine;
 using TileWithDistance = Data.TileWithDistance;
 
 namespace Scrips
 {
-    //[Serializable]
-    [ExecuteAlways]
     public class TdTile : MonoBehaviour
     {
         [HideInInspector]
@@ -43,25 +40,25 @@ namespace Scrips
         private TileManager _tileManager;
         
         private TowerInstance _currentTower;
-        private bool _readyToBuild;
         private SpriteRenderer _renderer;
+        private TowerSelector _towerSelector;
         private static GameObject _towersParent;
 
-        private static Level _level;
+        //private static Level _level;
 
-        private static Level LevelProp
-        {
-            get
-            {
-                if (_level == null)
-                    _level = GameObject.FindObjectsOfType<Level>().First();
-
-                return _level;
-            }
-        }
+        // private static Level LevelProp
+        // {
+        //     get
+        //     {
+        //         if (_level == null)
+        //             _level = GameObject.FindObjectsOfType<Level>().First();
+        //
+        //         return _level;
+        //     }
+        // }
 
         public float DistanceToGoal { get; private set; } = Mathf.Infinity;
-        public List<TdTile> NextTiles { get; private set; }
+        public List<TdTile> NextTiles { get; private set; } = new List<TdTile>();
 
         public bool Buildable
         {
@@ -80,7 +77,7 @@ namespace Scrips
 
         public bool Walkable
         {
-            get => _walkable;
+            get => _walkable && _currentTower == null;
             set
             {
                 _walkable = value;
@@ -126,17 +123,36 @@ namespace Scrips
             }
         }
 
+        private void OnEnable()
+        {
+            _tileManager = GetComponentInParent<TileManager>();
+            if (_tileManager == null)
+            {
+                Debug.LogError(
+                    $"This TdTile instance is not TileManager's child GameObject. Tile name: {gameObject.name}. Coordinates: {transform.position}");
+            }
+            else
+            {
+                if (IsSpawnpoint) _tileManager.RegisterSpawnpoint(this);
+                else if (IsGoal) _tileManager.RegisterGoal(this);
+            }
+        }
+
         private void OnDisable()
         {
-            Debug.Log("Disabling tile");
             if (_tileManager == null)
-                Debug.LogError("This TdTile instance is not TileManager's child GameObject.");
+            {
+                Debug.LogError(
+                    $"This TdTile instance is not TileManager's child GameObject. Tile name: {gameObject.name}. Coordinates: {transform.position}.");
+            }
             else
             {
                 if (IsSpawnpoint) _tileManager.RemoveSpawnpoint(this);
                 else if (IsGoal) _tileManager.RemoveGoal(this);
             }
         }
+
+        public void ResetDistanceToGoal() => DistanceToGoal = Mathf.Infinity;
 
         public List<TdTile> CalculateDistance(List<TileWithDistance> allNeighbors)
         {
@@ -149,21 +165,15 @@ namespace Scrips
                 DistanceToGoal = 0;
                 foreach(var n in allNeighbors)
                 {
-                    var t = n.Tile.GetComponent<TdTile>();
-                    if (t == null) throw new InvalidOperationException("GameObject has to have Tile component");
-                    if (!Walkable) continue;
+                    var t = n.Tile;
                     if (float.IsPositiveInfinity(t.DistanceToGoal)) result.Add(n.Tile);
                 }
 
                 return result;
             }
-
-
             foreach (var n in allNeighbors)
             {
-                var t = n.Tile.GetComponent<TdTile>();
-                if (t == null) continue;
-                if (!Walkable) continue;
+                var t = n.Tile;
                 if (float.IsPositiveInfinity(t.DistanceToGoal)) result.Add(n.Tile);
                 else
                 {
@@ -171,10 +181,8 @@ namespace Scrips
                     if (dist < DistanceToGoal)
                     {
                         DistanceToGoal = dist;
-                        NextTiles = new List<TdTile>
-                        {
-                            n.Tile
-                        };
+                        NextTiles.Clear();
+                        NextTiles.Add(n.Tile);
                     }
                     else if (Math.Abs(dist - DistanceToGoal) < 0.001f)
                     {
@@ -193,7 +201,6 @@ namespace Scrips
 
         public void OnDrawGizmos()
         {
-            if (NextTiles == null) return;
             Gizmos.color = Color.red;
             foreach (var n in NextTiles)
                 Gizmos.DrawLine(transform.position + Vector3.back * 2, n.transform.position + Vector3.back * 2);
@@ -219,22 +226,12 @@ namespace Scrips
             _camera = GameObject.Find("Main Camera")?.GetComponent<Camera>();
             _spellCircle = GameObject.Find("SpellPoint")?.GetComponent<CircleRenderer>();
             _spellSpawner = GameObject.Find("SpellPoint")?.GetComponent<SpellSpawner>();
-            
-            _tileManager = GetComponentInParent<TileManager>();
-            Debug.Log($"Parent is: {transform.parent}");
-
-            if (_tileManager == null)
-                Debug.LogError("This TdTile instance is not TileManager's child GameObject.");
-            else
-            {
-                if (IsSpawnpoint) _tileManager.RegisterSpawnpoint(this);
-                else if (IsGoal) _tileManager.RegisterGoal(this);
-            }
+            _towerSelector = GetComponentInParent<TowerSelector>();
         }
 
         public void HighlightTile()
         {
-            if (Buildable)
+            if (Buildable && _towerSelector.SelectedTower != null)
             {
                 _renderer.color = TileColor.InGameHoverColor;
             }
@@ -245,57 +242,48 @@ namespace Scrips
         public void StopHighlightTile()
         {
             _renderer.color = TileColor.InGameColor;
-            _readyToBuild = false;
             if (_currentTower != null) _currentTower.HideRangeCircle();
         }
 
-        public void ReadyToBuild()
+        public void SelectTile()
         {
-            if (Buildable)
-                _readyToBuild = true;
+            if (Buildable && _currentTower == null)
+                BuildTower();
             else if (_currentTower != null)
-                _readyToBuild = true;
+                _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
         }
 
-        public void Build(TowerUiData selectedTower)
+        private void BuildTower()
         {
-            if (_readyToBuild)
+            var selectedTower = _towerSelector.SelectedTower;
+            if (selectedTower == null)
             {
-                _readyToBuild = false;
-                if (_currentTower == null)
-                    BuildTower(selectedTower);
-                else
-                    _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
+                Debug.LogWarning("No selected tower to build.");
+                return;
             }
-        }
-
-        private void BuildTower(TowerUiData selectedTower)
-        {
+            
             var tower = selectedTower.BaseTowerData.BuildTower(
                 transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform,
                 selectedTower);
             if (tower == null) return;
             Buildable = false;
-            _readyToBuild = false;
             _renderer.color = TileColor.InGameColor;
             _currentTower = tower;
         }
 
         private void OnMouseEnter()
         {
-            Debug.Log("Entered");
             HighlightTile();
         }
 
         private void OnMouseExit()
         {
-            Debug.Log("Exited");
             StopHighlightTile();
         }
 
         private void OnMouseUpAsButton()
         {
-            Debug.Log("Clicked");
+            SelectTile();
         }
     }
 }

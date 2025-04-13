@@ -26,7 +26,7 @@ namespace Scrips
         public void Start()
         {
             Profiler.BeginSample("Pathfinding");
-            CalculateWaypoints();
+            //CalculateWaypoints();
             Profiler.EndSample();
         }
 
@@ -52,7 +52,6 @@ namespace Scrips
                 var go = queue.Dequeue();
                 var tile = go.Tile.GetComponent<TdTile>();
                 var neighbors = GetNeighbors(go.X, go.Y);
-                //Debug.Log($"Tile {go.x}, {go.y}");
                 var nextNeighbors = tile.CalculateDistance(neighbors.Select(
                     kv => new TileWithDistance(
                         kv.Tile,
@@ -105,8 +104,9 @@ namespace Scrips
 
         private List<TileWithCoordinates> GetGoals()
         {
-
             var result = new List<TileWithCoordinates>();
+
+            return result;
 
             for(int x = 0; x < Width; x++)
             {

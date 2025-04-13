@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Editor.EditorToolsMenu
 {
-    [InitializeOnLoad]
+    //[InitializeOnLoad]
     public class AddAndRemoveTilesTool : UnityEditor.Editor
     {
         private static GameObject _level;

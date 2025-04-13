@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Data
 {
-    public class TileWithCoordinates : IEquatable<TileWithCoordinates>
+    public readonly struct TileWithCoordinates : IEquatable<TileWithCoordinates>
     {
         public readonly TdTile Tile;
         public readonly int X;
@@ -17,25 +17,19 @@ namespace Data
             Y = y;
         }
 
-        public bool Equals(TileWithCoordinates other)
-        {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
-            return Tile == other.Tile
-                   && X == other.X
-                   && Y == other.Y;
-        }
+        public bool Equals(TileWithCoordinates other) =>
+            Tile == other.Tile
+            && X == other.X
+            && Y == other.Y;
 
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as TileWithCoordinates);
-        }
+        public override bool Equals(object obj) => 
+            obj is TileWithCoordinates other && Equals(other);
 
         public override int GetHashCode()
         {
             unchecked
             {
-                int hashCode = (Tile != null ? Tile.GetHashCode() : 0);
+                var hashCode = (Tile != null ? Tile.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ X;
                 hashCode = (hashCode * 397) ^ Y;
                 return hashCode;
@@ -43,7 +37,7 @@ namespace Data
         }
 
         public static bool operator ==(TileWithCoordinates a, TileWithCoordinates b)
-            => ReferenceEquals(a, b) || !ReferenceEquals(a, null) && a.Equals(b);
+            => a.Equals(b);
 
         public static bool operator !=(TileWithCoordinates a, TileWithCoordinates b) => !(a == b);
     }

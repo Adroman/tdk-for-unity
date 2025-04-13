@@ -1,9 +1,11 @@
+using System;
 using Scrips.Modifiers;
 using Scrips.Spells;
 using UnityEngine;
 
 namespace Scrips.Controls
 {
+    [Obsolete]
     [RequireComponent(typeof(Collider2D))]
     public class LevelMouseControls : MonoBehaviour
     {
@@ -84,7 +86,6 @@ namespace Scrips.Controls
                 }
 
                 _lastTile = tile;
-                tile.ReadyToBuild();
             }
             else
             {
@@ -109,8 +110,8 @@ namespace Scrips.Controls
             if (option.SelectedTowerPrefab != null)
             {
                 var tile = GetTile(hit);
-                if (tile == _lastTile && _lastTile != null) tile.Build(option.SelectedTowerPrefab.Tower);
-                else if (_lastTile != null) _lastTile.StopHighlightTile();
+                // if (tile == _lastTile && _lastTile != null) tile.SelectTile(option.SelectedTowerPrefab.Tower);
+                // else if (_lastTile != null) _lastTile.StopHighlightTile();
             }
 
             _lastTile = null;

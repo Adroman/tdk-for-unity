@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Editor.EditorToolsMenu
 {
-    [InitializeOnLoad]
+    //[InitializeOnLoad]
     public class SquareHandle : UnityEditor.Editor
     {
         public static Vector3 CurrentHandlePosition = Vector3.zero;

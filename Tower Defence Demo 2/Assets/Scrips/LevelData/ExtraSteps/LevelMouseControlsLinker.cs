@@ -1,3 +1,4 @@
+using System;
 using Scrips.Controls;
 using Scrips.Modifiers;
 using Scrips.Spells;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 namespace Scrips.LevelData.ExtraSteps
 {
+    [Obsolete]
     [RequireComponent(typeof(LevelMouseControls))]
     public class LevelMouseControlsLinker : PostImportComponent
     {
