@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DrainSpellCooldownSkill
   m_EditorClassIdentifier: 
   Name: Drain Spell Cooldown
-  DescriptionFormat: Drain spell takes {0} % less time to cooldown.
+  DescriptionFormat: Drain spell takes {0} % less time to cool down.
   SkillRequirements: []
   PlayerLevelRequirement: 0
   Modifiers: []
