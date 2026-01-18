@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Scrips.Data;
+using Scrips.Events.Alerts;
 using Scrips.Spells;
 using Scrips.Towers;
 using Scrips.Towers.BaseData;
+using Scrips.Waves;
 using UnityEngine;
 using TileWithDistance = Data.TileWithDistance;
 
@@ -27,6 +29,8 @@ namespace Scrips
         [HideInInspector]
         [SerializeField]
         private bool _isGoal;
+        
+        private WaypointManager _waypointManager;
 
         [SerializeField]
         private Camera _camera;
@@ -43,6 +47,10 @@ namespace Scrips
         private SpriteRenderer _renderer;
         private TowerSelector _towerSelector;
         private static GameObject _towersParent;
+        
+        [SerializeField]
+        private AlertEvent userErrorAlertEvent;
+        private bool _hasUserErrorAlertEvent = false;
 
         //private static Level _level;
 
@@ -66,12 +74,12 @@ namespace Scrips
             set
             {
                 _buildable = value;
-                if (value)
-                {
-                    _isGoal = false;
-                    _isSpawnpoint = false;
-                    _walkable = false;
-                }
+                // if (value)
+                // {
+                //     _isGoal = false;
+                //     _isSpawnpoint = false;
+                //     _walkable = false;
+                // }
             }
         }
 
@@ -81,15 +89,15 @@ namespace Scrips
             set
             {
                 _walkable = value;
-                if (value)
-                {
-                    _buildable = false;
-                }
-                else
-                {
-                    _isGoal = false;
-                    _isSpawnpoint = false;
-                }
+                // if (value)
+                // {
+                //     _buildable = false;
+                // }
+                // else
+                // {
+                //     _isGoal = false;
+                //     _isSpawnpoint = false;
+                // }
             }
         }
 
@@ -227,6 +235,16 @@ namespace Scrips
             _spellCircle = GameObject.Find("SpellPoint")?.GetComponent<CircleRenderer>();
             _spellSpawner = GameObject.Find("SpellPoint")?.GetComponent<SpellSpawner>();
             _towerSelector = GetComponentInParent<TowerSelector>();
+            _waypointManager = FindObjectOfType<WaypointManager>();
+            
+            if (_waypointManager == null) Debug.LogError("WaypointManager is null");
+            _hasUserErrorAlertEvent = userErrorAlertEvent != null;
+        }
+
+        private void AlertUser(string title, string message)
+        {
+            if (!_hasUserErrorAlertEvent) return;
+            userErrorAlertEvent.Invoke(title, message);
         }
 
         public void HighlightTile()
@@ -259,12 +277,35 @@ namespace Scrips
             if (selectedTower == null)
             {
                 Debug.LogWarning("No selected tower to build.");
+                AlertUser("Build error", "No selected tower to build.");
                 return;
+            }
+
+            if (Walkable)
+            {
+                Walkable = false;
+                bool result = _waypointManager.CalculateWaypoints();
+                if (!result)
+                {
+                    // Tower blocks an enemy, revert walkable stat and recalculate waypoints
+                    Debug.LogWarning("Tower blocks an enemy.");
+                    AlertUser("Error building tower", "Tower blocks an enemy.");
+                    
+                    Walkable = true;
+                    
+                    result = _waypointManager.CalculateWaypoints();
+
+                    if (!result)
+                    {
+                        throw new Exception("Waypoint recalculation failed the second time.");
+                    }
+                    return;
+                }
             }
             
             var tower = selectedTower.BaseTowerData.BuildTower(
                 transform.position - new Vector3(0, 0, 1), transform.rotation, TowersParent.transform,
-                selectedTower);
+                selectedTower, userErrorAlertEvent);
             if (tower == null) return;
             Buildable = false;
             _renderer.color = TileColor.InGameColor;

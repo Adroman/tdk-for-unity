@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
+using Scrips.EnemyData.Instances;
+using Scrips.Events.Alerts;
 using Scrips.Variables;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scrips.Waves
 {
@@ -11,7 +14,8 @@ namespace Scrips.Waves
     public class WaypointManager : MonoBehaviour
     {
         private TileManager _tileManager;
-
+        
+        [SerializeField] private AlertEvent userErrorAlert;
         [SerializeField] private EnemyCollection enemies;
         
         private void Start()
@@ -20,7 +24,7 @@ namespace Scrips.Waves
             CalculateWaypoints();
         }
 
-        public bool CalculateWaypoints()
+        public bool CalculateWaypoints(int? x = null, int? y = null)
         {
             if (_tileManager.Tiles == null && !_tileManager.MapTiles())
             {
@@ -50,7 +54,7 @@ namespace Scrips.Waves
                 }
             }
 
-            return !IsAnyEnemyStuck();
+            return !IsAnyEnemyStuck(x, y);
         }
 
         private List<TileWithDistance> CalculateNeighborDistances(
@@ -88,7 +92,7 @@ namespace Scrips.Waves
 
         private IEnumerable<TileWithCoordinates> GetGoals()
         {
-            for(var y = 0; y < _tileManager.Height; y++)
+            for (var y = 0; y < _tileManager.Height; y++)
             for (var x = 0; x < _tileManager.Width; x++)
             {
                 if (_tileManager.Tiles[x, y].IsGoal)
@@ -98,7 +102,28 @@ namespace Scrips.Waves
             }
         }
 
-        private bool IsAnyEnemyStuck() => 
-            enemies.Any(enemy => float.IsPositiveInfinity(enemy.ActiveTile.DistanceToGoal));
+        private bool IsAnyEnemyStuck(int? x, int? y)
+        {
+            if (x.HasValue != y.HasValue)
+            {
+                throw new Exception("Both coordinates must be null or not null.");
+            }
+            
+            return enemies.Any(
+                enemy => 
+                    IsEnemyCutOffFromGoal(enemy)
+                    && (!x.HasValue || !y.HasValue 
+                                    || IsEnemyOnTheGivenTile(enemy, x.Value, y.Value))
+                );
+        }
+
+        private bool IsEnemyOnTheGivenTile(EnemyInstance enemy, int x, int y)
+        {
+            var (enemyX, enemyY) = _tileManager.GetTileCoordinates(enemy.transform);
+            return x == enemyX && y == enemyY;
+        }
+
+        private bool IsEnemyCutOffFromGoal(EnemyInstance enemy) 
+            => float.IsPositiveInfinity(enemy.ActiveTile.DistanceToGoal);
     }
 }

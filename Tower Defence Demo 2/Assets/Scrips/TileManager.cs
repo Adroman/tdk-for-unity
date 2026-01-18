@@ -106,7 +106,7 @@ namespace Scrips
             return valid;
         }
 
-        private (int, int) GetTileCoordinates(Transform tileTransform)
+        public (int, int) GetTileCoordinates(Transform tileTransform)
         {
             var position = tileTransform.position;
             var xPos = (int)Math.Round(position.x - xOffset, MidpointRounding.ToEven);

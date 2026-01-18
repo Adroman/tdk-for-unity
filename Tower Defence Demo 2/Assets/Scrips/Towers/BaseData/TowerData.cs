@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Scrips.Data;
+using Scrips.Events.Alerts;
 using Scrips.Events.Towers;
 using Scrips.Modifiers;
 using Scrips.Towers.Specials;
@@ -36,13 +37,17 @@ namespace Scrips.Towers.BaseData
             Vector3 position,
             Quaternion rotation,
             Transform parent,
-            TowerUiData data)
+            TowerUiData data,
+            AlertEvent userErrorAlert)
         {
             var modifiedPrice = data.GetModifiedPrice().ToList();
 
             if (!modifiedPrice.All(p => p.HasEnough()))
             {
-                // not enough resources
+                Debug.LogWarning("Not enough resources to build the tower.");
+                if (userErrorAlert != null) 
+                    userErrorAlert.Invoke("Error building tower", "Not enough resources to build the tower.");
+                
                 return null;
             }
 

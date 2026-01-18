@@ -104,7 +104,10 @@ namespace Scrips.EnemyData.Instances
             _target = targets[GetRandom(0, targets.Count)];
             if (!_target.IsGoal)
             {
-                _targetNoiseOffset = new Vector3(Random.Range(-RandomTargetOffset, RandomTargetOffset), Random.Range(-RandomTargetOffset, RandomTargetOffset), 0);
+                _targetNoiseOffset = new Vector3(
+                    Random.Range(-RandomTargetOffset, RandomTargetOffset),
+                    Random.Range(-RandomTargetOffset, RandomTargetOffset),
+                    0);
             }
         }
 
@@ -117,7 +120,6 @@ namespace Scrips.EnemyData.Instances
             ActiveDebuffs.Clear();
         }
 
-        // Update is called once per frame
         private void Update ()
         {
             // direction
@@ -232,7 +234,7 @@ namespace Scrips.EnemyData.Instances
 
         private int GetRandom(int min, int max)
         {
-            return UnityEngine.Random.Range(min, max);
+            return Random.Range(min, max);
         }
 
         public void DestroyInstance()
@@ -277,7 +279,7 @@ namespace Scrips.EnemyData.Instances
         // origin: https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers
         private static float GetRandomNumber(float minimum, float maximum, System.Random rand = null)
         {
-            if (rand == null) rand = new System.Random();
+            rand ??= new System.Random();
             return (float)rand.NextDouble() * (maximum - minimum) + minimum;
         }
     }
