@@ -160,7 +160,11 @@ namespace Scrips
             }
         }
 
-        public void ResetDistanceToGoal() => DistanceToGoal = Mathf.Infinity;
+        public void ResetTile()
+        {
+            DistanceToGoal = Mathf.Infinity;
+            NextTiles.Clear();
+        }
 
         public List<TdTile> CalculateDistance(List<TileWithDistance> allNeighbors)
         {

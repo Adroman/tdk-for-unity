@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Scrips
 {
@@ -6,13 +8,13 @@ namespace Scrips
     public class CameraController : MonoBehaviour
     {
         public float PanSpeed = 30;
+        public float DragSpeed = 4;
         public float ScrollSpeed = 5;
         public float PanBorderThickness = 10;
 
         public float MobilePanSpeed = 1;
         public float MobileScrollSpeed = 1;
-
-
+        
         public float MinScrollDistance = 5;
         public float MaxScrollDistance = 30;
 
@@ -22,6 +24,9 @@ namespace Scrips
         public float LowerBorder = -10;
 
         private Camera _camera;
+        
+        private bool _mouseDown;
+        private Vector3? _lastMousePosition;
 
         private void Awake()
         {
@@ -31,37 +36,78 @@ namespace Scrips
         // Update is called once per frame
         private void Update ()
         {
-            if (Input.GetKey("w"))
+            HandleKeyboardInputs();
+            HandleMouseInputs();
+            HandleTouchInputs();
+        }
+
+        void HandleKeyboardInputs()
+        {
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 if (transform.position.y < UpperBorder)
                     transform.Translate(PanSpeed * Time.deltaTime * Vector3.up);
             }
 
-            if (Input.GetKey("s"))
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 if (transform.position.y > LowerBorder)
                     transform.Translate(PanSpeed * Time.deltaTime * Vector3.down);
             }
 
-            if (Input.GetKey("a"))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 if (transform.position.x > LeftBorder)
                     transform.Translate(PanSpeed * Time.deltaTime * Vector3.left);
             }
 
-            if (Input.GetKey("d"))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 if (transform.position.x < RightBorder)
                     transform.Translate(PanSpeed * Time.deltaTime * Vector3.right);
             }
+        }
 
+        void HandleMouseInputs()
+        {
+            if (Input.GetMouseButton((int)MouseButton.RightMouse))
+            {
+                if (_lastMousePosition.HasValue)
+                {
+                    var diff = _lastMousePosition.Value - Input.mousePosition;
+                    var translateVector = DragSpeed * Time.deltaTime * diff;
+                    if ((transform.position.x < LeftBorder && translateVector.x < 0) 
+                        || (transform.position.x > RightBorder && translateVector.x > 0))
+                    {
+                        translateVector.x = 0;
+                    }
+
+                    if ((transform.position.y < LowerBorder && translateVector.y < 0)
+                        || (transform.position.y > UpperBorder && translateVector.y > 0))
+                    {
+                        translateVector.y = 0;
+                    }
+                    
+                    transform.Translate(translateVector);
+                }
+                
+                _lastMousePosition = Input.mousePosition;
+            }
+            else
+            {
+                _lastMousePosition = null;
+            }
+            
             float scroll = Input.GetAxis("Mouse ScrollWheel");
 
             float newOrthographicSize = _camera.orthographicSize - scroll * ScrollSpeed;
             newOrthographicSize = Mathf.Clamp(newOrthographicSize, MinScrollDistance, MaxScrollDistance);
 
             _camera.orthographicSize = newOrthographicSize;
+        }
 
+        void HandleTouchInputs()
+        {
             switch (Input.touchCount)
             {
                 /*&& Input.GetTouch(0).phase == TouchPhase.Moved*/
@@ -96,7 +142,7 @@ namespace Scrips
                     // Find the difference in the distances between each frame.
                     float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
-                    newOrthographicSize = _camera.orthographicSize + deltaMagnitudeDiff * MobileScrollSpeed;
+                    float newOrthographicSize = _camera.orthographicSize + deltaMagnitudeDiff * MobileScrollSpeed;
                     newOrthographicSize = Mathf.Clamp(newOrthographicSize, MinScrollDistance, MaxScrollDistance);
 
                     _camera.orthographicSize = newOrthographicSize;

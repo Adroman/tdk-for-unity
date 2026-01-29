@@ -24,12 +24,14 @@ namespace Scrips.Waves
             CalculateWaypoints();
         }
 
-        public bool CalculateWaypoints(int? x = null, int? y = null)
+        public bool CalculateWaypoints(TdTile tileInQuestion = null)
         {
             if (_tileManager.Tiles == null && !_tileManager.MapTiles())
             {
                 throw new Exception("Tile mapping failed.");
             }
+
+            ResetWaypoints();
             
             var queue = new Queue<TileWithCoordinates>(GetGoals());
 
@@ -54,7 +56,15 @@ namespace Scrips.Waves
                 }
             }
 
-            return !IsAnyEnemyStuck(x, y);
+            return !IsAnyEnemyStuck(tileInQuestion);
+        }
+
+        private void ResetWaypoints()
+        {
+            foreach (var tile in _tileManager.Tiles)
+            {
+                tile.ResetTile();
+            }
         }
 
         private List<TileWithDistance> CalculateNeighborDistances(
@@ -71,6 +81,8 @@ namespace Scrips.Waves
         
         private List<TileWithCoordinates> GetLegalNeighbors(int x, int y)
         {
+            var activeTile = _tileManager.Tiles[x, y];
+            
             var minX = Math.Max(0, x - 1);
             var maxX = Math.Min(_tileManager.Width - 1, x + 1);
             var minY = Math.Max(0, y - 1);
@@ -82,12 +94,44 @@ namespace Scrips.Waves
             for (var j = minY; j <= maxY; j++)
                 if (x != i || y != j)
                 {
-                    var tile = _tileManager.Tiles[i, j];
-                    if (tile.Walkable)
-                        result.Add(new TileWithCoordinates(i, j, tile));
+                    var targetTile = _tileManager.Tiles[i, j];
+                    if (IsTileLegalToWalkTo(
+                            activeTile, new Vector2Int(x, y), 
+                            targetTile, new Vector2Int(i, j))) 
+                        result.Add(new TileWithCoordinates(i, j, targetTile));
                 }
 
             return result;
+        }
+
+        /// <summary>
+        /// Determines whether the target tile is walkable directly from the active tile.
+        /// In order to be walkable, it must meet the following criteria:
+        /// 1. Target must be walkable
+        /// 2a. Target must be touching a side with the active tile OR
+        /// 2b. Target must be touching a corner with the active tile
+        ///     and at least one common side neighbor must be walkable
+        /// </summary>
+        /// <param name="activeTile"></param>
+        /// <param name="activeTileCoords"></param>
+        /// <param name="targetTile"></param>
+        /// <param name="targetTileCoords"></param>
+        /// <returns>true if the target tile is walkable directly</returns>
+        private bool IsTileLegalToWalkTo(
+            TdTile activeTile, Vector2Int activeTileCoords, 
+            TdTile targetTile, Vector2Int targetTileCoords)
+        {
+            // 1. Tile must be walkable
+            if (!targetTile.Walkable) return false;
+            
+            // 2a. Tiles must touch each other with a side
+            var distance = targetTileCoords - activeTileCoords;
+            if (distance.x == 0 || distance.y == 0) return true;
+            
+            // 2b. At least one tile neighboring both tiles must be walkable
+            var touchingTile1 = _tileManager.Tiles[activeTileCoords.x, targetTileCoords.y];
+            var touchingTile2 = _tileManager.Tiles[targetTileCoords.x, activeTileCoords.y];
+            return touchingTile1.Walkable || touchingTile2.Walkable;
         }
 
         private IEnumerable<TileWithCoordinates> GetGoals()
@@ -101,26 +145,46 @@ namespace Scrips.Waves
                 }
             }
         }
-
-        private bool IsAnyEnemyStuck(int? x, int? y)
+        
+        private IEnumerable<TileWithCoordinates> GetSpawnpoints()
         {
-            if (x.HasValue != y.HasValue)
+            for (var y = 0; y < _tileManager.Height; y++)
+            for (var x = 0; x < _tileManager.Width; x++)
             {
-                throw new Exception("Both coordinates must be null or not null.");
+                if (_tileManager.Tiles[x, y].IsSpawnpoint)
+                {
+                    yield return new TileWithCoordinates(x, y, _tileManager.Tiles[x, y]);
+                }
             }
-            
-            return enemies.Any(
-                enemy => 
-                    IsEnemyCutOffFromGoal(enemy)
-                    && (!x.HasValue || !y.HasValue 
-                                    || IsEnemyOnTheGivenTile(enemy, x.Value, y.Value))
-                );
         }
 
-        private bool IsEnemyOnTheGivenTile(EnemyInstance enemy, int x, int y)
+        private bool IsAnyEnemyStuck(TdTile tileInQuestion)
         {
-            var (enemyX, enemyY) = _tileManager.GetTileCoordinates(enemy.transform);
-            return x == enemyX && y == enemyY;
+            var spawnPoints = GetSpawnpoints();
+            if (spawnPoints.Any(spawnPoint =>
+                    float.IsPositiveInfinity(spawnPoint.Tile.DistanceToGoal)))
+            {
+                Debug.LogWarning("Some spawnpoints are blocked.");
+                return true;
+            }
+            
+            if (enemies.Any(enemy =>
+                    IsEnemyCutOffFromGoal(enemy)
+                    && IsEnemyOnTheGivenTile(enemy, tileInQuestion)))
+            {
+                Debug.LogWarning("Some enemies are blocked.");
+                return true;
+            }
+            
+            return false;
+        }
+
+        private bool IsEnemyOnTheGivenTile(EnemyInstance enemy, TdTile tileInQuestion)
+        {
+            if (tileInQuestion == null) return false;
+            
+            return Math.Abs(enemy.transform.position.x - tileInQuestion.transform.position.x) < 0.5f
+                && Math.Abs(enemy.transform.position.y - tileInQuestion.transform.position.y) < 0.5f;
         }
 
         private bool IsEnemyCutOffFromGoal(EnemyInstance enemy) 

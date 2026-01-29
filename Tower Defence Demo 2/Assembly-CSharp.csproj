@@ -48,6 +48,7 @@
     <Compile Include="Assets\Scrips\Waves\BaseEnemyGenerationModifiers.cs" />
     <Compile Include="Assets\Scrips\LevelData\ExtraSteps\TowerUiDataModifierLinker.cs" />
     <Compile Include="Assets\Scrips\UI\UiSkills\UiSkill.cs" />
+    <Compile Include="Assets\Scrips\Events\Alerts\AlertEvent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scrips\UI\UiController.cs" />
     <Compile Include="Assets\Scrips\Waves\EnemyWaveDataPropertyDrawer.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scrips\Towers\Specials\SplashDamage\SplashDamageType.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\IncreaseType\FixedIncreaseType.cs" />
+    <Compile Include="Assets\Scrips\Events\Alerts\AlertEventListener.cs" />
     <Compile Include="Assets\Scrips\BuffData\BaseBuffData.cs" />
     <Compile Include="Assets\Scrips\Level.cs" />
     <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSpecials\ReduceSpeedAmountModifier.cs" />
@@ -305,8 +307,6 @@
     <Compile Include="Assets\Scrips\Modifiers\ModifiedAmount.cs" />
     <Compile Include="Assets\Scrips\EnemyData\WaveData\MoreWaveData.cs" />
     <Compile Include="Assets\Scrips\Waves\WaveCluster.cs" />
-    <Compile Include="Assets\Scrips\Events\Alerts\AlertEvent.cs" />
-    <Compile Include="Assets\Scrips\Events\Alerts\AlertEventListener.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

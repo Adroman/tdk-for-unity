@@ -35,10 +35,10 @@ namespace Scrips.EnemyData.Instances
 
         public EnemyCollection RuntimeCollection;
 
-        public List<BaseBuffData> ActiveDebuffs = new List<BaseBuffData>();
+        public readonly List<BaseBuffData> ActiveDebuffs = new List<BaseBuffData>();
 
         private TdTile _target;
-        public TdTile ActiveTile { get; private set; }
+        public TdTile ActiveTile => FindActiveTile();
         private Vector3 _targetNoiseOffset = Vector3.zero;
 
         private Vector3 TargetWithNoise => _target.transform.position + _targetNoiseOffset;
@@ -88,12 +88,12 @@ namespace Scrips.EnemyData.Instances
         }
 
         // Use this for initialization
-        private void Start ()
+        private void Start()
         {
             TriggersComponent = GetComponent<BaseTriggers>();
             _rigidbody = GetComponent<Rigidbody2D>();
 
-            var firstTargets = FindNearestTile(_tiles).NextTiles;
+            var firstTargets = FindNearestTile().NextTiles;
             SetNextTarget(firstTargets);
             
             ResetStats();
@@ -176,8 +176,6 @@ namespace Scrips.EnemyData.Instances
             rotatingPart.rotation = Quaternion.Slerp(rotatingPart.rotation, q, 10000 * Time.deltaTime);
 
             // movement
-            //transform.Translate(dir.normalized * distanceToTravel, Space.World);
-            //dir = Quaternion.Euler(0, 0, randomAngleNoise) * dir;
             _rigidbody.MovePosition(transform.position + dir.normalized * distanceToTravel);
         }
 
@@ -208,21 +206,42 @@ namespace Scrips.EnemyData.Instances
             var position = sp.position;
             if (move)
             {
-                var firstTargets = FindNearestTile(_tiles).NextTiles;
+                var firstTargets = FindNearestTile().NextTiles;
                 transform.position = new Vector3(position.x, position.y);
                 _target = firstTargets[GetRandom(0, firstTargets.Count)];
             }
         }
 
-        private TdTile FindNearestTile(TdTile[] tdTiles)
+        private TdTile FindActiveTile()
         {
-            foreach (var tile in tdTiles)
+            foreach (var tile in _tiles)
+            {
+                var thisPosition = transform.position;
+                var thatPosition = tile.transform.position;
+
+                if (Math.Abs(thisPosition.x - thatPosition.x) < 0.5f
+                    && Math.Abs(thisPosition.y - thatPosition.y) < 0.5f)
+                {
+                    return tile;
+                }
+            }
+            
+            // unreachable part of the code
+            Debug.LogError($"Invalid position {transform.position}");
+            return null;
+        }
+
+        // TODO: This should be like find tile enemy is on exactly 
+        private TdTile FindNearestTile()
+        {
+            foreach (var tile in _tiles)
             {
                 var thisPosition = transform.position;
                 thisPosition.z = 0;
                 var thatPosition = tile.transform.position;
                 thatPosition.z = 0;
-                if ((thisPosition - thatPosition).magnitude < 0.0001f)
+                
+                if ((thisPosition - thatPosition).sqrMagnitude < 0.0001f)
                 {
                     return tile;
                 }
@@ -274,13 +293,6 @@ namespace Scrips.EnemyData.Instances
         public void ReduceArmor(float amount)
         {
             Armor = Math.Max(0, Armor - amount);
-        }
-
-        // origin: https://stackoverflow.com/questions/1064901/random-number-between-2-double-numbers
-        private static float GetRandomNumber(float minimum, float maximum, System.Random rand = null)
-        {
-            rand ??= new System.Random();
-            return (float)rand.NextDouble() * (maximum - minimum) + minimum;
         }
     }
 }

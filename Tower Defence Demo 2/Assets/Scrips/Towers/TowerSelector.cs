@@ -11,5 +11,10 @@ namespace Scrips.Towers
         {
             SelectedTower = selectedTower;
         }
+
+        public void DeselectTower()
+        {
+            SelectedTower = null;
+        }
     }
 }
