@@ -52,35 +52,13 @@ namespace Scrips
         private AlertEvent userErrorAlertEvent;
         private bool _hasUserErrorAlertEvent = false;
 
-        //private static Level _level;
-
-        // private static Level LevelProp
-        // {
-        //     get
-        //     {
-        //         if (_level == null)
-        //             _level = GameObject.FindObjectsOfType<Level>().First();
-        //
-        //         return _level;
-        //     }
-        // }
-
         public float DistanceToGoal { get; private set; } = Mathf.Infinity;
-        public List<TdTile> NextTiles { get; private set; } = new List<TdTile>();
+        public List<TdTile> NextTiles { get; } = new List<TdTile>();
 
         public bool Buildable
         {
             get => _buildable;
-            set
-            {
-                _buildable = value;
-                // if (value)
-                // {
-                //     _isGoal = false;
-                //     _isSpawnpoint = false;
-                //     _walkable = false;
-                // }
-            }
+            set => _buildable = value;
         }
 
         public bool Walkable
@@ -89,15 +67,11 @@ namespace Scrips
             set
             {
                 _walkable = value;
-                // if (value)
-                // {
-                //     _buildable = false;
-                // }
-                // else
-                // {
-                //     _isGoal = false;
-                //     _isSpawnpoint = false;
-                // }
+                if (!value)
+                {
+                    _isSpawnpoint = false;
+                    _isGoal = false;
+                }
             }
         }
 
@@ -205,12 +179,6 @@ namespace Scrips
             return result;
         }
 
-        public void SetNextTile(IEnumerable<TdTile> targets, float distance)
-        {
-            NextTiles = new List<TdTile>(targets);
-            DistanceToGoal = distance;
-        }
-
         public void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
@@ -288,7 +256,7 @@ namespace Scrips
             if (Walkable)
             {
                 Walkable = false;
-                bool result = _waypointManager.CalculateWaypoints();
+                bool result = _waypointManager.CalculateWaypoints(this);
                 if (!result)
                 {
                     // Tower blocks an enemy, revert walkable stat and recalculate waypoints

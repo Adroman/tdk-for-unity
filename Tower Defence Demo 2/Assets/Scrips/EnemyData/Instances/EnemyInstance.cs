@@ -61,7 +61,7 @@ namespace Scrips.EnemyData.Instances
 
         private TdTile[] _tiles;
 
-        public float DistanceToGoal => _target.GetComponent<TdTile>().DistanceToGoal + (transform.position - _target.transform.position).magnitude;
+        public float DistanceToGoal => _target.DistanceToGoal + (transform.position - _target.transform.position).magnitude;
 
         private void Awake()
         {

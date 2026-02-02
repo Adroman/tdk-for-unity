@@ -73229,7 +73229,7 @@ PrefabInstance:
     - target: {fileID: 8837993218722933752, guid: 3f0d2ab02b3560343995b2824ab474ae,
         type: 3}
       propertyPath: Waves.Array.data[0].Wave.WaveClusters.Array.data[0].Amount
-      value: 34
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8837993218722933752, guid: 3f0d2ab02b3560343995b2824ab474ae,
         type: 3}
@@ -73241,6 +73241,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Waves.Array.data[0].Wave.WaveClusters.Array.data[0].Interval
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837993218722933752, guid: 3f0d2ab02b3560343995b2824ab474ae,
+        type: 3}
+      propertyPath: Waves.Array.data[0].Wave.WaveClusters.Array.data[0].EnemyData.InitialSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f0d2ab02b3560343995b2824ab474ae, type: 3}
