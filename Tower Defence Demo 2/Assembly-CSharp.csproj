@@ -266,7 +266,7 @@
     <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSpecials\BaseTowerSpecialModifier.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerCostModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerBuildCostModifier.cs" />
     <Compile Include="Assets\Scrips\Variables\TowerCollection.cs" />
     <Compile Include="Assets\Scrips\Statistics\EnemyStatistics.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -307,6 +307,9 @@
     <Compile Include="Assets\Scrips\Modifiers\ModifiedAmount.cs" />
     <Compile Include="Assets\Scrips\EnemyData\WaveData\MoreWaveData.cs" />
     <Compile Include="Assets\Scrips\Waves\WaveCluster.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerCostModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSellRefundModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSellCostModifier.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

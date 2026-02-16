@@ -6,8 +6,10 @@ using Scrips.Data;
 using Scrips.Events.Alerts;
 using Scrips.Events.Towers;
 using Scrips.Modifiers;
+using Scrips.Modifiers.Currency;
 using Scrips.Towers.Specials;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scrips.Towers.BaseData
 {
@@ -27,7 +29,15 @@ namespace Scrips.Towers.BaseData
 
         public List<TowerUpgradeNode> Upgrades;
 
-        public List<IntCurrency> Price;
+        [FormerlySerializedAs("Price")]
+        [Tooltip("The price for building the tower")]
+        public List<IntCurrency> BuildPrice;
+        
+        [Tooltip("The price for selling/destroying the tower")]
+        public List<IntCurrency> SellPrice;
+        
+        [Tooltip("The refund for selling/destroying the tower")]
+        public List<IntCurrency> SellRefund;
 
         public Sprite PreviewSprite;
 
@@ -67,9 +77,28 @@ namespace Scrips.Towers.BaseData
             tower.ActualRange = Range;
             tower.NumberOfTargets.Value = NumberOfTargets;
             tower.Upgrades = Upgrades.ToList();
+            tower.SellPrice = BuildModifiedPrice(SellPrice);
+            tower.SellRefund = BuildModifiedPrice(SellRefund);
             
             if (OnTowerBuilt != null) OnTowerBuilt.Invoke(tower);
             return tower;
+        }
+        
+        public static ModifiedCurrency[] BuildModifiedPrice(IList<IntCurrency> priceToBuildFrom)
+        {
+            var priceToUse = new ModifiedCurrency[priceToBuildFrom.Count];
+
+            for (int i = 0; i < priceToBuildFrom.Count; i++)
+            {
+                var newModified = new ModifiedCurrency
+                {
+                    Currency = priceToBuildFrom[i],
+                    Amount = { Value = priceToBuildFrom[i].Amount }
+                };
+                priceToUse[i] = newModified;
+            }
+
+            return priceToUse;
         }
     }
 }

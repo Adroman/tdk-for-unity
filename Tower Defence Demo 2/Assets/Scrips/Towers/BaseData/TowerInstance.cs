@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Scrips.Data;
 using Scrips.EnemyData.Instances;
 using Scrips.Instances;
 using Scrips.Modifiers;
+using Scrips.Modifiers.Currency;
 using Scrips.Modifiers.Stats;
 using Scrips.Modifiers.Towers;
 using Scrips.Priorities;
@@ -75,10 +77,16 @@ namespace Scrips.Towers.BaseData
         public TowerModel TowerModelToUse;
 
         public List<TowerUpgradeNode> Upgrades = new List<TowerUpgradeNode>();
+        
+        public ModifiedCurrency[] SellPrice;
+        public ModifiedCurrency[] SellRefund;
 
         public ModifierController ModifierController;
 
         public TowerCollection TowerCollection;
+        
+        [HideInInspector]
+        public TdTile Tile;
 
         private LineRenderer _circleRenderer;
         private float _cooldown;
@@ -216,7 +224,6 @@ namespace Scrips.Towers.BaseData
                 component.CopyDataToTargetComponent(newComponent);
             }
             //bullet.SpecialEffect = SpecialEffect; TODO: change it
-
         }
 
         public void Upgrade(TowerUpgradeNode upgrade)
@@ -230,6 +237,7 @@ namespace Scrips.Towers.BaseData
             if (!upgrade.Price.All(p => p.HasEnough()))
             {
                 Debug.Log("Not enough resources to upgrade");
+                //TODO: Alert the player
                 return;
             }
 
@@ -270,6 +278,29 @@ namespace Scrips.Towers.BaseData
             TowerModelToUse.SetDisplay(upgrade.TextToDisplay);
 
             _appliedUpgrades.Add(upgrade);
+        }
+
+        public void SellTower()
+        {
+            if (!SellPrice.All(p => p.HasEnough()))
+            {
+                Debug.Log("Not enough resources to upgrade");
+                //TODO: Alert the player
+                return;
+            }
+
+            foreach (var sellingPrice in SellPrice)
+            {
+                sellingPrice.Subtract();
+            }
+
+            foreach (var refund in SellRefund)
+            {
+                refund.Add();
+            }
+            
+            Tile.CurrentTower = null;
+            Destroy(gameObject);
         }
 
         public List<TowerUpgradeNode> GetPossibleUpgrades()

@@ -164,8 +164,8 @@ namespace Scrips.Modifiers
                     case BaseTowerModifier towerModifier:
                         towerModifier.AddToTower(tower);
                         break;
-                    case TowerCostModifier towerCostModifier:
-                        foreach (var price in tower.ModifiedPrice)
+                    case TowerBuildCostModifier towerCostModifier:
+                        foreach (var price in tower.ModifiedPurchasePrice)
                         {
                             towerCostModifier.AddToTower(tower, price.Currency.Variable);
                         }

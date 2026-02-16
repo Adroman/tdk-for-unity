@@ -8,6 +8,7 @@ using Scrips.Modifiers.Stats;
 using Scrips.Modifiers.Towers;
 using Scrips.Variables;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Scrips.Towers.BaseData
 {
@@ -22,15 +23,18 @@ namespace Scrips.Towers.BaseData
         public FloatModifiableStat Range;
         public IntModifiableStat NumberOfTargets;
 
-        public ModifiedCurrency[] ModifiedPrice;
+        // Price for building Tower
+        [FormerlySerializedAs("ModifiedPrice")]
+        public ModifiedCurrency[] ModifiedPurchasePrice;
+        
+        // Price for selling Tower - could be used as a limitation against juggling
+        public ModifiedCurrency[] ModifiedSellingPrice;
+        
+        // Amount of resources returned to player when selling Tower
+        public ModifiedCurrency[] ModifiedSellingRefund;
 
-        public int GetModifiedPrice(IntVariable currency)
-        {
-            return ModifiedPrice.First(p => p.Currency.Variable == currency).Amount.Value;
-        }
-
-        public IEnumerable<IntCurrency> GetModifiedPrice() => ModifiedPrice.Select(mp =>
-            new IntCurrency()
+        public IEnumerable<IntCurrency> GetModifiedPrice() => ModifiedPurchasePrice.Select(mp =>
+            new IntCurrency
             {
                 Amount = mp.Amount.Value,
                 Variable = mp.Currency.Variable
@@ -53,16 +57,18 @@ namespace Scrips.Towers.BaseData
 
         private void SetUpModifiedPrice()
         {
-            ModifiedPrice = new ModifiedCurrency[BaseTowerData.Price.Count];
-            for (int i = 0; i < BaseTowerData.Price.Count; i++)
-            {
-                var newModified = new ModifiedCurrency
-                {
-                    Currency = BaseTowerData.Price[i],
-                    Amount = {Value = BaseTowerData.Price[i].Amount},
-                };
-                ModifiedPrice[i] = newModified;
-            }
+            ModifiedPurchasePrice = TowerData.BuildModifiedPrice(BaseTowerData.BuildPrice);
+            
+            // ModifiedPurchasePrice = new ModifiedCurrency[BaseTowerData.Price.Count];
+            // for (int i = 0; i < BaseTowerData.Price.Count; i++)
+            // {
+            //     var newModified = new ModifiedCurrency
+            //     {
+            //         Currency = BaseTowerData.Price[i],
+            //         Amount = {Value = BaseTowerData.Price[i].Amount},
+            //     };
+            //     ModifiedPurchasePrice[i] = newModified;
+            // }
         }
     }
 }

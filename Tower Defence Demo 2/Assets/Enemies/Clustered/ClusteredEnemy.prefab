@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7330823650690201451}
   - component: {fileID: 5078419807234701488}
   - component: {fileID: 8158685643328460990}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ClusteredEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

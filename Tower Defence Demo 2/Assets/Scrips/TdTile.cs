@@ -29,6 +29,8 @@ namespace Scrips
         [HideInInspector]
         [SerializeField]
         private bool _isGoal;
+
+        private bool _hasTowerOnIt;
         
         private WaypointManager _waypointManager;
 
@@ -63,7 +65,7 @@ namespace Scrips
 
         public bool Walkable
         {
-            get => _walkable && _currentTower == null;
+            get => _walkable && !_hasTowerOnIt;
             set
             {
                 _walkable = value;
@@ -102,6 +104,16 @@ namespace Scrips
                     _buildable = false;
                     _walkable = true;
                 }
+            }
+        }
+
+        public TowerInstance CurrentTower
+        {
+            get => _currentTower;
+            set
+            {
+                _currentTower = value;
+                _hasTowerOnIt = value != null;
             }
         }
 
@@ -149,11 +161,12 @@ namespace Scrips
             if (IsGoal)
             {
                 DistanceToGoal = 0;
-                foreach(var n in allNeighbors)
-                {
-                    var t = n.Tile;
-                    if (float.IsPositiveInfinity(t.DistanceToGoal)) result.Add(n.Tile);
-                }
+                result.AddRange(
+                    from n in allNeighbors 
+                    let t = n.Tile 
+                    where float.IsPositiveInfinity(t.DistanceToGoal) 
+                    select n.Tile
+                    );
 
                 return result;
             }
@@ -211,6 +224,7 @@ namespace Scrips
             
             if (_waypointManager == null) Debug.LogError("WaypointManager is null");
             _hasUserErrorAlertEvent = userErrorAlertEvent != null;
+            _hasTowerOnIt = _currentTower != null;
         }
 
         private void AlertUser(string title, string message)
@@ -226,21 +240,22 @@ namespace Scrips
                 _renderer.color = TileColor.InGameHoverColor;
             }
 
-            if (_currentTower != null) _currentTower.ShowRangeCircle();
+            if (_hasTowerOnIt) CurrentTower.ShowRangeCircle();
         }
 
         public void StopHighlightTile()
         {
             _renderer.color = TileColor.InGameColor;
-            if (_currentTower != null) _currentTower.HideRangeCircle();
+            if (_hasTowerOnIt) CurrentTower.HideRangeCircle();
         }
 
         public void SelectTile()
         {
-            if (Buildable && _currentTower == null)
+            if (Buildable && !_hasTowerOnIt)
                 BuildTower();
-            else if (_currentTower != null)
-                _currentTower.Upgrade(_currentTower.GetPossibleUpgrades().FirstOrDefault());
+            else if (_hasTowerOnIt)
+                // TODO: Instead of upgrade, show UI
+                CurrentTower.Upgrade(CurrentTower.GetPossibleUpgrades().FirstOrDefault());
         }
 
         private void BuildTower()
@@ -273,6 +288,8 @@ namespace Scrips
                     }
                     return;
                 }
+
+                Walkable = true;
             }
             
             var tower = selectedTower.BaseTowerData.BuildTower(
@@ -281,7 +298,7 @@ namespace Scrips
             if (tower == null) return;
             Buildable = false;
             _renderer.color = TileColor.InGameColor;
-            _currentTower = tower;
+            CurrentTower = tower;
         }
 
         private void OnMouseEnter()
