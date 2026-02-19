@@ -1,0 +1,46 @@
+﻿using Scrips.Towers;
+using Scrips.Towers.BaseData;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Scrips.UI
+{
+    public class UiTowerButton : MonoBehaviour
+    {
+        public TowerUiData Tower;
+        public Image ButtonImage;
+        public Image SelectedTowerImage;
+        public UiTowerPreBuildInfo UiInfo;
+        public TowerSelector TowerSelector;
+
+        public void SelectTower()
+        {
+            SelectedTowerOption.Option.SelectedTowerPrefab = this;
+            SelectedTowerImage.sprite = Tower.BaseTowerData.PreviewSprite;
+            SelectedTowerImage.color = Color.white;
+            TowerSelector.SelectTower(Tower);
+        }
+
+        private void Start()
+        {
+            ButtonImage.sprite = Tower.BaseTowerData.PreviewSprite;
+        }
+
+        public void ShowInfo()
+        {
+            var rectTransform = UiInfo.GetComponent<RectTransform>();
+            rectTransform.position = new Vector3(rectTransform.position.x, transform.position.y + rectTransform.rect.height - 10);
+            UiInfo.gameObject.SetActive(true);
+        }
+
+        public void HideInfo()
+        {
+            UiInfo.gameObject.SetActive(false);
+        }
+
+        public void BuildTower(TdTile tile)
+        {
+            tile.SelectTile();
+        }
+    }
+}

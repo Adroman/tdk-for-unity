@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095080d5e94341c7beb77293b8257c24, type: 3}
+  m_Name: Level2Special
+  m_EditorClassIdentifier: 
+  SpecialType: {fileID: 11400000, guid: 6584eff8df23a3742b1ac41725e98451, type: 2}
+  ChanceIncreaseType: {fileID: 11400000, guid: 2917526a1b9becd48bb41757234ec08e, type: 2}
+  ChanceByAmount: 0
+  PowerIncreaseType: {fileID: 11400000, guid: 11dca13de3fd254439438f4ec28e2e2c, type: 2}
+  PowerByAmount: 1

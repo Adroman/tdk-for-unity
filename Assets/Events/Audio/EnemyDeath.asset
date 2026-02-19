@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e489b402a64dd1938c8e43af2b536e, type: 3}
+  m_Name: EnemyDeath
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: cc477416f4cbc1e40ba8784657c89fb5, type: 3}
+  - {fileID: 8300000, guid: 17477ce656321124a8c4a3646fd1d29c, type: 3}
+  - {fileID: 8300000, guid: 35c86ee4888e7ad4a8c0d7bc409c28ad, type: 3}
+  MinVolume: 0.46100938
+  MaxVolume: 0.55259395
+  MinPitch: 1.0681889
+  MaxPitch: 1.2648009
