@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scrips\SelfDisabler.cs" />
     <Compile Include="Assets\Scrips\Data\IntCurrency.cs" />
     <Compile Include="Assets\Scrips\Variables\IntVariable.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerCostModifier.cs" />
     <Compile Include="Assets\Scrips\Data\TileData\TileRow.cs" />
     <Compile Include="Assets\Scrips\Waves\IntEnemyStat.cs" />
     <Compile Include="Assets\Scrips\Variables\IntReference.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSpecials\ReduceSpeedAmountModifier.cs" />
     <Compile Include="Assets\Scrips\Modifiers\Enemies\EnemyLootModifier.cs" />
     <Compile Include="Assets\Scrips\CustomTypes\ComparisonType.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSellCostModifier.cs" />
     <Compile Include="Assets\Scrips\UI\UiProgressDisplay\UiFillAmountProgressDisplay.cs" />
     <Compile Include="Assets\Scrips\Spells\SpellSpawner.cs" />
     <Compile Include="Assets\Scrips\Modifiers\Towers\BaseTowerModifier.cs" />
@@ -253,6 +255,7 @@
     <Compile Include="Assets\Scrips\ScoreManager.cs" />
     <Compile Include="Assets\Scrips\Data\TileData\TileWithDistance.cs" />
     <Compile Include="Assets\Scrips\Modifiers\Enemies\EnemySpeedModifier.cs" />
+    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSellRefundModifier.cs" />
     <Compile Include="Assets\Scrips\Modifiers\Towers\TowerNumberOfTargetsModifier.cs" />
     <Compile Include="Assets\Scrips\UI\UiLoadPercentage.cs" />
     <Compile Include="Assets\Scrips\Spells\SpellInstance.cs" />
@@ -307,9 +310,6 @@
     <Compile Include="Assets\Scrips\Modifiers\ModifiedAmount.cs" />
     <Compile Include="Assets\Scrips\EnemyData\WaveData\MoreWaveData.cs" />
     <Compile Include="Assets\Scrips\Waves\WaveCluster.cs" />
-    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerCostModifier.cs" />
-    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSellRefundModifier.cs" />
-    <Compile Include="Assets\Scrips\Modifiers\Towers\TowerSellCostModifier.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
