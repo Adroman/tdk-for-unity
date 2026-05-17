@@ -24,14 +24,14 @@ namespace Editor.CustomInspectors
             _minLevel = EditorGUILayout.IntField("Minimum level", _minLevel);
             _maxLevel = EditorGUILayout.IntField("Maximum level", _maxLevel);
 
-            if (GUILayout.Button("Show level requirements"))
+            if (GUILayout.Button("Show values"))
             {
                 _sb.Clear();
                 for (int i = _minLevel; i <= _maxLevel; i++)
                 {
-                    _sb.Append("Level ")
+                    _sb.Append("x = ")
                         .Append(i)
-                        .Append(" requirement: ")
+                        .Append(" : value = ")
                         .Append(target.GetLevelRequirement(i))
                         .AppendLine();
                 }

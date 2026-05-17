@@ -1,3 +1,4 @@
+using System.Text;
 using Scrips.Data;
 using Scrips.Waves;
 using UnityEditor;
@@ -9,6 +10,7 @@ namespace Editor.WaveEditor
     {
         private readonly WaveGenerator _generator;
         private readonly WaveEditorWindow _waveEditor;
+        private readonly StringBuilder _sb = new StringBuilder();
 
         private readonly Vector2 _fieldSize = new Vector2(100, 15);
         private readonly Vector2 _smallerFieldSize = new Vector2(80, 15);
@@ -107,6 +109,10 @@ namespace Editor.WaveEditor
             if (GUI.Button(new Rect(position, _labelSize), "Clear waves"))
                 _generator.Waves.Clear();
 
+            position.y += 20;
+            if (GUI.Button(new Rect(position, _labelSize), "Print waves"))
+                PrintWaves();
+
             position.x -= 310;
             position.y += 20;
             EditorGUI.LabelField(new Rect(position, _labelSize), "Waves", EditorStyles.boldLabel);
@@ -174,6 +180,27 @@ namespace Editor.WaveEditor
             rect.position = position;
             rect.width = 15;
             return !newIndex && GUI.Button(rect, "X");
+        }
+
+        private void PrintWaves()
+        {
+            _sb.Clear();
+            int maxWave = 20;
+            int waveNumber = 1;
+            foreach (var wave in _generator.GetWaves())
+            {
+                if (waveNumber++ > maxWave) break;
+                
+                _sb.AppendLine($"Wave {wave}:");
+                foreach (var cluster in wave.WaveClusters)
+                {
+                    _sb.Append($"{cluster.Amount} {cluster.Prefab.name} enemies with ")
+                        .Append($"{cluster.EnemyData.InitialHitpoints} HP, ")
+                        .Append($"{cluster.EnemyData.InitialArmor} armor and ")
+                        .Append($"{cluster.EnemyData.InitialSpeed} speed.").AppendLine();
+                }
+                _sb.AppendLine();
+            }
         }
     }
 }

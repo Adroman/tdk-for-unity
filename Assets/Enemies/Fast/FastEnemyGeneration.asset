@@ -19,13 +19,13 @@ MonoBehaviour:
   HitpointModifier:
     UseBaseValue: 0
     BaseValue: 0
-    ModifierFromDifficulty: 0.1
+    ModifierFromDifficulty: 0.09
     Deviation: 0.1
   HitpointDeviation: 0.1
   ArmorModifier:
     UseBaseValue: 0
     BaseValue: 0
-    ModifierFromDifficulty: 0.06
+    ModifierFromDifficulty: 0.01
     Deviation: 0.1
   ArmorDeviation: 0.1
   SpeedModifier:

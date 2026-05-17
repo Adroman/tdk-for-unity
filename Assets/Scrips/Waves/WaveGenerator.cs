@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using Scrips.Data.Formula;
 using UnityEngine;
 
 namespace Scrips.Waves
@@ -29,16 +30,18 @@ namespace Scrips.Waves
         public int WavesTotal;
         public int MinClusters;
         public int MaxClusters;
-        public int BaseDifficulty;
         public bool Infinite;
-        public float DifficultyIncrease;
         [Range(0, 1)]
         public float DifficultyDeviation;
         public string RandomSeed;
-
+        
+        public BaseFormula DifficultyIncreaseFormula;
+        
         public List<Transform> SpawnpointsToUse = new List<Transform>();
         public List<int> ClusterIncreases = new List<int>();
         public List<WaveNumber> Waves = new List<WaveNumber>();
+        
+        // Do not put serialized fields below this comment
 
         private int _currentWave;
         private int _currentDifficulty;
@@ -66,7 +69,8 @@ namespace Scrips.Waves
         private Wave GetNextWave(int waveNumber)
         {
             _currentWave++;
-            if (waveNumber > 1) _currentDifficulty = (int) (_currentDifficulty * DifficultyIncrease);
+            _currentDifficulty = DifficultyIncreaseFormula.GetLevelRequirement(_currentWave);
+            
             if (ClusterIncreases.Contains(waveNumber)) MaxClusters++;
             int clusters = _random.Next(MinClusters, MaxClusters + 1);
 
@@ -112,7 +116,7 @@ namespace Scrips.Waves
         private void ResetPrivateStats()
         {
             _currentWave = 0;
-            _currentDifficulty = BaseDifficulty;
+            _currentDifficulty = DifficultyIncreaseFormula.GetLevelRequirement(0);
             _random = RandomSeed != null ? new System.Random(RandomSeed.GetHashCode()) : new System.Random();
         }
     }

@@ -75,8 +75,6 @@ namespace Editor.CustomWindows
             GUI.Label(new Rect(10, Space + topOffset + 20, 150, 20), "Number of waves:");
             GUI.Label(new Rect(10, Space + topOffset + 40, 150, 20), "Min Clusters:");
             GUI.Label(new Rect(10, Space + topOffset + 60, 150, 20), "Max Clusters:");
-            GUI.Label(new Rect(10, Space + topOffset + 80, 150, 20), "Base Difficulty:");
-            GUI.Label(new Rect(10, Space + topOffset + 100, 150, 20), "Difficulty increase:");
             GUI.Label(new Rect(10, Space + topOffset + 120, 150, 20), "Difficulty deviation:");
             GUI.Label(new Rect(10, Space + topOffset + 140, 150, 20), "Random seed:");
             GUI.Label(new Rect(10, Space + topOffset + 160, 150, 20), "Infinite amount of waves:");
@@ -86,8 +84,6 @@ namespace Editor.CustomWindows
             int newWaveAmount = EditorGUI.IntField(new Rect(200, Space + topOffset + 20, 150, 20), Generator.WavesTotal);
             int newMinClusters = EditorGUI.IntField(new Rect(200, Space + topOffset + 40, 150, 20), Generator.MinClusters);
             int newMaxClusters = EditorGUI.IntField(new Rect(200, Space + topOffset + 60, 150, 20), Generator.MaxClusters);
-            int newBaseDifficulty = EditorGUI.IntField(new Rect(200, Space + topOffset + 80, 150, 20), Generator.BaseDifficulty);
-            float newDifficultyIncrease = EditorGUI.FloatField(new Rect(200, Space + topOffset + 100, 150, 20), Generator.DifficultyIncrease);
             float newDifficultyDeviation = EditorGUI.Slider(new Rect(200, Space + topOffset + 120, 150, 20), Generator.DifficultyDeviation, 0, 1);
             string newSeed = EditorGUI.TextField(new Rect(200, Space + topOffset + 140, 150, 20), Generator.RandomSeed);
             bool newUseInfiniteGeneration = EditorGUI.Toggle(new Rect(200, Space + topOffset + 160, 20, 20), Generator.Infinite);
@@ -95,14 +91,10 @@ namespace Editor.CustomWindows
             newWaveAmount = Math.Max(1, newWaveAmount);
             newMinClusters = Math.Max(1, newMinClusters);
             newMaxClusters = Math.Max(1, newMaxClusters);
-            newBaseDifficulty = Math.Max(1, newBaseDifficulty);
-            newDifficultyIncrease = Math.Max(1, newDifficultyIncrease);
 
             if (EditorGUI.EndChangeCheck())
             {
-                Generator.BaseDifficulty = newBaseDifficulty;
                 Generator.DifficultyDeviation = newDifficultyDeviation;
-                Generator.DifficultyIncrease = newDifficultyIncrease;
                 Generator.MinClusters = newMinClusters;
                 Generator.MaxClusters = newMaxClusters;
                 Generator.RandomSeed = newSeed;
